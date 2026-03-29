@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KANOPY Inc. — Building Digital Experiences</title>
+  <meta name="description" content="株式会社KANOPY。ゴルフソーシャルアプリ「Golfie」の開発・運営、採用コンサルティング事業を展開。">
+  <meta property="og:title" content="KANOPY Inc. — Building Digital Experiences">
+  <meta property="og:description" content="テクノロジーで、新しい体験を。ゴルフアプリ「Golfie」運営、採用コンサルティング。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kanopy-inc.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%232D5A27' font-family='Arial'>K</text></svg>">
+  <style>
+    :root{
+      --primary:#2D5A27;--primary-light:#E8F5E9;--primary-muted:#81C784;
+      --bg:#fff;--bg-alt:#F6F8F6;--text:#1A1A1A;--text-sub:#555;--text-muted:#999;--border:#E2E6E2;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{
+        --primary:#81C784;--primary-light:#1B3A1A;--primary-muted:#4CAF50;
+        --bg:#0E0E0E;--bg-alt:#161816;--text:#E8E8E8;--text-sub:#AAA;--text-muted:#666;--border:#2A2C2A;
+      }
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.8;font-size:16px;
+      animation:fadeIn .6s ease-out;
+    }
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+    /* Nav */
+    nav{
+      position:fixed;top:0;width:100%;z-index:100;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+      border-bottom:1px solid transparent;padding:16px 32px;
+      display:flex;justify-content:space-between;align-items:center;
+      transition:border-color .3s,box-shadow .3s;
+    }
+    nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 12px rgba(0,0,0,.05)}
+    @media(prefers-color-scheme:dark){
+      nav{background:rgba(14,14,14,.92)}
+      nav.scrolled{box-shadow:0 1px 12px rgba(0,0,0,.4)}
+    }
+    .nav-logo{font-size:16px;font-weight:800;letter-spacing:5px;color:var(--primary);text-decoration:none}
+    .nav-links{display:flex;gap:24px}
+    .nav-links a{font-size:13px;font-weight:600;color:var(--text-sub);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--primary)}
+
+    /* Hero */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      padding:120px 32px 80px;text-align:center;
+    }
+    .hero-inner{max-width:700px}
+    .hero-logo{font-size:clamp(28px,5vw,40px);font-weight:900;letter-spacing:clamp(10px,3vw,18px);color:var(--primary);margin-bottom:24px}
+    .hero-tagline{font-size:clamp(14px,2.5vw,18px);color:var(--text-sub);margin-bottom:40px;line-height:1.8}
+    .hero-tagline em{font-style:normal;color:var(--primary);font-weight:600}
+
+    /* Section */
+    section{padding:100px 32px}
+    .sec-inner{max-width:880px;margin:0 auto}
+    .sec-label{font-size:11px;font-weight:800;color:var(--primary-muted);letter-spacing:5px;text-transform:uppercase;margin-bottom:14px;text-align:center}
+    .sec-title{font-size:clamp(24px,4.5vw,34px);font-weight:800;text-align:center;margin-bottom:48px;line-height:1.35}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    @media(max-width:768px){.services{grid-template-columns:1fr}}
+    .service-card{
+      padding:36px;border-radius:20px;background:var(--bg);
+      border:1px solid var(--border);transition:all .3s;
+    }
+    .service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
+    .service-icon{
+      width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+      font-size:24px;margin-bottom:20px;
+    }
+    .service-card:nth-child(1) .service-icon{background:var(--primary-light)}
+    .service-card:nth-child(2) .service-icon{background:#E3F2FD}
+    .service-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+    .service-card p{font-size:14px;color:var(--text-sub);line-height:1.7}
+    .service-link{
+      display:inline-block;margin-top:16px;font-size:13px;font-weight:700;
+      color:var(--primary);text-decoration:none;
+    }
+    .service-link:hover{text-decoration:underline}
+
+    /* Company */
+    .company-sec{background:var(--bg-alt)}
+    .company-table{max-width:600px;margin:0 auto}
+    .company-table table{width:100%;border-collapse:collapse}
+    .company-table th{
+      text-align:left;padding:14px 16px;font-size:14px;font-weight:600;color:var(--text-sub);
+      border-bottom:1px solid var(--border);width:140px;vertical-align:top;
+    }
+    .company-table td{
+      padding:14px 16px;font-size:14px;color:var(--text);
+      border-bottom:1px solid var(--border);
+    }
+
+    /* Contact */
+    .contact-card{
+      max-width:480px;margin:0 auto;text-align:center;
+      padding:40px;border-radius:20px;background:var(--bg-alt);border:1px solid var(--border);
+    }
+    .contact-card p{font-size:14px;color:var(--text-sub);margin-bottom:20px}
+    .contact-btn{
+      display:inline-block;padding:14px 36px;border-radius:12px;
+      background:var(--primary);color:#fff;font-size:14px;font-weight:700;
+      text-decoration:none;letter-spacing:.5px;transition:all .3s;
+    }
+    .contact-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,90,39,.25)}
+
+    /* Footer */
+    footer{
+      padding:40px 32px;text-align:center;border-top:1px solid var(--border);
+    }
+    footer .f-logo{font-size:13px;font-weight:800;letter-spacing:4px;color:var(--primary);margin-bottom:12px}
+    footer .f-links{margin-bottom:8px}
+    footer .f-links a{font-size:12px;color:var(--text-sub);text-decoration:none;margin:0 10px}
+    footer .f-links a:hover{color:var(--primary)}
+    footer .f-copy{font-size:11px;color:var(--text-muted)}
+
+    /* Animation */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+    .fade-up.v{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">KANOPY</a>
+  <div class="nav-links">
+    <a href="#services">事業内容</a>
+    <a href="#company">会社情報</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-logo">KANOPY</div>
+    <p class="hero-tagline">
+      テクノロジーで、<em>新しい体験</em>を。<br>
+      ゴルフソーシャルアプリ「Golfie」の開発・運営と、<br>
+      採用コンサルティング事業を展開しています。
+    </p>
+  </div>
+</div>
+
+<!-- Services -->
+<section id="services">
+  <div class="sec-inner fade-up">
+    <div class="sec-label">Services</div>
+    <div class="sec-title">事業内容</div>
+    <div class="services">
+      <div class="service-card">
+        <div class="service-icon">⛳</div>
+        <h3>Golfie</h3>
+        <p>ゴルフスコアをWordleグリッドで可視化する、世界初のゴルフソーシャルアプリ。スコアを見せずにラウンドの"かたち"をシェアする、プライバシーファーストの設計。</p>
+        <a href="https://mygolfie.app" class="service-link" target="_blank">mygolfie.app →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>採用コンサルティング</h3>
+        <p>企業の採用活動を支援。採用戦略の策定から、候補者評価、面接設計、オンボーディングまで、採用プロセス全体をサポートします。</p>
+        <a href="mailto:hr@kanopy-inc.com" class="service-link">お問い合わせ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company -->
+<section id="company" class="company-sec">
+  <div class="sec-inner fade-up">
+    <div class="sec-label">Company</div>
+    <div class="sec-title">会社情報</div>
+    <div class="company-table">
+      <table>
+        <tr><th>会社名</th><td>株式会社KANOPY（KANOPY Inc.）</td></tr>
+        <tr><th>設立</th><td>2026年4月（予定）</td></tr>
+        <tr><th>代表</th><td>[代表者名]</td></tr>
+        <tr><th>所在地</th><td>東京都練馬区</td></tr>
+        <tr><th>資本金</th><td>100,000円</td></tr>
+        <tr><th>事業内容</th><td>
+          モバイルアプリケーションの企画・開発・運営<br>
+          採用コンサルティング・人事支援<br>
+          インターネットを利用した情報提供サービス
+        </td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="sec-inner fade-up">
+    <div class="sec-label">Contact</div>
+    <div class="sec-title">お問い合わせ</div>
+    <div class="contact-card">
+      <p>事業に関するお問い合わせ、<br>採用コンサルティングのご相談など、<br>お気軽にご連絡ください。</p>
+      <a href="mailto:info@kanopy-inc.com" class="contact-btn">info@kanopy-inc.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">KANOPY</div>
+  <div class="f-links">
+    <a href="https://mygolfie.app" target="_blank">Golfie</a>
+    <a href="https://mygolfie.app/privacy.html" target="_blank">Privacy Policy</a>
+    <a href="https://mygolfie.app/terms.html" target="_blank">Terms of Service</a>
+  </div>
+  <div class="f-copy">&copy; 2026 KANOPY Inc.</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',scrollY>20)});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.15});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
