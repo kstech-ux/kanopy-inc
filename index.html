@@ -145,10 +145,10 @@
     .contact-box{padding:28px;border-radius:10px;border:1px solid var(--bd);background:var(--card)}
     .contact-box h4{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--ac);margin-bottom:8px}
     .contact-box p{font-size:13px;color:var(--t3);margin-bottom:12px;line-height:1.6}
-    .contact-box a{font-family:inherit;font-size:13px;color:var(--t2);text-decoration:none;transition:color .2s}
+    .contact-box a{font-family:inherit;font-size:13px;color:var(--t2);text-decoration:none;transition:color .2s;word-break:break-all}
     .contact-box a:hover{color:var(--ac)}
     .contact-general{font-size:12px;color:var(--t3);margin-top:8px}
-    .contact-general a{font-family:inherit;color:var(--t2);text-decoration:none;margin:0 8px}
+    .contact-general a{font-family:inherit;color:var(--t2);text-decoration:none;margin:0 8px;padding:10px 8px;display:inline-block}
     .contact-general a:hover{color:var(--ac)}
 
     /* FOOTER */
@@ -174,8 +174,8 @@
     @media(max-width:768px){
       nav{padding:16px 20px}
       .nk{display:none}
-      .mob-menu{display:flex !important;gap:16px}
-      .mob-menu a{font-size:10px;font-weight:600;color:var(--t2);text-decoration:none;letter-spacing:1px}
+      .mob-menu{display:flex !important;gap:8px}
+      .mob-menu a{font-size:10px;font-weight:600;color:var(--t2);text-decoration:none;letter-spacing:1px;padding:12px 8px;min-height:44px;display:inline-flex;align-items:center}
       .hero{padding:0 24px}
       section{padding:80px 24px}
       .si{max-width:100%}
@@ -190,8 +190,9 @@
     @media(max-width:480px){
       nav{padding:14px 16px}
       .nl{font-size:10px;letter-spacing:6px}
-      .ng a{padding:3px 7px;font-size:9px}
+      .ng a{padding:8px 10px;font-size:9px;min-height:36px;display:inline-flex;align-items:center;justify-content:center}
       .hero{padding:0 20px;min-height:100svh}
+      .hero-glow{width:300px;height:300px}
       .hero-logo{font-size:28px !important;letter-spacing:12px !important;margin-bottom:20px}
       .hero-makers{font-size:11px}
       .hero-vision{font-size:13px;max-width:320px}
@@ -205,7 +206,7 @@
       .f-nm{font-size:18px}
       .f-nm2{font-size:10px}
       .f-ttl{font-size:9px}
-      .f-lk a{padding:5px 12px;font-size:8px}
+      .f-lk a{padding:10px 14px;font-size:10px}
       .why-story p{font-size:13px}
       .tl-co{font-size:12px}.tl-ro{font-size:10px}.tl-yr{font-size:8px}
       .badges{gap:4px}.badge{font-size:9px;padding:3px 8px}
@@ -216,12 +217,13 @@
       .co-i .co-k{font-size:9px}.co-i .co-v{font-size:11px}
       footer{padding:24px 20px;text-align:center;gap:12px}
       .ft-l{font-size:9px;letter-spacing:5px}
-      .ft-m a{margin:0 6px;font-size:8px}
+      .ft-m a{margin:0 4px;font-size:10px;padding:10px 4px;display:inline-flex;align-items:center;min-height:44px}
       .ft-r{font-size:9px}
     }
     @media(max-width:360px){
       .hero-logo{font-size:24px !important;letter-spacing:10px !important}
       .phone{width:160px;border-radius:20px;padding:24px 10px 14px}
+      .co-g{grid-template-columns:1fr;gap:10px}
     }
     @supports(padding:env(safe-area-inset-bottom)){
       footer{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
@@ -234,8 +236,8 @@
     .store-badge svg{flex-shrink:0}
     .store-badge .sb-label{font-size:8px;color:#aaa;display:block;line-height:1}
     .store-badge .sb-name{font-size:13px;font-weight:700;line-height:1.2}
-    .social-icons{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
-    .social-icons a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;color:var(--t3);transition:all .3s;text-decoration:none}
+    .social-icons{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+    .social-icons a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--t3);transition:all .3s;text-decoration:none}
     .social-icons a:hover{color:var(--ac);transform:translateY(-2px)}
     .social-icons a svg{width:18px;height:18px;fill:currentColor}
     [data-l]{display:none}[data-l].a{display:inline}
