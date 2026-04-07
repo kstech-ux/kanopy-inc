@@ -170,9 +170,12 @@
     .sidebar a:hover{background:var(--ac)}
     @media(max-width:768px){.sidebar{display:none}}
 
-    /* Hamburger */
-    .hamburger{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;padding:10px;flex-shrink:0}
-    .hamburger span{display:block;width:20px;height:2px;background:var(--t2);margin:4px auto;transition:all .3s;border-radius:1px}
+    /* Floating hamburger */
+    .hamburger{display:none;position:fixed;bottom:24px;right:24px;z-index:101;width:52px;height:52px;border:none;border-radius:50%;background:rgba(129,199,132,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;padding:0;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:all .3s}
+    .hamburger:active{transform:scale(.92)}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--ac);margin:4px auto;transition:all .3s;border-radius:1px}
+    .hamburger.open{background:var(--ac)}
+    .hamburger.open span{background:var(--bg)}
     .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
     .hamburger.open span:nth-child(2){opacity:0}
     .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
@@ -269,9 +272,10 @@
       <a href="#" class="a" onclick="sl('ja',this);return false">JA</a>
       <a href="#" onclick="sl('ko',this);return false">KO</a>
     </div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 
 <div class="mob-overlay" id="mobMenu">
   <a href="#roundie" onclick="closeMenu()">ROUNDIE</a>
