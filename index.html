@@ -638,13 +638,8 @@ function sl(l,el){
 (function(){
   const p=new URLSearchParams(location.search);
   const l=p.get('lang');
-  if(l&&['ja','ko'].includes(l)){
-    curLang=l;
-    document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
-    document.querySelectorAll('[data-b]').forEach(e=>e.classList.toggle('a',e.dataset.b===l));
-    document.querySelectorAll('.ng a').forEach(a=>{a.classList.remove('a');if((l==='ja'&&a.textContent==='JA')||(l==='ko'&&a.textContent==='KO'))a.classList.add('a')});
-    document.documentElement.lang=l;
-    document.querySelectorAll('[data-page]').forEach(a=>{const pg=a.dataset.page;if(pg)a.href=pg+'.html?lang='+l});
+  if(l&&['en','ja','ko'].includes(l)&&l!=='ja'){
+    sl(l);
   }
 })()
 
