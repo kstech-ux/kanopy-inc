@@ -19,6 +19,8 @@
       --ac:#81C784;--acg:rgba(129,199,132,.1);
       --bd:rgba(255,255,255,.05);
     }
+    .sp{display:none}
+    @media(max-width:640px){.sp{display:inline}}
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -88,7 +90,7 @@
 
     /* HOW IT WORKS */
     .hiw-sec{background:var(--bg)}
-    .hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+    .hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:36px}
     @media(max-width:768px){.hiw-grid{grid-template-columns:1fr;gap:20px}}
     .hiw-step{text-align:center;padding:28px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--bd);transition:all .3s}
     .hiw-step:hover{transform:translateY(-3px);border-color:var(--ac)}
@@ -372,12 +374,12 @@
         </p>
         <p class="prod-desc" style="margin-top:-8px">
           <span data-l="en">Enter your score, and 18 holes become a colorful grid. Share it with friends — no numbers required.</span>
-          <span data-l="ja" class="a">スコアを入力するだけで、18ホールがカラフルなグリッドに。仲間にシェアしよう。数字は見せなくてもいい。</span>
+          <span data-l="ja" class="a">スコアを入力するだけで、<br class="sp">18ホールがカラフルなグリッドに。<br class="sp">仲間にシェアしよう。<br class="sp">数字は見せなくてもいい。</span>
           <span data-l="ko">스코어를 입력하면 18홀이 컬러풀한 그리드로. 친구에게 공유하자. 숫자는 안 보여도 된다.</span>
         </p>
         <p class="prod-desc" style="font-size:12px;margin-top:-4px">
           <span data-l="en">Score recording · Color grid · Feed · Kudos · Ranking · Competitions</span>
-          <span data-l="ja" class="a">スコア記録 · カラーグリッド · フィード · Kudos · ランキング · コンペ</span>
+          <span data-l="ja" class="a">スコア記録 · カラーグリッド · フィード<br class="sp"> · Kudos · ランキング · コンペ</span>
           <span data-l="ko">스코어 기록 · 컬러 그리드 · 피드 · Kudos · 랭킹 · 대회</span>
         </p>
         <div class="prod-btns">
@@ -413,7 +415,7 @@
     <div class="sl">Vision</div>
     <div class="vision-text">
       <span data-l="en">The memories are there. But scorecards get buried in group chats, and the best moments of a round <strong>deserve more than a number</strong>. They deserve <span class="pac">a shape</span>. ROUNDIE makes that possible.</span>
-      <span data-l="ja" class="a">ラウンドの記憶はある。でもスコアカードの写真はチャットに埋もれ、最高のショットも<strong>数字だけでは伝わらない</strong>。もっと美しく、もっと楽しく<span class="pac">残せるはず</span>だ。ROUNDIEが、それを実現する。</span>
+      <span data-l="ja" class="a">ラウンドの記憶はある。<br class="sp">でもスコアカードの写真はチャットに埋もれ、<br class="sp">最高のショットも<strong>数字だけでは伝わらない</strong>。<br class="sp">もっと美しく、もっと楽しく<span class="pac">残せるはず</span>だ。<br class="sp">ROUNDIEが、それを実現する。</span>
       <span data-l="ko">기억은 있다. 하지만 스코어카드는 채팅에 묻히고, 라운드의 최고의 순간은 <strong>숫자 이상의 가치가 있다</strong>. 더 아름답게, 더 즐겁게 <span class="pac">남길 수 있어야 한다</span>. ROUNDIE가 그것을 가능하게 한다.</span>
     </div>
     <div class="vision-launch">
@@ -430,24 +432,29 @@
     <div class="sl rv">How It Works</div>
     <h2 class="rv" style="font-size:clamp(20px,3vw,28px);font-weight:600;letter-spacing:-.3px;margin-bottom:8px">
       <span data-l="en">30 seconds. One beautiful Round Card.</span>
-      <span data-l="ja" class="a">30秒で、美しいラウンドカードが完成。</span>
+      <span data-l="ja" class="a">30秒で、<br class="sp">美しいラウンドカードが完成。</span>
       <span data-l="ko">30초만에, 아름다운 라운드카드 완성.</span>
     </h2>
     <div class="hiw-grid">
       <div class="hiw-step rv">
         <div class="hiw-num">STEP 1</div>
         <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록하기</span></h4>
-        <p><span data-l="en">Enter your round results. Quick mode takes just 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を入力。クイックモードなら30秒で完了。</span><span data-l="ko">라운드 결과 입력. 퀵 모드로 30초면 완료.</span></p>
+        <p><span data-l="en">Enter your round results. Quick mode takes just 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を入力。<br class="sp">クイックモードなら30秒で完了。</span><span data-l="ko">라운드 결과 입력. 퀵 모드로 30초면 완료.</span></p>
       </div>
       <div class="hiw-step rv">
         <div class="hiw-num">STEP 2</div>
         <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
-        <p><span data-l="en">Your score becomes a colorful grid — your unique Round Card.</span><span data-l="ja" class="a">スコアがカラーグリッドに変わる。あなただけのラウンドカード。</span><span data-l="ko">스코어가 컬러 그리드로 변신. 나만의 라운드카드.</span></p>
+        <p><span data-l="en">Your score becomes a colorful grid — your unique Round Card.</span><span data-l="ja" class="a">スコアがカラーグリッドに変わる。<br class="sp">あなただけのラウンドカード。</span><span data-l="ko">스코어가 컬러 그리드로 변신. 나만의 라운드카드.</span></p>
       </div>
       <div class="hiw-step rv">
         <div class="hiw-num">STEP 3</div>
         <h4><span data-l="en">Share & Rise</span><span data-l="ja" class="a">シェア & 成長</span><span data-l="ko">공유 & 성장</span></h4>
-        <p><span data-l="en">Share with friends, send Kudos, compete in rankings. Your golf life, together.</span><span data-l="ja" class="a">仲間とシェアし、Kudosを送り、ランキングで競い合う。ゴルフライフを、一緒に。</span><span data-l="ko">친구와 공유하고, Kudos를 보내고, 랭킹에서 경쟁. 골프 라이프를 함께.</span></p>
+        <p><span data-l="en">Share with friends, send Kudos, compete in rankings. Your golf life, together.</span><span data-l="ja" class="a">仲間とシェアし、Kudosを送り、<br class="sp">ランキングで競い合う。<br class="sp">ゴルフライフを、一緒に。</span><span data-l="ko">친구와 공유하고, Kudos를 보내고,<br class="sp"> 랭킹에서 경쟁. 골프 라이프를 함께.</span></p>
+      </div>
+      <div class="hiw-step rv">
+        <div class="hiw-num">STEP 4</div>
+        <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회로 즐기기</span></h4>
+        <p><span data-l="en">Host competitions in 3 taps. Auto scoring, animated reveals, and shareable result cards.</span><span data-l="ja" class="a">3タップでコンペ開催。<br class="sp">自動集計、結果リビール演出、<br class="sp">シェアできる結果カード。</span><span data-l="ko">3번 탭으로 대회 개최.<br class="sp"> 자동 집계, 결과 발표 연출,<br class="sp"> 공유 가능한 결과 카드.</span></p>
       </div>
     </div>
   </div>
@@ -477,8 +484,8 @@
           <p data-b="en">Before, during, and after every round, golf is full of beautiful moments. If only I could <strong>keep them more beautifully</strong>. If only I could <strong>share these memories</strong> with friends in a more joyful way. <span class="pac">That's what I wanted.</span></p>
           <p data-b="en">So I built <strong>ROUNDIE</strong>. In April 2026, I founded KANOPY Inc. in Tokyo. <span class="pac">A company that shapes golf experiences and memories.</span></p>
 
-          <p data-b="ja" class="a">山と川に囲まれた田舎で育った。20代でゴルフに出会った。スポーツとしても惹かれたが、それ以上に心を掴んだのは、<strong>仲間と過ごすあの4時間</strong>だった。朝の緊張感、フェアウェイでの会話、最高のショットを決めた瞬間の歓声。回るたびに少しずつ上手くなっていく、あの成長の実感。</p>
-          <p data-b="ja" class="a">ラウンドの前も、最中も、終わった後も、ゴルフには美しい瞬間がある。この体験を、<strong>もっと美しく残せたら</strong>。この記憶を、<strong>仲間ともっと楽しくシェアできたら</strong>。<span class="pac">そう思った。</span></p>
+          <p data-b="ja" class="a">山と川に囲まれた田舎で育った。<br class="sp">20代でゴルフに出会った。<br class="sp">スポーツとしても惹かれたが、<br class="sp">それ以上に心を掴んだのは、<br class="sp"><strong>仲間と過ごすあの4時間</strong>だった。<br class="sp">朝の緊張感、フェアウェイでの会話、<br class="sp">最高のショットを決めた瞬間の歓声。<br class="sp">回るたびに少しずつ上手くなっていく、<br class="sp">あの成長の実感。</p>
+          <p data-b="ja" class="a">ラウンドの前も、最中も、終わった後も、<br class="sp">ゴルフには美しい瞬間がある。<br class="sp">この体験を、<strong>もっと美しく残せたら</strong>。<br class="sp">この記憶を、<br class="sp"><strong>仲間ともっと楽しくシェアできたら</strong>。<br class="sp"><span class="pac">そう思った。</span></p>
           <p data-b="ja" class="a">だから、<strong>ROUNDIE</strong>を作った。2026年4月、東京にKANOPYを設立。<span class="pac">ゴルフの体験と記憶を、かたちにする</span>会社として。</p>
 
           <p data-b="ko">산과 강으로 둘러싸인 시골에서 자랐다. 20대에 골프를 만났다. 스포츠로서도 매력적이었지만, 그 이상으로 마음을 사로잡은 건 <strong>동료와 함께하는 그 4시간</strong>이었다. 아침의 긴장감, 페어웨이에서의 대화, 최고의 샷을 성공했을 때의 환호. 라운드를 거듭할수록 조금씩 나아지는, 그 성장의 실감.</p>
@@ -496,7 +503,7 @@
           <div class="tl-h">Background</div>
           <div class="why-story">
             <p data-b="en" style="font-size:13px;line-height:1.8;color:var(--t2)">Business & entrepreneurship background. Sales and BD at global manufacturers, then talent industry — recruiting lead at a major HR firm, people strategy at a startup. Independent consultant for 20+ companies. Now building at the intersection of sports, community, and technology.</p>
-            <p data-b="ja" class="a" style="font-size:13px;line-height:1.8;color:var(--t2)">経営学・起業論を学び、グローバルメーカーで営業・事業開発を経験。人材業界へ転身し、大手からスタートアップまで累計20社以上の採用を支援。現在はスポーツ×コミュニティ×テクノロジー領域でプロダクト開発に注力。</p>
+            <p data-b="ja" class="a" style="font-size:13px;line-height:1.8;color:var(--t2)">経営学・起業論を学び、<br class="sp">グローバルメーカーで営業・事業開発を経験。<br class="sp">人材業界へ転身し、<br class="sp">大手からスタートアップまで累計20社以上の採用を支援。<br class="sp">現在はスポーツ×コミュニティ×テクノロジー領域で<br class="sp">プロダクト開発に注力。</p>
             <p data-b="ko" style="font-size:13px;line-height:1.8;color:var(--t2)">경영학·기업가정신을 전공. 글로벌 제조사에서 영업·사업개발 경험 후 인재 업계로 전환. 누적 20사 이상의 채용 지원. 현재 스포츠×커뮤니티×테크 영역에서 프로덕트 개발에 주력.</p>
           </div>
           <div class="badges">
@@ -514,7 +521,7 @@
 <div class="cta2 rv">
   <p>
     <span data-l="en">Ready to shape your rounds?</span>
-    <span data-l="ja" class="a">あなたのラウンドを、かたちにしよう。</span>
+    <span data-l="ja" class="a">あなたのラウンドを、<br class="sp">かたちにしよう。</span>
     <span data-l="ko">당신의 라운드를, 형태로 만들자.</span>
   </p>
   <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:12px;padding:14px 36px;">
@@ -564,7 +571,7 @@
         </h4>
         <p>
           <span data-l="en">Join our team or learn about our talent services.</span>
-          <span data-l="ja" class="a">KANOPYで働く、または採用支援サービスについて。</span>
+          <span data-l="ja" class="a">KANOPYで働く、<br class="sp">または採用支援サービスについて。</span>
           <span data-l="ko">KANOPY에서 일하기, 또는 채용 지원 서비스 안내.</span>
         </p>
         <a href="talent.html" style="display:inline-block;margin-bottom:4px">
