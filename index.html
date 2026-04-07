@@ -170,12 +170,22 @@
     .sidebar a:hover{background:var(--ac)}
     @media(max-width:768px){.sidebar{display:none}}
 
+    /* Hamburger */
+    .hamburger{display:none;width:44px;height:44px;border:none;background:none;cursor:pointer;padding:10px;flex-shrink:0}
+    .hamburger span{display:block;width:20px;height:2px;background:var(--t2);margin:4px auto;transition:all .3s;border-radius:1px}
+    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+    @media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}}
+    .mob-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(5,5,7,.97);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
+    .mob-overlay.open{opacity:1;pointer-events:auto}
+    .mob-overlay a{font-size:16px;font-weight:600;color:var(--t2);text-decoration:none;padding:14px 32px;border-radius:10px;transition:all .2s;letter-spacing:2px;min-height:44px;display:flex;align-items:center}
+    .mob-overlay a:hover,.mob-overlay a:active{color:var(--ac);background:var(--acg)}
+
     /* RESPONSIVE */
     @media(max-width:768px){
       nav{padding:16px 20px}
       .nk{display:none}
-      .mob-menu{display:flex !important;gap:8px}
-      .mob-menu a{font-size:10px;font-weight:600;color:var(--t2);text-decoration:none;letter-spacing:1px;padding:12px 8px;min-height:44px;display:inline-flex;align-items:center}
       .hero{padding:0 24px}
       section{padding:80px 24px}
       .si{max-width:100%}
@@ -254,17 +264,22 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="mob-menu" style="display:none">
-      <a href="#roundie">ROUNDIE</a>
-      <a href="#contact">Contact</a>
-    </div>
     <div class="ng">
       <a href="#" onclick="sl('en',this);return false">EN</a>
       <a href="#" class="a" onclick="sl('ja',this);return false">JA</a>
       <a href="#" onclick="sl('ko',this);return false">KO</a>
     </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mob-overlay" id="mobMenu">
+  <a href="#roundie" onclick="closeMenu()">ROUNDIE</a>
+  <a href="#vision" onclick="closeMenu()">Vision</a>
+  <a href="#hiw" onclick="closeMenu()">How it Works</a>
+  <a href="#about" onclick="closeMenu()">Why Golf?</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
 <div class="sidebar">
   <a href="#" title="Top"></a>
@@ -599,6 +614,10 @@
 </footer>
 
 <script>
+// Hamburger menu
+function toggleMenu(){document.querySelector('.hamburger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':''}
+function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
+
 // Nav scroll
 window.addEventListener('scroll',()=>document.querySelector('nav').classList.toggle('s',scrollY>40));
 
