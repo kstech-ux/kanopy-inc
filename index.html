@@ -78,13 +78,13 @@
     .phone{width:220px;margin:0 auto;background:var(--card);border-radius:28px;border:2px solid var(--bd);padding:32px 14px 20px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 80px var(--acg)}
     .phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:48px;height:4px;border-radius:2px;background:var(--bd)}
     .ph-h{text-align:center;margin-bottom:10px}
-    .ph-h .l1{font-size:7px;font-weight:700;color:var(--t3);letter-spacing:2px;text-transform:uppercase}
+    .ph-h .l1{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:2px;text-transform:uppercase}
     .ph-h .l2{font-size:18px;font-weight:700;color:var(--ac);margin-top:2px;}
     .mg{display:grid;grid-template-columns:repeat(9,1fr);gap:2px}
     .mg .c{aspect-ratio:1;border-radius:16%;opacity:0;transform:scale(0);transition:all .35s ease-out}
     .mg.an .c{opacity:1;transform:scale(1)}
     .ph-b{display:flex;justify-content:space-around;margin-top:10px;padding-top:8px;border-top:1px solid var(--bd)}
-    .ph-b .s{text-align:center}.ph-b .n{font-size:12px;font-weight:700;}.ph-b .l{font-size:6px;color:var(--t3);font-weight:700;letter-spacing:1.5px}
+    .ph-b .s{text-align:center}.ph-b .n{font-size:12px;font-weight:700;}.ph-b .l{font-size:9px;color:var(--t3);font-weight:700;letter-spacing:1.5px}
 
     /* HOW IT WORKS */
     .hiw-sec{background:var(--bg)}
@@ -133,7 +133,7 @@
     .tl-ro{font-size:11px;color:var(--t2);line-height:1.6}
     .tl-yr{font-size:9px;color:var(--t3);font-weight:600}
     .badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:28px}
-    .badge{padding:4px 10px;border-radius:3px;font-size:8px;font-weight:700;letter-spacing:.5px;background:var(--acg);color:var(--ac)}
+    .badge{padding:4px 10px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.5px;background:var(--acg);color:var(--ac)}
 
     /* CONTACT (split) */
     .contact{text-align:center;position:relative;overflow:hidden}
@@ -190,7 +190,7 @@
     @media(max-width:480px){
       nav{padding:14px 16px}
       .nl{font-size:10px;letter-spacing:6px}
-      .ng a{padding:3px 7px;font-size:7px}
+      .ng a{padding:3px 7px;font-size:9px}
       .hero{padding:0 20px;min-height:100svh}
       .hero-logo{font-size:28px !important;letter-spacing:12px !important;margin-bottom:20px}
       .hero-makers{font-size:11px}
@@ -200,7 +200,7 @@
       .sl{font-size:8px;letter-spacing:5px;margin-bottom:16px}
       .phone{width:180px;border-radius:22px;padding:28px 12px 16px}
       .phone::before{width:36px;height:3px;top:8px}
-      .ph-b .n{font-size:10px}.ph-b .l{font-size:5px}
+      .ph-b .n{font-size:10px}.ph-b .l{font-size:8px}
       .f-av{width:64px;height:64px;font-size:20px}
       .f-nm{font-size:18px}
       .f-nm2{font-size:10px}
@@ -208,16 +208,16 @@
       .f-lk a{padding:5px 12px;font-size:8px}
       .why-story p{font-size:13px}
       .tl-co{font-size:12px}.tl-ro{font-size:10px}.tl-yr{font-size:8px}
-      .badges{gap:4px}.badge{font-size:7px;padding:3px 8px}
+      .badges{gap:4px}.badge{font-size:9px;padding:3px 8px}
       .contact h2{font-size:clamp(24px,7vw,40px)}
       .contact-sub{font-size:12px}
       .co-bar{padding:32px 20px}
       .co-g{grid-template-columns:repeat(2,1fr);gap:12px}
-      .co-i .co-k{font-size:7px}.co-i .co-v{font-size:11px}
+      .co-i .co-k{font-size:9px}.co-i .co-v{font-size:11px}
       footer{padding:24px 20px;text-align:center;gap:12px}
       .ft-l{font-size:9px;letter-spacing:5px}
       .ft-m a{margin:0 6px;font-size:8px}
-      .ft-r{font-size:7px}
+      .ft-r{font-size:9px}
     }
     @media(max-width:360px){
       .hero-logo{font-size:24px !important;letter-spacing:10px !important}
@@ -354,12 +354,11 @@
           <span data-l="ja">スコアを入力するだけで、18ホールがカラフルなグリッドに。仲間にシェアしよう。数字は見せなくてもいい。</span>
           <span data-l="ko">스코어를 입력하면 18홀이 컬러풀한 그리드로. 친구에게 공유하자. 숫자는 안 보여도 된다.</span>
         </p>
-        <div class="prod-tags">
-          <span class="prod-tag"><span data-l="en" class="a">Round Card</span><span data-l="ja">ラウンドカード</span><span data-l="ko">라운드카드</span></span>
-          <span class="prod-tag"><span data-l="en" class="a">Privacy First</span><span data-l="ja">プライバシー</span><span data-l="ko">프라이버시</span></span>
-          <span class="prod-tag"><span data-l="en" class="a">Competitions</span><span data-l="ja">コンペ</span><span data-l="ko">대회</span></span>
-          <span class="prod-tag"><span data-l="en" class="a">Social Sharing</span><span data-l="ja">ソーシャル</span><span data-l="ko">소셜</span></span>
-        </div>
+        <p class="prod-desc" style="font-size:12px;margin-top:-4px">
+          <span data-l="en" class="a">Score recording · Color grid · Feed · Kudos · Ranking · Competitions</span>
+          <span data-l="ja">スコア記録 · カラーグリッド · フィード · Kudos · ランキング · コンペ</span>
+          <span data-l="ko">스코어 기록 · 컬러 그리드 · 피드 · Kudos · 랭킹 · 대회</span>
+        </p>
         <div class="prod-btns">
           <span class="btn btn-g" style="pointer-events:none;opacity:.6;font-size:10px;padding:8px 16px">iOS / Android — Coming Soon</span>
         </div>
@@ -480,9 +479,9 @@
             <p data-b="ko" style="font-size:13px;line-height:1.8;color:var(--t2)">경영학·기업가정신을 전공. 글로벌 제조사에서 영업·사업개발 경험 후 인재 업계로 전환. 누적 20사 이상의 채용 지원. 현재 스포츠×커뮤니티×테크 영역에서 프로덕트 개발에 주력.</p>
           </div>
           <div class="badges">
-            <span class="badge"><span data-l="en" class="a">Career Consultant</span><span data-l="ja">キャリアコンサルタント</span><span data-l="ko">커리어 컨설턴트</span></span>
-            <span class="badge">AI × Recruiting</span>
-            <span class="badge"><span data-l="en" class="a">500+ Interviews/yr</span><span data-l="ja">年間500+面談</span><span data-l="ko">연간 500+ 면담</span></span>
+            <span class="badge"><span data-l="en" class="a">Sports × Tech</span><span data-l="ja">スポーツ × テック</span><span data-l="ko">스포츠 × 테크</span></span>
+            <span class="badge"><span data-l="en" class="a">Product Builder</span><span data-l="ja">プロダクト開発</span><span data-l="ko">프로덕트 개발</span></span>
+            <span class="badge"><span data-l="en" class="a">Tokyo, Japan</span><span data-l="ja">東京</span><span data-l="ko">도쿄</span></span>
           </div>
         </div>
       </div>
@@ -494,8 +493,8 @@
 <div class="cta2 rv">
   <p>
     <span data-l="en" class="a">Ready to shape your rounds?</span>
-    <span data-l="ja">ラウンドの記憶を、残す準備はできた？</span>
-    <span data-l="ko">라운드의 기억을 남길 준비가 됐나요?</span>
+    <span data-l="ja">あなたのラウンドを、かたちにしよう。</span>
+    <span data-l="ko">당신의 라운드를, 형태로 만들자.</span>
   </p>
   <a href="mailto:notify@kanopy-inc.com?subject=ROUNDIE%20Early%20Access&body=I'd%20like%20to%20get%20early%20access%20to%20ROUNDIE." class="btn btn-a" style="font-size:12px;padding:14px 36px;">
     <span data-l="en" class="a">Get Early Access</span>
