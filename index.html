@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KANOPY Inc. — Makers of ROUNDIE</title>
-  <meta name="description" content="KANOPY Inc. — Makers of ROUNDIE, a new kind of golf social app. We shape what lasts.">
+  <meta name="description" content="KANOPY Inc. — Makers of ROUNDIE, a new kind of golf social app. We shape what lasts. 記憶を、かたちに。">
   <meta property="og:title" content="KANOPY Inc. — Makers of ROUNDIE">
   <meta property="og:description" content="A new kind of golf social app. 記憶を、かたちに。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kanopy-inc.com">
+  <link rel="canonical" href="https://kanopy-inc.com/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%2381C784' font-family='Arial'>K</text></svg>">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KANOPY Inc.","url":"https://kanopy-inc.com","founder":{"@type":"Person","name":"Kazushige Shiba"},"foundingDate":"2026-04","address":{"@type":"PostalAddress","addressLocality":"Shinjuku","addressRegion":"Tokyo","addressCountry":"JP"}}</script>
   <style>
     :root{
       --bg:#050507;--bg2:#09090D;--card:#0E0E14;
-      --t1:#EDEDEF;--t2:#6E6E7E;--t3:#35354A;
+      --t1:#EDEDEF;--t2:#6E6E7E;--t3:#5A5A70;
       --ac:#81C784;--acg:rgba(129,199,132,.1);
       --bd:rgba(255,255,255,.05);
     }
@@ -31,7 +33,7 @@
     .nk a{font-size:10px;font-weight:500;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:color .3s;margin-left:20px;text-transform:uppercase}
     .nk a:hover{color:var(--t1)}
     .ng{display:flex;gap:2px}
-    .ng a{padding:4px 8px;border-radius:3px;font-size:8px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s}
+    .ng a{padding:4px 8px;border-radius:3px;font-size:10px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s}
     .ng a.a{color:var(--ac);background:var(--acg)}
 
     /* SHARED */
@@ -61,7 +63,7 @@
     .scroll-hint .line{width:1px;height:36px;background:var(--bd);margin:8px auto 0;position:relative;overflow:hidden}
     .scroll-hint .line::after{content:'';position:absolute;top:-100%;width:1px;height:100%;background:var(--ac);animation:drop 2.5s ease-in-out infinite}
     @keyframes drop{to{top:100%}}
-    .scroll-hint span{font-size:8px;letter-spacing:4px;color:var(--t3);font-weight:600}
+    .scroll-hint span{font-size:10px;letter-spacing:4px;color:var(--t3);font-weight:600}
 
     /* PRODUCT */
     .prod-sec{background:var(--bg2)}
@@ -152,14 +154,14 @@
     /* FOOTER */
     .co-bar{padding:48px;border-top:1px solid var(--bd)}
     .co-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
-    .co-i .co-k{font-size:8px;font-weight:700;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-bottom:3px}
+    .co-i .co-k{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-bottom:3px}
     .co-i .co-v{font-size:12px;color:var(--t2)}
     .co-i .co-v a{color:var(--ac);text-decoration:none}
     footer{padding:32px 48px;display:flex;flex-direction:column;align-items:center;border-top:1px solid var(--bd);flex-wrap:wrap;gap:12px}
     .ft-l{font-size:10px;font-weight:700;letter-spacing:6px;color:var(--t3)}
     .ft-m a{font-size:9px;color:var(--t3);text-decoration:none;margin-left:16px;letter-spacing:1px;transition:color .2s}
     .ft-m a:hover{color:var(--ac)}
-    .ft-r{font-size:8px;color:var(--t3);letter-spacing:1px}
+    .ft-r{font-size:10px;color:var(--t3);letter-spacing:1px}
 
     /* SIDEBAR NAV */
     .sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:12px}
@@ -172,6 +174,8 @@
     @media(max-width:768px){
       nav{padding:16px 20px}
       .nk{display:none}
+      .mob-menu{display:flex !important;gap:16px}
+      .mob-menu a{font-size:10px;font-weight:600;color:var(--t2);text-decoration:none;letter-spacing:1px}
       .hero{padding:0 24px}
       section{padding:80px 24px}
       .si{max-width:100%}
@@ -248,10 +252,14 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
+    <div class="mob-menu" style="display:none">
+      <a href="#roundie">ROUNDIE</a>
+      <a href="#contact">Contact</a>
+    </div>
     <div class="ng">
-      <a href="#" class="a" onclick="sl('en');return false">EN</a>
-      <a href="#" onclick="sl('ja');return false">JP</a>
-      <a href="#" onclick="sl('ko');return false">KR</a>
+      <a href="#" class="a" onclick="sl('en',this);return false">EN</a>
+      <a href="#" onclick="sl('ja',this);return false">JA</a>
+      <a href="#" onclick="sl('ko',this);return false">KO</a>
     </div>
   </div>
 </nav>
@@ -265,6 +273,7 @@
   <a href="#contact" title="Contact"></a>
 </div>
 
+<main>
 <!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-glow"></div>
@@ -290,7 +299,19 @@
       <span data-l="ja">記憶を、<em>かたち</em>に。</span>
       <span data-l="ko">기억을, <em>형태</em>로.</span>
     </p>
-    <div class="hero-cta" style="margin-top:28px;opacity:0;animation:fu .8s 1.2s ease-out forwards;">
+    <div class="hero-cta" style="margin-top:28px;opacity:0;animation:fu .8s 1.2s ease-out forwards;display:flex;flex-direction:column;align-items:center;gap:12px">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <a href="#roundie" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
+          <span data-l="en" class="a">Discover ROUNDIE</span>
+          <span data-l="ja">ROUNDIE を見る</span>
+          <span data-l="ko">ROUNDIE 알아보기</span>
+        </a>
+        <a href="mailto:notify@kanopy-inc.com?subject=ROUNDIE%20Early%20Access&body=I'd%20like%20to%20get%20early%20access%20to%20ROUNDIE." class="btn btn-g" style="font-size:11px;padding:12px 24px;">
+          <span data-l="en" class="a">Get Early Access</span>
+          <span data-l="ja">リリース通知を受け取る</span>
+          <span data-l="ko">출시 알림 받기</span>
+        </a>
+      </div>
       <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:var(--ac)">
         <span data-l="en" class="a">COMING APRIL 2026</span>
         <span data-l="ja">2026年4月 リリース予定</span>
@@ -401,7 +422,7 @@
       <div class="hiw-step rv">
         <div class="hiw-num">STEP 2</div>
         <h4><span data-l="en" class="a">Shape</span><span data-l="ja">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
-        <p><span data-l="en" class="a">Your score becomes a colorful Wordle-style grid — your unique Round Card.</span><span data-l="ja">スコアがカラフルなグリッドに変わる。あなただけのラウンドカード。</span><span data-l="ko">스코어가 컬러풀한 그리드로 변신. 나만의 라운드카드.</span></p>
+        <p><span data-l="en" class="a">Your score becomes a colorful grid — your unique Round Card.</span><span data-l="ja">スコアがカラーグリッドに変わる。あなただけのラウンドカード。</span><span data-l="ko">스코어가 컬러 그리드로 변신. 나만의 라운드카드.</span></p>
       </div>
       <div class="hiw-step rv">
         <div class="hiw-num">STEP 3</div>
@@ -476,7 +497,7 @@
     <span data-l="ja">ラウンドの記憶を、残す準備はできた？</span>
     <span data-l="ko">라운드의 기억을 남길 준비가 됐나요?</span>
   </p>
-  <a href="mailto:roundie.notify@gmail.com?subject=ROUNDIE%20Notify&body=Notify%20me%20at%20launch" class="btn btn-a" style="font-size:12px;padding:14px 36px;">
+  <a href="mailto:notify@kanopy-inc.com?subject=ROUNDIE%20Early%20Access&body=I'd%20like%20to%20get%20early%20access%20to%20ROUNDIE." class="btn btn-a" style="font-size:12px;padding:14px 36px;">
     <span data-l="en" class="a">Get Early Access</span>
     <span data-l="ja">先行アクセスを申し込む</span>
     <span data-l="ko">선행 액세스 신청</span>
@@ -517,16 +538,20 @@
       </div>
       <div class="contact-box">
         <h4>
-          <span data-l="en" class="a">Talent Acquisition</span>
-          <span data-l="ja">採用支援</span>
-          <span data-l="ko">채용 지원</span>
+          <span data-l="en" class="a">Careers & Talent</span>
+          <span data-l="ja">採用・人材</span>
+          <span data-l="ko">채용 · 인재</span>
         </h4>
         <p>
-          <span data-l="en" class="a">Recruiting for startups to enterprises. 20+ companies, 500+ annual interviews, 13 years in HR.</span>
-          <span data-l="ja">スタートアップから大手まで。支援企業20社以上・年間500面談・HR歴13年。</span>
-          <span data-l="ko">스타트업부터 대기업까지. 지원 20사 이상·연간 500 면담·HR 경력 13년.</span>
+          <span data-l="en" class="a">Join our team or learn about our talent services.</span>
+          <span data-l="ja">KANOPYで働く、または採用支援サービスについて。</span>
+          <span data-l="ko">KANOPY에서 일하기, 또는 채용 지원 서비스 안내.</span>
         </p>
-        <a href="mailto:talent@kanopy-inc.com">talent@kanopy-inc.com</a>
+        <a href="talent.html" style="display:inline-block;margin-bottom:4px">
+          <span data-l="en" class="a">Learn more →</span>
+          <span data-l="ja">詳しく見る →</span>
+          <span data-l="ko">자세히 보기 →</span>
+        </a>
       </div>
     </div>
     <div class="contact-general">
@@ -537,6 +562,7 @@
   </div>
 </section>
 
+</main>
 <!-- COMPANY BAR -->
 <div class="co-bar">
   <div class="co-g">
@@ -596,13 +622,14 @@ document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 
 // i18n
 let curLang='en';
-function sl(l){
+function sl(l,el){
   curLang=l;
   document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
   document.querySelectorAll('[data-b]').forEach(e=>e.classList.toggle('a',e.dataset.b===l));
   document.querySelectorAll('.ng a').forEach(a=>a.classList.remove('a'));
-  event.target.classList.add('a');
-  document.documentElement.lang=l;
+  if(el)el.classList.add('a');
+  else document.querySelector('.ng a[onclick*="\''+l+'\'"]')?.classList.add('a');
+  document.documentElement.lang=(l==='ja'?'ja':l==='ko'?'ko':'en');
   document.querySelectorAll('[data-page]').forEach(a=>{
     const pg=a.dataset.page;
     if(pg)a.href=pg+'.html?lang='+l;
@@ -615,7 +642,7 @@ function sl(l){
     curLang=l;
     document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
     document.querySelectorAll('[data-b]').forEach(e=>e.classList.toggle('a',e.dataset.b===l));
-    document.querySelectorAll('.ng a').forEach(a=>{a.classList.remove('a');if((l==='ja'&&a.textContent==='JP')||(l==='ko'&&a.textContent==='KR'))a.classList.add('a')});
+    document.querySelectorAll('.ng a').forEach(a=>{a.classList.remove('a');if((l==='ja'&&a.textContent==='JA')||(l==='ko'&&a.textContent==='KO'))a.classList.add('a')});
     document.documentElement.lang=l;
     document.querySelectorAll('[data-page]').forEach(a=>{const pg=a.dataset.page;if(pg)a.href=pg+'.html?lang='+l});
   }
