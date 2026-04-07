@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talent Acquisition — KANOPY Inc.</title>
+  <meta name="description" content="Beyond the hire. Strategy to execution — building teams that last. KANOPY Inc.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%2381C784' font-family='Arial'>K</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050507;--bg2:#09090D;--card:#0E0E14;--t1:#EDEDEF;--t2:#6E6E7E;--t3:#35354A;--ac:#81C784;--acg:rgba(129,199,132,.1);--bd:rgba(255,255,255,.05)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--ac);color:var(--bg)}
+    h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
+
+    nav{padding:24px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--bd)}
+    .nl{font-size:12px;font-weight:700;letter-spacing:8px;color:var(--ac);text-decoration:none}
+    .nb{display:flex;align-items:center;gap:16px}
+    .nb a{font-size:10px;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:color .2s}
+    .nb a:hover{color:var(--ac)}
+    .ng{display:flex;gap:2px}
+    .ng a{padding:4px 8px;border-radius:3px;font-size:8px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s}
+    .ng a.a{color:var(--ac);background:var(--acg)}
+    @media(max-width:768px){nav{padding:16px 24px}}
+
+    .si{max-width:800px;margin:0 auto;padding:0 48px}
+    @media(max-width:768px){.si{padding:0 24px}}
+    section{padding:clamp(80px,12vw,140px) 48px}
+    @media(max-width:768px){section{padding:80px 24px}}
+    .sl{font-size:9px;font-weight:700;letter-spacing:6px;color:var(--ac);text-transform:uppercase;margin-bottom:16px}
+    .sec-h{font-size:clamp(22px,3.5vw,32px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.25}
+    .sec-sub{font-size:13px;color:var(--t2);margin-bottom:40px}
+    .rv{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.25,.8,.25,1)}.rv.v{opacity:1;transform:translateY(0)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:6px;font-family:'Inter';font-size:11px;font-weight:600;letter-spacing:1px;text-decoration:none;transition:all .35s}
+    .btn-a{background:var(--ac);color:var(--bg)}.btn-a:hover{box-shadow:0 0 40px var(--acg);transform:translateY(-1px)}
+
+    /* HERO */
+    .hero{padding:clamp(100px,16vw,180px) 48px clamp(60px,10vw,80px)}
+    .hero .sl{margin-bottom:12px}
+    .hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:-1.5px;margin-bottom:20px;line-height:1.1}
+    .hero .desc{font-size:15px;color:var(--t2);max-width:520px;margin-bottom:24px;line-height:1.8}
+    .hero-stats{display:flex;gap:32px;margin-bottom:32px;flex-wrap:wrap}
+    .hero-stat{text-align:center}
+    .hero-stat .n{font-family:'Space Grotesk';font-size:24px;font-weight:700;color:var(--ac)}
+    .hero-stat .l{font-size:9px;color:var(--t3);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+    @media(max-width:480px){.hero-stats{gap:20px}}
+
+    /* SPECIALTY */
+    .spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    @media(max-width:640px){.spec-grid{grid-template-columns:1fr}}
+    .spec{padding:28px;border-radius:12px;background:var(--card);border:1px solid var(--bd);transition:all .3s}
+    .spec:hover{border-color:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .spec-num{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:3px;margin-bottom:12px;font-family:'Space Grotesk'}
+    .spec h3{font-size:16px;font-weight:600;margin-bottom:6px}
+    .spec p{font-size:12px;color:var(--t2);line-height:1.7}
+
+    /* SCOPE */
+    .scope-sec{background:var(--bg2)}
+    .scope-flow{max-width:600px}
+    .scope-item{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--bd);position:relative}
+    .scope-item:first-child{border-top:1px solid var(--bd)}
+    .scope-bar{width:3px;background:var(--ac);border-radius:2px;flex-shrink:0;opacity:.3}
+    .scope-item:first-child .scope-bar{opacity:1}
+    .scope-item:nth-child(2) .scope-bar{opacity:.7}
+    .scope-item:nth-child(3) .scope-bar{opacity:.5}
+    .scope-body h4{font-size:14px;font-weight:600;margin-bottom:4px}
+    .scope-label{font-size:8px;font-weight:700;color:var(--ac);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+    .scope-body p{font-size:12px;color:var(--t2);line-height:1.6}
+
+    /* CASES */
+    .cases-list{max-width:680px}
+    .case{display:grid;grid-template-columns:140px 1fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--bd)}
+    .case:first-child{border-top:1px solid var(--bd)}
+    @media(max-width:640px){.case{grid-template-columns:1fr;gap:4px}}
+    .case-tag{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:.5px}
+    .case-desc{font-size:13px;color:var(--t2)}
+    .case-result{font-family:'Space Grotesk';font-size:14px;font-weight:700;color:var(--ac);white-space:nowrap;text-align:right}
+    @media(max-width:640px){.case-result{text-align:left}}
+
+    /* WHY US */
+    .why-sec{background:var(--bg2)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+    .why-card{padding:24px;border-radius:10px;background:var(--card);border:1px solid var(--bd)}
+    .why-card h4{font-size:14px;font-weight:600;margin-bottom:6px}
+    .why-card p{font-size:12px;color:var(--t2);line-height:1.7}
+    .why-full{grid-column:1/-1;display:flex;gap:20px;align-items:center;padding:24px;border-radius:10px;background:var(--card);border:1px solid var(--bd)}
+    @media(max-width:640px){.why-full{flex-direction:column;gap:12px}}
+    .why-full h4{font-size:14px;font-weight:600;margin-bottom:6px;white-space:nowrap}
+    .why-full p{font-size:12px;color:var(--t2);line-height:1.7}
+    .tool-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+    .tool-tag{padding:3px 8px;border-radius:3px;font-size:8px;font-weight:700;letter-spacing:.5px;color:var(--t3);border:1px solid var(--bd)}
+
+    /* CTA */
+    .cta-sec{text-align:center;position:relative;overflow:hidden}
+    .cta-sec::before{content:'';position:absolute;bottom:-30%;left:50%;transform:translateX(-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--acg),transparent 70%);pointer-events:none}
+    .cta-sec h2{font-size:clamp(24px,4.5vw,40px);font-weight:600;letter-spacing:-.5px;margin-bottom:12px;position:relative;z-index:1}
+    .cta-sub{font-size:13px;color:var(--t2);margin-bottom:32px;position:relative;z-index:1}
+
+    footer{padding:32px 48px;text-align:center;border-top:1px solid var(--bd)}
+    footer a{font-size:9px;color:var(--t3);text-decoration:none;margin:0 8px}footer a:hover{color:var(--ac)}
+    footer .fc{font-size:8px;color:var(--t3);margin-top:8px;letter-spacing:1px}
+    [data-l]{display:none}[data-l].a{display:inline}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nl">KANOPY</a>
+  <div class="nb">
+    <a href="index.html" id="backLink">← Back</a>
+    <div class="ng">
+      <a href="#" class="a" onclick="sl('en');return false">EN</a>
+      <a href="#" onclick="sl('ja');return false">JP</a>
+      <a href="#" onclick="sl('ko');return false">KR</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<div class="hero">
+  <div class="sl">Service</div>
+  <h1><span data-l="en" class="a">Beyond<br>the hire.</span><span data-l="ja">採って、<br>終わりにしない。</span><span data-l="ko">채용하고,<br>끝내지 않는다.</span></h1>
+  <p class="desc">
+    <span data-l="en" class="a">Strategy to execution. We don't just fill roles — we build teams that last. Aligning growth speed with candidate experience, end to end.</span>
+    <span data-l="ja">戦略から実行まで。組織の成長速度と候補者体験を両立させる、一気通貫の採用支援。「採って終わり」ではなく、その先まで伴走します。</span>
+    <span data-l="ko">전략부터 실행까지. 조직의 성장 속도와 후보자 경험을 양립시키는, 일괄 채용 지원. '채용 후 끝'이 아닌, 그 이후까지 동행합니다.</span>
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="n">13<span style="font-size:14px">yrs</span></div><div class="l"><span data-l="en" class="a">Sales 7 + HR 6</span><span data-l="ja">営業7年 + 人事6年</span><span data-l="ko">영업7 + 인사6</span></div></div>
+    <div class="hero-stat"><div class="n">20<span style="font-size:14px">+</span></div><div class="l"><span data-l="en" class="a">Companies</span><span data-l="ja">支援企業</span><span data-l="ko">지원 기업</span></div></div>
+    <div class="hero-stat"><div class="n">500<span style="font-size:14px">+</span></div><div class="l"><span data-l="en" class="a">Interviews / yr</span><span data-l="ja">年間面談</span><span data-l="ko">연간 면담</span></div></div>
+  </div>
+  <a href="mailto:hr@kanopy-inc.com" class="btn btn-a"><span data-l="en" class="a">Get in Touch</span><span data-l="ja">お問い合わせ</span><span data-l="ko">문의하기</span></a>
+</div>
+
+<!-- 2. SPECIALTY -->
+<section>
+  <div class="si">
+    <div class="sl rv">Specialty</div>
+    <h2 class="sec-h rv"><span data-l="en" class="a">What we're best at.</span><span data-l="ja">得意領域。</span><span data-l="ko">전문 영역.</span></h2>
+    <div class="spec-grid rv">
+      <div class="spec">
+        <div class="spec-num">01</div>
+        <h3><span data-l="en" class="a">Engineering Hiring</span><span data-l="ja">エンジニア採用</span><span data-l="ko">엔지니어 채용</span></h3>
+        <p><span data-l="en" class="a">Backend / Full-stack / Data / ML / LLM / Platform — deep expertise in technical roles and what engineers actually look for.</span><span data-l="ja">Backend / Full-stack / Data / ML / LLM / Platform — 技術職の深い理解と、エンジニアが本当に求めるものを知っている。</span><span data-l="ko">Backend / Full-stack / Data / ML / LLM / Platform — 기술 직군에 대한 깊은 이해.</span></p>
+      </div>
+      <div class="spec">
+        <div class="spec-num">02</div>
+        <h3><span data-l="en" class="a">AI-Specific Recruiting</span><span data-l="ja">AI特化採用</span><span data-l="ko">AI 특화 채용</span></h3>
+        <p><span data-l="en" class="a">LLM engineers, AI agents, RAG/MLOps — role definition, requirements design, and selection process for emerging AI positions.</span><span data-l="ja">LLMエンジニア・AIエージェント・RAG/MLOps — 新しいAIポジションの要件整理から選考設計まで。</span><span data-l="ko">LLM 엔지니어, AI 에이전트, RAG/MLOps — 새로운 AI 포지션의 요건 정리부터 선발 설계까지.</span></p>
+      </div>
+      <div class="spec">
+        <div class="spec-num">03</div>
+        <h3><span data-l="en" class="a">0→1 Hiring Setup</span><span data-l="ja">0→1 採用立ち上げ</span><span data-l="ko">0→1 채용 구축</span></h3>
+        <p><span data-l="en" class="a">Requirements definition, messaging, selection design, KPI setup — building the hiring function from scratch.</span><span data-l="ja">要件定義・訴求設計・選考設計・KPI設計 — 採用機能をゼロから構築。</span><span data-l="ko">요건 정의, 소구 설계, 선발 설계, KPI 설정 — 채용 기능을 제로부터 구축.</span></p>
+      </div>
+      <div class="spec">
+        <div class="spec-num">04</div>
+        <h3><span data-l="en" class="a">All Functions</span><span data-l="ja">全職種対応</span><span data-l="ko">전 직군 대응</span></h3>
+        <p><span data-l="en" class="a">Sales / Design / PM / Corporate / Marketing / Management — every role, from individual contributors to CxO.</span><span data-l="ja">セールス / デザイン / PM / コーポレート / マーケ / マネジメント — IC〜CxOまで全職種。</span><span data-l="ko">세일즈 / 디자인 / PM / 코퍼레이트 / 마케팅 / 매니지먼트 — IC~CxO까지 전 직군.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SCOPE -->
+<section class="scope-sec">
+  <div class="si">
+    <div class="sl rv">Scope</div>
+    <h2 class="sec-h rv"><span data-l="en" class="a">Upstream to downstream.</span><span data-l="ja">川上から川下まで。</span><span data-l="ko">상류부터 하류까지.</span></h2>
+    <p class="sec-sub rv"><span data-l="en" class="a">Not just execution. We cover the full spectrum — from strategy to daily operations.</span><span data-l="ja">実行だけじゃない。戦略から日々のオペレーションまで、全領域をカバー。</span><span data-l="ko">실행만이 아닌. 전략부터 일상 운영까지 전 영역 커버.</span></p>
+    <div class="scope-flow rv">
+      <div class="scope-item">
+        <div class="scope-bar"></div>
+        <div class="scope-body">
+          <div class="scope-label"><span data-l="en" class="a">Upstream</span><span data-l="ja">上流</span><span data-l="ko">상류</span></div>
+          <h4><span data-l="en" class="a">Hiring & HR Strategy</span><span data-l="ja">採用・人事戦略</span><span data-l="ko">채용·인사 전략</span></h4>
+          <p><span data-l="en" class="a">Hiring plans, KPI design, team structure, employer branding</span><span data-l="ja">採用計画・KPI設計・体制設計・採用広報</span><span data-l="ko">채용 계획, KPI 설계, 체제 설계, 채용 홍보</span></p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-bar"></div>
+        <div class="scope-body">
+          <h4><span data-l="en" class="a">HR Design</span><span data-l="ja">人事設計</span><span data-l="ko">인사 설계</span></h4>
+          <p><span data-l="en" class="a">Onboarding, interviewer training, evaluation criteria</span><span data-l="ja">オンボーディング・面接官トレーニング・評価基準整備</span><span data-l="ko">온보딩, 면접관 트레이닝, 평가 기준 정비</span></p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-bar"></div>
+        <div class="scope-body">
+          <h4><span data-l="en" class="a">Referral Programs</span><span data-l="ja">リファラル施策</span><span data-l="ko">리퍼럴 시책</span></h4>
+          <p><span data-l="en" class="a">Program design, rollout, adoption & continuous improvement</span><span data-l="ja">制度設計〜浸透・改善まで</span><span data-l="ko">제도 설계~침투·개선까지</span></p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="scope-bar"></div>
+        <div class="scope-body">
+          <div class="scope-label"><span data-l="en" class="a">Downstream</span><span data-l="ja">下流</span><span data-l="ko">하류</span></div>
+          <h4><span data-l="en" class="a">Execution</span><span data-l="ja">実行支援</span><span data-l="ko">실행 지원</span></h4>
+          <p><span data-l="en" class="a">Job board management, direct recruiting, scout messaging, agent relations, AI-powered automation</span><span data-l="ja">媒体運用・ダイレクトリクルーティング・スカウト設計・エージェントリレーション・AI自動化</span><span data-l="ko">매체 운용, 다이렉트 리쿠르팅, 스카우트, 에이전트 릴레이션, AI 자동화</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CASES -->
+<section>
+  <div class="si">
+    <div class="sl rv">Cases</div>
+    <h2 class="sec-h rv"><span data-l="en" class="a">Results that speak.</span><span data-l="ja">実績が語る。</span><span data-l="ko">실적이 말한다.</span></h2>
+    <div class="cases-list rv">
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">SaaS × AI Startup</span><span data-l="ja">SaaS×AIスタートアップ</span><span data-l="ko">SaaS×AI 스타트업</span></div><div class="case-desc"><span data-l="en" class="a">LLM / Backend / Full-stack engineers</span><span data-l="ja">LLM / Backend / Full-stackエンジニア</span><span data-l="ko">LLM / Backend / Full-stack 엔지니어</span></div><div class="case-result"><span data-l="en" class="a">6 hires / 2mo</span><span data-l="ja">6名 / 2ヶ月</span><span data-l="ko">6명 / 2개월</span></div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">AI Startup</span><span data-l="ja">AIスタートアップ</span><span data-l="ko">AI 스타트업</span></div><div class="case-desc"><span data-l="en" class="a">AI engineer recruiting built from zero via LinkedIn</span><span data-l="ja">LinkedIn活用でAIエンジニア採用をゼロから設計</span><span data-l="ko">LinkedIn 활용 AI 엔지니어 채용 제로부터 설계</span></div><div class="case-result">0→1</div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">EC Venture</span><span data-l="ja">ECベンチャー</span><span data-l="ko">EC 벤처</span></div><div class="case-desc"><span data-l="en" class="a">Engineering hiring lead time reduced</span><span data-l="ja">エンジニア採用リードタイム短縮</span><span data-l="ko">엔지니어 채용 리드타임 단축</span></div><div class="case-result"><span data-l="en" class="a">3mo → 1.5mo</span><span data-l="ja">3ヶ月→1.5ヶ月</span><span data-l="ko">3개월→1.5개월</span></div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">Sensor × GenAI Startup</span><span data-l="ja">センサ×生成AIスタートアップ</span><span data-l="ko">센서×생성AI 스타트업</span></div><div class="case-desc"><span data-l="en" class="a">Sales hiring completed</span><span data-l="ja">セールス採用を完了</span><span data-l="ko">세일즈 채용 완료</span></div><div class="case-result"><span data-l="en" class="a">2 months</span><span data-l="ja">2ヶ月</span><span data-l="ko">2개월</span></div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">Foreign Ad Major</span><span data-l="ja">外資広告大手</span><span data-l="ko">외자 광고 대기업</span></div><div class="case-desc"><span data-l="en" class="a">New grad candidate pool improved, decline rate reduced</span><span data-l="ja">新卒母集団を改善、辞退率を低減</span><span data-l="ko">신졸 후보자 풀 개선, 사퇴율 저감</span></div><div class="case-result"><span data-l="en" class="a">+150% YoY</span><span data-l="ja">前年比150%</span><span data-l="ko">전년비 150%</span></div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">Foreign Café Chain</span><span data-l="ja">外資カフェチェーン</span><span data-l="ko">외자 카페 체인</span></div><div class="case-desc"><span data-l="en" class="a">Store manager pipeline (~400 interviews/yr)</span><span data-l="ja">店長候補パイプライン（年間約400名面接）</span><span data-l="ko">점장 후보 파이프라인 (연간 약400명 면접)</span></div><div class="case-result"><span data-l="en" class="a">20-30 hires/yr</span><span data-l="ja">年20-30名</span><span data-l="ko">연 20-30명</span></div></div>
+      <div class="case"><div class="case-tag"><span data-l="en" class="a">JP Manufacturer</span><span data-l="ja">日系大手製造</span><span data-l="ko">일본 대기업 제조</span></div><div class="case-desc"><span data-l="en" class="a">New grad engineer internship — planned & executed</span><span data-l="ja">新卒エンジニアインターン 企画〜運営</span><span data-l="ko">신졸 엔지니어 인턴 기획~운영</span></div><div class="case-result"><span data-l="en" class="a">2 months</span><span data-l="ja">2ヶ月で完遂</span><span data-l="ko">2개월 완수</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WHY US -->
+<section class="why-sec">
+  <div class="si">
+    <div class="sl rv">Why Us</div>
+    <h2 class="sec-h rv"><span data-l="en" class="a">What sets us apart.</span><span data-l="ja">私たちの強み。</span><span data-l="ko">우리의 강점.</span></h2>
+    <div class="why-grid rv">
+      <div class="why-card">
+        <h4>AI × Recruiting</h4>
+        <p><span data-l="en" class="a">Claude, ChatGPT, Gemini, Grok — AI-powered JD creation, scout optimization, candidate data structuring, and selection design.</span><span data-l="ja">Claude / ChatGPT / Gemini / Grok活用。JD作成、スカウト最適化、候補者データ構造化、選考設計の自動化。</span><span data-l="ko">Claude / ChatGPT / Gemini / Grok 활용. JD 작성, 스카우트 최적화, 후보자 데이터 구조화, 선발 설계 자동화.</span></p>
+      </div>
+      <div class="why-card">
+        <h4><span data-l="en" class="a">Builder's Eye</span><span data-l="ja">作り手の視点</span><span data-l="ko">메이커의 관점</span></h4>
+        <p><span data-l="en" class="a">As a product developer ourselves (ROUNDIE), we understand what engineers actually want in their next role.</span><span data-l="ja">自らプロダクト開発（ROUNDIE）を行う立場。エンジニアが本当に求めるものを理解できる。</span><span data-l="ko">직접 프로덕트(ROUNDIE)를 개발하는 입장. 엔지니어가 진정 원하는 것을 이해.</span></p>
+      </div>
+      <div class="why-card">
+        <h4><span data-l="en" class="a">Sales × HR Hybrid</span><span data-l="ja">営業 × 人事</span><span data-l="ko">영업 × 인사</span></h4>
+        <p><span data-l="en" class="a">7 years in sales + 6 years in HR. We speak the language of CEOs and the language of candidates — fluently.</span><span data-l="ja">営業7年+人事6年。経営者の言語と候補者の言語、両方で話せる。</span><span data-l="ko">영업 7년 + 인사 6년. 경영자의 언어와 후보자의 언어, 둘 다 능숙하게.</span></p>
+      </div>
+      <div class="why-card">
+        <h4><span data-l="en" class="a">0→1 Builder</span><span data-l="ja">0→1 の構築力</span><span data-l="ko">0→1 구축력</span></h4>
+        <p><span data-l="en" class="a">Built HR divisions from scratch. We know how to hire the first 10, not just the 100th.</span><span data-l="ja">人事部門をゼロから構築した経験。100人目ではなく、最初の10人を採る方法を知っている。</span><span data-l="ko">인사 부문을 제로부터 구축. 100번째가 아닌, 처음 10명을 채용하는 법을 알고 있다.</span></p>
+      </div>
+      <div class="why-full">
+        <div>
+          <h4><span data-l="en" class="a">Tool Mastery</span><span data-l="ja">ツール精通</span><span data-l="ko">툴 마스터리</span></h4>
+          <p><span data-l="en" class="a">Fluent across major ATS and recruiting platforms.</span><span data-l="ja">主要ATS・採用プラットフォームに精通。</span><span data-l="ko">주요 ATS·채용 플랫폼에 정통.</span></p>
+          <div class="tool-tags">
+            <span class="tool-tag">HERP</span><span class="tool-tag">HRMOS</span><span class="tool-tag">i-web</span><span class="tool-tag">SONAR</span><span class="tool-tag">LinkedIn</span><span class="tool-tag">BizReach</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CTA -->
+<section class="cta-sec">
+  <div class="si rv">
+    <div class="sl">Contact</div>
+    <h2><span data-l="en" class="a">Let's build your team.</span><span data-l="ja">チームを、一緒に。</span><span data-l="ko">팀을, 함께.</span></h2>
+    <p class="cta-sub"><span data-l="en" class="a">Tell us what you're looking for. We'll take it from there.</span><span data-l="ja">求める人材を教えてください。そこから私たちが動きます。</span><span data-l="ko">찾는 인재를 알려주세요. 거기서부터 움직입니다.</span></p>
+    <a href="mailto:hr@kanopy-inc.com" class="btn btn-a" style="position:relative;z-index:1">hr@kanopy-inc.com</a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html">KANOPY</a>
+  <a href="https://www.linkedin.com/in/kazushige-shiba-0596281bb/" target="_blank">LinkedIn</a>
+  <a href="https://roundie.app/privacy.html" target="_blank">Privacy</a>
+  <div class="fc">&copy; 2026 KANOPY Inc.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.rv').forEach(el=>{
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1}).observe(el);
+});
+function sl(l){
+  document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
+  document.querySelectorAll('.ng a').forEach(a=>a.classList.remove('a'));
+  event.target.classList.add('a');
+  document.documentElement.lang=l;
+  document.getElementById('backLink').href='index.html?lang='+l;
+}
+(function(){
+  const l=new URLSearchParams(location.search).get('lang');
+  if(l&&['ja','ko'].includes(l)){
+    document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
+    document.querySelectorAll('.ng a').forEach(a=>{a.classList.remove('a');if((l==='ja'&&a.textContent==='JP')||(l==='ko'&&a.textContent==='KR'))a.classList.add('a')});
+    document.documentElement.lang=l;
+    document.getElementById('backLink').href='index.html?lang='+l;
+  }
+})()
+</script>
+</body>
+</html>

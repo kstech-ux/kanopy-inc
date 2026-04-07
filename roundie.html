@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROUNDIE — KANOPY Inc.</title>
+  <meta name="description" content="ROUNDIE — A new kind of golf social app. Share the shape of your round, not the numbers.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%2381C784' font-family='Arial'>K</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#050507;--bg2:#09090D;--card:#0E0E14;--t1:#EDEDEF;--t2:#6E6E7E;--t3:#35354A;--ac:#81C784;--acg:rgba(129,199,132,.1);--bd:rgba(255,255,255,.05)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--ac);color:var(--bg)}
+    h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+
+    /* Nav */
+    nav{padding:24px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--bd)}
+    .nl{font-size:12px;font-weight:700;letter-spacing:8px;color:var(--ac);text-decoration:none}
+    .nb{display:flex;align-items:center;gap:16px}
+    .nb a{font-size:10px;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:color .2s}
+    .nb a:hover{color:var(--ac)}
+    .ng{display:flex;gap:2px}
+    .ng a{padding:4px 8px;border-radius:3px;font-size:8px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s}
+    .ng a.a{color:var(--ac);background:var(--acg)}
+    @media(max-width:768px){nav{padding:16px 24px}}
+
+    /* Shared */
+    .si{max-width:800px;margin:0 auto;padding:0 48px}
+    @media(max-width:768px){.si{padding:0 24px}}
+    section{padding:clamp(80px,12vw,140px) 48px}
+    @media(max-width:768px){section{padding:80px 24px}}
+    .sl{font-size:9px;font-weight:700;letter-spacing:6px;color:var(--ac);text-transform:uppercase;margin-bottom:16px}
+    .sec-h{font-size:clamp(22px,3.5vw,32px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.25}
+    .rv{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.25,.8,.25,1)}.rv.v{opacity:1;transform:translateY(0)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:6px;font-family:'Inter';font-size:11px;font-weight:600;letter-spacing:1px;text-decoration:none;transition:all .35s}
+    .btn-a{background:var(--ac);color:var(--bg)}.btn-a:hover{box-shadow:0 0 40px var(--acg);transform:translateY(-1px)}
+    .btn-g{background:transparent;color:var(--t2);border:1px solid var(--bd);margin-left:8px}.btn-g:hover{border-color:var(--ac);color:var(--ac)}
+
+    /* Hero — unified with phone */
+    .hero{
+      min-height:90vh;display:flex;align-items:center;justify-content:center;
+      padding:clamp(100px,14vw,160px) 48px clamp(80px,10vw,120px);
+      position:relative;overflow:hidden;
+    }
+    .hero::before{
+      content:'';position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);
+      width:500px;height:500px;border-radius:50%;
+      background:radial-gradient(circle,var(--acg),transparent 70%);
+      animation:breathe 16s ease-in-out infinite;pointer-events:none;
+    }
+    @keyframes breathe{0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(1)}50%{opacity:.6;transform:translate(-50%,-50%) scale(1.1)}}
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:64px;
+      align-items:center;max-width:900px;position:relative;z-index:1;
+    }
+    @media(max-width:768px){.hero-grid{grid-template-columns:1fr;gap:40px;text-align:center}}
+    .hero-text .sl{margin-bottom:12px}
+    .hero-text h1{font-size:clamp(40px,7vw,72px);font-weight:900;letter-spacing:12px;margin-bottom:16px;line-height:1}
+    .hero-text .tagline{font-size:clamp(13px,1.4vw,16px);color:var(--t2);margin-bottom:12px;line-height:1.8}
+    .hero-text .tagline em{font-style:normal;color:var(--t1);font-weight:500}
+    .hero-text .brand{
+      font-family:'Space Grotesk';font-size:14px;font-weight:500;
+      color:var(--ac);letter-spacing:1px;margin-bottom:32px;
+    }
+    .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+    @media(max-width:768px){.hero-btns{justify-content:center}}
+
+    /* Phone */
+    .phone{
+      width:220px;margin:0 auto;background:var(--card);border-radius:28px;
+      border:2px solid var(--bd);padding:32px 14px 20px;position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 80px var(--acg);
+    }
+    .phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:48px;height:4px;border-radius:2px;background:var(--bd)}
+    .ph-h{text-align:center;margin-bottom:10px}
+    .ph-h .l1{font-size:7px;font-weight:700;color:var(--t3);letter-spacing:2px;text-transform:uppercase}
+    .ph-h .l2{font-size:18px;font-weight:700;color:var(--ac);margin-top:2px;font-family:'Space Grotesk'}
+    .mg{display:grid;grid-template-columns:repeat(9,1fr);gap:2px}
+    .mg .c{aspect-ratio:1;border-radius:16%;opacity:0;transform:scale(0);transition:all .35s ease-out}
+    .mg.an .c{opacity:1;transform:scale(1)}
+    .ph-b{display:flex;justify-content:space-around;margin-top:10px;padding-top:8px;border-top:1px solid var(--bd)}
+    .ph-b .s{text-align:center}.ph-b .n{font-size:12px;font-weight:700;font-family:'Space Grotesk'}.ph-b .l{font-size:6px;color:var(--t3);font-weight:700;letter-spacing:1.5px}
+    @media(max-width:480px){.phone{width:180px;border-radius:22px;padding:28px 12px 16px}}
+
+    /* Vision */
+    .vision-sec{background:var(--bg2)}
+    .vision-text{font-size:clamp(16px,2.5vw,22px);color:var(--t2);line-height:2;max-width:600px}
+    .vision-text strong{color:var(--t1);font-weight:500}
+    .vision-text .ac{color:var(--ac)}
+
+    /* Differentiators */
+    .diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+    @media(max-width:640px){.diff-grid{grid-template-columns:1fr;gap:20px}}
+    .diff{padding:32px;border-radius:14px;background:var(--card);border:1px solid var(--bd);transition:all .3s}
+    .diff:hover{border-color:rgba(255,255,255,.1);transform:translateY(-3px)}
+    .diff-num{font-family:'Space Grotesk';font-size:11px;font-weight:700;color:var(--t3);letter-spacing:3px;margin-bottom:16px}
+    .diff h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .diff p{font-size:13px;color:var(--t2);line-height:1.7}
+
+    /* Pricing */
+    .pricing-sec{background:var(--bg2)}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;gap:16px}}
+    .price-card{padding:36px 28px;border-radius:14px;background:var(--card);border:1px solid var(--bd);position:relative;transition:all .3s;display:flex;flex-direction:column}
+    .price-card:hover{transform:translateY(-3px)}
+    .price-card.featured{border-color:var(--ac);box-shadow:0 0 40px var(--acg)}
+    .price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--ac);color:var(--bg);font-size:9px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:20px;text-transform:uppercase}
+    .price-name{font-family:'Space Grotesk';font-size:14px;font-weight:700;letter-spacing:3px;color:var(--t2);margin-bottom:16px}
+    .price-card.featured .price-name{color:var(--ac)}
+    .price-amount{font-family:'Space Grotesk';font-size:clamp(32px,5vw,42px);font-weight:700;margin-bottom:4px}
+    .price-sub{font-size:12px;color:var(--t3);margin-bottom:24px;min-height:20px;white-space:nowrap}
+    .price-sub .save{color:var(--ac);font-weight:600}
+    .price-features{list-style:none;margin-bottom:28px;flex:1}
+    .price-features li{font-size:13px;color:var(--t2);padding:6px 0;border-bottom:1px solid var(--bd)}
+    .price-features li::before{content:'✓ ';color:var(--ac);font-weight:700}
+    .price-cta{display:block;text-align:center;padding:12px 24px;border-radius:6px;font-size:11px;margin-top:auto;font-weight:600;letter-spacing:1px;text-decoration:none;transition:all .35s}
+    .price-cta.active{background:var(--ac);color:var(--bg)}.price-cta.active:hover{box-shadow:0 0 40px var(--acg);transform:translateY(-1px)}
+    .price-cta.soon{background:transparent;color:var(--t3);border:1px solid var(--bd);cursor:default}
+    .pricing-note{text-align:center;margin-top:32px;font-size:12px;color:var(--t3)}
+
+    /* Brand statement */
+    .brand-sec{text-align:center}
+    .brand-statement{
+      font-family:'Space Grotesk';font-size:clamp(24px,4vw,40px);
+      font-weight:500;color:var(--t3);line-height:1.4;
+    }
+    .brand-statement .ac{color:var(--ac)}
+
+    /* CTA */
+    .cta-sec{text-align:center;position:relative;overflow:hidden}
+    .cta-sec::before{content:'';position:absolute;bottom:-30%;left:50%;transform:translateX(-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--acg),transparent 70%);pointer-events:none}
+    .cta-sec h2{font-size:clamp(24px,4vw,36px);font-weight:600;letter-spacing:-.5px;margin-bottom:12px;position:relative;z-index:1}
+    .cta-sub{font-size:13px;color:var(--t2);margin-bottom:32px;position:relative;z-index:1}
+
+    footer{padding:32px 48px;text-align:center;border-top:1px solid var(--bd)}
+    footer a{font-size:9px;color:var(--t3);text-decoration:none;margin:0 8px}footer a:hover{color:var(--ac)}
+    footer .fc{font-size:8px;color:var(--t3);margin-top:8px;letter-spacing:1px}
+    [data-l]{display:none}[data-l].a{display:inline}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nl">KANOPY</a>
+  <div class="nb">
+    <a href="index.html" id="backLink">← Back</a>
+    <div class="ng">
+      <a href="#" class="a" onclick="sl('en');return false">EN</a>
+      <a href="#" onclick="sl('ja');return false">JP</a>
+      <a href="#" onclick="sl('ko');return false">KR</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — Phone integrated -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="sl">Product</div>
+      <div style="margin-bottom:12px"><svg width="48" height="48" viewBox="0 0 48 48"><rect width="48" height="48" rx="11" fill="#0A0A0A"/><circle cx="24" cy="24" r="19.2" fill="none" stroke="#fff" stroke-width="2.3" stroke-dasharray="2.16 1.44" stroke-linecap="round"/><circle cx="24" cy="24" r="14.4" fill="none" stroke="#2D5A27" stroke-width="2" stroke-dasharray="2.16 1.44" stroke-linecap="round"/><circle cx="24" cy="4.8" r="2.2" fill="#fff"/><circle cx="43.2" cy="24" r="2.2" fill="#fff"/><circle cx="24" cy="43.2" r="2.2" fill="#fff"/><circle cx="4.8" cy="24" r="2.2" fill="#fff"/><text x="24" y="29.5" font-family="Arial Black,sans-serif" font-weight="900" font-size="17.8" fill="#2D5A27" text-anchor="middle">R</text></svg></div>
+      <h1>ROUNDIE</h1>
+      <p class="tagline">
+        <span data-l="en" class="a">A new kind of golf social app.<br>Share the <em>shape</em> of your round — not the numbers.</span>
+        <span data-l="ja">新しい形のゴルフソーシャルアプリ。<br>スコアではなく、ラウンドの<em>"かたち"</em>をシェア。</span>
+        <span data-l="ko">새로운 형태의 골프 소셜 앱.<br>숫자가 아닌 라운드의 <em>'형태'</em>를 공유.</span>
+      </p>
+      <p class="brand">
+        <span data-l="en" class="a">Shape your round.</span>
+        <span data-l="ja">ラウンドを、かたちにしよう。</span>
+        <span data-l="ko">라운드를, 형태로 만들자.</span>
+      </p>
+      <div class="hero-btns">
+        <a href="https://roundie.app" class="btn btn-a" target="_blank">roundie.app</a>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone">
+        <div class="ph-h"><div class="l1">ROUNDIE SCORE</div><div class="l2">72</div></div>
+        <div class="mg" id="vg"></div>
+        <div class="ph-b">
+          <div class="s"><div class="n">42</div><div class="l">OUT</div></div>
+          <div class="s"><div class="n">44</div><div class="l">IN</div></div>
+          <div class="s"><div class="n">86</div><div class="l">TOTAL</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VISION — Why ROUNDIE exists -->
+<section class="vision-sec">
+  <div class="si rv">
+    <div class="sl">Vision</div>
+    <div class="vision-text">
+      <span data-l="en" class="a">Every round of golf is unique — the course, the weather, the people, the shots. But when it's over, all that remains is a number.<br><br>ROUNDIE turns each round into a <span class="ac">beautiful visual pattern</span> — a grid of colors that captures the shape of your experience. Not a score to be judged, but <strong>a memory to be kept</strong>.<br><br>Share it, collect it, look back on it years from now. Your golf life, in <strong>shapes and colors</strong>.</span>
+      <span data-l="ja">ゴルフのラウンドは、一つとして同じものがない。コース、天気、仲間、ショット。でもラウンドが終われば、残るのは数字だけ。<br><br>ROUNDIEは、すべてのラウンドを<span class="ac">美しいビジュアルパターン</span>に変える。体験の"かたち"を色で記録するグリッド。判断される数字ではなく、<strong>残すべき記憶</strong>として。<br><br>シェアして、集めて、何年後かに振り返ろう。あなたのゴルフライフを、<strong>色とかたち</strong>で。</span>
+      <span data-l="ko">골프 라운드는 하나하나가 유일하다. 코스, 날씨, 동반자, 샷. 하지만 라운드가 끝나면 남는 건 숫자뿐.<br><br>ROUNDIE는 모든 라운드를 <span class="ac">아름다운 시각 패턴</span>으로 바꾼다. 경험의 '형태'를 색으로 기록하는 그리드. 평가받는 숫자가 아닌, <strong>남겨야 할 기억</strong>으로.<br><br>공유하고, 모으고, 몇 년 후에 돌아보자. 당신의 골프 라이프를, <strong>색과 형태</strong>로.</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS — Business perspective -->
+<section>
+  <div class="si rv">
+    <div class="sl">
+      <span data-l="en" class="a">What Sets ROUNDIE Apart</span>
+      <span data-l="ja">ROUNDIEの差別化</span>
+      <span data-l="ko">ROUNDIE의 차별화</span>
+    </div>
+    <h2 class="sec-h">
+      <span data-l="en" class="a">What makes ROUNDIE, ROUNDIE.</span>
+      <span data-l="ja">ROUNDIEを、ROUNDIEたらしめるもの。</span>
+      <span data-l="ko">ROUNDIE를 ROUNDIE답게 만드는 것.</span>
+    </h2>
+    <div class="diff-grid">
+      <div class="diff">
+        <div class="diff-num">01</div>
+        <h3>Wordle Grid</h3>
+        <p>
+          <span data-l="en" class="a">18 holes become one beautiful grid. Each round creates a unique visual pattern — a fingerprint of your game, in six colors.</span>
+          <span data-l="ja">18ホールがひとつの美しいグリッドに。各ラウンドが6色のユニークなパターンを生み出す — あなたのゲームの指紋。</span>
+          <span data-l="ko">18홀이 하나의 아름다운 그리드로. 각 라운드가 6색의 유니크한 패턴을 만든다 — 당신의 게임 지문.</span>
+        </p>
+      </div>
+      <div class="diff">
+        <div class="diff-num">02</div>
+        <h3>Privacy First</h3>
+        <p>
+          <span data-l="en" class="a">Share the grid, choose who sees the numbers. Everyone plays their own way — and shares on their own terms.</span>
+          <span data-l="ja">グリッドをシェアし、数字を見せるかは自分で決める。誰もが自分らしくプレーし、自分らしくシェアする。</span>
+          <span data-l="ko">그리드를 공유하고, 숫자를 보여줄지는 스스로 결정. 누구나 자기답게 플레이하고, 자기답게 공유.</span>
+        </p>
+      </div>
+      <div class="diff">
+        <div class="diff-num">03</div>
+        <h3>Social</h3>
+        <p>
+          <span data-l="en" class="a">Feed, Kudos, Ranking, ROUNDIE ID — a warm social network just for golfers. See friends' grids, celebrate their play, and track your growth together.</span>
+          <span data-l="ja">Feed、Kudos、ランキング、ROUNDIE ID — ゴルフ仲間だけのあたたかいSNS。仲間のグリッドを見て称え合い、一緒に成長を実感する場所。</span>
+          <span data-l="ko">Feed, Kudos, 랭킹, ROUNDIE ID — 골프 친구만의 따뜻한 SNS. 친구의 그리드를 보고, 서로 칭찬하며, 함께 성장을 느끼는 공간.</span>
+        </p>
+      </div>
+      <div class="diff">
+        <div class="diff-num">04</div>
+        <h3>Competitions</h3>
+        <p>
+          <span data-l="en" class="a">Host a comp in 3 taps. Animated result reveals with auto-assigned titles. Compe memories become beautiful records.</span>
+          <span data-l="ja">3タップでコンペ作成。アニメーション付き結果発表に、個人タイトルも自動付与。コンペの思い出が、美しい記録に。</span>
+          <span data-l="ko">3번 탭으로 대회 생성. 애니메이션 결과 발표에 개인 타이틀 자동 부여. 대회의 추억이 아름다운 기록으로.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-sec">
+  <div class="si rv">
+    <div class="sl">
+      <span data-l="en" class="a">Pricing</span>
+      <span data-l="ja">料金プラン</span>
+      <span data-l="ko">요금제</span>
+    </div>
+    <h2 class="sec-h">
+      <span data-l="en" class="a">Start free. Upgrade when you're ready.</span>
+      <span data-l="ja">まずは無料で。もっと楽しみたくなったら。</span>
+      <span data-l="ko">먼저 무료로. 더 즐기고 싶을 때.</span>
+    </h2>
+    <div class="pricing-grid">
+      <!-- FREE -->
+      <div class="price-card">
+        <div class="price-name">FREE</div>
+        <div class="price-amount">¥0</div>
+        <div class="price-sub">
+          <span data-l="en" class="a">Free forever</span>
+          <span data-l="ja">ずっと無料</span>
+          <span data-l="ko">영원히 무료</span>
+        </div>
+        <ul class="price-features">
+          <li><span data-l="en" class="a">Score & Wordle grid</span><span data-l="ja">スコア記録 & グリッド</span><span data-l="ko">스코어 & 그리드</span></li>
+          <li><span data-l="en" class="a">Comps: 3/mo, 8 players</span><span data-l="ja">コンペ 月3回 / 8人</span><span data-l="ko">대회 월3회 / 8명</span></li>
+          <li><span data-l="en" class="a">Feed, Kudos & Ranking</span><span data-l="ja">Feed・Kudos・Ranking</span><span data-l="ko">Feed, Kudos & Ranking</span></li>
+          <li><span data-l="en" class="a">Grid sharing</span><span data-l="ja">グリッドシェア</span><span data-l="ko">그리드 공유</span></li>
+          <li><span data-l="en" class="a">Basic stats</span><span data-l="ja">基本統計</span><span data-l="ko">기본 통계</span></li>
+        </ul>
+        <a href="https://roundie.app" class="price-cta active" target="_blank">
+          <span data-l="en" class="a">Start for free</span>
+          <span data-l="ja">無料で始める</span>
+          <span data-l="ko">무료로 시작</span>
+        </a>
+      </div>
+      <!-- COMPE PACK -->
+      <div class="price-card">
+        <div class="price-name">COMPE PACK</div>
+        <div class="price-amount">¥980<span style="font-size:14px;color:var(--t2);font-weight:400"> /回</span></div>
+        <div class="price-sub">
+          <span data-l="en" class="a">Pay per event</span>
+          <span data-l="ja">開催時だけ課金</span>
+          <span data-l="ko">개최 시에만 결제</span>
+        </div>
+        <ul class="price-features">
+          <li><span data-l="en" class="a">Everything in Free +</span><span data-l="ja">Freeの全機能 +</span><span data-l="ko">Free 전체 +</span></li>
+          <li><span data-l="en" class="a">Up to 40 players</span><span data-l="ja">1回40人まで</span><span data-l="ko">최대 40명</span></li>
+          <li><span data-l="en" class="a">Auto scoring & ranking</span><span data-l="ja">自動集計・順位発表</span><span data-l="ko">자동 집계 & 순위</span></li>
+          <li><span data-l="en" class="a">Result reveal</span><span data-l="ja">結果リビール演出</span><span data-l="ko">결과 발표 연출</span></li>
+          <li><span data-l="en" class="a">Shareable result cards</span><span data-l="ja">結果カードのシェア</span><span data-l="ko">결과 카드 공유</span></li>
+        </ul>
+        <span class="price-cta soon">
+          <span data-l="en" class="a">Coming soon</span>
+          <span data-l="ja">準備中</span>
+          <span data-l="ko">준비 중</span>
+        </span>
+      </div>
+      <!-- ROUNDIE Pro -->
+      <div class="price-card featured">
+        <div class="price-badge">
+          <span data-l="en" class="a">BEST VALUE</span>
+          <span data-l="ja">一番お得</span>
+          <span data-l="ko">최고 가성비</span>
+        </div>
+        <div class="price-name">ROUNDIE Pro</div>
+        <div class="price-amount">¥980<span style="font-size:14px;color:var(--t2);font-weight:400"> /月</span></div>
+        <div class="price-sub">
+          <span data-l="en" class="a">¥7,800/year <span class="save">(37% OFF)</span></span>
+          <span data-l="ja">¥7,800/年 <span class="save">(37%お得)</span></span>
+          <span data-l="ko">¥7,800/년 <span class="save">(37% 할인)</span></span>
+        </div>
+        <ul class="price-features">
+          <li><span data-l="en" class="a">Everything in Free +</span><span data-l="ja">Freeの全機能 +</span><span data-l="ko">Free 전체 +</span></li>
+          <li><span data-l="en" class="a"><strong>Unlimited</strong> comps</span><span data-l="ja">コンペ<strong>無制限</strong>・人数∞</span><span data-l="ko">대회 <strong>무제한</strong> & 인원∞</span></li>
+          <li><span data-l="en" class="a">Advanced analytics</span><span data-l="ja">詳細分析</span><span data-l="ko">상세 분석</span></li>
+          <li><span data-l="en" class="a">Custom frames</span><span data-l="ja">カスタムフレーム</span><span data-l="ko">커스텀 프레임</span></li>
+          <li><span data-l="en" class="a">Logo-free sharing</span><span data-l="ja">ロゴなしシェア</span><span data-l="ko">로고 없는 공유</span></li>
+        </ul>
+        <span class="price-cta soon">
+          <span data-l="en" class="a">Coming soon</span>
+          <span data-l="ja">準備中</span>
+          <span data-l="ko">준비 중</span>
+        </span>
+      </div>
+    </div>
+    <p class="pricing-note">
+      <span data-l="en" class="a">All core features are free forever — no credit card required. Paid plans are coming after launch.</span>
+      <span data-l="ja">基本機能はすべて無料。有料プランはローンチ後に提供予定です。</span>
+      <span data-l="ko">기본 기능은 모두 무료. 유료 플랜은 출시 후 제공 예정입니다.</span>
+    </p>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT -->
+<section class="brand-sec">
+  <div class="si rv">
+    <p class="brand-statement">
+      <span data-l="en" class="a">"<span class="ac">Shape</span> your round."</span>
+      <span data-l="ja">「ラウンドを、<span class="ac">かたち</span>にしよう。」</span>
+      <span data-l="ko">"라운드를, <span class="ac">형태</span>로 만들자."</span>
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="si rv">
+    <h2>
+      <span data-l="en" class="a">See it in action.</span>
+      <span data-l="ja">実際に見てみよう。</span>
+      <span data-l="ko">직접 확인해 보세요.</span>
+    </h2>
+    <p class="cta-sub">
+      <span data-l="en" class="a">Visit the ROUNDIE product site for the full experience.</span>
+      <span data-l="ja">ROUNDIEのプロダクトサイトで、フル体験を。</span>
+      <span data-l="ko">ROUNDIE 프로덕트 사이트에서 풀 경험을.</span>
+    </p>
+    <a href="https://roundie.app" class="btn btn-a" target="_blank">roundie.app →</a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html">KANOPY</a>
+  <a href="https://roundie.app" target="_blank">ROUNDIE</a>
+  <a href="https://roundie.app/privacy.html" target="_blank">Privacy</a>
+  <a href="https://roundie.app/terms.html" target="_blank">Terms</a>
+  <div class="fc">&copy; 2026 KANOPY Inc.</div>
+</footer>
+
+<script>
+// Grid animation
+const gc=['#FFD700','#EF5350','#4CAF50','#42A5F5','#5C6BC0','#546E7A'];
+const gp=[3,2,3,4,3,3,2,3,4,3,3,1,3,3,4,3,2,3];
+const vg=document.getElementById('vg');
+gp.forEach(c=>{const d=document.createElement('div');d.className='c';d.style.backgroundColor=gc[c-1];vg.appendChild(d)});
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){vg.classList.add('an');vg.querySelectorAll('.c').forEach((c,i)=>{c.style.transitionDelay=(i*35)+'ms'})}})},{threshold:.3}).observe(vg);
+
+// Scroll reveal
+document.querySelectorAll('.rv').forEach(el=>{
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1}).observe(el);
+});
+
+// i18n
+function sl(l){
+  document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
+  document.querySelectorAll('.ng a').forEach(a=>a.classList.remove('a'));
+  event.target.classList.add('a');
+  document.documentElement.lang=l;
+  document.getElementById('backLink').href='index.html?lang='+l;
+}
+(function(){
+  const l=new URLSearchParams(location.search).get('lang');
+  if(l&&['ja','ko'].includes(l)){
+    document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
+    document.querySelectorAll('.ng a').forEach(a=>{a.classList.remove('a');if((l==='ja'&&a.textContent==='JP')||(l==='ko'&&a.textContent==='KR'))a.classList.add('a')});
+    document.documentElement.lang=l;
+    document.getElementById('backLink').href='index.html?lang='+l;
+  }
+})()
+</script>
+</body>
+</html>
