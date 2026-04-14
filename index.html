@@ -520,26 +520,52 @@
       <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">⛳ STEP 1</div>
         <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록하기</span></h4>
-        <p class="hiw-brief"><span data-l="en">Enter your round results in 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を30秒で入力。</span><span data-l="ko">라운드 결과를 30초로 입력.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Score, weather, playing partners, photos — record everything about your round. Quick mode lets you enter just the scores. Detailed mode captures putts, fairways, and per-hole notes.</span><span data-l="ja" class="a">スコア、天気、同伴者、写真。<br class="sp">ラウンドのすべてを記録できる。<br class="sp">クイックモードならスコアだけ、<br class="sp">詳細モードならパットやFW率、<br class="sp">ホール別メモまで。</span><span data-l="ko">스코어, 날씨, 동반자, 사진.<br class="sp">라운드의 모든 것을 기록.<br class="sp">퀵 모드는 스코어만,<br class="sp">상세 모드는 퍼트, FW율,<br class="sp">홀별 메모까지.</span></p></div>
+        <!-- Mini score input mock -->
+        <div style="display:flex;gap:6px;margin:12px 0;justify-content:center">
+          <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 1</div><div style="font-size:7px;color:var(--t3)">Par 4</div><div style="font-size:16px;font-weight:700;color:var(--ac)">4</div></div>
+          <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 2</div><div style="font-size:7px;color:var(--t3)">Par 3</div><div style="font-size:16px;font-weight:700;color:#EF5350">3</div></div>
+          <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 3</div><div style="font-size:7px;color:var(--t3)">Par 5</div><div style="font-size:16px;font-weight:700;color:var(--t1)">5</div></div>
+        </div>
+        <p class="hiw-brief"><span data-l="en">Enter scores in 30 seconds.</span><span data-l="ja" class="a">スコアを30秒で入力。</span><span data-l="ko">스코어를 30초로 입력.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Score, weather, playing partners, photos.<br class="sp">Quick mode or detailed mode.</span><span data-l="ja" class="a">スコア、天気、同伴者、写真。<br class="sp">クイックモードか詳細モード。</span><span data-l="ko">스코어, 날씨, 동반자, 사진.<br class="sp">퀵 모드 또는 상세 모드.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">🎨 STEP 2</div>
         <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
-        <p class="hiw-brief"><span data-l="en">18 holes become your unique color grid.</span><span data-l="ja" class="a">18ホールがカラーグリッドに。</span><span data-l="ko">18홀이 컬러 그리드로.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Each hole becomes a color based on your performance — eagle, birdie, par, bogey. Your unique Round Card is born. No two grids are ever alike.</span><span data-l="ja" class="a">各ホールの結果が色に変わる。<br class="sp">イーグル、バーディー、パー、ボギー。<br class="sp">あなただけのラウンドカードが生まれる。<br class="sp">同じグリッドは二つとない。</span><span data-l="ko">각 홀의 결과가 색으로 변한다.<br class="sp">이글, 버디, 파, 보기.<br class="sp">나만의 라운드카드가 탄생.<br class="sp">같은 그리드는 없다.</span></p></div>
+        <!-- Mini color grid -->
+        <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:2px;margin:12px auto;max-width:160px">
+          <div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#EF5350"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#FFD700"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div>
+          <div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#EF5350"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#5C6BC0"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div>
+        </div>
+        <p class="hiw-brief"><span data-l="en">Your unique Round Card is born.</span><span data-l="ja" class="a">あなただけのラウンドカード。</span><span data-l="ko">나만의 라운드카드 탄생.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Each hole becomes a color.<br class="sp">No two grids are ever alike.</span><span data-l="ja" class="a">各ホールが色に変わる。<br class="sp">同じグリッドは二つとない。</span><span data-l="ko">각 홀이 색으로 변한다.<br class="sp">같은 그리드는 없다.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">🤝 STEP 3</div>
         <h4><span data-l="en">Share & Rise</span><span data-l="ja" class="a">シェア & 成長</span><span data-l="ko">공유 & 성장</span></h4>
-        <p class="hiw-brief"><span data-l="en">Share with friends, send Kudos, compete.</span><span data-l="ja" class="a">仲間とシェアし、讃え合おう。</span><span data-l="ko">동료와 공유하고 칭찬하자.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Post to your Feed for friends to see. Send Kudos to celebrate great plays. Track your position in Friends Ranking. Your ROUNDIE Score grows with every round.</span><span data-l="ja" class="a">フィードに投稿して仲間に共有。<br class="sp">Kudosで素晴らしいプレーを称え合おう。<br class="sp">フレンズランキングで順位を確認。<br class="sp">ROUNDIE Scoreはラウンドごとに成長する。</span><span data-l="ko">피드에 공유하고 동료에게 보여주자.<br class="sp">Kudos로 훌륭한 플레이를 칭찬.<br class="sp">프렌즈 랭킹에서 순위 확인.<br class="sp">ROUNDIE Score는 라운드마다 성장.</span></p></div>
+        <!-- Mini feed + kudos mock -->
+        <div style="margin:12px 0;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:var(--ac);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">Y</div><div style="flex:1;font-size:9px;font-weight:600">Yuki</div><div style="font-size:9px;color:var(--ac);font-weight:600">🔥</div></div>
+          <div style="display:flex;align-items:center;gap:6px;background:var(--acg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:#FF9800;color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">K</div><div style="flex:1;font-size:9px;font-weight:600"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></div><div style="font-size:9px;color:var(--ac);font-weight:600">💪</div></div>
+        </div>
+        <p class="hiw-brief"><span data-l="en">Feed, Kudos, Ranking.</span><span data-l="ja" class="a">フィード、Kudos、ランキング。</span><span data-l="ko">피드, Kudos, 랭킹.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Post to Feed. Send Kudos.<br class="sp">Track growth in Ranking.</span><span data-l="ja" class="a">フィードに投稿。Kudosを送る。<br class="sp">ランキングで成長を実感。</span><span data-l="ko">피드에 공유. Kudos를 보내자.<br class="sp">랭킹에서 성장 실감.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">🏆 STEP 4</div>
         <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회로 즐기기</span></h4>
-        <p class="hiw-brief"><span data-l="en">Host competitions in 3 taps.</span><span data-l="ja" class="a">3タップでコンペ開催。</span><span data-l="ko">3번 탭으로 대회 개최.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Create a competition, invite friends, and let ROUNDIE handle the scoring. Auto-calculated results with animated reveals. Individual titles like "Eagle Hunter" and "Comeback King" are automatically awarded.</span><span data-l="ja" class="a">コンペを作成し、仲間を招待。<br class="sp">集計はROUNDIEにおまかせ。<br class="sp">アニメーション付きの結果発表。<br class="sp">「イーグルハンター」「カムバックキング」など<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">대회를 만들고 동료를 초대.<br class="sp">집계는 ROUNDIE에 맡기자.<br class="sp">애니메이션 결과 발표.<br class="sp">이글 헌터, 컴백 킹 등<br class="sp">개인 타이틀도 자동 부여.</span></p></div>
+        <!-- Mini comp result mock -->
+        <div style="margin:12px 0;background:var(--bg);border-radius:8px;padding:10px;border:1px solid var(--bd);text-align:center">
+          <div style="font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:4px">RESULT</div>
+          <div style="display:flex;justify-content:center;gap:12px;margin-bottom:6px">
+            <div><div style="font-size:8px;color:var(--t3)">🥈</div><div style="font-size:10px;font-weight:600">Kenji</div></div>
+            <div><div style="font-size:10px;color:#FFD700">🥇</div><div style="font-size:12px;font-weight:700;color:var(--ac)">Yuki</div></div>
+            <div><div style="font-size:8px;color:var(--t3)">🥉</div><div style="font-size:10px;font-weight:600"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></div></div>
+          </div>
+          <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap"><span style="font-size:7px;padding:2px 6px;border-radius:8px;background:var(--acg);color:var(--ac);font-weight:600"><span data-l="en">Eagle Hunter</span><span data-l="ja" class="a">イーグルハンター</span><span data-l="ko">이글 헌터</span></span><span style="font-size:7px;padding:2px 6px;border-radius:8px;background:var(--acg);color:var(--ac);font-weight:600"><span data-l="en">Comeback King</span><span data-l="ja" class="a">カムバックキング</span><span data-l="ko">컴백 킹</span></span></div>
+        </div>
+        <p class="hiw-brief"><span data-l="en">Auto scoring & animated reveals.</span><span data-l="ja" class="a">自動集計 & 結果リビール演出。</span><span data-l="ko">자동 집계 & 결과 발표 연출.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Invite friends, auto-score.<br class="sp">Individual titles awarded.</span><span data-l="ja" class="a">仲間を招待して自動集計。<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">동료를 초대하고 자동 집계.<br class="sp">개인 타이틀도 자동 부여.</span></p></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:28px" class="rv">
