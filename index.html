@@ -260,6 +260,37 @@
       .phone{width:160px;border-radius:20px;padding:24px 10px 14px}
       .co-g{grid-template-columns:1fr;gap:10px}
     }
+    /* Feature blocks */
+    .feat-block{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0;border-bottom:1px solid var(--bd)}
+    .feat-block:last-child{border-bottom:none}
+    .feat-block.reverse{direction:rtl}
+    .feat-block.reverse>*{direction:ltr}
+    .feat-block-text{display:flex;flex-direction:column;gap:10px}
+    .feat-block-text .feat-label{font-size:10px;font-weight:800;letter-spacing:4px;color:var(--ac);text-transform:uppercase}
+    .feat-block-text h3{font-size:clamp(18px,2.5vw,22px);font-weight:700;line-height:1.35}
+    .feat-block-text p{font-size:13px;color:var(--t2);line-height:1.8}
+    .feat-block-text .feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+    .feat-block-text .feat-tag{padding:4px 10px;border-radius:16px;font-size:10px;font-weight:600;background:var(--acg);color:var(--ac)}
+    .feat-block-visual{border-radius:14px;background:var(--bg2);border:1px solid var(--bd);padding:20px;overflow:hidden}
+    .feat-feed-item{padding:12px;border-radius:10px;background:var(--card);border:1px solid var(--bd);margin-bottom:8px}
+    .feat-feed-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+    .feat-feed-av{width:24px;height:24px;border-radius:50%;background:var(--ac);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800}
+    .feat-feed-name{font-size:10px;font-weight:600}
+    .feat-feed-course{font-size:8px;color:var(--t3)}
+    .feat-feed-grid{display:grid;grid-template-columns:repeat(9,12px);gap:2px;margin-bottom:6px}
+    .feat-feed-grid span{width:12px;height:12px;border-radius:16%;display:block}
+    .feat-feed-kudos{font-size:9px;color:var(--ac);font-weight:600}
+    .feat-rank-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px}
+    .feat-rank-row:last-child{border-bottom:none}
+    .feat-rank-pos{font-weight:800;color:var(--ac);width:20px}
+    .feat-rank-name{flex:1;font-weight:500}
+    .feat-rank-score{font-weight:700}
+    .feat-rank-you{background:var(--acg);border-radius:6px;padding:8px}
+    @media(max-width:768px){
+      .feat-block{grid-template-columns:1fr;gap:24px;padding:36px 0}
+      .feat-block.reverse{direction:ltr}
+    }
+
     @supports(padding:env(safe-area-inset-bottom)){
       footer{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
     }
@@ -388,28 +419,15 @@
           <span data-l="ko">골프의 경험과 기억을,<br class="sp">아름답게 남기고 동료와 공유하자.</span>
         </p>
         <p class="prod-desc">
-          <span data-l="en">The morning nerves, your best shot, laughing with friends. Golf experiences can't be captured in numbers alone. ROUNDIE lets you <strong>keep and share every moment</strong>, beautifully.</span>
-          <span data-l="ja" class="a">朝の緊張感、最高のショット、仲間との笑い声。<br class="sp">ゴルフの体験は、数字だけじゃ残せない。<br class="sp">ROUNDIEなら、体験も記憶もまるごと、<br class="sp"><strong>美しく残して仲間とシェアできる。</strong></span>
-          <span data-l="ko">아침의 긴장감, 최고의 샷, 동료와의 웃음.<br class="sp">골프의 경험은 숫자만으로는 남길 수 없다.<br class="sp">ROUNDIE라면 경험도 기억도 통째로,<br class="sp"><strong>아름답게 남기고 동료와 공유할 수 있다.</strong></span>
+          <span data-l="en">A golf social app that lets you record, visualize, share, and celebrate every round with friends.</span>
+          <span data-l="ja" class="a">ラウンドを記録し、可視化し、<br class="sp">仲間とシェアして、讃え合う。<br class="sp">ゴルフソーシャルアプリ。</span>
+          <span data-l="ko">라운드를 기록하고, 시각화하고,<br class="sp">동료와 공유하고, 칭찬하는.<br class="sp">골프 소셜 앱.</span>
         </p>
-        <div class="prod-tags" style="display:flex;flex-wrap:wrap;gap:6px;margin:16px 0">
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Feed</span>
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Kudos</span>
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Ranking</span>
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">ROUNDIE ID</span>
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)"><span data-l="en">Competition</span><span data-l="ja" class="a">コンペ</span><span data-l="ko">대회</span></span>
-          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Color Grid</span>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
           <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
             <span data-l="en">Get Early Access</span>
             <span data-l="ja" class="a">先行アクセスを申し込む</span>
             <span data-l="ko">선행 액세스 신청</span>
-          </a>
-          <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:10px;padding:10px 20px;">
-            <span data-l="en">Learn more at roundie.app →</span>
-            <span data-l="ja" class="a">roundie.app で詳しく見る →</span>
-            <span data-l="ko">roundie.app에서 자세히 보기 →</span>
           </a>
         </div>
       </div>
@@ -426,6 +444,96 @@
         <p style="text-align:center;font-size:8px;color:var(--t3);margin-top:8px;letter-spacing:1px">* Development mockup</p>
       </div>
     </div>
+
+    <!-- Feature Blocks -->
+    <div style="margin-top:48px">
+
+      <!-- Feed -->
+      <div class="feat-block rv">
+        <div class="feat-block-text">
+          <div class="feat-label">Feed</div>
+          <h3><span data-l="en">Your friends' rounds,<br class="sp">delivered to your feed.</span><span data-l="ja" class="a">仲間のラウンドが、<br class="sp">フィードに届く。</span><span data-l="ko">동료의 라운드가<br class="sp">피드에 도착한다.</span></h3>
+          <p><span data-l="en">Open the app after your round.<br class="sp">Your friends' grids, photos, and comments<br class="sp">are waiting. Share your golf day together.</span><span data-l="ja" class="a">ラウンド後にアプリを開こう。<br class="sp">仲間のグリッド、写真、コメントが<br class="sp">待っている。ゴルフの1日を共有しよう。</span><span data-l="ko">라운드 후 앱을 열자.<br class="sp">동료의 그리드, 사진, 코멘트가<br class="sp">기다리고 있다. 골프의 하루를 공유.</span></p>
+        </div>
+        <div class="feat-block-visual">
+          <div class="feat-feed-item">
+            <div class="feat-feed-head"><div class="feat-feed-av">Y</div><div><div class="feat-feed-name">Yuki</div><div class="feat-feed-course">Roundie GC</div></div></div>
+            <div class="feat-feed-grid"><span style="background:#4CAF50"></span><span style="background:#EF5350"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#FFD700"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#EF5350"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span></div>
+            <div class="feat-feed-kudos">🔥 Nice Shot!</div>
+          </div>
+          <div class="feat-feed-item">
+            <div class="feat-feed-head"><div class="feat-feed-av" style="background:#FF9800">K</div><div><div class="feat-feed-name">Kenji</div><div class="feat-feed-course">Pine Wind GC</div></div></div>
+            <div class="feat-feed-grid"><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#5C6BC0"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span><span style="background:#42A5F5"></span><span style="background:#5C6BC0"></span><span style="background:#4CAF50"></span><span style="background:#4CAF50"></span></div>
+            <div class="feat-feed-kudos">💪 Nice Fight!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kudos -->
+      <div class="feat-block reverse rv">
+        <div class="feat-block-text">
+          <div class="feat-label">Kudos</div>
+          <h3><span data-l="en">More than a like.</span><span data-l="ja" class="a">「いいね」じゃ足りない。</span><span data-l="ko">좋아요로는 부족하다.</span></h3>
+          <p><span data-l="en">Celebrate your friends' plays<br class="sp">with 3 types of Kudos.<br class="sp">Send respect that only golfers understand.</span><span data-l="ja" class="a">3種類のKudosで<br class="sp">仲間のプレーを称えよう。<br class="sp">ゴルファーだけに通じる<br class="sp">リスペクトを贈ろう。</span><span data-l="ko">3종류의 Kudos로<br class="sp">동료의 플레이를 칭찬하자.<br class="sp">골퍼만이 아는 리스펙트를.</span></p>
+          <div class="feat-tags">
+            <span class="feat-tag">🔥 <span data-l="en">Nice Shot</span><span data-l="ja" class="a">ナイスショット</span><span data-l="ko">나이스샷</span></span>
+            <span class="feat-tag">💪 <span data-l="en">Nice Fight</span><span data-l="ja" class="a">ナイスファイト</span><span data-l="ko">나이스 파이트</span></span>
+            <span class="feat-tag">🤝 <span data-l="en">Best Buddy</span><span data-l="ja" class="a">ベストバディ</span><span data-l="ko">베스트 버디</span></span>
+          </div>
+        </div>
+        <div class="feat-block-visual" style="text-align:center;padding:40px 20px">
+          <div style="font-size:56px;margin-bottom:12px">🤝</div>
+          <p style="font-size:13px;color:var(--t2);line-height:1.8"><span data-l="en">Golfer-specific respect<br class="sp">for your friends.</span><span data-l="ja" class="a">仲間のプレーに、<br class="sp">ゴルファーだけの称賛を。</span><span data-l="ko">동료의 플레이에<br class="sp">골퍼만의 칭찬을.</span></p>
+        </div>
+      </div>
+
+      <!-- Ranking -->
+      <div class="feat-block rv">
+        <div class="feat-block-text">
+          <div class="feat-label">Ranking</div>
+          <h3><span data-l="en">Where do you stand<br class="sp">among friends?</span><span data-l="ja" class="a">仲間の中で、<br class="sp">今どこにいる？</span><span data-l="ko">동료 중에서<br class="sp">지금 어디에?</span></h3>
+          <p><span data-l="en">Check your position in Friends Ranking.<br class="sp">Track your growth over time.<br class="sp">Earn evolving rank badges.</span><span data-l="ja" class="a">フレンズランキングで順位を確認。<br class="sp">自分の成長を振り返ろう。<br class="sp">ランクが上がるとバッジが進化。</span><span data-l="ko">프렌즈 랭킹에서 순위 확인.<br class="sp">자신의 성장을 돌아보자.<br class="sp">랭크가 오르면 배지가 진화.</span></p>
+          <div class="feat-tags">
+            <span class="feat-tag" style="background:#152015;color:#81C784">ROOKIE</span>
+            <span class="feat-tag" style="background:#201A10;color:#FF9800">PLAYER</span>
+            <span class="feat-tag" style="background:#1A1520;color:#CE93D8">MASTER</span>
+          </div>
+        </div>
+        <div class="feat-block-visual">
+          <div class="feat-rank-row"><span class="feat-rank-pos">1</span><span class="feat-rank-name">Yuki</span><span class="feat-rank-score">74.2</span></div>
+          <div class="feat-rank-row feat-rank-you"><span class="feat-rank-pos">2</span><span class="feat-rank-name"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></span><span class="feat-rank-score">68.5 <span style="color:var(--ac);font-size:10px">▲+3.1</span></span></div>
+          <div class="feat-rank-row"><span class="feat-rank-pos">3</span><span class="feat-rank-name">Kenji</span><span class="feat-rank-score">62.0</span></div>
+        </div>
+      </div>
+
+      <!-- Competition -->
+      <div class="feat-block reverse rv">
+        <div class="feat-block-text">
+          <div class="feat-label">Competition</div>
+          <h3><span data-l="en">Host a comp<br class="sp">in 3 taps.</span><span data-l="ja" class="a">3タップで<br class="sp">コンペ開催。</span><span data-l="ko">3번 탭으로<br class="sp">대회 개최.</span></h3>
+          <p><span data-l="en">Invite friends, auto-score,<br class="sp">animated result reveal.<br class="sp">Individual titles awarded automatically.</span><span data-l="ja" class="a">仲間を招待して、自動集計。<br class="sp">アニメーション付きの結果発表。<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">동료를 초대하고 자동 집계.<br class="sp">애니메이션 결과 발표.<br class="sp">개인 타이틀도 자동 부여.</span></p>
+          <div class="feat-tags">
+            <span class="feat-tag"><span data-l="en">Champion</span><span data-l="ja" class="a">チャンピオン</span><span data-l="ko">챔피언</span></span>
+            <span class="feat-tag"><span data-l="en">Eagle Hunter</span><span data-l="ja" class="a">イーグルハンター</span><span data-l="ko">이글 헌터</span></span>
+            <span class="feat-tag"><span data-l="en">Comeback King</span><span data-l="ja" class="a">カムバックキング</span><span data-l="ko">컴백 킹</span></span>
+          </div>
+        </div>
+        <div class="feat-block-visual" style="text-align:center;padding:40px 20px">
+          <div style="font-size:56px;margin-bottom:12px">🏆</div>
+          <p style="font-size:13px;color:var(--t2);line-height:1.8"><span data-l="en">Auto scoring &<br class="sp">animated reveals.</span><span data-l="ja" class="a">自動集計 &<br class="sp">結果リビール演出。</span><span data-l="ko">자동 집계 &<br class="sp">결과 발표 연출.</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:11px;padding:12px 24px;">
+        <span data-l="en">Explore all features at roundie.app →</span>
+        <span data-l="ja" class="a">roundie.app で全機能を見る →</span>
+        <span data-l="ko">roundie.app에서 전체 기능 보기 →</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -457,29 +565,36 @@
     </h2>
     <div class="hiw-grid">
       <div class="hiw-step rv" onclick="tHiw(this)">
-        <div class="hiw-num">STEP 1</div>
+        <div class="hiw-num">⛳ STEP 1</div>
         <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록하기</span></h4>
         <p class="hiw-brief"><span data-l="en">Enter your round results in 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を30秒で入力。</span><span data-l="ko">라운드 결과를 30초로 입력.</span></p>
         <div class="hiw-detail"><p><span data-l="en">Score, weather, playing partners, photos — record everything about your round. Quick mode lets you enter just the scores. Detailed mode captures putts, fairways, and per-hole notes.</span><span data-l="ja" class="a">スコア、天気、同伴者、写真。<br class="sp">ラウンドのすべてを記録できる。<br class="sp">クイックモードならスコアだけ、<br class="sp">詳細モードならパットやFW率、<br class="sp">ホール別メモまで。</span><span data-l="ko">스코어, 날씨, 동반자, 사진.<br class="sp">라운드의 모든 것을 기록.<br class="sp">퀵 모드는 스코어만,<br class="sp">상세 모드는 퍼트, FW율,<br class="sp">홀별 메모까지.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
-        <div class="hiw-num">STEP 2</div>
+        <div class="hiw-num">🎨 STEP 2</div>
         <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
         <p class="hiw-brief"><span data-l="en">18 holes become your unique color grid.</span><span data-l="ja" class="a">18ホールがカラーグリッドに。</span><span data-l="ko">18홀이 컬러 그리드로.</span></p>
         <div class="hiw-detail"><p><span data-l="en">Each hole becomes a color based on your performance — eagle, birdie, par, bogey. Your unique Round Card is born. No two grids are ever alike.</span><span data-l="ja" class="a">各ホールの結果が色に変わる。<br class="sp">イーグル、バーディー、パー、ボギー。<br class="sp">あなただけのラウンドカードが生まれる。<br class="sp">同じグリッドは二つとない。</span><span data-l="ko">각 홀의 결과가 색으로 변한다.<br class="sp">이글, 버디, 파, 보기.<br class="sp">나만의 라운드카드가 탄생.<br class="sp">같은 그리드는 없다.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
-        <div class="hiw-num">STEP 3</div>
+        <div class="hiw-num">🤝 STEP 3</div>
         <h4><span data-l="en">Share & Rise</span><span data-l="ja" class="a">シェア & 成長</span><span data-l="ko">공유 & 성장</span></h4>
         <p class="hiw-brief"><span data-l="en">Share with friends, send Kudos, compete.</span><span data-l="ja" class="a">仲間とシェアし、讃え合おう。</span><span data-l="ko">동료와 공유하고 칭찬하자.</span></p>
         <div class="hiw-detail"><p><span data-l="en">Post to your Feed for friends to see. Send Kudos to celebrate great plays. Track your position in Friends Ranking. Your ROUNDIE Score grows with every round.</span><span data-l="ja" class="a">フィードに投稿して仲間に共有。<br class="sp">Kudosで素晴らしいプレーを称え合おう。<br class="sp">フレンズランキングで順位を確認。<br class="sp">ROUNDIE Scoreはラウンドごとに成長する。</span><span data-l="ko">피드에 공유하고 동료에게 보여주자.<br class="sp">Kudos로 훌륭한 플레이를 칭찬.<br class="sp">프렌즈 랭킹에서 순위 확인.<br class="sp">ROUNDIE Score는 라운드마다 성장.</span></p></div>
       </div>
       <div class="hiw-step rv" onclick="tHiw(this)">
-        <div class="hiw-num">STEP 4</div>
+        <div class="hiw-num">🏆 STEP 4</div>
         <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회로 즐기기</span></h4>
         <p class="hiw-brief"><span data-l="en">Host competitions in 3 taps.</span><span data-l="ja" class="a">3タップでコンペ開催。</span><span data-l="ko">3번 탭으로 대회 개최.</span></p>
         <div class="hiw-detail"><p><span data-l="en">Create a competition, invite friends, and let ROUNDIE handle the scoring. Auto-calculated results with animated reveals. Individual titles like "Eagle Hunter" and "Comeback King" are automatically awarded.</span><span data-l="ja" class="a">コンペを作成し、仲間を招待。<br class="sp">集計はROUNDIEにおまかせ。<br class="sp">アニメーション付きの結果発表。<br class="sp">「イーグルハンター」「カムバックキング」など<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">대회를 만들고 동료를 초대.<br class="sp">집계는 ROUNDIE에 맡기자.<br class="sp">애니메이션 결과 발표.<br class="sp">이글 헌터, 컴백 킹 등<br class="sp">개인 타이틀도 자동 부여.</span></p></div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:28px" class="rv">
+      <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:11px;padding:12px 24px;">
+        <span data-l="en">See more at roundie.app →</span>
+        <span data-l="ja" class="a">roundie.app でもっと詳しく →</span>
+        <span data-l="ko">roundie.app에서 더 자세히 →</span>
+      </a>
     </div>
   </div>
 </section>
