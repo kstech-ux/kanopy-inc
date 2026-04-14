@@ -109,10 +109,14 @@
     .hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:36px}
     @media(max-width:768px){.hiw-grid{grid-template-columns:1fr;gap:20px}}
     .hiw-step{text-align:center;padding:28px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--bd);transition:all .3s}
-    .hiw-step:hover{transform:translateY(-3px);border-color:var(--ac)}
+    .hiw-step:hover,.hiw-step.active{transform:translateY(-3px);border-color:var(--ac)}
+    .hiw-step{cursor:pointer}
     .hiw-num{font-size:11px;font-weight:800;color:var(--ac);letter-spacing:2px;margin-bottom:12px}
     .hiw-step h4{font-size:14px;font-weight:600;margin-bottom:8px}
-    .hiw-step p{font-size:12px;color:var(--t2);line-height:1.7}
+    .hiw-step .hiw-brief{font-size:12px;color:var(--t2);line-height:1.7}
+    .hiw-step .hiw-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,margin .3s ease;margin-top:0}
+    .hiw-step.active .hiw-detail{max-height:200px;opacity:1;margin-top:12px}
+    .hiw-step .hiw-detail p{font-size:12px;color:var(--t2);line-height:1.7;padding-top:12px;border-top:1px solid var(--bd)}
     /* VISION */
     .vision-sec{background:var(--bg2);text-align:center}
     .vision-text{font-size:clamp(15px,2.2vw,20px);color:var(--t2);line-height:2;max-width:640px;margin:0 auto}
@@ -379,24 +383,29 @@
           <div class="prod-h" style="margin-bottom:0">ROUNDIE</div>
         </div>
         <p class="prod-sub">
-          <span data-l="en">The golf app your rounds deserve.</span>
-          <span data-l="ja" class="a">あなたのラウンドにふさわしいアプリ。</span>
-          <span data-l="ko">당신의 라운드에 걸맞은 앱.</span>
+          <span data-l="en">Keep your golf experiences. Share them with friends.</span>
+          <span data-l="ja" class="a">ゴルフの体験と記憶を、<br class="sp">美しく残して、仲間とシェアしよう。</span>
+          <span data-l="ko">골프의 경험과 기억을,<br class="sp">아름답게 남기고 동료와 공유하자.</span>
         </p>
         <p class="prod-desc">
-          <span data-l="en">Every round is a story. ROUNDIE turns it into something beautiful you can keep and share. Your score, your memories — <strong>all in one card</strong>.</span>
-          <span data-l="ja" class="a">すべてのラウンドには物語がある。<br>ROUNDIEはそれを美しい「かたち」にして残す。<br>スコアも、思い出も、<strong>まるごと一枚のカード</strong>に。</span>
-          <span data-l="ko">모든 라운드에는 이야기가 있다. ROUNDIE는 그것을 아름다운 '형태'로 만든다. 스코어도, 추억도, <strong>한 장의 카드</strong>로.</span>
+          <span data-l="en">The morning nerves, your best shot, laughing with friends. Golf experiences can't be captured in numbers alone. ROUNDIE lets you <strong>keep and share every moment</strong>, beautifully.</span>
+          <span data-l="ja" class="a">朝の緊張感、最高のショット、仲間との笑い声。<br class="sp">ゴルフの体験は、数字だけじゃ残せない。<br class="sp">ROUNDIEなら、体験も記憶もまるごと、<br class="sp"><strong>美しく残して仲間とシェアできる。</strong></span>
+          <span data-l="ko">아침의 긴장감, 최고의 샷, 동료와의 웃음.<br class="sp">골프의 경험은 숫자만으로는 남길 수 없다.<br class="sp">ROUNDIE라면 경험도 기억도 통째로,<br class="sp"><strong>아름답게 남기고 동료와 공유할 수 있다.</strong></span>
         </p>
-        <p class="prod-desc" style="margin-top:-8px">
-          <span data-l="en">Enter your score, and 18 holes become a colorful grid. Share with friends and make golf even more fun.</span>
-          <span data-l="ja" class="a">スコアを入力するだけで、<br class="sp">18ホールがカラフルなグリッドに。<br class="sp">仲間にシェアして、<br class="sp">ゴルフをもっと楽しもう。</span>
-          <span data-l="ko">스코어를 입력하면 18홀이 컬러풀한 그리드로. 친구와 공유하고, 골프를 더 즐기자.</span>
-        </p>
-        <div class="prod-btns">
-          <span class="btn btn-g" style="pointer-events:none;opacity:.6;font-size:10px;padding:8px 16px">iOS / Android — Coming Soon</span>
+        <div class="prod-tags" style="display:flex;flex-wrap:wrap;gap:6px;margin:16px 0">
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Feed</span>
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Kudos</span>
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Ranking</span>
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">ROUNDIE ID</span>
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)"><span data-l="en">Competition</span><span data-l="ja" class="a">コンペ</span><span data-l="ko">대회</span></span>
+          <span class="prod-tag" style="padding:6px 14px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:1px;color:var(--ac);border:1px solid var(--bd);background:var(--acg)">Color Grid</span>
         </div>
-        <div style="margin-top:16px">
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
+            <span data-l="en">Get Early Access</span>
+            <span data-l="ja" class="a">先行アクセスを申し込む</span>
+            <span data-l="ko">선행 액세스 신청</span>
+          </a>
           <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:10px;padding:10px 20px;">
             <span data-l="en">Learn more at roundie.app →</span>
             <span data-l="ja" class="a">roundie.app で詳しく見る →</span>
@@ -425,9 +434,9 @@
   <div class="si rv">
     <div class="sl">Vision</div>
     <div class="vision-text">
-      <span data-l="en">The memories are there. But scorecards get buried in group chats, and the best moments of a round <strong>deserve more than a number</strong>. They deserve <span class="pac">a shape</span>. ROUNDIE makes that possible.</span>
-      <span data-l="ja" class="a">ラウンドの記憶はある。<br class="sp">でもスコアカードの写真はチャットに埋もれ、<br class="sp">最高のショットも<strong>数字だけでは伝わらない</strong>。<br class="sp">もっと美しく、もっと楽しく<span class="pac">残せるはず</span>だ。<br class="sp">ROUNDIEが、それを実現する。</span>
-      <span data-l="ko">기억은 있다. 하지만 스코어카드는 채팅에 묻히고, 라운드의 최고의 순간은 <strong>숫자 이상의 가치가 있다</strong>. 더 아름답게, 더 즐겁게 <span class="pac">남길 수 있어야 한다</span>. ROUNDIE가 그것을 가능하게 한다.</span>
+      <span data-l="en">Golf is more than a score. It's <strong>the experience of playing with friends</strong> — the nervous first tee, the perfect approach, the laughs between holes. We believe these moments deserve to be <span class="pac">kept beautifully and shared joyfully</span>.</span>
+      <span data-l="ja" class="a">ゴルフはスコアだけじゃない。<br class="sp"><strong>仲間と過ごす体験そのもの</strong>に価値がある。<br class="sp">朝の緊張感、最高のアプローチ、<br class="sp">ホール間の笑い声。<br class="sp">その瞬間を<span class="pac">美しく残し、楽しくシェアする</span>。<br class="sp">それが私たちの信念です。</span>
+      <span data-l="ko">골프는 스코어만이 아니다.<br class="sp"><strong>동료와 함께하는 경험 그 자체</strong>에 가치가 있다.<br class="sp">아침의 긴장감, 최고의 어프로치,<br class="sp">홀 사이의 웃음소리.<br class="sp">그 순간을 <span class="pac">아름답게 남기고 즐겁게 공유하는 것</span>.<br class="sp">그것이 우리의 신념입니다.</span>
     </div>
     <div class="vision-launch">
       <span data-l="en">COMING LATE APRIL 2026</span>
@@ -447,25 +456,29 @@
       <span data-l="ko">30초만에, 아름다운 라운드카드 완성.</span>
     </h2>
     <div class="hiw-grid">
-      <div class="hiw-step rv">
+      <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">STEP 1</div>
         <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록하기</span></h4>
-        <p><span data-l="en">Enter your round results. Quick mode takes just 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を入力。<br class="sp">クイックモードなら30秒で完了。</span><span data-l="ko">라운드 결과 입력. 퀵 모드로 30초면 완료.</span></p>
+        <p class="hiw-brief"><span data-l="en">Enter your round results in 30 seconds.</span><span data-l="ja" class="a">ラウンド結果を30秒で入力。</span><span data-l="ko">라운드 결과를 30초로 입력.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Score, weather, playing partners, photos — record everything about your round. Quick mode lets you enter just the scores. Detailed mode captures putts, fairways, and per-hole notes.</span><span data-l="ja" class="a">スコア、天気、同伴者、写真。<br class="sp">ラウンドのすべてを記録できる。<br class="sp">クイックモードならスコアだけ、<br class="sp">詳細モードならパットやFW率、<br class="sp">ホール別メモまで。</span><span data-l="ko">스코어, 날씨, 동반자, 사진.<br class="sp">라운드의 모든 것을 기록.<br class="sp">퀵 모드는 스코어만,<br class="sp">상세 모드는 퍼트, FW율,<br class="sp">홀별 메모까지.</span></p></div>
       </div>
-      <div class="hiw-step rv">
+      <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">STEP 2</div>
         <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
-        <p><span data-l="en">Your score becomes a colorful grid — your unique Round Card.</span><span data-l="ja" class="a">スコアがカラーグリッドに変わる。<br class="sp">あなただけのラウンドカード。</span><span data-l="ko">스코어가 컬러 그리드로 변신. 나만의 라운드카드.</span></p>
+        <p class="hiw-brief"><span data-l="en">18 holes become your unique color grid.</span><span data-l="ja" class="a">18ホールがカラーグリッドに。</span><span data-l="ko">18홀이 컬러 그리드로.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Each hole becomes a color based on your performance — eagle, birdie, par, bogey. Your unique Round Card is born. No two grids are ever alike.</span><span data-l="ja" class="a">各ホールの結果が色に変わる。<br class="sp">イーグル、バーディー、パー、ボギー。<br class="sp">あなただけのラウンドカードが生まれる。<br class="sp">同じグリッドは二つとない。</span><span data-l="ko">각 홀의 결과가 색으로 변한다.<br class="sp">이글, 버디, 파, 보기.<br class="sp">나만의 라운드카드가 탄생.<br class="sp">같은 그리드는 없다.</span></p></div>
       </div>
-      <div class="hiw-step rv">
+      <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">STEP 3</div>
         <h4><span data-l="en">Share & Rise</span><span data-l="ja" class="a">シェア & 成長</span><span data-l="ko">공유 & 성장</span></h4>
-        <p><span data-l="en">Share with friends, send Kudos, compete in rankings. Your golf life, together.</span><span data-l="ja" class="a">仲間とシェアし、Kudosを送り、<br class="sp">ランキングで競い合う。<br class="sp">ゴルフライフを、一緒に。</span><span data-l="ko">친구와 공유하고, Kudos를 보내고,<br class="sp"> 랭킹에서 경쟁. 골프 라이프를 함께.</span></p>
+        <p class="hiw-brief"><span data-l="en">Share with friends, send Kudos, compete.</span><span data-l="ja" class="a">仲間とシェアし、讃え合おう。</span><span data-l="ko">동료와 공유하고 칭찬하자.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Post to your Feed for friends to see. Send Kudos to celebrate great plays. Track your position in Friends Ranking. Your ROUNDIE Score grows with every round.</span><span data-l="ja" class="a">フィードに投稿して仲間に共有。<br class="sp">Kudosで素晴らしいプレーを称え合おう。<br class="sp">フレンズランキングで順位を確認。<br class="sp">ROUNDIE Scoreはラウンドごとに成長する。</span><span data-l="ko">피드에 공유하고 동료에게 보여주자.<br class="sp">Kudos로 훌륭한 플레이를 칭찬.<br class="sp">프렌즈 랭킹에서 순위 확인.<br class="sp">ROUNDIE Score는 라운드마다 성장.</span></p></div>
       </div>
-      <div class="hiw-step rv">
+      <div class="hiw-step rv" onclick="tHiw(this)">
         <div class="hiw-num">STEP 4</div>
         <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회로 즐기기</span></h4>
-        <p><span data-l="en">Host competitions in 3 taps. Auto scoring, animated reveals, and shareable result cards.</span><span data-l="ja" class="a">3タップでコンペ開催。<br class="sp">自動集計、結果リビール演出、<br class="sp">シェアできる結果カード。</span><span data-l="ko">3번 탭으로 대회 개최.<br class="sp"> 자동 집계, 결과 발표 연출,<br class="sp"> 공유 가능한 결과 카드.</span></p>
+        <p class="hiw-brief"><span data-l="en">Host competitions in 3 taps.</span><span data-l="ja" class="a">3タップでコンペ開催。</span><span data-l="ko">3번 탭으로 대회 개최.</span></p>
+        <div class="hiw-detail"><p><span data-l="en">Create a competition, invite friends, and let ROUNDIE handle the scoring. Auto-calculated results with animated reveals. Individual titles like "Eagle Hunter" and "Comeback King" are automatically awarded.</span><span data-l="ja" class="a">コンペを作成し、仲間を招待。<br class="sp">集計はROUNDIEにおまかせ。<br class="sp">アニメーション付きの結果発表。<br class="sp">「イーグルハンター」「カムバックキング」など<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">대회를 만들고 동료를 초대.<br class="sp">집계는 ROUNDIE에 맡기자.<br class="sp">애니메이션 결과 발표.<br class="sp">이글 헌터, 컴백 킹 등<br class="sp">개인 타이틀도 자동 부여.</span></p></div>
       </div>
     </div>
   </div>
@@ -623,7 +636,7 @@
     <a href="notice.html">Notice</a>
   </div>
   <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0">
-    <span style="font-size:9px;color:var(--t3);letter-spacing:1px;font-weight:600">iOS / Android — Coming Soon</span>
+    <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" style="font-size:9px;color:var(--ac);letter-spacing:1px;font-weight:600;text-decoration:none"><span data-l="en">Get Early Access →</span><span data-l="ja" class="a">先行アクセス →</span><span data-l="ko">선행 액세스 →</span></a>
   </div>
   <div class="social-icons" style="margin-bottom:8px">
     <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.3.3.6.7.8 1.2.1.4.3.9.3 1.9 0 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.3.3-.7.6-1.2.8-.4.1-.9.3-1.9.3-1.1 0-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.3-.3-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9 0-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.3-.3.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1.1-.1 1.4-.1 4.1-.1M12 0C9.3 0 8.9 0 7.8.1c-1.1 0-1.8.2-2.5.5C4.6.8 4 1.2 3.4 1.8 2.8 2.4 2.4 3 2.1 3.7c-.3.7-.4 1.4-.5 2.5C1.6 7.3 1.6 7.7 1.6 12s0 4.7.1 5.8c0 1.1.2 1.8.5 2.5.3.7.7 1.3 1.3 1.9.6.6 1.2 1 1.9 1.3.7.3 1.4.4 2.5.5 1.1 0 1.5.1 5.8.1s4.7 0 5.8-.1c1.1 0 1.8-.2 2.5-.5.7-.3 1.3-.7 1.9-1.3.6-.6 1-1.2 1.3-1.9.3-.7.4-1.4.5-2.5 0-1.1.1-1.5.1-5.8s0-4.7-.1-5.8c0-1.1-.2-1.8-.5-2.5-.3-.7-.7-1.3-1.3-1.9-.6-.6-1.2-1-1.9-1.3C18.1.3 17.4.1 16.3.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-10.8a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8z"/></svg></a>
@@ -637,6 +650,7 @@
 
 <script>
 // Hamburger menu
+function tHiw(el){const wasActive=el.classList.contains('active');document.querySelectorAll('.hiw-step').forEach(x=>x.classList.remove('active'));if(!wasActive)el.classList.add('active')}
 function toggleMenu(){document.querySelector('.hamburger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':''}
 function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 
