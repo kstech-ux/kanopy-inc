@@ -20,28 +20,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KANOPY Inc. — Makers of ROUNDIE</title>
-  <meta name="description" content="KANOPY Inc. — Makers of ROUNDIE, a new kind of golf social app. We shape what lasts. 記憶を、かたちに。">
+  <meta name="description" content="KANOPY Inc. — Makers of ROUNDIE. ゴルフの体験と記憶を、かたちに残す。We shape what lasts.">
   <meta property="og:title" content="KANOPY Inc. — Makers of ROUNDIE">
-  <meta property="og:description" content="A new kind of golf social app. 記憶を、かたちに。">
+  <meta property="og:description" content="ゴルフの体験と記憶を、かたちに残す。We shape what lasts.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kanopy-inc.com">
   <link rel="canonical" href="https://kanopy-inc.com/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%2381C784' font-family='Arial'>K</text></svg>">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KANOPY Inc.","url":"https://kanopy-inc.com","founder":{"@type":"Person","name":"Kazushige Shiba"},"foundingDate":"2026-04","address":{"@type":"PostalAddress","addressLocality":"Shinjuku","addressRegion":"Tokyo","addressCountry":"JP"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KANOPY Inc.","url":"https://kanopy-inc.com","founder":{"@type":"Person","name":"Kazushige Shiba"},"foundingDate":"2026-04-14","address":{"@type":"PostalAddress","addressLocality":"Shinjuku","addressRegion":"Tokyo","addressCountry":"JP"}}</script>
   <style>
     :root{
       --bg:#050507;--bg2:#09090D;--card:#0E0E14;
       --t1:#EDEDEF;--t2:#6E6E7E;--t3:#5A5A70;
       --ac:#81C784;--acg:rgba(129,199,132,.1);
+      --gold:#D4A857;
       --bd:rgba(255,255,255,.05);
     }
-    .sp{display:none}
-    @media(max-width:640px){.sp{display:inline}}
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
     ::selection{background:var(--ac);color:var(--bg)}
     h1,h2,h3,.display{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif}
+    .sp{display:none}
+    @media(max-width:640px){.sp{display:inline}}
+
+    /* Language switch */
+    [data-l]{display:none}[data-l].a{display:inline}
+    [data-b]{display:none}[data-b].a{display:block}
 
     /* NAV */
     nav{position:fixed;top:0;width:100%;z-index:100;padding:24px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .5s}
@@ -51,29 +56,42 @@
     .nk a{font-family:inherit;font-size:10px;font-weight:500;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:color .3s;margin-left:20px;text-transform:uppercase}
     .nk a:hover{color:var(--t1)}
     .ng{display:flex;gap:2px}
-    .ng a{padding:4px 8px;border-radius:3px;font-size:10px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s}
+    .ng a{padding:4px 8px;border-radius:3px;font-size:10px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s;cursor:pointer}
     .ng a.a{color:var(--ac);background:var(--acg)}
+
+    .hamburger{display:none;position:fixed;top:18px;right:24px;z-index:200;background:transparent;border:none;cursor:pointer;width:36px;height:36px;flex-direction:column;justify-content:center;gap:5px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--t1);transition:all .3s;margin:0 auto}
+    .mob-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(5,5,7,.98);backdrop-filter:blur(20px);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:32px}
+    .mob-overlay a{font-size:18px;font-weight:600;color:var(--t1);text-decoration:none;letter-spacing:3px}
+    @media(max-width:768px){
+      .nk{display:none}.hamburger{display:flex}
+      nav{padding:16px 24px}
+      .mob-overlay.o{display:flex}
+    }
 
     /* SHARED */
     section{padding:clamp(100px,16vw,200px) 48px;position:relative}
+    @media(max-width:768px){section{padding:80px 24px}}
     .si{max-width:900px;margin:0 auto}
     .sl{font-size:9px;font-weight:700;letter-spacing:6px;color:var(--ac);text-transform:uppercase;margin-bottom:20px}
     .rv{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.25,.8,.25,1)}
     .rv.v{opacity:1;transform:translateY(0)}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:6px;font-family:inherit;font-size:11px;font-weight:600;letter-spacing:1px;text-decoration:none;transition:all .35s;border:none;cursor:pointer}
-    .btn-a{background:var(--ac);color:var(--bg)}.btn-a:hover{box-shadow:0 0 40px var(--acg);transform:translateY(-1px)}
-    .btn-g{background:transparent;color:var(--t2);border:1px solid var(--bd)}.btn-g:hover{border-color:var(--ac);color:var(--ac)}
+    .btn-a{background:var(--ac);color:var(--bg)}
+    .btn-a:hover{box-shadow:0 0 40px var(--acg);transform:translateY(-1px)}
+    .btn-g{background:transparent;color:var(--t2);border:1px solid var(--bd)}
+    .btn-g:hover{border-color:var(--ac);color:var(--ac)}
 
     /* HERO */
     .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 48px;text-align:center;position:relative}
     .hero-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--acg) 0%,transparent 70%);animation:breathe 16s ease-in-out infinite;pointer-events:none}
     @keyframes breathe{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.15)}}
-    .hero-c{position:relative;z-index:1}
+    .hero-c{position:relative;z-index:1;max-width:640px}
     .hero-logo{font-family:'Arial Black',-apple-system,sans-serif;font-size:clamp(32px,6vw,64px);font-weight:900;letter-spacing:clamp(12px,3vw,28px);color:var(--ac);margin-bottom:24px;display:inline-block}
     .hero-logo .char{display:inline-block;opacity:0;transform:translateY(20px);animation:charIn .5s ease-out forwards}
-    .hero-makers{font-size:clamp(12px,1.8vw,16px);font-weight:500;color:var(--t2);letter-spacing:2px;margin-bottom:12px;opacity:0;animation:fu .8s .6s ease-out forwards}
+    .hero-makers{font-size:clamp(12px,1.8vw,16px);font-weight:500;color:var(--t2);letter-spacing:2px;margin-bottom:16px;opacity:0;animation:fu .8s .6s ease-out forwards}
     .hero-makers em{font-style:normal;color:var(--ac);font-family:'Arial Black',-apple-system,sans-serif;font-weight:900;letter-spacing:4px}
-    .hero-vision{font-size:clamp(15px,2vw,20px);font-weight:300;color:var(--t2);line-height:2;max-width:480px;margin:0 auto;opacity:0;animation:fu .8s .9s ease-out forwards}
+    .hero-vision{font-size:clamp(16px,2.2vw,22px);font-weight:300;color:var(--t2);line-height:1.9;max-width:520px;margin:0 auto;opacity:0;animation:fu .8s .9s ease-out forwards}
     .hero-vision em{font-style:normal;color:var(--t1);font-weight:500}
     @keyframes charIn{to{opacity:1;transform:translateY(0)}}
     @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -83,247 +101,157 @@
     @keyframes drop{to{top:100%}}
     .scroll-hint span{font-size:10px;letter-spacing:4px;color:var(--t3);font-weight:600}
 
+    /* HERO BADGES */
+    .hero-badges{display:flex;justify-content:center;gap:8px;margin:24px 0 28px;opacity:0;animation:fu .8s 1.0s ease-out forwards;flex-wrap:wrap}
+    .hero-badge{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--ac);padding:6px 14px;border:1px solid var(--ac);border-radius:100px;background:var(--acg)}
+
+    /* HERO CTAs */
+    .hero-cta{margin-top:32px;opacity:0;animation:fu .8s 1.2s ease-out forwards;display:flex;flex-direction:column;align-items:center;gap:14px}
+    .hero-cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
     /* PRODUCT */
     .prod-sec{background:var(--bg2)}
-    .prod-grid{display:grid;grid-template-columns:1fr 220px;gap:64px;align-items:center}
+    .prod-grid{display:grid;grid-template-columns:1fr 240px;gap:64px;align-items:center}
+    @media(max-width:768px){.prod-grid{grid-template-columns:1fr;gap:40px}}
     .prod-h{font-family:'Arial Black',-apple-system,sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:12px;margin-bottom:16px;color:var(--ac);line-height:1.1}
-    .prod-sub{font-size:clamp(14px,1.8vw,18px);font-weight:500;color:var(--t1);margin-bottom:16px}
-    .prod-desc{font-size:15px;color:var(--t2);margin-bottom:24px;line-height:1.9}
-    .prod-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px}
-    .prod-tag{padding:4px 12px;border-radius:4px;font-size:9px;font-weight:600;letter-spacing:1px;color:var(--t3);border:1px solid var(--bd)}
+    .prod-sub{font-size:clamp(15px,1.9vw,19px);font-weight:500;color:var(--t1);margin-bottom:18px;line-height:1.6}
+    .prod-desc{font-size:14px;color:var(--t2);margin-bottom:24px;line-height:1.9}
     .prod-btns{display:flex;gap:10px;flex-wrap:wrap}
-    /* Phone mockup */
-    .phone{width:220px;margin:0 auto;background:var(--card);border-radius:28px;border:2px solid var(--bd);padding:32px 14px 20px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 80px var(--acg)}
+    .phone{width:240px;margin:0 auto;background:var(--card);border-radius:32px;border:2px solid var(--bd);padding:32px 14px 20px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 80px var(--acg)}
     .phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:48px;height:4px;border-radius:2px;background:var(--bd)}
     .ph-h{text-align:center;margin-bottom:10px}
     .ph-h .l1{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:2px;text-transform:uppercase}
-    .ph-h .l2{font-size:18px;font-weight:700;color:var(--ac);margin-top:2px;}
+    .ph-h .l2{font-size:18px;font-weight:700;color:var(--ac);margin-top:2px}
     .mg{display:grid;grid-template-columns:repeat(9,1fr);gap:2px}
-    .mg .c{aspect-ratio:1;border-radius:16%;opacity:0;transform:scale(0);transition:all .35s ease-out}
-    .mg.an .c{opacity:1;transform:scale(1)}
-    .ph-b{display:flex;justify-content:space-around;margin-top:10px;padding-top:8px;border-top:1px solid var(--bd)}
-    .ph-b .s{text-align:center}.ph-b .n{font-size:12px;font-weight:700;}.ph-b .l{font-size:9px;color:var(--t3);font-weight:700;letter-spacing:1.5px}
+    .mg div{aspect-ratio:1;border-radius:16%}
+    .ph-b{display:flex;justify-content:space-around;margin-top:10px;padding-top:10px;border-top:1px solid var(--bd)}
+    .ph-b .s{text-align:center}
+    .ph-b .n{font-size:14px;font-weight:700;color:var(--t1)}
+    .ph-b .l{font-size:7px;color:var(--t3);letter-spacing:1px}
+
+    /* FEATURE GRID */
+    .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+    @media(max-width:768px){.fgrid{grid-template-columns:repeat(2,1fr)}}
+    .fcard{padding:22px 18px;border-radius:14px;background:var(--bg);border:1px solid var(--bd);transition:border-color .3s,transform .3s}
+    .fcard:hover{border-color:var(--ac);transform:translateY(-2px)}
+    .fcard .ic{font-size:24px;margin-bottom:10px}
+    .fcard .ti{font-size:12px;font-weight:700;color:var(--ac);margin-bottom:6px;letter-spacing:1.5px}
+    .fcard .dc{font-size:11px;color:var(--t2);line-height:1.7}
+
+    /* VISION */
+    .vision-sec{background:var(--bg);text-align:center}
+    .vision-text{font-size:clamp(17px,2.2vw,22px);font-weight:300;line-height:2;color:var(--t2);margin:32px 0}
+    .vision-text strong{color:var(--t1);font-weight:500}
+    .vision-text .pac{color:var(--ac);font-weight:600}
+    .vision-launch{display:inline-block;margin-top:24px;font-size:11px;font-weight:700;letter-spacing:4px;color:var(--ac);padding:8px 20px;border:1px solid var(--ac);border-radius:100px;background:var(--acg)}
 
     /* HOW IT WORKS */
-    .hiw-sec{background:var(--bg)}
-    .hiw-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:36px}
-    @media(max-width:768px){.hiw-grid{grid-template-columns:1fr;gap:20px}}
-    .hiw-step{text-align:center;padding:28px 20px;border-radius:14px;background:var(--bg2);border:1px solid var(--bd);transition:all .3s}
-    .hiw-step:hover,.hiw-step.active{transform:translateY(-3px);border-color:var(--ac)}
-    .hiw-step{cursor:pointer}
-    .hiw-num{font-size:12px;font-weight:800;color:var(--ac);letter-spacing:2px;margin-bottom:12px}
-    .hiw-step h4{font-size:14px;font-weight:600;margin-bottom:8px}
-    .hiw-step .hiw-brief{font-size:12px;color:var(--t2);line-height:1.7}
-    .hiw-step .hiw-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .3s ease,margin .3s ease;margin-top:0}
-    .hiw-step.active .hiw-detail{max-height:200px;opacity:1;margin-top:12px}
-    .hiw-step .hiw-detail p{font-size:12px;color:var(--t2);line-height:1.7;padding-top:12px;border-top:1px solid var(--bd)}
-    /* VISION */
-    .vision-sec{background:var(--bg2);text-align:center}
-    .vision-text{font-size:clamp(15px,2.2vw,20px);color:var(--t2);line-height:2;max-width:640px;margin:0 auto}
-    .vision-text strong{color:var(--t1);font-weight:500}
-    .vision-text .pac{color:var(--ac)}
-    .vision-launch{margin-top:28px;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--ac)}
-    /* WHY GOLF photo */
-    .why-photo{width:100%;border-radius:12px;aspect-ratio:16/9;background-size:cover;background-position:center;margin-bottom:28px;position:relative;overflow:hidden}
-    .why-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3) 100%)}
-    /* 2ND CTA */
-    .cta2{text-align:center;padding:60px 48px;background:var(--bg2);border-top:1px solid var(--bd)}
-    .cta2 p{font-size:clamp(18px,3vw,28px);font-weight:600;margin-bottom:20px;color:var(--t1)}
-    @media(max-width:480px){.cta2{padding:48px 20px}}
+    .hiw-sec{background:var(--bg2)}
+    .hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+    @media(max-width:900px){.hiw-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.hiw-grid{grid-template-columns:1fr}}
+    .hiw-step{padding:24px 20px;border-radius:16px;background:var(--card);border:1px solid var(--bd);text-align:center}
+    .hiw-num{font-size:10px;font-weight:700;color:var(--ac);letter-spacing:3px;margin-bottom:12px}
+    .hiw-step h4{font-size:15px;font-weight:600;margin-bottom:12px;color:var(--t1)}
+    .hiw-brief{font-size:11px;color:var(--t2);line-height:1.7;margin-top:12px}
+
+    /* PRO / PRICING */
+    .pro-sec{background:var(--bg);position:relative;overflow:hidden}
+    .pro-sec::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,87,.05) 0%,transparent 70%);pointer-events:none}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px;position:relative;z-index:1}
+    @media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
+    .pricing-card{padding:30px 24px;border-radius:18px;background:var(--card);border:1px solid var(--bd);position:relative;transition:all .3s}
+    .pricing-card.pop{border-color:var(--ac);box-shadow:0 0 40px var(--acg)}
+    .pricing-card.pop::before{content:'BEST VALUE';position:absolute;top:-10px;right:20px;font-size:9px;font-weight:700;letter-spacing:2px;color:var(--bg);background:var(--ac);padding:4px 10px;border-radius:100px}
+    .pricing-card .name{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--ac);margin-bottom:14px;text-transform:uppercase}
+    .pricing-card .price{font-size:32px;font-weight:900;color:var(--t1);margin-bottom:4px;font-family:'Arial Black',sans-serif}
+    .pricing-card .period{font-size:11px;color:var(--t3);margin-bottom:18px}
+    .pricing-card .discount{display:inline-block;font-size:10px;font-weight:700;color:var(--ac);background:var(--acg);padding:3px 10px;border-radius:100px;margin-bottom:18px}
+    .pricing-card ul{list-style:none;padding:0;margin:18px 0}
+    .pricing-card ul li{font-size:12px;color:var(--t2);padding:6px 0;border-bottom:1px solid var(--bd);position:relative;padding-left:22px}
+    .pricing-card ul li:last-child{border-bottom:none}
+    .pricing-card ul li::before{content:'✓';position:absolute;left:4px;color:var(--ac);font-weight:700;font-size:11px}
+
     /* WHY GOLF */
-    .why-sec{background:var(--bg)}
-    .why-grid{display:grid;grid-template-columns:220px 1fr;gap:64px;align-items:start}
-    .why-left{position:sticky;top:120px}
-    .f-av{width:80px;height:80px;border-radius:50%;background:var(--ac);display:flex;align-items:center;justify-content:center;;font-size:24px;font-weight:700;color:var(--bg);margin-bottom:16px;box-shadow:0 0 48px var(--acg)}
-    .f-nm{font-size:20px;font-weight:600;letter-spacing:-.3px;margin-bottom:2px}
-    .f-nm2{font-size:11px;color:var(--t3);margin-bottom:14px}
-    .f-ttl{font-size:10px;color:var(--ac);font-weight:600;line-height:1.8;margin-bottom:16px}
-    .f-lk{display:flex;gap:6px}
-    .f-lk a{font-family:inherit;padding:6px 14px;border-radius:4px;font-size:9px;font-weight:700;letter-spacing:1px;text-decoration:none;color:var(--t3);border:1px solid var(--bd);transition:all .3s}
-    .f-lk a:hover{color:var(--ac);border-color:var(--ac)}
-    .why-story p{font-size:15px;color:var(--t2);margin-bottom:20px;line-height:2;max-width:54ch}
-    .why-story strong{color:var(--t1);font-weight:500}
-    .why-story .pac{color:var(--ac)}
-    .why-echo{font-size:clamp(24px,4vw,36px);color:var(--ac);font-weight:700;margin-top:40px;margin-bottom:48px;letter-spacing:-.5px;line-height:1.3}
-    /* Career (secondary) */
-    .career-wrap{border-top:1px solid var(--bd);padding-top:32px;margin-top:16px}
-    .tl-h{font-size:9px;font-weight:700;letter-spacing:5px;color:var(--t3);text-transform:uppercase;margin-bottom:20px}
-    .tl{padding-left:16px;border-left:1px solid var(--bd)}
-    .tl-i{margin-bottom:16px;padding-left:12px;position:relative}
-    .tl-i::before{content:'';position:absolute;left:-20px;top:6px;width:5px;height:5px;border-radius:50%;background:var(--ac)}
-    .tl-co{font-size:13px;font-weight:600;color:var(--t1)}
-    .tl-ro{font-size:11px;color:var(--t2);line-height:1.6}
-    .tl-yr{font-size:9px;color:var(--t3);font-weight:600}
-    .badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:28px}
-    .badge{padding:4px 10px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.5px;background:var(--acg);color:var(--ac)}
+    .why-sec{background:var(--bg2)}
+    .why-grid{display:grid;grid-template-columns:240px 1fr;gap:48px;margin-top:32px}
+    @media(max-width:768px){.why-grid{grid-template-columns:1fr;gap:32px}}
+    .why-left{text-align:center;padding:24px;border-radius:16px;background:var(--card);border:1px solid var(--bd);position:sticky;top:100px;height:fit-content}
+    @media(max-width:768px){.why-left{position:relative;top:0}}
+    .f-av{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#5BA85F);color:var(--bg);font-family:'Arial Black',sans-serif;font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+    .f-nm{font-size:16px;font-weight:600;color:var(--t1)}
+    .f-nm2{font-size:11px;color:var(--t3);margin-top:4px}
+    .f-ttl{font-size:10px;color:var(--ac);margin-top:10px;letter-spacing:2px;font-weight:700}
+    .f-lk{display:flex;justify-content:center;gap:12px;margin-top:18px}
+    .f-lk a{font-size:10px;color:var(--t3);text-decoration:none;letter-spacing:1px;transition:color .2s}
+    .f-lk a:hover{color:var(--ac)}
+    .why-photo{aspect-ratio:16/9;border-radius:14px;background-size:cover;background-position:center;margin-bottom:24px;border:1px solid var(--bd)}
+    .why-story p{font-size:15px;line-height:1.95;color:var(--t2);margin-bottom:20px}
+    .why-story p strong{color:var(--t1);font-weight:500}
+    .why-story .pac{color:var(--ac);font-weight:600}
+    .why-echo{margin:32px 0;padding:24px;border-left:2px solid var(--ac);font-size:15px;font-weight:500;color:var(--t1);font-style:italic}
+    .career-wrap{margin-top:32px;padding-top:24px;border-top:1px solid var(--bd)}
+    .tl-h{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ac);margin-bottom:14px;text-transform:uppercase}
+    .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+    .badge{font-size:9px;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:100px;color:var(--t3);border:1px solid var(--bd)}
 
-    /* CONTACT (split) */
-    .contact{text-align:center;position:relative;overflow:hidden}
-    .contact::before{content:'';position:absolute;bottom:-30%;left:50%;transform:translateX(-50%);width:800px;height:400px;border-radius:50%;background:radial-gradient(circle,var(--acg),transparent 70%);pointer-events:none}
-    .contact-c{position:relative;z-index:1}
-    .contact h2{font-size:clamp(28px,5vw,52px);font-weight:600;letter-spacing:-1px;margin-bottom:12px;line-height:1.1}
-    .contact-sub{font-size:13px;color:var(--t2);margin-bottom:36px}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:600px;margin:0 auto 32px;text-align:left}
-    .contact-box{padding:28px;border-radius:10px;border:1px solid var(--bd);background:var(--card)}
-    .contact-box h4{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--ac);margin-bottom:8px}
-    .contact-box p{font-size:13px;color:var(--t3);margin-bottom:12px;line-height:1.6}
-    .contact-box a{font-family:inherit;font-size:13px;color:var(--t2);text-decoration:none;transition:color .2s;word-break:break-all}
+    /* 2nd CTA */
+    .cta2{padding:120px 48px;text-align:center;background:var(--bg);position:relative}
+    @media(max-width:768px){.cta2{padding:80px 24px}}
+    .cta2 p:first-child{font-size:clamp(20px,3vw,28px);font-weight:300;color:var(--t1);margin-bottom:24px;line-height:1.7}
+
+    /* CONTACT */
+    .contact{background:var(--bg2)}
+    .contact h2{font-size:clamp(24px,3.5vw,36px);font-weight:600;margin-bottom:14px}
+    .contact-sub{font-size:14px;color:var(--t2);margin-bottom:32px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
+    @media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+    .contact-box{padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--bd)}
+    .contact-box h4{font-size:13px;font-weight:700;color:var(--ac);margin-bottom:10px;letter-spacing:1.5px}
+    .contact-box p{font-size:12px;color:var(--t2);margin-bottom:14px;line-height:1.7}
+    .contact-box a{font-size:12px;color:var(--t1);text-decoration:none;border-bottom:1px solid var(--ac);transition:color .2s}
     .contact-box a:hover{color:var(--ac)}
-    .contact-general{font-size:12px;color:var(--t3);margin-top:8px}
-    .contact-general a{font-family:inherit;color:var(--t2);text-decoration:none;margin:0 8px;padding:10px 8px;display:inline-block}
-    .contact-general a:hover{color:var(--ac)}
+    .contact-general{font-size:12px;color:var(--t3);text-align:center}
+    .contact-general a{color:var(--t1);text-decoration:none;margin-left:14px;border-bottom:1px solid var(--bd);padding-bottom:1px;transition:all .2s}
+    .contact-general a:hover{color:var(--ac);border-color:var(--ac)}
 
-    /* FOOTER */
-    .co-bar{padding:48px;border-top:1px solid var(--bd)}
-    .co-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
-    .co-i .co-k{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-bottom:3px}
-    .co-i .co-v{font-size:12px;color:var(--t2)}
-    .co-i .co-v a{font-family:inherit;color:var(--ac);text-decoration:none}
-    footer{padding:32px 48px;display:flex;flex-direction:column;align-items:center;border-top:1px solid var(--bd);flex-wrap:wrap;gap:12px}
-    .ft-l{font-size:10px;font-weight:700;letter-spacing:6px;color:var(--t3)}
-    .ft-m a{font-family:inherit;font-size:9px;color:var(--t3);text-decoration:none;margin-left:16px;letter-spacing:1px;transition:color .2s}
-    .ft-m a:hover{color:var(--ac)}
-    .ft-r{font-size:10px;color:var(--t3);letter-spacing:1px}
+    /* COMPANY BAR */
+    .co-bar{background:#000;padding:40px 48px;border-top:1px solid var(--bd)}
+    @media(max-width:768px){.co-bar{padding:32px 24px}}
+    .co-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;font-size:11px;color:var(--t3)}
+    @media(max-width:768px){.co-g{grid-template-columns:1fr;gap:20px;text-align:center}}
+    .co-g div h5{font-size:10px;color:var(--ac);font-weight:700;letter-spacing:2px;margin-bottom:10px}
+    .co-g div p{line-height:1.8}
+    .co-g div a{color:var(--t2);text-decoration:none;display:block;line-height:2;transition:color .2s}
+    .co-g div a:hover{color:var(--ac)}
+    .copyright{max-width:900px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--bd);text-align:center;font-size:10px;color:var(--t3);letter-spacing:2px}
 
-    /* SIDEBAR NAV */
-    .sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:12px}
-    .sidebar a{width:8px;height:8px;border-radius:50%;background:var(--bd);display:block;transition:all .3s;text-decoration:none}
-    .sidebar a.active{background:var(--ac);transform:scale(1.4)}
-    .sidebar a:hover{background:var(--ac)}
-    @media(max-width:768px){.sidebar{display:none}}
-
-    /* Floating hamburger */
-    .hamburger{display:none;position:fixed;top:64px;right:16px;z-index:101;width:52px;height:52px;border:none;border-radius:50%;background:rgba(129,199,132,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer;padding:0;box-shadow:0 4px 20px rgba(0,0,0,.4);transition:all .3s}
-    .hamburger:active{transform:scale(.92)}
-    .hamburger span{display:block;width:20px;height:2px;background:var(--ac);margin:4px auto;transition:all .3s;border-radius:1px}
-    .hamburger.open{background:var(--ac)}
-    .hamburger.open span{background:var(--bg)}
-    .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-    .hamburger.open span:nth-child(2){opacity:0}
-    .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-    @media(max-width:768px){.hamburger{display:flex;align-items:center;justify-content:center}}
-    .mob-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(5,5,7,.97);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mob-overlay.open{opacity:1;pointer-events:auto}
-    .mob-overlay a{font-size:16px;font-weight:600;color:var(--t2);text-decoration:none;padding:14px 32px;border-radius:10px;transition:all .2s;letter-spacing:2px;min-height:44px;display:flex;align-items:center}
-    .mob-overlay a:hover,.mob-overlay a:active{color:var(--ac);background:var(--acg)}
-
-    /* RESPONSIVE */
-    @media(max-width:768px){
-      nav{padding:16px 20px}
-      .nk{display:none}
-      .hero{padding:0 24px}
-      section{padding:80px 24px}
-      .si{max-width:100%}
-      .prod-grid{grid-template-columns:1fr;gap:40px}
-      .why-grid{grid-template-columns:1fr;gap:32px}
-      .why-left{position:static}
-      .contact-grid{grid-template-columns:1fr;gap:16px}
-      .prod-desc{font-size:14px}
-      .contact-box{padding:20px}
-      .why-story p{max-width:none}
-    }
-    @media(max-width:480px){
-      nav{padding:14px 16px}
-      .nl{font-size:10px;letter-spacing:6px}
-      .ng a{padding:8px 10px;font-size:9px;min-height:36px;display:inline-flex;align-items:center;justify-content:center}
-      .hero{padding:0 20px;min-height:100svh}
-      .hero-glow{width:300px;height:300px}
-      .hero-logo{font-size:28px !important;letter-spacing:12px !important;margin-bottom:20px}
-      .hero-makers{font-size:11px}
-      .hero-vision{font-size:13px;max-width:320px}
-      .hero-cta .btn{max-width:280px;display:block;margin:0 auto;text-align:center}
-      section{padding:64px 20px}
-      .sl{font-size:8px;letter-spacing:5px;margin-bottom:16px}
-      .phone{width:180px;border-radius:22px;padding:28px 12px 16px}
-      .phone::before{width:36px;height:3px;top:8px}
-      .ph-b .n{font-size:10px}.ph-b .l{font-size:8px}
-      .f-av{width:64px;height:64px;font-size:20px}
-      .f-nm{font-size:18px}
-      .f-nm2{font-size:10px}
-      .f-ttl{font-size:9px}
-      .f-lk a{padding:10px 14px;font-size:10px}
-      .why-story p{font-size:13px}
-      .tl-co{font-size:12px}.tl-ro{font-size:10px}.tl-yr{font-size:8px}
-      .badges{gap:4px}.badge{font-size:9px;padding:3px 8px}
-      .contact h2{font-size:clamp(24px,7vw,40px)}
-      .contact-sub{font-size:12px}
-      .co-bar{padding:32px 20px}
-      .co-g{grid-template-columns:repeat(2,1fr);gap:12px}
-      .co-i .co-k{font-size:9px}.co-i .co-v{font-size:11px}
-      footer{padding:24px 20px;text-align:center;gap:12px}
-      .ft-l{font-size:9px;letter-spacing:5px}
-      .ft-m a{margin:0 4px;font-size:10px;padding:10px 4px;display:inline-flex;align-items:center;min-height:44px}
-      .ft-r{font-size:9px}
-    }
-    @media(max-width:360px){
-      .hero-logo{font-size:24px !important;letter-spacing:10px !important}
-      .phone{width:160px;border-radius:20px;padding:24px 10px 14px}
-      .co-g{grid-template-columns:1fr;gap:10px}
-    }
-    /* Feature blocks */
-    .feat-block{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0;border-bottom:1px solid var(--bd)}
-    .feat-block:last-child{border-bottom:none}
-    .feat-block.reverse{direction:rtl}
-    .feat-block.reverse>*{direction:ltr}
-    .feat-block-text{display:flex;flex-direction:column;gap:10px}
-    .feat-block-text .feat-label{font-size:10px;font-weight:800;letter-spacing:4px;color:var(--ac);text-transform:uppercase}
-    .feat-block-text h3{font-size:clamp(18px,2.5vw,22px);font-weight:700;line-height:1.35}
-    .feat-block-text p{font-size:13px;color:var(--t2);line-height:1.8}
-    .feat-block-text .feat-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-    .feat-block-text .feat-tag{padding:4px 10px;border-radius:16px;font-size:10px;font-weight:600;background:var(--acg);color:var(--ac)}
-    .feat-block-visual{border-radius:14px;background:var(--bg2);border:1px solid var(--bd);padding:20px;overflow:hidden}
-    .feat-feed-item{padding:12px;border-radius:10px;background:var(--card);border:1px solid var(--bd);margin-bottom:8px}
-    .feat-feed-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-    .feat-feed-av{width:24px;height:24px;border-radius:50%;background:var(--ac);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800}
-    .feat-feed-name{font-size:10px;font-weight:600}
-    .feat-feed-course{font-size:8px;color:var(--t3)}
-    .feat-feed-grid{display:grid;grid-template-columns:repeat(9,12px);gap:2px;margin-bottom:6px}
-    .feat-feed-grid span{width:12px;height:12px;border-radius:16%;display:block}
-    .feat-feed-kudos{font-size:9px;color:var(--ac);font-weight:600}
-    .feat-rank-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--bd);font-size:12px}
-    .feat-rank-row:last-child{border-bottom:none}
-    .feat-rank-pos{font-weight:800;color:var(--ac);width:20px}
-    .feat-rank-name{flex:1;font-weight:500}
-    .feat-rank-score{font-weight:700}
-    .feat-rank-you{background:var(--acg);border-radius:6px;padding:8px}
-    @media(max-width:768px){
-      .feat-block{grid-template-columns:1fr;gap:24px;padding:36px 0}
-      .feat-block.reverse{direction:ltr}
-    }
-
-    @supports(padding:env(safe-area-inset-bottom)){
-      footer{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
-    }
-    @media(hover:none){.contact-box:hover{transform:none}}
-    /* Store badges + Social icons */
-    .store-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .store-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;background:#111;color:#fff;text-decoration:none;font-size:12px;font-weight:600;transition:all .3s;border:1px solid #333}
-    .store-badge:hover{background:#222;transform:translateY(-1px)}
-    .store-badge svg{flex-shrink:0}
-    .store-badge .sb-label{font-size:8px;color:#aaa;display:block;line-height:1}
-    .store-badge .sb-name{font-size:13px;font-weight:700;line-height:1.2}
-    .social-icons{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
-    .social-icons a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:8px;color:var(--t3);transition:all .3s;text-decoration:none}
-    .social-icons a:hover{color:var(--ac);transform:translateY(-2px)}
-    .social-icons a svg{width:18px;height:18px;fill:currentColor}
-    [data-l]{display:none}[data-l].a{display:inline}
-    [data-b]{display:none}[data-b].a{display:block}
+    /* Sidebar dots */
+    .sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:90}
+    @media(max-width:900px){.sidebar{display:none}}
+    .sidebar a{width:6px;height:6px;border-radius:50%;background:var(--t3);transition:all .3s;position:relative}
+    .sidebar a.a{background:var(--ac);transform:scale(1.5)}
+    .sidebar a:hover::after{content:attr(title);position:absolute;right:18px;top:50%;transform:translateY(-50%);background:var(--card);padding:4px 10px;border-radius:4px;font-size:10px;color:var(--t1);white-space:nowrap;border:1px solid var(--bd)}
   </style>
 </head>
 <body>
 
+<!-- ===== NAV ===== -->
 <nav>
   <a href="#" class="nl">KANOPY</a>
   <div class="nr">
     <div class="nk">
       <a href="#roundie">ROUNDIE</a>
       <a href="#about">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="talent.html">Talent</a>
+      <a href="notice.html">Notice</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="ng">
-      <a href="#" onclick="sl('en',this);return false">EN</a>
-      <a href="#" class="a" onclick="sl('ja',this);return false">JA</a>
-      <a href="#" onclick="sl('ko',this);return false">KO</a>
+      <a onclick="sl('en',this)">EN</a>
+      <a class="a" onclick="sl('ja',this)">JA</a>
+      <a onclick="sl('ko',this)">KO</a>
     </div>
   </div>
 </nav>
@@ -334,7 +262,11 @@
   <a href="#roundie" onclick="closeMenu()">ROUNDIE</a>
   <a href="#vision" onclick="closeMenu()">Vision</a>
   <a href="#hiw" onclick="closeMenu()">How it Works</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
   <a href="#about" onclick="closeMenu()">Why Golf?</a>
+  <a href="faq.html">FAQ</a>
+  <a href="talent.html">Talent</a>
+  <a href="notice.html">Notice</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -343,17 +275,19 @@
   <a href="#roundie" title="Product"></a>
   <a href="#vision" title="Vision"></a>
   <a href="#hiw" title="How it Works"></a>
+  <a href="#pricing" title="Pricing"></a>
   <a href="#about" title="Why Golf?"></a>
   <a href="#contact" title="Contact"></a>
 </div>
 
 <main>
+
 <!-- ===== HERO ===== -->
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-c">
     <div class="hero-logo" id="logo"></div>
-    <div style="margin-bottom:16px;opacity:0;animation:fu .8s .5s ease-out forwards;">
+    <div style="margin-bottom:16px;opacity:0;animation:fu .8s .5s ease-out forwards">
       <svg width="48" height="48" viewBox="0 0 48 48">
         <rect width="48" height="48" rx="11" fill="#0A0A0A"/>
         <circle cx="24" cy="24" r="19.2" fill="none" stroke="#fff" stroke-width="2.3" stroke-dasharray="2.16 1.44" stroke-linecap="round"/>
@@ -370,26 +304,34 @@
     </p>
     <p class="hero-vision">
       <span data-l="en">We shape <em>what lasts</em>.</span>
-      <span data-l="ja" class="a">記憶を、<em>かたち</em>に。</span>
-      <span data-l="ko">기억을, <em>형태</em>로.</span>
+      <span data-l="ja" class="a">ゴルフの体験と記憶を、<em>かたち</em>に。</span>
+      <span data-l="ko">골프의 경험과 기억을, <em>형태</em>로.</span>
     </p>
-    <div class="hero-cta" style="margin-top:28px;opacity:0;animation:fu .8s 1.2s ease-out forwards;display:flex;flex-direction:column;align-items:center;gap:12px">
-      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
-        <a href="#roundie" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
-          <span data-l="en">Discover ROUNDIE</span>
-          <span data-l="ja" class="a">ROUNDIE を見る</span>
-          <span data-l="ko">ROUNDIE 알아보기</span>
-        </a>
-        <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
+    <div class="hero-badges">
+      <span class="hero-badge">
+        <span data-l="en">EARLY ACCESS OPEN</span>
+        <span data-l="ja" class="a">EARLY ACCESS 受付中</span>
+        <span data-l="ko">얼리 액세스 오픈</span>
+      </span>
+      <span class="hero-badge">v1.0.11</span>
+    </div>
+    <div class="hero-cta">
+      <div class="hero-cta-row">
+        <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a">
           <span data-l="en">Get Early Access</span>
-          <span data-l="ja" class="a">先行アクセスを申し込む</span>
+          <span data-l="ja" class="a">TestFlightで先行体験</span>
           <span data-l="ko">선행 액세스 신청</span>
         </a>
+        <a href="#roundie" class="btn btn-g">
+          <span data-l="en">Discover ROUNDIE →</span>
+          <span data-l="ja" class="a">ROUNDIEを見る →</span>
+          <span data-l="ko">ROUNDIE 살펴보기 →</span>
+        </a>
       </div>
-      <span style="font-size:11px;font-weight:700;letter-spacing:3px;color:var(--ac)">
-        <span data-l="en">COMING LATE APRIL 2026</span>
-        <span data-l="ja" class="a">2026年4月下旬 リリース予定</span>
-        <span data-l="ko">2026년 4월 하순 출시 예정</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:2px;color:var(--t3)">
+        <span data-l="en">App Store launch coming soon · 2026</span>
+        <span data-l="ja" class="a">App Store 正式公開準備中 · 2026</span>
+        <span data-l="ko">App Store 정식 출시 준비중 · 2026</span>
       </span>
     </div>
   </div>
@@ -414,20 +356,25 @@
           <div class="prod-h" style="margin-bottom:0">ROUNDIE</div>
         </div>
         <p class="prod-sub">
-          <span data-l="en">Keep your golf experiences. Share them with friends.</span>
-          <span data-l="ja" class="a">ゴルフの体験と記憶を、<br class="sp">美しく残して、仲間とシェアしよう。</span>
-          <span data-l="ko">골프의 경험과 기억을,<br class="sp">아름답게 남기고 동료와 공유하자.</span>
+          <span data-l="en">A golf social app that turns every round into a memory worth keeping.</span>
+          <span data-l="ja" class="a">ラウンドのすべてを、<br class="sp">記憶として美しく残す。<br class="sp">ゴルフソーシャルアプリ。</span>
+          <span data-l="ko">라운드의 모든 것을, 기억으로 아름답게 남기는 골프 소셜 앱.</span>
         </p>
         <p class="prod-desc">
-          <span data-l="en">A golf social app that lets you record, visualize, share, and celebrate every round with friends.</span>
-          <span data-l="ja" class="a">ラウンドを記録し、可視化し、<br class="sp">仲間とシェアして、讃え合う。<br class="sp">ゴルフソーシャルアプリ。</span>
-          <span data-l="ko">라운드를 기록하고, 시각화하고,<br class="sp">동료와 공유하고, 칭찬하는.<br class="sp">골프 소셜 앱.</span>
+          <span data-l="en">Record your round, see it become a unique color grid, share with friends, and grow together — round by round.</span>
+          <span data-l="ja" class="a">ラウンドを記録すると、<br class="sp">あなただけのカラーグリッドが生まれる。<br class="sp">仲間とシェアして、一緒に成長する。</span>
+          <span data-l="ko">라운드를 기록하면, 나만의 컬러 그리드가 탄생합니다. 동료와 공유하고, 함께 성장하세요.</span>
         </p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
-          <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:11px;padding:12px 24px;">
-            <span data-l="en">Get Early Access</span>
-            <span data-l="ja" class="a">先行アクセスを申し込む</span>
-            <span data-l="ko">선행 액세스 신청</span>
+        <div class="prod-btns">
+          <a href="roundie.html" class="btn btn-a">
+            <span data-l="en">See product page →</span>
+            <span data-l="ja" class="a">プロダクトページ →</span>
+            <span data-l="ko">프로덕트 페이지 →</span>
+          </a>
+          <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-g">
+            <span data-l="en">TestFlight</span>
+            <span data-l="ja" class="a">TestFlight</span>
+            <span data-l="ko">TestFlight</span>
           </a>
         </div>
       </div>
@@ -441,52 +388,31 @@
             <div class="s"><div class="n">86</div><div class="l">TOTAL</div></div>
           </div>
         </div>
-        <p style="text-align:center;font-size:8px;color:var(--t3);margin-top:8px;letter-spacing:1px">* Development mockup</p>
+        <p style="text-align:center;font-size:8px;color:var(--t3);margin-top:8px;letter-spacing:1px">
+          <span data-l="en">* Sample card</span>
+          <span data-l="ja" class="a">* サンプルカード</span>
+          <span data-l="ko">* 샘플 카드</span>
+        </p>
       </div>
     </div>
 
-    <!-- Feature Grid (compact) -->
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px" class="rv">
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">📱</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">Feed</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">Friends' rounds at a glance</span><span data-l="ja" class="a">仲間のラウンドがひと目で</span><span data-l="ko">동료의 라운드를 한눈에</span></div>
-      </div>
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">🔥</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">Kudos</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">Celebrate with golfer respect</span><span data-l="ja" class="a">ゴルファーならではの称賛</span><span data-l="ko">골퍼만의 칭찬</span></div>
-      </div>
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">📊</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">Ranking</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">Track growth with friends</span><span data-l="ja" class="a">仲間と成長を実感</span><span data-l="ko">동료와 성장 실감</span></div>
-      </div>
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">🏆</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">Competition</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">Host comps in 3 taps</span><span data-l="ja" class="a">3タップでコンペ開催</span><span data-l="ko">3번 탭으로 대회 개최</span></div>
-      </div>
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">🎨</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">Color Grid</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">18 holes → one unique grid</span><span data-l="ja" class="a">18ホールがカラーグリッドに</span><span data-l="ko">18홀이 컬러 그리드로</span></div>
-      </div>
-      <div style="padding:20px;border-radius:12px;background:var(--bg);border:1px solid var(--bd)">
-        <div style="font-size:24px;margin-bottom:8px">🪪</div>
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:4px;letter-spacing:1px">ROUNDIE ID</div>
-        <div style="font-size:11px;color:var(--t2);line-height:1.6"><span data-l="en">Your personal golf card</span><span data-l="ja" class="a">あなただけのゴルフカード</span><span data-l="ko">나만의 골프 카드</span></div>
-      </div>
+    <!-- Feature Grid -->
+    <div class="fgrid rv">
+      <div class="fcard"><div class="ic">📱</div><div class="ti">Feed</div><div class="dc"><span data-l="en">Friends' rounds at a glance</span><span data-l="ja" class="a">仲間のラウンドが一覧で</span><span data-l="ko">동료의 라운드를 한눈에</span></div></div>
+      <div class="fcard"><div class="ic">🔥</div><div class="ti">Kudos</div><div class="dc"><span data-l="en">Cheer each other on</span><span data-l="ja" class="a">ゴルファー同士で称え合う</span><span data-l="ko">서로를 응원하기</span></div></div>
+      <div class="fcard"><div class="ic">🎨</div><div class="ti">Round Card</div><div class="dc"><span data-l="en">18 holes become a color grid</span><span data-l="ja" class="a">18ホールがカラーグリッドに</span><span data-l="ko">18홀이 컬러 그리드로</span></div></div>
+      <div class="fcard"><div class="ic">🏆</div><div class="ti">Competition</div><div class="dc"><span data-l="en">Host comps in just 3 taps</span><span data-l="ja" class="a">3タップでコンペ開催</span><span data-l="ko">3번 탭으로 대회 개최</span></div></div>
+      <div class="fcard"><div class="ic">📊</div><div class="ti">Ranking</div><div class="dc"><span data-l="en">Self-growth, side by side</span><span data-l="ja" class="a">自己成長を可視化</span><span data-l="ko">자기 성장을 시각화</span></div></div>
+      <div class="fcard"><div class="ic">🪪</div><div class="ti">ROUNDIE Score</div><div class="dc"><span data-l="en">Play × Vibe × Style</span><span data-l="ja" class="a">PLAY × VIBE × STYLE 3軸</span><span data-l="ko">PLAY × VIBE × STYLE 3축</span></div></div>
     </div>
 
-    <div style="text-align:center;margin-top:28px" class="rv">
-      <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:11px;padding:12px 24px;">
-        <span data-l="en">See all features at roundie.app →</span>
-        <span data-l="ja" class="a">全ての機能を見る →</span>
-        <span data-l="ko">모든 기능 보기 →</span>
+    <div style="text-align:center;margin-top:36px" class="rv">
+      <a href="roundie.html" class="btn btn-g">
+        <span data-l="en">All features at roundie.html →</span>
+        <span data-l="ja" class="a">機能の詳細を見る →</span>
+        <span data-l="ko">기능 자세히 보기 →</span>
       </a>
     </div>
-
   </div>
 </section>
 
@@ -495,14 +421,14 @@
   <div class="si rv">
     <div class="sl">Vision</div>
     <div class="vision-text">
-      <span data-l="en">Golf is more than a score. It's <strong>the experience of playing with friends</strong> — the nervous first tee, the perfect approach, the laughs between holes. We believe these moments deserve to be <span class="pac">kept beautifully and shared joyfully</span>.</span>
-      <span data-l="ja" class="a">ゴルフはスコアだけじゃない。<br class="sp"><strong>仲間と過ごす体験そのもの</strong>に価値がある。<br class="sp">朝の緊張感、最高のアプローチ、<br class="sp">ホール間の笑い声。<br class="sp">その瞬間を<span class="pac">美しく残し、楽しくシェアする</span>。<br class="sp">それが私たちの信念です。</span>
-      <span data-l="ko">골프는 스코어만이 아니다.<br class="sp"><strong>동료와 함께하는 경험 그 자체</strong>에 가치가 있다.<br class="sp">아침의 긴장감, 최고의 어프로치,<br class="sp">홀 사이의 웃음소리.<br class="sp">그 순간을 <span class="pac">아름답게 남기고 즐겁게 공유하는 것</span>.<br class="sp">그것이 우리의 신념입니다.</span>
+      <span data-l="en">Golf is a lifetime sport. From kids to grandparents, anyone can play. In four hours on the fairway, there is nervousness, laughter, frustration, and joy. The greatest gift of golf is <strong>sharing those emotions with the people beside you</strong>.<br><br>But the memories of each round slowly fade with time. The feelings you had that day, and the moments shared with friends, could only live on in your heart.<br><br><span class="pac">ROUNDIE keeps those memories as something you can hold.</span> Years from now, you can still revisit that one round, just as it was.</span>
+      <span data-l="ja" class="a">ゴルフは人生スポーツ。<br class="sp">子どもから祖父母まで、誰でも楽しめる。<br class="sp">フェアウェイで過ごす4時間に、<br class="sp">緊張、笑い、悔しさ、歓喜が詰まっている。<br class="sp">ゴルフの最大の贈り物は<br class="sp"><strong>一緒に回った人たちと感情を共有できること</strong>。<br><br>けれど、ラウンドの記憶は時間とともに少しずつ薄れていきます。<br class="sp">あの日に感じた気持ちや、仲間と過ごした時間は、<br class="sp">これまで心の中にしか残せませんでした。<br><br><span class="pac">ROUNDIE は、その記憶を「かたち」として残します。</span><br class="sp">何年経っても、あの日のラウンドをもう一度振り返ることができます。</span>
+      <span data-l="ko">골프는 인생 스포츠입니다. 아이부터 조부모까지 누구나 즐길 수 있고, 페어웨이에서 보내는 4시간에 긴장·웃음·아쉬움·환희가 담겨 있습니다. 골프의 가장 큰 선물은 <strong>함께한 사람들과 감정을 나눌 수 있다는 것</strong>.<br><br>하지만 라운드의 기억은 시간이 지나면서 조금씩 흐려져 갑니다. 그날의 감정도, 동료와 보낸 시간도, 지금까지는 마음 속에만 남길 수 있었습니다.<br><br><span class="pac">ROUNDIE는 그 기억을 형태로 남깁니다.</span> 몇 년이 지나도 그날의 라운드를 다시 한번 돌아볼 수 있습니다.</span>
     </div>
     <div class="vision-launch">
-      <span data-l="en">COMING LATE APRIL 2026</span>
-      <span data-l="ja" class="a">2026年4月下旬 リリース予定</span>
-      <span data-l="ko">2026년 4월 하순 출시 예정</span>
+      <span data-l="en">PLAY · SHARE · RISE</span>
+      <span data-l="ja" class="a">PLAY · SHARE · RISE</span>
+      <span data-l="ko">PLAY · SHARE · RISE</span>
     </div>
   </div>
 </section>
@@ -511,51 +437,49 @@
 <section id="hiw" class="hiw-sec">
   <div class="si">
     <div class="sl rv">How It Works</div>
-    <h2 class="rv" style="font-size:clamp(20px,3vw,28px);font-weight:600;letter-spacing:-.3px;margin-bottom:8px">
+    <h2 class="rv" style="font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.3px;margin-bottom:8px">
       <span data-l="en">30 seconds. One beautiful Round Card.</span>
       <span data-l="ja" class="a">30秒で、<br class="sp">美しいラウンドカードが完成。</span>
-      <span data-l="ko">30초만에, 아름다운 라운드카드 완성.</span>
+      <span data-l="ko">30초로, 아름다운 라운드카드 완성.</span>
     </h2>
+    <p class="rv" style="font-size:13px;color:var(--t2);margin-bottom:32px;line-height:1.8">
+      <span data-l="en">From scoring to sharing — golf's best moments, kept beautifully.</span>
+      <span data-l="ja" class="a">スコア入力から共有まで。ゴルフの最高の瞬間を、美しく残す。</span>
+      <span data-l="ko">스코어 입력부터 공유까지. 골프의 최고의 순간을, 아름답게 남기다.</span>
+    </p>
     <div class="hiw-grid">
-      <div class="hiw-step rv" onclick="tHiw(this)">
+      <div class="hiw-step rv">
         <div class="hiw-num">⛳ STEP 1</div>
-        <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록하기</span></h4>
-        <!-- Mini score input mock -->
-        <div style="display:flex;gap:6px;margin:12px 0;justify-content:center">
+        <h4><span data-l="en">Record</span><span data-l="ja" class="a">記録する</span><span data-l="ko">기록</span></h4>
+        <div style="display:flex;gap:6px;margin:14px 0;justify-content:center">
           <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 1</div><div style="font-size:7px;color:var(--t3)">Par 4</div><div style="font-size:16px;font-weight:700;color:var(--ac)">4</div></div>
           <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 2</div><div style="font-size:7px;color:var(--t3)">Par 3</div><div style="font-size:16px;font-weight:700;color:#EF5350">3</div></div>
           <div style="background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;text-align:center;min-width:48px"><div style="font-size:8px;color:var(--t3)">HOLE 3</div><div style="font-size:7px;color:var(--t3)">Par 5</div><div style="font-size:16px;font-weight:700;color:var(--t1)">5</div></div>
         </div>
-        <p class="hiw-brief"><span data-l="en">Enter scores in 30 seconds.</span><span data-l="ja" class="a">スコアを30秒で入力。</span><span data-l="ko">스코어를 30초로 입력.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Score, weather, playing partners, photos.<br class="sp">Quick mode or detailed mode.</span><span data-l="ja" class="a">スコア、天気、同伴者、写真。<br class="sp">クイックモードか詳細モード。</span><span data-l="ko">스코어, 날씨, 동반자, 사진.<br class="sp">퀵 모드 또는 상세 모드.</span></p></div>
+        <p class="hiw-brief"><span data-l="en">Enter scores in 30 seconds. Quick or detailed mode.</span><span data-l="ja" class="a">30秒でスコア入力。<br class="sp">クイック／詳細モード。</span><span data-l="ko">30초로 스코어 입력. 퀵·상세 모드.</span></p>
       </div>
-      <div class="hiw-step rv" onclick="tHiw(this)">
+      <div class="hiw-step rv">
         <div class="hiw-num">🎨 STEP 2</div>
-        <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로 만들기</span></h4>
-        <!-- Mini color grid -->
-        <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:2px;margin:12px auto;max-width:160px">
+        <h4><span data-l="en">Shape</span><span data-l="ja" class="a">かたちにする</span><span data-l="ko">형태로</span></h4>
+        <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:2px;margin:14px auto;max-width:160px">
           <div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#EF5350"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#FFD700"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div>
           <div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#42A5F5"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#EF5350"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#5C6BC0"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div><div style="aspect-ratio:1;border-radius:16%;background:#4CAF50"></div>
         </div>
-        <p class="hiw-brief"><span data-l="en">Your unique Round Card is born.</span><span data-l="ja" class="a">あなただけのラウンドカード。</span><span data-l="ko">나만의 라운드카드 탄생.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Each hole becomes a color.<br class="sp">No two grids are ever alike.</span><span data-l="ja" class="a">各ホールが色に変わる。<br class="sp">同じグリッドは二つとない。</span><span data-l="ko">각 홀이 색으로 변한다.<br class="sp">같은 그리드는 없다.</span></p></div>
+        <p class="hiw-brief"><span data-l="en">18 holes become a unique color grid.</span><span data-l="ja" class="a">18ホールが<br class="sp">あなただけのカラーグリッドに。</span><span data-l="ko">18홀이 나만의 컬러 그리드로.</span></p>
       </div>
-      <div class="hiw-step rv" onclick="tHiw(this)">
+      <div class="hiw-step rv">
         <div class="hiw-num">🤝 STEP 3</div>
-        <h4><span data-l="en">Share & Rise</span><span data-l="ja" class="a">シェア & 成長</span><span data-l="ko">공유 & 성장</span></h4>
-        <!-- Mini feed + kudos mock -->
-        <div style="margin:12px 0;display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:var(--ac);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">Y</div><div style="flex:1;font-size:9px;font-weight:600">Yuki</div><div style="font-size:9px;color:var(--ac);font-weight:600">🔥</div></div>
-          <div style="display:flex;align-items:center;gap:6px;background:var(--acg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:#FF9800;color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">K</div><div style="flex:1;font-size:9px;font-weight:600"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></div><div style="font-size:9px;color:var(--ac);font-weight:600">💪</div></div>
+        <h4><span data-l="en">Share</span><span data-l="ja" class="a">シェアする</span><span data-l="ko">공유</span></h4>
+        <div style="margin:14px 0;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:var(--ac);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">Y</div><div style="flex:1;font-size:9px;font-weight:600">Yuki</div><div style="font-size:9px;color:var(--ac);font-weight:600">🔥 12</div></div>
+          <div style="display:flex;align-items:center;gap:6px;background:var(--acg);border-radius:8px;padding:8px 10px;border:1px solid var(--bd)"><div style="width:20px;height:20px;border-radius:50%;background:#FF9800;color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;flex-shrink:0">K</div><div style="flex:1;font-size:9px;font-weight:600"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></div><div style="font-size:9px;color:var(--ac);font-weight:600">💪 8</div></div>
         </div>
-        <p class="hiw-brief"><span data-l="en">Feed, Kudos, Ranking.</span><span data-l="ja" class="a">フィード、Kudos、ランキング。</span><span data-l="ko">피드, Kudos, 랭킹.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Post to Feed. Send Kudos.<br class="sp">Track growth in Ranking.</span><span data-l="ja" class="a">フィードに投稿。Kudosを送る。<br class="sp">ランキングで成長を実感。</span><span data-l="ko">피드에 공유. Kudos를 보내자.<br class="sp">랭킹에서 성장 실감.</span></p></div>
+        <p class="hiw-brief"><span data-l="en">Feed, Kudos, Comments — celebrate together.</span><span data-l="ja" class="a">フィード、Kudos、コメントで<br class="sp">仲間と称え合う。</span><span data-l="ko">피드, Kudos, 댓글로 함께 축하.</span></p>
       </div>
-      <div class="hiw-step rv" onclick="tHiw(this)">
+      <div class="hiw-step rv">
         <div class="hiw-num">🏆 STEP 4</div>
-        <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회로 즐기기</span></h4>
-        <!-- Mini comp result mock -->
-        <div style="margin:12px 0;background:var(--bg);border-radius:8px;padding:10px;border:1px solid var(--bd);text-align:center">
+        <h4><span data-l="en">Compete</span><span data-l="ja" class="a">コンペで盛り上がる</span><span data-l="ko">대회</span></h4>
+        <div style="margin:14px 0;background:var(--bg);border-radius:8px;padding:10px;border:1px solid var(--bd);text-align:center">
           <div style="font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:4px">RESULT</div>
           <div style="display:flex;justify-content:center;gap:12px;margin-bottom:6px">
             <div><div style="font-size:8px;color:var(--t3)">🥈</div><div style="font-size:10px;font-weight:600">Kenji</div></div>
@@ -564,21 +488,136 @@
           </div>
           <div style="display:flex;gap:4px;justify-content:center;flex-wrap:wrap"><span style="font-size:7px;padding:2px 6px;border-radius:8px;background:var(--acg);color:var(--ac);font-weight:600"><span data-l="en">Eagle Hunter</span><span data-l="ja" class="a">イーグルハンター</span><span data-l="ko">이글 헌터</span></span><span style="font-size:7px;padding:2px 6px;border-radius:8px;background:var(--acg);color:var(--ac);font-weight:600"><span data-l="en">Comeback King</span><span data-l="ja" class="a">カムバックキング</span><span data-l="ko">컴백 킹</span></span></div>
         </div>
-        <p class="hiw-brief"><span data-l="en">Auto scoring & animated reveals.</span><span data-l="ja" class="a">自動集計 & 結果リビール演出。</span><span data-l="ko">자동 집계 & 결과 발표 연출.</span></p>
-        <div class="hiw-detail"><p><span data-l="en">Invite friends, auto-score.<br class="sp">Individual titles awarded.</span><span data-l="ja" class="a">仲間を招待して自動集計。<br class="sp">個人タイトルも自動付与。</span><span data-l="ko">동료를 초대하고 자동 집계.<br class="sp">개인 타이틀도 자동 부여.</span></p></div>
+        <p class="hiw-brief"><span data-l="en">Auto scoring & individual titles.</span><span data-l="ja" class="a">自動集計と<br class="sp">個人タイトル付与。</span><span data-l="ko">자동 집계와 개인 타이틀.</span></p>
       </div>
-    </div>
-    <div style="text-align:center;margin-top:28px" class="rv">
-      <a href="https://roundie.app" target="_blank" class="btn btn-g" style="font-size:11px;padding:12px 24px;">
-        <span data-l="en">See more at roundie.app →</span>
-        <span data-l="ja" class="a">roundie.app でもっと詳しく →</span>
-        <span data-l="ko">roundie.app에서 더 자세히 →</span>
-      </a>
     </div>
   </div>
 </section>
 
-<!-- ===== WHY GOLF? (Founder Story) ===== -->
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="pro-sec">
+  <div class="si">
+    <div class="sl rv">Pricing</div>
+    <h2 class="rv" style="font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.3px;margin-bottom:8px">
+      <span data-l="en">Start free. Unlock more with Pro.</span>
+      <span data-l="ja" class="a">基本は無料。<br class="sp">Proで、もっと深く。</span>
+      <span data-l="ko">기본은 무료. Pro로 더 깊게.</span>
+    </h2>
+    <p class="rv" style="font-size:13px;color:var(--t2);margin-bottom:8px;line-height:1.8">
+      <span data-l="en">All core features are free. Pro unlocks unlimited competition participants, advanced stats, and more.</span>
+      <span data-l="ja" class="a">すべてのコア機能は無料でお使いいただけます。<br class="sp">Proに加入すると、コンペ参加人数の無制限化や詳細統計などが開放されます。</span>
+      <span data-l="ko">모든 핵심 기능은 무료. Pro로 대회 인원 무제한·상세 통계 등 개방.</span>
+    </p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card rv">
+        <div class="name">
+          <span data-l="en">Free</span>
+          <span data-l="ja" class="a">無料プラン</span>
+          <span data-l="ko">무료 플랜</span>
+        </div>
+        <div class="price">$0</div>
+        <div class="period">
+          <span data-l="en">forever</span>
+          <span data-l="ja" class="a">永続無料</span>
+          <span data-l="ko">영구 무료</span>
+        </div>
+        <ul>
+          <li><span data-l="en">Unlimited round records</span><span data-l="ja" class="a">ラウンド記録 無制限</span><span data-l="ko">라운드 기록 무제한</span></li>
+          <li><span data-l="en">Round Card & ROUNDIE Score</span><span data-l="ja" class="a">ラウンドカード・ROUNDIE Score</span><span data-l="ko">라운드카드·ROUNDIE Score</span></li>
+          <li><span data-l="en">Feed, Kudos, Comments, Ranking</span><span data-l="ja" class="a">フィード・Kudos・コメント・ランキング</span><span data-l="ko">피드·Kudos·댓글·랭킹</span></li>
+          <li><span data-l="en">Grid sharing (with logo)</span><span data-l="ja" class="a">グリッドシェア（ロゴ付き）</span><span data-l="ko">그리드 공유 (로고)</span></li>
+          <li><span data-l="en">Basic stats</span><span data-l="ja" class="a">基本統計</span><span data-l="ko">기본 통계</span></li>
+          <li><span data-l="en">Compe hosting: <strong>1/month · up to 8 players</strong></span><span data-l="ja" class="a">コンペ開催: <strong>月1回・8人まで</strong></span><span data-l="ko">대회 개최: <strong>월 1회·8명까지</strong></span></li>
+        </ul>
+      </div>
+
+      <div class="pricing-card pop rv">
+        <div class="name">
+          <span data-l="en">ROUNDIE Pro · Yearly</span>
+          <span data-l="ja" class="a">ROUNDIE Pro 年額</span>
+          <span data-l="ko">ROUNDIE Pro 연간</span>
+        </div>
+        <div class="price">$39.99</div>
+        <div class="period">
+          <span data-l="en">/ year ($3.33/mo)</span>
+          <span data-l="ja" class="a">/ 年（実質 約$3.33/月）</span>
+          <span data-l="ko">/ 년 (월 약 $3.33)</span>
+        </div>
+        <div class="discount">
+          <span data-l="en">2 months free · 17% OFF</span>
+          <span data-l="ja" class="a">2ヶ月分お得 · 17% OFF</span>
+          <span data-l="ko">2개월 무료 · 17% OFF</span>
+        </div>
+        <ul>
+          <li><span data-l="en"><strong>Everything in Free</strong></span><span data-l="ja" class="a"><strong>Free の全機能</strong></span><span data-l="ko"><strong>Free 전체 기능</strong></span></li>
+          <li><span data-l="en">Compe hosting <strong>unlimited</strong> · players <strong>unlimited</strong></span><span data-l="ja" class="a">コンペ開催 <strong>無制限</strong>・参加人数 <strong>無制限</strong></span><span data-l="ko">대회 개최·참가자 <strong>무제한</strong></span></li>
+          <li><span data-l="en">Auto scoring & live ranking</span><span data-l="ja" class="a">自動集計 & ランキング</span><span data-l="ko">자동 집계·랭킹</span></li>
+          <li><span data-l="en">Animated result reveal</span><span data-l="ja" class="a">結果発表アニメーション</span><span data-l="ko">결과 발표 애니메이션</span></li>
+          <li><span data-l="en">Shareable result cards</span><span data-l="ja" class="a">シェア可能な結果カード</span><span data-l="ko">공유 가능한 결과 카드</span></li>
+          <li><span data-l="en">Advanced stats & trends</span><span data-l="ja" class="a">詳細統計・トレンド分析</span><span data-l="ko">상세 통계·트렌드 분석</span></li>
+          <li><span data-l="en">No need to buy Compe Packs</span><span data-l="ja" class="a">コンペパックの都度購入が不要</span><span data-l="ko">대회 팩 추가 구매 불필요</span></li>
+        </ul>
+      </div>
+
+      <div class="pricing-card rv">
+        <div class="name">
+          <span data-l="en">ROUNDIE Pro · Monthly</span>
+          <span data-l="ja" class="a">ROUNDIE Pro 月額</span>
+          <span data-l="ko">ROUNDIE Pro 월간</span>
+        </div>
+        <div class="price">$4.99</div>
+        <div class="period">
+          <span data-l="en">/ month</span>
+          <span data-l="ja" class="a">/ 月</span>
+          <span data-l="ko">/ 월</span>
+        </div>
+        <div style="font-size:11px;color:var(--t2);margin-top:6px;margin-bottom:16px;line-height:1.7">
+          <span data-l="en">Start month-by-month, same features as Yearly.</span>
+          <span data-l="ja" class="a">月単位で気軽に始められるプラン。<br>機能内容は年額プランと同じです。</span>
+          <span data-l="ko">월 단위로 부담 없이 시작. 기능은 연간 플랜과 동일.</span>
+        </div>
+        <ul>
+          <li><span data-l="en"><strong>Everything in Free</strong></span><span data-l="ja" class="a"><strong>Free の全機能</strong></span><span data-l="ko"><strong>Free 전체 기능</strong></span></li>
+          <li><span data-l="en">Compe hosting <strong>unlimited</strong> · players <strong>unlimited</strong></span><span data-l="ja" class="a">コンペ開催 <strong>無制限</strong>・参加人数 <strong>無制限</strong></span><span data-l="ko">대회 개최·참가자 <strong>무제한</strong></span></li>
+          <li><span data-l="en">Auto scoring & live ranking</span><span data-l="ja" class="a">自動集計 & ランキング</span><span data-l="ko">자동 집계·랭킹</span></li>
+          <li><span data-l="en">Animated result reveal</span><span data-l="ja" class="a">結果発表アニメーション</span><span data-l="ko">결과 발표 애니메이션</span></li>
+          <li><span data-l="en">Shareable result cards</span><span data-l="ja" class="a">シェア可能な結果カード</span><span data-l="ko">공유 가능한 결과 카드</span></li>
+          <li><span data-l="en">Advanced stats & trends</span><span data-l="ja" class="a">詳細統計・トレンド分析</span><span data-l="ko">상세 통계·트렌드 분석</span></li>
+          <li><span data-l="en">No need to buy Compe Packs</span><span data-l="ja" class="a">コンペパックの都度購入が不要</span><span data-l="ko">대회 팩 추가 구매 불필요</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:32px;padding:18px 24px;background:var(--card);border:1px solid var(--bd);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1px">
+          <span data-l="en">Compe Pack · $9.99 / competition</span>
+          <span data-l="ja" class="a">コンペパック · $9.99 / 1コンペ</span>
+          <span data-l="ko">대회 팩 · $9.99 / 1대회</span>
+        </div>
+        <div style="font-size:11px;color:var(--t2);margin-top:6px;line-height:1.7">
+          <span data-l="en">Want to host one extra competition without a subscription? Buy a single Compe Pack — that competition only, players unlimited, auto-scoring and shareable result card included. One-time purchase.</span>
+          <span data-l="ja" class="a">サブスク契約なしで1回だけ大規模なコンペを開きたい時に。<br class="sp">そのコンペだけ、人数無制限・自動集計・結果カード付きで開催できます。1回購入・買い切り型。</span>
+          <span data-l="ko">구독 없이 한 번만 대규모 대회를 개최하고 싶을 때. 해당 대회만 인원 무제한·자동 집계·결과 카드 포함. 일회성 구매.</span>
+        </div>
+      </div>
+      <a href="roundie.html#pricing" class="btn btn-g">
+        <span data-l="en">Details →</span>
+        <span data-l="ja" class="a">詳細を見る →</span>
+        <span data-l="ko">자세히 →</span>
+      </a>
+    </div>
+
+    <p class="rv" style="font-size:11px;color:var(--t3);margin-top:24px;text-align:center;line-height:1.8">
+      <span data-l="en">All prices in USD. Subscriptions renew automatically and can be cancelled anytime in your App Store settings. Compe Packs are consumable and non-refundable. Available on iOS first; Android rollout to follow.</span>
+      <span data-l="ja" class="a">価格はすべて米ドル表示です。サブスクリプションは自動更新され、App Storeの設定からいつでも解約できます。コンペパックは消費型のため返金不可です。iOSから順次提供、Android対応予定。</span>
+      <span data-l="ko">가격은 USD. 구독은 자동 갱신되며 App Store 설정에서 언제든 해지. 대회 팩은 소모성·환불 불가. iOS 우선, Android 추후.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===== WHY GOLF (Founder Story) ===== -->
 <section id="about" class="why-sec">
   <div class="si">
     <div class="sl rv">Why Golf?</div>
@@ -594,35 +633,32 @@
         </div>
       </div>
       <div class="rv">
-        <!-- Photo -->
         <div class="why-photo" style="background-image:url('https://images.unsplash.com/photo-1592937238247-cd0090e02f65?w=800&h=450&fit=crop')"></div>
-        <!-- Founder Story -->
         <div class="why-story">
-          <p data-b="en">I grew up surrounded by mountains and rivers in rural Japan. I found golf in my twenties. I loved it as a sport, but what truly captivated me was <strong>those four hours with friends</strong>. The nerves on the first tee, the conversations on the fairway, the cheers when someone nails the perfect shot. And the feeling of growth — getting a little better, round by round.</p>
-          <p data-b="en">Before, during, and after every round, golf is full of beautiful moments. If only I could <strong>keep them more beautifully</strong>. If only I could <strong>share these memories</strong> with friends in a more joyful way. <span class="pac">That's what I wanted.</span></p>
-          <p data-b="en">So I built <strong>ROUNDIE</strong>. In April 2026, I founded KANOPY Inc. in Tokyo. <span class="pac">A company that shapes golf experiences and memories.</span></p>
+          <p data-b="en" class="a">I grew up surrounded by mountains and rivers in rural Japan. I found golf in my twenties — and what truly captivated me wasn't the sport itself, but <strong>those four hours with friends</strong>. The nerves on the first tee. The conversations on the fairway. The cheers when someone nails a perfect shot. And the quiet feeling of growth — getting a little better, round by round.</p>
+          <p data-b="en" class="a">Before, during, and after every round, golf is full of beautiful moments. I wanted to <strong>keep them more beautifully</strong>. To <strong>share these memories with friends</strong> in a more joyful way. <span class="pac">So we built ROUNDIE.</span></p>
+          <p data-b="en" class="a">In April 2026, we founded KANOPY Inc. in Tokyo — <span class="pac">a company that shapes golf experiences and memories</span>. Today we're launching ROUNDIE worldwide, starting with Japan.</p>
 
-          <p data-b="ja" class="a">山と川に囲まれた田舎で育った。<br class="sp">20代でゴルフに出会った。<br class="sp">スポーツとしても惹かれたが、<br class="sp">それ以上に心を掴んだのは、<br class="sp"><strong>仲間と過ごすあの4時間</strong>だった。<br class="sp">朝の緊張感、フェアウェイでの会話、<br class="sp">最高のショットを決めた瞬間の歓声。<br class="sp">回るたびに少しずつ上手くなっていく、<br class="sp">あの成長の実感。</p>
-          <p data-b="ja" class="a">ラウンドの前も、最中も、終わった後も、<br class="sp">ゴルフには美しい瞬間がある。<br class="sp">この体験を、<strong>もっと美しく残せたら</strong>。<br class="sp">この記憶を、<br class="sp"><strong>仲間ともっと楽しくシェアできたら</strong>。<br class="sp"><span class="pac">そう思った。</span></p>
-          <p data-b="ja" class="a">だから、<strong>ROUNDIE</strong>を作った。2026年4月、東京にKANOPYを設立。<span class="pac">ゴルフの体験と記憶を、かたちにする</span>会社として。</p>
+          <p data-b="ja" class="a">山と川に囲まれた田舎で育ち、<br class="sp">20代の頃にゴルフと出会いました。<br class="sp">スポーツとしての面白さに惹かれたのはもちろん、<br class="sp">それ以上に夢中になったのは、<br class="sp"><strong>仲間と過ごすあの4時間</strong>そのものでした。<br class="sp">スタートホールの緊張、<br class="sp">フェアウェイでの何気ない会話、<br class="sp">ナイスショットが決まったときの歓声。<br class="sp">そしてラウンドを重ねるごとに、<br class="sp">少しずつ自分が上達していく手応え。</p>
+          <p data-b="ja" class="a">ゴルフには、ラウンドの前も、最中も、<br class="sp">終わった後も、<br class="sp">美しい瞬間がいくつもあります。<br class="sp">この体験を、<strong>もっと美しいかたちで残したい</strong>。<br class="sp">仲間との時間を、<strong>もっと楽しく分かち合いたい</strong>。<br class="sp"><span class="pac">そんな思いから、ROUNDIE を作りました。</span></p>
+          <p data-b="ja" class="a">2026年4月、東京で<strong>株式会社 KANOPY</strong>を設立。<br class="sp"><span class="pac">「ゴルフの体験と記憶を、かたちに残す」</span>をミッションに掲げ、<br class="sp">日本から世界へ、<br class="sp">ゴルフを愛する人たちの記憶を彩るプロダクトを届けていきます。</p>
 
-          <p data-b="ko">산과 강으로 둘러싸인 시골에서 자랐다. 20대에 골프를 만났다. 스포츠로서도 매력적이었지만, 그 이상으로 마음을 사로잡은 건 <strong>동료와 함께하는 그 4시간</strong>이었다. 아침의 긴장감, 페어웨이에서의 대화, 최고의 샷을 성공했을 때의 환호. 라운드를 거듭할수록 조금씩 나아지는, 그 성장의 실감.</p>
-          <p data-b="ko">라운드 전도, 도중에도, 끝난 후에도, 골프에는 아름다운 순간이 있다. 이 경험을 <strong>더 아름답게 남길 수 있다면</strong>. 이 기억을 <strong>동료와 더 즐겁게 공유할 수 있다면</strong>. <span class="pac">그렇게 생각했다.</span></p>
-          <p data-b="ko">그래서 <strong>ROUNDIE</strong>를 만들었다. 2026년 4월, 도쿄에 KANOPY Inc.를 설립. <span class="pac">골프의 경험과 기억을 형태로 만드는</span> 회사로서.</p>
+          <p data-b="ko">산과 강으로 둘러싸인 시골에서 자랐다. 20대에 골프를 만났다. 스포츠로서도 매력적이었지만, 그 이상으로 마음을 사로잡은 건 <strong>동료와 함께하는 그 4시간</strong>이었다. 첫 티의 긴장감, 페어웨이에서의 대화, 최고의 샷의 환호. 라운드를 거듭할수록 조금씩 나아지는, 조용한 성장의 실감.</p>
+          <p data-b="ko">라운드 전도, 도중에도, 끝난 후에도, 골프에는 아름다운 순간이 가득하다. 이 경험을 <strong>더 아름답게 남기고 싶었다</strong>. 이 기억을 <strong>동료와 더 즐겁게 공유하고 싶었다</strong>. <span class="pac">그래서 ROUNDIE를 만들었다.</span></p>
+          <p data-b="ko">2026년 4월, 도쿄에 KANOPY Inc.를 설립. <span class="pac">골프의 경험과 기억을 형태로 만드는</span> 회사로서. 일본에서 세계로 펼쳐 나간다.</p>
         </div>
         <div class="why-echo rv">
-          <span data-l="en">Shape your round.</span>
+          <span data-l="en">Shape your round. Keep what lasts.</span>
           <span data-l="ja" class="a">記憶を、かたちに。</span>
           <span data-l="ko">기억을, 형태로.</span>
         </div>
 
-        <!-- Background (narrative) -->
         <div class="career-wrap">
           <div class="tl-h">Background</div>
           <div class="why-story">
-            <p data-b="en" style="font-size:13px;line-height:1.8;color:var(--t2)">Business & entrepreneurship background. Sales and BD at global manufacturers, then talent industry — recruiting lead at a major HR firm, people strategy at a startup. Independent consultant for 20+ companies. Now building at the intersection of sports, community, and technology.</p>
-            <p data-b="ja" class="a" style="font-size:13px;line-height:1.8;color:var(--t2)">経営学・起業論を学び、<br class="sp">グローバルメーカーで営業・事業開発を経験。<br class="sp">人材業界へ転身し、<br class="sp">大手からスタートアップまで累計20社以上の採用を支援。<br class="sp">現在はスポーツ×コミュニティ×テクノロジー領域で<br class="sp">プロダクト開発に注力。</p>
-            <p data-b="ko" style="font-size:13px;line-height:1.8;color:var(--t2)">경영학·기업가정신을 전공. 글로벌 제조사에서 영업·사업개발 경험 후 인재 업계로 전환. 누적 20사 이상의 채용 지원. 현재 스포츠×커뮤니티×테크 영역에서 프로덕트 개발에 주력.</p>
+            <p data-b="en" class="a" style="font-size:13px;line-height:1.85;color:var(--t2)">Business & entrepreneurship background. Sales and BD at global manufacturers, then talent industry — recruiting lead at a major HR firm, people strategy across 20+ companies. Now building at the intersection of sports, community, and technology.</p>
+            <p data-b="ja" class="a" style="font-size:13px;line-height:1.85;color:var(--t2)">経営学・起業論を学び、グローバルメーカーで営業・事業開発を経験。人材業界へ転身し、大手からスタートアップまで累計20社以上の採用を支援。現在はスポーツ×コミュニティ×テクノロジー領域でプロダクト開発に注力。</p>
+            <p data-b="ko" style="font-size:13px;line-height:1.85;color:var(--t2)">경영학·기업가정신 전공. 글로벌 제조사에서 영업·사업 개발 경험 후 인재 업계로 전환. 누적 20사 이상의 채용 지원. 현재 스포츠×커뮤니티×테크 영역에서 프로덕트 개발에 주력.</p>
           </div>
           <div class="badges">
             <span class="badge"><span data-l="en">Sports × Tech</span><span data-l="ja" class="a">スポーツ × テック</span><span data-l="ko">스포츠 × 테크</span></span>
@@ -640,28 +676,21 @@
   <p>
     <span data-l="en">Ready to shape your rounds?</span>
     <span data-l="ja" class="a">あなたのラウンドを、<br class="sp">かたちにしよう。</span>
-    <span data-l="ko">당신의 라운드를, 형태로 만들자.</span>
+    <span data-l="ko">당신의 라운드를, 형태로.</span>
   </p>
-  <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:12px;padding:14px 36px;">
-    <span data-l="en">Get Early Access</span>
-    <span data-l="ja" class="a">先行アクセスを申し込む</span>
-    <span data-l="ko">선행 액세스 신청</span>
+  <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" class="btn btn-a" style="font-size:12px;padding:14px 36px">
+    <span data-l="en">Get Early Access (TestFlight)</span>
+    <span data-l="ja" class="a">TestFlightで先行体験</span>
+    <span data-l="ko">TestFlight 선행 액세스</span>
   </a>
-  <p style="margin-top:12px;font-size:11px;color:var(--t3)">
-    <span data-l="en">Free. Launching late April 2026.</span>
-    <span data-l="ja" class="a">無料。2026年4月下旬リリース予定。</span>
-    <span data-l="ko">무료. 2026년 4월 하순 출시 예정.</span>
+  <p style="margin-top:14px;font-size:11px;color:var(--t3)">
+    <span data-l="en">Free to download. App Store launch coming soon.</span>
+    <span data-l="ja" class="a">ダウンロード無料。App Store公開準備中。</span>
+    <span data-l="ko">다운로드 무료. App Store 출시 준비중.</span>
   </p>
-  <div style="margin-top:16px">
-    <a href="https://roundie.app" target="_blank" style="font-size:11px;color:var(--t3);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--ac)'" onmouseout="this.style.color='var(--t3)'">
-      <span data-l="en">or visit roundie.app →</span>
-      <span data-l="ja" class="a">roundie.app を見る →</span>
-      <span data-l="ko">roundie.app 방문 →</span>
-    </a>
-  </div>
 </div>
 
-<!-- ===== CONTACT (split) ===== -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="contact">
   <div class="contact-c si rv">
     <div class="sl">Contact</div>
@@ -671,14 +700,14 @@
       <span data-l="ko">문의하기</span>
     </h2>
     <p class="contact-sub">
-      <span data-l="en">Products, people, or partnerships.</span>
-      <span data-l="ja" class="a">プロダクト、採用、提携。</span>
-      <span data-l="ko">프로덕트, 채용, 제휴.</span>
+      <span data-l="en">Products, partnerships, press, careers.</span>
+      <span data-l="ja" class="a">プロダクト、提携、取材、採用。</span>
+      <span data-l="ko">프로덕트, 제휴, 취재, 채용.</span>
     </p>
     <div class="contact-grid">
       <div class="contact-box">
         <h4>ROUNDIE</h4>
-        <p><span data-l="en">App partnerships, sponsorships, press</span><span data-l="ja" class="a">提携・協賛・取材</span><span data-l="ko">제휴·협찬·취재</span></p>
+        <p><span data-l="en">App partnerships, sponsorships, press, business inquiries.</span><span data-l="ja" class="a">提携・協賛・取材・ビジネスのお問い合わせ。</span><span data-l="ko">제휴·협찬·취재·비즈니스 문의.</span></p>
         <a href="mailto:roundie@kanopy-inc.com">roundie@kanopy-inc.com</a>
       </div>
       <div class="contact-box">
@@ -689,13 +718,13 @@
         </h4>
         <p>
           <span data-l="en">Join our team or learn about our talent services.</span>
-          <span data-l="ja" class="a">KANOPYで働く、<br class="sp">または採用支援サービスについて。</span>
-          <span data-l="ko">KANOPY에서 일하기, 또는 채용 지원 서비스 안내.</span>
+          <span data-l="ja" class="a">KANOPYで働く、または採用支援サービスについて。</span>
+          <span data-l="ko">KANOPY에서 일하기 또는 채용 지원 서비스 안내.</span>
         </p>
         <a href="talent.html" style="display:inline-block;margin-bottom:4px">
-          <span data-l="en">Learn more →</span>
-          <span data-l="ja" class="a">詳しく見る →</span>
-          <span data-l="ko">자세히 보기 →</span>
+          <span data-l="en">See talent page →</span>
+          <span data-l="ja" class="a">採用ページへ →</span>
+          <span data-l="ko">채용 페이지로 →</span>
         </a><br>
         <a href="mailto:recruit@kanopy-inc.com">recruit@kanopy-inc.com</a>
       </div>
@@ -704,113 +733,130 @@
       <span data-l="en">General:</span><span data-l="ja" class="a">その他:</span><span data-l="ko">기타:</span>
       <a href="mailto:notify@kanopy-inc.com">notify@kanopy-inc.com</a>
       <a href="https://www.linkedin.com/in/kazushige-shiba-0596281bb/" target="_blank">LinkedIn</a>
+      <a href="notice.html">
+        <span data-l="en">Notices</span>
+        <span data-l="ja" class="a">お知らせ</span>
+        <span data-l="ko">공지</span>
+      </a>
     </div>
   </div>
 </section>
 
 </main>
-<!-- COMPANY BAR -->
+
+<!-- ===== COMPANY BAR ===== -->
 <div class="co-bar">
   <div class="co-g">
-    <div class="co-i"><div class="co-k">Company</div><div class="co-v"><span data-l="en">KANOPY Inc.</span><span data-l="ja" class="a">株式会社KANOPY</span><span data-l="ko">KANOPY Inc.</span></div></div>
-    <div class="co-i"><div class="co-k"><span data-l="en">Representative</span><span data-l="ja" class="a">代表</span><span data-l="ko">대표</span></div><div class="co-v"><span data-l="en">Kazushige Shiba</span><span data-l="ja" class="a">柴 和成</span><span data-l="ko">시바 카즈시게</span></div></div>
-    <div class="co-i"><div class="co-k">Location</div><div class="co-v"><span data-l="en">Nishi-Shinjuku, Tokyo</span><span data-l="ja" class="a">東京都新宿区西新宿</span><span data-l="ko">도쿄 신주쿠구</span></div></div>
-    <div class="co-i"><div class="co-k">Founded</div><div class="co-v">April 2026</div></div>
-    <div class="co-i"><div class="co-k">Product</div><div class="co-v"><a href="https://roundie.app" target="_blank">ROUNDIE</a></div></div>
+    <div>
+      <h5>KANOPY Inc.</h5>
+      <p>
+        <span data-l="en">Tokyo · Founded April 14, 2026<br>Makers of ROUNDIE</span>
+        <span data-l="ja" class="a">東京 · 2026年4月14日設立<br>ROUNDIEを作る会社</span>
+        <span data-l="ko">도쿄 · 2026년 4월 14일 설립<br>ROUNDIE를 만드는 회사</span>
+      </p>
+    </div>
+    <div>
+      <h5>ROUNDIE</h5>
+      <a href="roundie.html">
+        <span data-l="en">Product</span>
+        <span data-l="ja" class="a">プロダクト</span>
+        <span data-l="ko">프로덕트</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://roundie-pages.pages.dev/legal/terms.html" target="_blank">
+        <span data-l="en">Terms of Service</span>
+        <span data-l="ja" class="a">利用規約</span>
+        <span data-l="ko">이용약관</span>
+      </a>
+      <a href="https://roundie-pages.pages.dev/legal/privacy.html" target="_blank">
+        <span data-l="en">Privacy Policy</span>
+        <span data-l="ja" class="a">プライバシーポリシー</span>
+        <span data-l="ko">개인정보처리방침</span>
+      </a>
+    </div>
+    <div>
+      <h5>Connect</h5>
+      <a href="mailto:roundie@kanopy-inc.com">roundie@kanopy-inc.com</a>
+      <a href="mailto:recruit@kanopy-inc.com">recruit@kanopy-inc.com</a>
+      <a href="https://www.linkedin.com/in/kazushige-shiba-0596281bb/" target="_blank">LinkedIn</a>
+    </div>
   </div>
+  <div class="copyright">© 2026 KANOPY Inc. · All Rights Reserved</div>
 </div>
 
-<footer>
-  <div class="ft-l">KANOPY</div>
-  <div class="ft-m">
-    <a href="https://roundie.app" target="_blank">ROUNDIE</a>
-    <a href="https://roundie.app/privacy.html" target="_blank">Privacy</a>
-    <a href="https://roundie.app/terms.html" target="_blank">Terms</a>
-    <a href="https://www.linkedin.com/in/kazushige-shiba-0596281bb/" target="_blank">LinkedIn</a>
-    <a href="notice.html">Notice</a>
-  </div>
-  <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0">
-    <a href="https://testflight.apple.com/join/TecygPvk" target="_blank" style="font-size:9px;color:var(--ac);letter-spacing:1px;font-weight:600;text-decoration:none"><span data-l="en">Get Early Access →</span><span data-l="ja" class="a">先行アクセス →</span><span data-l="ko">선행 액세스 →</span></a>
-  </div>
-  <div class="social-icons" style="margin-bottom:8px">
-    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.3.3.6.7.8 1.2.1.4.3.9.3 1.9 0 1.1.1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.3.3-.7.6-1.2.8-.4.1-.9.3-1.9.3-1.1 0-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.3-.3-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9 0-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.3-.3.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1.1-.1 1.4-.1 4.1-.1M12 0C9.3 0 8.9 0 7.8.1c-1.1 0-1.8.2-2.5.5C4.6.8 4 1.2 3.4 1.8 2.8 2.4 2.4 3 2.1 3.7c-.3.7-.4 1.4-.5 2.5C1.6 7.3 1.6 7.7 1.6 12s0 4.7.1 5.8c0 1.1.2 1.8.5 2.5.3.7.7 1.3 1.3 1.9.6.6 1.2 1 1.9 1.3.7.3 1.4.4 2.5.5 1.1 0 1.5.1 5.8.1s4.7 0 5.8-.1c1.1 0 1.8-.2 2.5-.5.7-.3 1.3-.7 1.9-1.3.6-.6 1-1.2 1.3-1.9.3-.7.4-1.4.5-2.5 0-1.1.1-1.5.1-5.8s0-4.7-.1-5.8c0-1.1-.2-1.8-.5-2.5-.3-.7-.7-1.3-1.3-1.9-.6-.6-1.2-1-1.9-1.3C18.1.3 17.4.1 16.3.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-10.8a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8z"/></svg></a>
-    <a href="https://x.com/" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-    <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.6-.9-2.3c-.9-.9-1.8-.9-2.3-1C17 2.7 12 2.7 12 2.7s-5 0-8.3.2c-.5.1-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S.3 8.1.3 10v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 6.8.2 7.1.2 0 0 5 0 8.3-.2.5-.1 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.6 15.6V8l6.2 3.8-6.2 3.8z"/></svg></a>
-    <a href="https://www.linkedin.com/in/kazushige-shiba-0596281bb/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.5A1.75 1.75 0 118.3 6.8a1.72 1.72 0 01-1.8 1.7zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6-1.6 0-1.8 1.2-1.8 2.5V19h-3v-9h2.9v1.2h0a3.2 3.2 0 012.9-1.6c3.1 0 3.6 2 3.6 4.6z"/></svg></a>
-    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg></a>
-  </div>
-  <div class="ft-r">&copy; 2026 KANOPY Inc.</div>
-</footer>
-
 <script>
-// Hamburger menu
-function tHiw(el){const wasActive=el.classList.contains('active');document.querySelectorAll('.hiw-step').forEach(x=>x.classList.remove('active'));if(!wasActive)el.classList.add('active')}
-function toggleMenu(){document.querySelector('.hamburger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobMenu').classList.contains('open')?'hidden':''}
-function closeMenu(){document.querySelector('.hamburger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
+// Language switcher
+function sl(lang, el){
+  document.querySelectorAll('[data-l]').forEach(e=>{e.classList.toggle('a', e.getAttribute('data-l')===lang)});
+  document.querySelectorAll('[data-b]').forEach(e=>{e.classList.toggle('a', e.getAttribute('data-b')===lang)});
+  document.querySelectorAll('.ng a').forEach(a=>a.classList.remove('a'));
+  if(el) el.classList.add('a');
+  document.documentElement.setAttribute('lang', lang);
+  try{localStorage.setItem('kanopy_lang', lang)}catch(e){}
+}
+// Init lang from localStorage or browser
+(function(){
+  try{
+    var saved = localStorage.getItem('kanopy_lang');
+    if(saved){
+      sl(saved);
+      document.querySelectorAll('.ng a').forEach(a=>{
+        if(a.textContent.toLowerCase()===saved) a.classList.add('a');
+      });
+      return;
+    }
+  }catch(e){}
+  var nav = (navigator.language||'').toLowerCase();
+  if(nav.startsWith('en')) sl('en', document.querySelector('.ng a[onclick*="en"]'));
+  else if(nav.startsWith('ko')) sl('ko', document.querySelector('.ng a[onclick*="ko"]'));
+})();
+
+// Mobile menu
+function toggleMenu(){document.getElementById('mobMenu').classList.toggle('o')}
+function closeMenu(){document.getElementById('mobMenu').classList.remove('o')}
+
+// Logo char animation
+(function(){
+  var t = 'KANOPY';
+  var html = '';
+  for(var i=0;i<t.length;i++){
+    html += '<span class="char" style="animation-delay:'+(i*0.08)+'s">'+t[i]+'</span>';
+  }
+  document.getElementById('logo').innerHTML = html;
+})();
 
 // Nav scroll
-window.addEventListener('scroll',()=>document.querySelector('nav').classList.toggle('s',scrollY>40));
-
-// Logo letter stagger
-const logo=document.getElementById('logo');
-'KANOPY'.split('').forEach((ch,i)=>{
-  const s=document.createElement('span');
-  s.className='char';s.textContent=ch;
-  s.style.animationDelay=(i*.08+.1)+'s';
-  logo.appendChild(s);
+window.addEventListener('scroll', function(){
+  var nav = document.querySelector('nav');
+  if(window.scrollY > 100) nav.classList.add('s'); else nav.classList.remove('s');
 });
 
-// Grid animation
-const gc=['#FFD700','#EF5350','#4CAF50','#42A5F5','#5C6BC0','#546E7A'];
-const gp=[3,2,3,4,3,3,2,3,4,3,3,1,3,3,4,3,2,3];
-const vg=document.getElementById('vg');
-gp.forEach(c=>{const d=document.createElement('div');d.className='c';d.style.backgroundColor=gc[c-1];vg.appendChild(d)});
-new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){vg.classList.add('an');vg.querySelectorAll('.c').forEach((c,i)=>{c.style.transitionDelay=(i*35)+'ms'})}})},{threshold:.3}).observe(vg);
+// Reveal on scroll
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('v')});
+}, {threshold:0.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// Scroll reveal
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.08,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-
-// i18n
-let curLang='ja';
-function sl(l,el){
-  curLang=l;
-  document.querySelectorAll('[data-l]').forEach(e=>e.classList.toggle('a',e.dataset.l===l));
-  document.querySelectorAll('[data-b]').forEach(e=>e.classList.toggle('a',e.dataset.b===l));
-  document.querySelectorAll('.ng a').forEach(a=>a.classList.remove('a'));
-  if(el)el.classList.add('a');
-  else document.querySelector('.ng a[onclick*="\''+l+'\'"]')?.classList.add('a');
-  document.documentElement.lang=(l==='ja'?'ja':l==='ko'?'ko':'en');
-  document.querySelectorAll('[data-page]').forEach(a=>{
-    const pg=a.dataset.page;
-    if(pg)a.href=pg+'.html?lang='+l;
-  });
-}
+// Sample grid
 (function(){
-  const p=new URLSearchParams(location.search);
-  const l=p.get('lang');
-  if(l&&['en','ja','ko'].includes(l)&&l!=='ja'){
-    sl(l);
+  var colors = ['#4CAF50','#EF5350','#4CAF50','#42A5F5','#4CAF50','#4CAF50','#FFD700','#4CAF50','#42A5F5','#4CAF50','#42A5F5','#4CAF50','#4CAF50','#EF5350','#4CAF50','#5C6BC0','#4CAF50','#4CAF50'];
+  var g = document.getElementById('vg');
+  if(g){
+    g.innerHTML = colors.map(c=>'<div style="background:'+c+'"></div>').join('');
   }
-})()
+})();
 
-// Sidebar active state
-const sidebarLinks = document.querySelectorAll('.sidebar a');
-const sections = document.querySelectorAll('section,.hero,.cta2');
-const sidebarObs = new IntersectionObserver(es=>{
-  es.forEach(e=>{
-    if(e.isIntersecting){
-      const id = e.target.id || '';
-      sidebarLinks.forEach((a,i)=>{
-        a.classList.toggle('active',
-          (id==='' && i===0) ||
-          a.getAttribute('href')==='#'+id
-        );
-      });
-    }
+// Sidebar active dot
+var sections = ['','roundie','vision','hiw','pricing','about','contact'];
+window.addEventListener('scroll', function(){
+  var y = window.scrollY + window.innerHeight/3;
+  var active = 0;
+  sections.forEach(function(id, i){
+    var el = id ? document.getElementById(id) : document.querySelector('.hero');
+    if(el && el.offsetTop <= y) active = i;
   });
-},{threshold:.3});
-sections.forEach(s=>sidebarObs.observe(s));
+  document.querySelectorAll('.sidebar a').forEach((a,i)=>a.classList.toggle('a', i===active));
+});
 </script>
 </body>
 </html>
