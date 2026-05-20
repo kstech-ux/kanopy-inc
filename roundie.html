@@ -77,11 +77,30 @@
 
     .ftrs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
     @media(max-width:640px){.ftrs{grid-template-columns:1fr}}
-    .ftr{padding:26px 22px;border-radius:16px;background:var(--card);border:1px solid var(--bd);transition:border-color .3s,transform .3s}
+    .ftr{padding:26px 22px;border-radius:16px;background:var(--card);border:1px solid var(--bd);transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
     .ftr:hover{border-color:var(--ac);transform:translateY(-2px)}
-    .ftr .ic{font-size:28px;margin-bottom:14px}
+    .ftr .ic{font-size:24px;margin-bottom:10px;opacity:.85}
     .ftr .ti{font-size:14px;font-weight:700;color:var(--ac);margin-bottom:8px;letter-spacing:1px;font-family:'Space Grotesk'}
-    .ftr .dc{font-size:13px;color:var(--t2);line-height:1.8}
+    .ftr .dc{font-size:13px;color:var(--t2);line-height:1.75;margin-bottom:14px}
+
+    /* Feature mini-mockup */
+    .ftr-mock{margin-top:auto;padding:14px 12px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05)}
+    .mock-row{display:flex;align-items:center;gap:8px}
+    .mock-meta{font-size:9px;color:var(--t3);letter-spacing:.5px}
+    .mock-avatar{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#0A0A0A;font-size:10px;font-weight:800;flex-shrink:0;font-family:'Space Grotesk'}
+    .mock-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:3px}
+    .mock-grid > div{aspect-ratio:1;border-radius:16%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:800;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.35);line-height:1}
+    .mock-bar{display:flex;align-items:center;gap:8px;font-size:10px;margin-bottom:5px}
+    .mock-bar .lbl{width:38px;font-weight:700;color:var(--ac);font-family:'Space Grotesk';font-size:9px;letter-spacing:1px}
+    .mock-bar .trk{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;display:block}
+    .mock-bar .fil{display:block;height:100%;background:var(--ac);border-radius:3px;transition:width .4s ease}
+    .mock-bar .val{font-family:'Space Grotesk';font-weight:700;color:var(--t1);min-width:36px;text-align:right;font-size:10px}
+    .mock-chip{font-size:9px;padding:3px 8px;border-radius:6px;font-weight:700;letter-spacing:.8px}
+    .mock-feed-tile{width:7px;height:7px;border-radius:2px}
+    .mock-podium{display:flex;justify-content:center;align-items:flex-end;gap:14px}
+    .mock-podium .p{text-align:center}
+    .mock-photo{aspect-ratio:1;border-radius:5px}
+    .mock-emoji{font-size:14px}
 
     .score-system{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
     @media(max-width:640px){.score-system{grid-template-columns:1fr}}
@@ -182,11 +201,14 @@
     </div>
     <div class="rv">
       <div class="phone">
-        <div class="ph-h"><div class="l1">ROUNDIE SCORE</div><div class="l2">72</div></div>
+        <div class="ph-h">
+          <div class="l1">Yuki · Sat Apr 12 · Par 72</div>
+          <div class="l2">86</div>
+        </div>
         <div class="mg" id="vg"></div>
         <div class="ph-b">
-          <div class="s"><div class="n">42</div><div class="l">OUT</div></div>
-          <div class="s"><div class="n">44</div><div class="l">IN</div></div>
+          <div class="s"><div class="n">40</div><div class="l">OUT</div></div>
+          <div class="s"><div class="n">46</div><div class="l">IN</div></div>
           <div class="s"><div class="n">86</div><div class="l">TOTAL</div></div>
         </div>
       </div>
@@ -275,56 +297,240 @@
     </p>
 
     <div class="ftrs">
+
+      <!-- 01: Round Card -->
       <div class="ftr rv">
         <div class="ic">🎨</div>
         <div class="ti">Round Card</div>
         <div class="dc"><span data-l="en">Every round becomes a one-of-a-kind color grid. Save, share, and revisit the shape of your golf days.</span><span data-l="ja" class="a">ラウンドが世界に一つだけのカラーグリッドに。保存・シェア・いつでも振り返れる。</span><span data-l="ko">라운드가 세상에 단 하나뿐인 컬러 그리드로.</span></div>
+        <div class="ftr-mock">
+          <!-- Actual color mapping: Eagle=Gold, Birdie=Red, Par=Green, Bogey=Blue, Double=Indigo, Triple+=DarkSlate. Score numbers shown inside each tile. -->
+          <div class="mock-grid">
+            <!-- OUT 9 holes: 4·5·3·6·4·5·3·4·6 = 40 -->
+            <div style="background:#4CAF50">4</div><div style="background:#42A5F5">5</div><div style="background:#4CAF50">3</div><div style="background:#42A5F5">6</div><div style="background:#4CAF50">4</div><div style="background:#42A5F5">5</div><div style="background:#FFD700;color:#0A0A0A;text-shadow:none">3</div><div style="background:#42A5F5">4</div><div style="background:#5C6BC0">6</div>
+            <!-- IN 9 holes: 4·7·5·3·7·4·6·5·5 = 46 -->
+            <div style="background:#4CAF50">4</div><div style="background:#37474F">7</div><div style="background:#42A5F5">5</div><div style="background:#4CAF50">3</div><div style="background:#5C6BC0">7</div><div style="background:#4CAF50">4</div><div style="background:#5C6BC0">6</div><div style="background:#4CAF50">5</div><div style="background:#42A5F5">5</div>
+          </div>
+          <!-- OUT / IN / TOTAL summary -->
+          <div class="mock-row" style="margin-top:10px;justify-content:space-between;padding:6px 8px;background:rgba(255,255,255,.025);border-radius:6px">
+            <span style="font-size:9px;color:var(--t3);letter-spacing:1px">OUT <strong style="color:var(--t1);font-family:'Space Grotesk';font-size:11px;font-weight:700">40</strong></span>
+            <span style="font-size:9px;color:var(--t3);letter-spacing:1px">IN <strong style="color:var(--t1);font-family:'Space Grotesk';font-size:11px;font-weight:700">46</strong></span>
+            <span style="font-size:9px;color:var(--ac);letter-spacing:1px">TOTAL <strong style="color:var(--ac);font-family:'Space Grotesk';font-size:14px;font-weight:800">86</strong></span>
+          </div>
+          <div class="mock-row" style="margin-top:6px;justify-content:space-between">
+            <span class="mock-meta">Yuki · Sat Apr 12 · Par 72</span>
+          </div>
+          <!-- Legend with abbreviations (E / B / P / Bo / D / T) -->
+          <div style="display:flex;gap:6px;margin-top:8px;font-size:8px;color:var(--t3);flex-wrap:wrap;letter-spacing:.3px;align-items:center">
+            <span><span style="display:inline-block;width:8px;height:8px;background:#FFD700;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">E</strong> Eagle</span>
+            <span><span style="display:inline-block;width:8px;height:8px;background:#EF5350;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">B</strong> Birdie</span>
+            <span><span style="display:inline-block;width:8px;height:8px;background:#4CAF50;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">P</strong> Par</span>
+            <span><span style="display:inline-block;width:8px;height:8px;background:#42A5F5;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">Bo</strong> Bogey</span>
+            <span><span style="display:inline-block;width:8px;height:8px;background:#5C6BC0;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">D</strong> Double</span>
+            <span><span style="display:inline-block;width:8px;height:8px;background:#37474F;border-radius:2px;vertical-align:middle;margin-right:3px"></span><strong style="color:var(--t2)">T</strong> Triple+</span>
+          </div>
+        </div>
       </div>
+
+      <!-- 02: ROUNDIE Score -->
       <div class="ftr rv">
         <div class="ic">🪪</div>
         <div class="ti">ROUNDIE Score</div>
-        <div class="dc"><span data-l="en">A 3-pillar score (Play / Vibe / Style) capturing skill, community spirit, and lifestyle. Rank up from ROOKIE to LEGEND.</span><span data-l="ja" class="a">PLAY・VIBE・STYLEの3軸スコア。実力・コミュニティ貢献・ライフスタイル。<br class="sp">ROOKIEからLEGENDまでランクアップ。</span><span data-l="ko">PLAY·VIBE·STYLE 3축 스코어. ROOKIE에서 LEGEND까지.</span></div>
+        <div class="dc"><span data-l="en">A 3-pillar score (Skill / Vibe / Style) capturing technique, community presence, and golf life. Rank up from ROOKIE to LEGEND.</span><span data-l="ja" class="a">スキル・評判・スタイルの3軸スコア。<br class="sp">技術・コミュニティでの存在感・ゴルフライフを表現。<br class="sp">ROOKIEからLEGENDまでランクアップしていきます。</span><span data-l="ko">스킬·평판·스타일 3축 스코어. ROOKIE에서 LEGEND까지.</span></div>
+        <div class="ftr-mock">
+          <div class="mock-row" style="justify-content:space-between;margin-bottom:10px">
+            <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;color:var(--ac)">72<span style="font-size:11px;color:var(--t3);font-weight:500"> / 100</span></span>
+            <span class="mock-chip" style="background:rgba(129,199,132,.12);color:var(--ac)">REGULAR</span>
+          </div>
+          <div class="mock-bar"><span class="lbl" style="color:#66BB6A">SKILL</span><span class="trk"><span class="fil" style="width:80%;background:#66BB6A"></span></span><span class="val">28<span style="font-weight:500;color:var(--t3);font-size:9px">/35</span></span></div>
+          <div class="mock-bar"><span class="lbl" style="color:#FFA726">VIBE</span><span class="trk"><span class="fil" style="width:60%;background:#FFA726"></span></span><span class="val">18<span style="font-weight:500;color:var(--t3);font-size:9px">/30</span></span></div>
+          <div class="mock-bar" style="margin-bottom:0"><span class="lbl" style="color:#AB47BC">STYLE</span><span class="trk"><span class="fil" style="width:74%;background:#AB47BC"></span></span><span class="val">26<span style="font-weight:500;color:var(--t3);font-size:9px">/35</span></span></div>
+        </div>
       </div>
+
+      <!-- 03: Feed -->
       <div class="ftr rv">
         <div class="ic">📱</div>
         <div class="ti">Feed</div>
-        <div class="dc"><span data-l="en">Friends' rounds in one beautiful timeline. See who played where, how the round shaped up.</span><span data-l="ja" class="a">仲間のラウンドが美しいタイムラインに。<br class="sp">誰がどこで、どんなラウンドだったか。</span><span data-l="ko">동료의 라운드를 아름다운 타임라인으로.</span></div>
+        <div class="dc"><span data-l="en">Friends' rounds in one beautiful timeline. Round Cards take center stage, with photos when added — every post tells the day's story.</span><span data-l="ja" class="a">仲間のラウンドが美しいタイムラインに並びます。<br class="sp">ラウンドカードが主役で、写真が添付されればそれも一緒に。<br class="sp">投稿ひとつひとつがその日の物語に。</span><span data-l="ko">동료의 라운드가 아름다운 타임라인으로. 라운드카드가 중심이 되고, 사진이 함께라면 그것까지 — 게시물 하나하나가 그날의 이야기가 됩니다.</span></div>
+        <div class="ftr-mock">
+          <!-- Photo-hero post (Yuki) -->
+          <div style="margin-bottom:10px">
+            <div class="mock-row" style="margin-bottom:6px">
+              <div class="mock-avatar" style="background:#81C784">Y</div>
+              <div style="flex:1;font-size:11px;font-weight:600;color:var(--t1)">Yuki<span style="font-size:9px;color:var(--t3);font-weight:400">  · 2h</span></div>
+              <span style="font-size:10px;color:var(--ac);font-weight:600">🔥 12</span>
+            </div>
+            <div style="position:relative;border-radius:6px;overflow:hidden;height:90px;background:#1A1A1A">
+              <!-- Real golf course photo -->
+              <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=520&h=180&fit=crop&q=80" alt="Golf course" style="width:100%;height:100%;object-fit:cover;display:block">
+              <!-- Bottom gradient for legibility -->
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 50%);pointer-events:none"></div>
+              <!-- Mini grid overlay (corner) -->
+              <div style="position:absolute;bottom:6px;left:6px;display:grid;grid-template-columns:repeat(9,1fr);gap:1px;width:74px;padding:3px;background:rgba(0,0,0,.35);border-radius:3px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)">
+                <div style="aspect-ratio:1;background:#4CAF50;border-radius:1px"></div><div style="aspect-ratio:1;background:#42A5F5;border-radius:1px"></div><div style="aspect-ratio:1;background:#4CAF50;border-radius:1px"></div><div style="aspect-ratio:1;background:#42A5F5;border-radius:1px"></div><div style="aspect-ratio:1;background:#4CAF50;border-radius:1px"></div><div style="aspect-ratio:1;background:#42A5F5;border-radius:1px"></div><div style="aspect-ratio:1;background:#FFD700;border-radius:1px"></div><div style="aspect-ratio:1;background:#42A5F5;border-radius:1px"></div><div style="aspect-ratio:1;background:#5C6BC0;border-radius:1px"></div>
+              </div>
+              <span style="position:absolute;bottom:8px;right:8px;font-family:'Space Grotesk';font-size:14px;font-weight:800;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)">86</span>
+            </div>
+          </div>
+          <!-- Grid-hero post (Kenji) -->
+          <div class="mock-row">
+            <div class="mock-avatar" style="background:#FF9800">K</div>
+            <div style="flex:1;font-size:11px;font-weight:600;color:var(--t1)">Kenji<span style="font-size:9px;color:var(--t3);font-weight:400">  · 5h</span></div>
+            <div style="display:flex;gap:2px">
+              <span class="mock-feed-tile" style="background:#4CAF50"></span><span class="mock-feed-tile" style="background:#4CAF50"></span><span class="mock-feed-tile" style="background:#42A5F5"></span><span class="mock-feed-tile" style="background:#4CAF50"></span><span class="mock-feed-tile" style="background:#5C6BC0"></span>
+            </div>
+            <span style="font-size:10px;color:var(--ac);font-weight:600">💪 8</span>
+          </div>
+        </div>
       </div>
+
+      <!-- 04: Kudos & Comments -->
       <div class="ftr rv">
         <div class="ic">🔥</div>
         <div class="ti">Kudos & Comments</div>
-        <div class="dc"><span data-l="en">Cheer with golfer-specific reactions. Comment with golf etiquette in mind.</span><span data-l="ja" class="a">ゴルファーならではの絵文字でリアクション。礼儀あるコメントで盛り上がる。</span><span data-l="ko">골퍼만의 이모티콘. 매너 있는 댓글.</span></div>
+        <div class="dc"><span data-l="en">Three Kudos made for golfers — Nice Shot, Nice Fight, Best Buddy. Add a real comment with golf etiquette in mind.</span><span data-l="ja" class="a">ゴルファーならではの3種類の Kudos — ナイスショット・ナイスファイト・ベストバディ。<br class="sp">コメントもゴルフの作法を持ったまま、仲間のラウンドに反応できます。</span><span data-l="ko">골퍼를 위한 3가지 Kudos — Nice Shot · Nice Fight · Best Buddy. 매너 있는 댓글로 동료의 라운드에 반응할 수 있습니다.</span></div>
+        <div class="ftr-mock">
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px">
+            <div class="mock-row" style="justify-content:space-between">
+              <span><span class="mock-emoji">🔥</span> <span style="font-size:10px;color:var(--t1);font-weight:600;margin-left:4px"><span data-l="en">Nice Shot</span><span data-l="ja" class="a">ナイスショット</span><span data-l="ko">나이스샷</span></span></span>
+              <span style="font-size:10px;color:var(--ac);font-weight:700;font-family:'Space Grotesk'">12</span>
+            </div>
+            <div class="mock-row" style="justify-content:space-between">
+              <span><span class="mock-emoji">💪</span> <span style="font-size:10px;color:var(--t1);font-weight:600;margin-left:4px"><span data-l="en">Nice Fight</span><span data-l="ja" class="a">ナイスファイト</span><span data-l="ko">나이스 파이트</span></span></span>
+              <span style="font-size:10px;color:var(--ac);font-weight:700;font-family:'Space Grotesk'">8</span>
+            </div>
+            <div class="mock-row" style="justify-content:space-between">
+              <span><span class="mock-emoji">🤝</span> <span style="font-size:10px;color:var(--t1);font-weight:600;margin-left:4px"><span data-l="en">Best Buddy</span><span data-l="ja" class="a">ベストバディ</span><span data-l="ko">베스트 버디</span></span></span>
+              <span style="font-size:10px;color:var(--ac);font-weight:700;font-family:'Space Grotesk'">5</span>
+            </div>
+          </div>
+          <div class="mock-row" style="gap:8px;align-items:flex-start;padding-top:10px;border-top:1px solid rgba(255,255,255,.05)">
+            <div class="mock-avatar" style="background:#EC4899;width:18px;height:18px;font-size:9px">M</div>
+            <div style="flex:1">
+              <div style="font-size:11px;color:var(--t1);line-height:1.5">
+                <span data-l="en">"Nice birdie on 7!"</span>
+                <span data-l="ja" class="a">「7番のバーディ最高でした」</span>
+                <span data-l="ko">"7번 홀 버디 최고"</span>
+              </div>
+              <div style="font-size:9px;color:var(--t3);margin-top:3px">Mio · 1h</div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- 05: Competitions -->
       <div class="ftr rv">
         <div class="ic">🏆</div>
         <div class="ti"><span data-l="en">Competitions</span><span data-l="ja" class="a">コンペ機能</span><span data-l="ko">대회 기능</span></div>
-        <div class="dc"><span data-l="en">Host in 3 taps. Auto-scoring, animated result reveal, individual titles. Free hosts 1 competition per month (up to 8 players). Pro unlocks unlimited hosting and participants; Compe Pack lets you host one larger competition without a subscription.</span><span data-l="ja" class="a">3タップで開催。自動集計・結果リビール演出・個人タイトル付与。<br class="sp">Freeは月1回・8人までコンペ開催可。<br class="sp">Pro加入で開催・参加人数とも無制限に。コンペパックを単発購入することで、サブスクなしで1回だけ大規模なコンペも開催できます。</span><span data-l="ko">3번 탭으로 개최. 자동 집계·결과 발표·개인 타이틀. Free는 월 1회·8명까지. Pro 가입 시 무제한. 대회 팩으로 구독 없이 1회 대규모 대회 개최 가능.</span></div>
+        <div class="dc"><span data-l="en">Host a competition in 3 taps. Auto-scoring, animated result reveal, and individual titles (Champion, Birdie Hunter, Mr. Consistent, and more) — automatically shared to the Feed when earned. Free plan hosts 1 competition per month; Pro unlocks unlimited hosting and unlimited participants.</span><span data-l="ja" class="a">3タップでコンペを開催できます。<br class="sp">自動集計・結果リビール演出・個人タイトル（チャンピオン、バーディーハンター、安定感の鬼など）が付与され、受賞時はフィードにも自動でシェアされます。<br class="sp">無料プランは月1回まで、Pro は開催回数も参加人数も無制限に。</span><span data-l="ko">3번 탭으로 대회를 개최할 수 있습니다. 자동 집계·결과 발표 연출·개인 타이틀(챔피언·버디 헌터·안정감의 강자 등)이 부여되고, 수상 시 피드에도 자동 공유됩니다. 무료 플랜은 월 1회까지, Pro는 개최 횟수·참가자 모두 무제한입니다.</span></div>
+        <div class="ftr-mock">
+          <div class="mock-podium" style="margin-bottom:12px">
+            <div class="p"><div style="font-size:16px">🥈</div><div style="font-size:10px;font-weight:600;color:var(--t2);margin-top:2px">Kenji</div></div>
+            <div class="p"><div style="font-size:22px">🥇</div><div style="font-size:11px;font-weight:700;color:var(--ac);margin-top:2px">Yuki</div></div>
+            <div class="p"><div style="font-size:16px">🥉</div><div style="font-size:10px;font-weight:600;color:var(--t2);margin-top:2px"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></div></div>
+          </div>
+          <div style="display:flex;gap:5px;justify-content:center;flex-wrap:wrap">
+            <span class="mock-chip" style="background:rgba(212,168,87,.15);color:var(--gold)">
+              <span data-l="en">CHAMPION</span><span data-l="ja" class="a">チャンピオン</span><span data-l="ko">챔피언</span>
+            </span>
+            <span class="mock-chip" style="background:rgba(239,83,80,.12);color:#EF8B89">
+              <span data-l="en">BIRDIE HUNTER</span><span data-l="ja" class="a">バーディーハンター</span><span data-l="ko">버디 헌터</span>
+            </span>
+            <span class="mock-chip" style="background:rgba(129,199,132,.12);color:var(--ac)">
+              <span data-l="en">MR. CONSISTENT</span><span data-l="ja" class="a">安定感の鬼</span><span data-l="ko">안정감의 강자</span>
+            </span>
+          </div>
+        </div>
       </div>
+
+      <!-- 06: Ranking -->
       <div class="ftr rv">
         <div class="ic">📊</div>
         <div class="ti"><span data-l="en">Ranking & Growth</span><span data-l="ja" class="a">ランキング・成長</span><span data-l="ko">랭킹·성장</span></div>
-        <div class="dc"><span data-l="en">Self-growth view by default. Compete on friends ranking for fun.</span><span data-l="ja" class="a">デフォルトは自己成長ビュー。<br class="sp">フレンドランキングで楽しく競争も。</span><span data-l="ko">기본은 자기 성장 뷰. 친구 랭킹으로 경쟁.</span></div>
+        <div class="dc"><span data-l="en">Five categories (Total, Skill, Vibe, Style, Best Score) and two scopes (Friends / All Users). The default is the self-growth view — climb at your own pace.</span><span data-l="ja" class="a">5カテゴリ（総合・スキル・評判・スタイル・ベストスコア）と、2スコープ（仲間・全ユーザー）。<br class="sp">デフォルトは自己成長ビューなので、人と比べずマイペースで楽しめます。</span><span data-l="ko">5개 카테고리(총합·스킬·평판·스타일·베스트 스코어)와 2개 스코프(친구·전체 사용자). 기본은 자기 성장 뷰 — 나의 페이스로 성장을 즐길 수 있습니다.</span></div>
+        <div class="ftr-mock">
+          <!-- Scope tabs (actual: 2 only) -->
+          <div style="display:flex;gap:6px;margin-bottom:8px">
+            <span class="mock-chip" style="background:rgba(129,199,132,.12);color:var(--ac)">👥 <span data-l="en">Friends</span><span data-l="ja" class="a">仲間</span><span data-l="ko">친구</span></span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.04);color:var(--t3)">🌐 <span data-l="en">All Users</span><span data-l="ja" class="a">全ユーザー</span><span data-l="ko">전체 사용자</span></span>
+          </div>
+          <!-- Category tabs (5 actual categories) -->
+          <div style="display:flex;gap:3px;margin-bottom:10px;flex-wrap:wrap">
+            <span class="mock-chip" style="background:rgba(129,199,132,.18);color:var(--ac);padding:3px 6px;font-size:8px">TOTAL</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.04);color:var(--t3);padding:3px 6px;font-size:8px">SKILL</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.04);color:var(--t3);padding:3px 6px;font-size:8px">VIBE</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.04);color:var(--t3);padding:3px 6px;font-size:8px">STYLE</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.04);color:var(--t3);padding:3px 6px;font-size:8px">SCORE</span>
+          </div>
+          <!-- Mini leaderboard -->
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div class="mock-row" style="padding:5px 6px;background:rgba(255,215,0,.08);border-radius:6px">
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:#FFD700;width:18px">1</span>
+              <div class="mock-avatar" style="background:#EC4899;width:18px;height:18px;font-size:9px">M</div>
+              <span style="flex:1;font-size:10px;font-weight:600;color:var(--t1)">Mio</span>
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:var(--t1)">86</span>
+            </div>
+            <div class="mock-row" style="padding:5px 6px">
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:#C0C0C0;width:18px">2</span>
+              <div class="mock-avatar" style="background:#81C784;width:18px;height:18px;font-size:9px">Y</div>
+              <span style="flex:1;font-size:10px;font-weight:600;color:var(--t1)">Yuki</span>
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:600;color:var(--t1)">72</span>
+              <span style="font-size:9px;color:#4CAF50;font-weight:600">+3 ▲</span>
+            </div>
+            <div class="mock-row" style="padding:5px 6px;background:rgba(129,199,132,.08);border-radius:6px">
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:#CD7F32;width:18px">3</span>
+              <div class="mock-avatar" style="background:#FF9800;width:18px;height:18px;font-size:9px">K</div>
+              <span style="flex:1;font-size:10px;font-weight:600;color:var(--ac)"><span data-l="en">You</span><span data-l="ja" class="a">あなた</span><span data-l="ko">나</span></span>
+              <span style="font-family:'Space Grotesk';font-size:11px;font-weight:700;color:var(--ac)">68</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="ftr rv">
-        <div class="ic">📸</div>
-        <div class="ti"><span data-l="en">Round Photos</span><span data-l="ja" class="a">ラウンド写真</span><span data-l="ko">라운드 사진</span></div>
-        <div class="dc"><span data-l="en">Capture moments, attach to your Round Card. Choose public or private. Pro unlocks unlimited photos.</span><span data-l="ja" class="a">瞬間を撮影してラウンドカードに添付。公開／非公開を選べる。Proで無制限。</span><span data-l="ko">순간을 촬영하여 라운드카드에 첨부. 공개·비공개 선택.</span></div>
-      </div>
-      <div class="ftr rv">
-        <div class="ic">⛳</div>
-        <div class="ti"><span data-l="en">Course Master</span><span data-l="ja" class="a">コースマスター</span><span data-l="ko">코스 마스터</span></div>
-        <div class="dc"><span data-l="en">Choose from Japan's top courses via GORA API. Yardage, par, layout — all built in.</span><span data-l="ja" class="a">楽天GORA APIで日本のゴルフ場から選択。<br class="sp">ヤード・パー・レイアウト情報を内蔵。</span><span data-l="ko">GORA API로 일본 골프장 선택.</span></div>
-      </div>
+
+      <!-- 07: Invite Friends -->
       <div class="ftr rv">
         <div class="ic">💬</div>
         <div class="ti"><span data-l="en">Invite Friends</span><span data-l="ja" class="a">フレンド招待</span><span data-l="ko">친구 초대</span></div>
-        <div class="dc"><span data-l="en">Share an invite link via LINE, Messages, or QR. Friends join with a tap.</span><span data-l="ja" class="a">LINE・メッセージ・QRで招待リンク。<br class="sp">ワンタップで参加。</span><span data-l="ko">LINE·메시지·QR로 초대.</span></div>
+        <div class="dc"><span data-l="en">Share an invite link via LINE, SMS, the system share sheet, or a QR code. Friends join with a tap.</span><span data-l="ja" class="a">LINE・SMS・共有シート・QRコードで招待リンクをシェア。<br class="sp">フレンドはワンタップで参加できます。</span><span data-l="ko">LINE·SMS·공유 시트·QR로 초대 링크 공유. 원탭 가입.</span></div>
+        <div class="ftr-mock">
+          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+            <span class="mock-chip" style="background:rgba(6,199,85,.15);color:#06C755">LINE</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.06);color:var(--t2)">SMS</span>
+            <span class="mock-chip" style="background:rgba(129,199,132,.12);color:var(--ac)">
+              <span data-l="en">Share</span>
+              <span data-l="ja" class="a">共有</span>
+              <span data-l="ko">공유</span>
+            </span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.06);color:var(--t2)">
+              <span data-l="en">Copy Link</span>
+              <span data-l="ja" class="a">リンクをコピー</span>
+              <span data-l="ko">링크 복사</span>
+            </span>
+          </div>
+          <div style="font-size:9px;color:var(--t3);font-family:'Space Grotesk';letter-spacing:.5px">+ QR code in sheet</div>
+        </div>
       </div>
+
+      <!-- 08: Multi-Language -->
       <div class="ftr rv">
         <div class="ic">🌐</div>
         <div class="ti"><span data-l="en">Multi-Language</span><span data-l="ja" class="a">多言語対応</span><span data-l="ko">다국어</span></div>
-        <div class="dc"><span data-l="en">Japanese, English, Korean. Built for global golfers from day one.</span><span data-l="ja" class="a">日本語・英語・韓国語。<br class="sp">初日からグローバルゴルファーのために。</span><span data-l="ko">일본어·영어·한국어.</span></div>
+        <div class="dc"><span data-l="en">Japanese, English, Korean. Built for global golfers from day one.</span><span data-l="ja" class="a">日本語・英語・韓国語に対応。<br class="sp">初日からグローバルゴルファーのために設計。</span><span data-l="ko">일본어·영어·한국어 대응. 처음부터 글로벌 골퍼를 위한 설계.</span></div>
+        <div class="ftr-mock">
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <span class="mock-chip" style="background:rgba(129,199,132,.12);color:var(--ac)">日本語</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.06);color:var(--t2)">EN</span>
+            <span class="mock-chip" style="background:rgba(255,255,255,.06);color:var(--t2)">한국어</span>
+          </div>
+          <div style="font-size:10px;color:var(--t2);line-height:1.6;font-style:italic">
+            記憶をかたちに。<br>
+            Shape your round.<br>
+            기억을, 형태로.
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -345,33 +551,33 @@
 
     <div class="score-system">
       <div class="score-pillar rv">
-        <div class="num">PLAY</div>
-        <div class="name"><span data-l="en">SKILL</span><span data-l="ja" class="a">実力</span><span data-l="ko">실력</span></div>
-        <div class="desc"><span data-l="en">Average score, consistency, par-save, birdies. Beginner-friendly correction applied.</span><span data-l="ja" class="a">平均スコア・安定性・パーセーブ率・バーディ率。初心者には補正をかけて評価。</span><span data-l="ko">평균 스코어·안정성·파세이브·버디.</span></div>
+        <div class="num">SKILL</div>
+        <div class="name"><span data-l="en">Golf Skill</span><span data-l="ja" class="a">ゴルフスキル</span><span data-l="ko">골프 실력</span></div>
+        <div class="desc"><span data-l="en">Average score, consistency, par-save and birdie rates. Beginners get a built-in handicap so early rounds aren't penalized.</span><span data-l="ja" class="a">平均スコア・安定性・パーセーブ率・バーディ率で算出。初心者の最初の数ラウンドには補正がかかるので、低くなりすぎません。</span><span data-l="ko">평균 스코어·안정성·파세이브·버디율로 산출. 초보자는 첫 몇 라운드에 보정이 적용되어 점수가 너무 낮아지지 않습니다.</span></div>
         <div class="weight">35%</div>
       </div>
       <div class="score-pillar rv">
         <div class="num">VIBE</div>
-        <div class="name"><span data-l="en">COMMUNITY</span><span data-l="ja" class="a">仲間貢献</span><span data-l="ko">커뮤니티</span></div>
-        <div class="desc"><span data-l="en">Kudos sent, comments given, feed activity. We value those who lift others up.</span><span data-l="ja" class="a">Kudos送信・コメント・フィード活動。<br class="sp">仲間を引き上げる人を評価。</span><span data-l="ko">Kudos·댓글·피드 활동.</span></div>
+        <div class="name"><span data-l="en">Reputation</span><span data-l="ja" class="a">評判</span><span data-l="ko">평판</span></div>
+        <div class="desc"><span data-l="en">Kudos given, comments left, and how much you bring to the Feed. ROUNDIE rewards golfers who lift others up.</span><span data-l="ja" class="a">仲間に送る Kudos やコメント、フィードでの活動量で算出。<br class="sp">ROUNDIE は「与える側」のゴルファーを評価します。</span><span data-l="ko">동료에게 보낸 Kudos·댓글·피드 활동량으로 산출. ROUNDIE는 함께하는 동료를 응원하는 골퍼를 높이 평가합니다.</span></div>
         <div class="weight">30%</div>
       </div>
       <div class="score-pillar rv">
         <div class="num">STYLE</div>
-        <div class="name"><span data-l="en">LIFESTYLE</span><span data-l="ja" class="a">ライフスタイル</span><span data-l="ko">라이프스타일</span></div>
-        <div class="desc"><span data-l="en">Round frequency, course variety, streak weeks, profile depth. Live your golf life.</span><span data-l="ja" class="a">ラウンド頻度・コース多様性・継続週数・プロフィール充実度。</span><span data-l="ko">라운드 빈도·코스 다양성·연속 주.</span></div>
+        <div class="name"><span data-l="en">Golf Life</span><span data-l="ja" class="a">ゴルフライフ</span><span data-l="ko">골프 라이프</span></div>
+        <div class="desc"><span data-l="en">How often you play, how many different courses you visit, your streak weeks, and how complete your profile feels.</span><span data-l="ja" class="a">ラウンド頻度・回ったコースの数・継続週数・プロフィールの充実度で算出。</span><span data-l="ko">라운드 빈도·다녀온 코스의 다양성·연속 주·프로필 충실도로 산출.</span></div>
         <div class="weight">35%</div>
       </div>
     </div>
 
     <div class="cards-row" style="margin-top:36px">
       <div class="info-card rv">
-        <h3><span data-l="en">7 Ranks. Real growth.</span><span data-l="ja" class="a">7段階のランク。本物の成長。</span><span data-l="ko">7단계 랭크. 진짜 성장.</span></h3>
-        <p><span data-l="en">ROOKIE · PLAYER · REGULAR · SINGLE · SCRATCH · PRO · LEGEND. Each rank is earned through real progress — no shortcuts.</span><span data-l="ja" class="a">ROOKIE · PLAYER · REGULAR · SINGLE · SCRATCH · PRO · LEGEND。<br>本物の成長で勝ち取るランク。<br class="sp">ショートカットはなし。</span><span data-l="ko">ROOKIE · PLAYER · REGULAR · SINGLE · SCRATCH · PRO · LEGEND.</span></p>
+        <h3><span data-l="en">Climb 7 ranks, step by step.</span><span data-l="ja" class="a">ROOKIE から LEGEND まで、自分のペースで。</span><span data-l="ko">ROOKIE에서 LEGEND까지, 나의 페이스로.</span></h3>
+        <p><span data-l="en">Start as a <strong>ROOKIE</strong> and climb through PLAYER → REGULAR → SINGLE → SCRATCH → PRO → <strong>LEGEND</strong>. Your rank rises as you play, share with friends, and keep coming back. There's no way to buy your way up — every rank is earned.</span><span data-l="ja" class="a">最初はみんな <strong>ROOKIE</strong>。ラウンドを記録し、仲間と Kudos やコメントを交わし、続けるうちに <strong>PLAYER → REGULAR → SINGLE → SCRATCH → PRO → LEGEND</strong> へとランクが上がっていきます。<br class="sp">ランクは行動の積み重ねで決まり、課金で先に進むことはできません。</span><span data-l="ko">처음은 <strong>ROOKIE</strong>부터. 라운드 기록·동료와의 교류·꾸준함이 쌓여 <strong>PLAYER → REGULAR → SINGLE → SCRATCH → PRO → LEGEND</strong>로 올라갑니다. 결제로 건너뛸 수 없어, 모든 랭크는 행동의 결과입니다.</span></p>
       </div>
       <div class="info-card rv">
-        <h3><span data-l="en">3-Layer Disclosure</span><span data-l="ja" class="a">3層ディスクロージャー</span><span data-l="ko">3층 공개 모델</span></h3>
-        <p><span data-l="en">Always visible: pillar scores, rank, progress bar. Tap to see: relative evaluation, feedback, next actions. The formulas stay simple — the experience stays clean.</span><span data-l="ja" class="a">常時表示: 各軸スコア・ランク・進捗バー。<br class="sp">タップして表示: 相対評価・フィードバック・次のアクション。<br class="sp">仕組みはシンプル、体験はクリアに。</span><span data-l="ko">상시 표시·탭하면 표시 2층 모델.</span></p>
+        <h3><span data-l="en">Clear at a glance, deeper on tap.</span><span data-l="ja" class="a">一目でわかり、タップで深掘り。</span><span data-l="ko">한눈에 파악, 탭하면 깊이.</span></h3>
+        <p><span data-l="en">Open the screen — you instantly see your <strong>score, rank, and progress bar</strong>. Tap them, and you'll see how you compare with others your age and what specifically to focus on next to grow. The math behind it stays in the background, so the experience always feels simple.</span><span data-l="ja" class="a">画面を開いた瞬間に、<strong>スコア・ランク・進捗バー</strong>がひと目でわかります。<br class="sp">スコアをタップすると、<strong>「同世代と比べてどのくらいの位置か」「次に何を伸ばせばランクアップに近づくか」</strong>がわかるヒントが表示されます。<br class="sp">複雑な計算式は裏側に隠して、表示はあくまでシンプルに保ちました。</span><span data-l="ko">화면을 열면 <strong>점수·랭크·진척 바</strong>가 한눈에. 점수를 탭하면 <strong>"같은 연령대와 비교하여 어느 정도인지"</strong>와 <strong>"다음에 무엇을 강화하면 랭크업에 가까워지는지"</strong>의 힌트를 표시. 복잡한 계산식은 뒤로 숨기고, 표시는 심플하게.</span></p>
       </div>
     </div>
   </div>
@@ -482,14 +688,18 @@
       <span data-l="ko">프라이버시 설정은 모든 액션에 내장. 라운드별·사진별로 누구에게 보일지 선택 가능.</span>
     </p>
 
-    <div class="cards-row">
+    <div class="cards-row" style="grid-template-columns:repeat(3,1fr)">
       <div class="info-card rv">
         <h3><span data-l="en">Per-round visibility</span><span data-l="ja" class="a">ラウンドごとの公開範囲</span><span data-l="ko">라운드별 공개 범위</span></h3>
-        <p><span data-l="en">Public, friends-only, or private. Set it round-by-round. Change it anytime.</span><span data-l="ja" class="a">公開・フレンドのみ・非公開。ラウンドごとに設定可能。いつでも変更できる。</span><span data-l="ko">공개·친구만·비공개. 라운드별로 설정.</span></p>
+        <p><span data-l="en">Public, friends-only, or private. Set it round-by-round. Change it anytime.</span><span data-l="ja" class="a">公開・フレンドのみ・非公開を、ラウンドごとに設定できます。いつでも変更可能です。</span><span data-l="ko">공개·친구만·비공개. 라운드별로 설정.</span></p>
+      </div>
+      <div class="info-card rv">
+        <h3><span data-l="en">Mute & Block, your way</span><span data-l="ja" class="a">ミュート & ブロックも、自分のペースで</span><span data-l="ko">뮤트·차단도, 나의 페이스로</span></h3>
+        <p><span data-l="en">Don't want to see someone's posts? Mute them quietly. Need stronger separation? Block. All settings are reversible at any time.</span><span data-l="ja" class="a">特定の人の投稿を見たくない時はミュート、もっとはっきり距離を置きたい時はブロック。<br class="sp">どちらもいつでも解除できます。</span><span data-l="ko">조용히 보고 싶지 않을 때는 뮤트, 더 분명한 거리가 필요할 때는 차단. 모두 언제든 해제 가능.</span></p>
       </div>
       <div class="info-card rv">
         <h3><span data-l="en">Data you own</span><span data-l="ja" class="a">あなたのデータはあなたのもの</span><span data-l="ko">데이터는 당신의 것</span></h3>
-        <p><span data-l="en">Export or delete your data anytime. We don't sell your information. Stored on Supabase (Tokyo).</span><span data-l="ja" class="a">データはいつでもエクスポート・削除可能。<br class="sp">第三者への販売は一切しません。<br class="sp">保管はSupabase（東京リージョン）。</span><span data-l="ko">데이터는 언제든 내보내기·삭제 가능. 제3자 판매 없음.</span></p>
+        <p><span data-l="en">Stored securely on Supabase (Tokyo region). We never sell user data to third parties.</span><span data-l="ja" class="a">データは Supabase（東京リージョン）で安全に管理しています。<br class="sp">第三者への販売は一切いたしません。</span><span data-l="ko">Supabase(도쿄 리전)에서 안전하게 보관. 제3자 판매 없음.</span></p>
       </div>
     </div>
   </div>
@@ -568,7 +778,8 @@ var obs = new IntersectionObserver(function(entries){
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
 (function(){
-  var colors = ['#4CAF50','#EF5350','#4CAF50','#42A5F5','#4CAF50','#4CAF50','#FFD700','#4CAF50','#42A5F5','#4CAF50','#42A5F5','#4CAF50','#4CAF50','#EF5350','#4CAF50','#5C6BC0','#4CAF50','#4CAF50'];
+  // Yuki's Sat Apr 12 round — Par 72, total 86 (OUT 40 + IN 46). 1 Eagle, 1 Triple, mostly pars/bogeys/doubles. Matches Features mock.
+  var colors = ['#4CAF50','#42A5F5','#4CAF50','#42A5F5','#4CAF50','#42A5F5','#FFD700','#42A5F5','#5C6BC0', '#4CAF50','#37474F','#42A5F5','#4CAF50','#5C6BC0','#4CAF50','#5C6BC0','#4CAF50','#42A5F5'];
   var g = document.getElementById('vg');
   if(g) g.innerHTML = colors.map(c=>'<div style="background:'+c+'"></div>').join('');
 })();
