@@ -4,7 +4,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8YSVSPZ7E"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-T8YSVSPZ7E')</script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <meta name="theme-color" content="#050507">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Talent — KANOPY Inc.</title>
   <meta name="description" content="KANOPY Talent — Personal AI企業の人事採用を主軸に、AI・SaaS・プロダクト組織の採用 (Talent Acquisition / RPO) と人事立ち上げを支援。">
   <meta property="og:title" content="Talent — KANOPY Inc.">
@@ -15,10 +18,15 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.88em' font-size='70' font-weight='900' fill='%2381C784' font-family='Arial'>K</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#050507;--bg2:#09090D;--card:#0E0E14;--t1:#EDEDEF;--t2:#9095A0;--t3:#55556A;--ac:#81C784;--acg:rgba(129,199,132,.1);--bd:rgba(255,255,255,.06)}
+    :root{--bg:#050507;--bg2:#09090D;--card:#0E0E14;--t1:#EDEDEF;--t2:#9095A0;--t3:#8B8BA0;--ac:#81C784;--acg:rgba(129,199,132,.1);--bd:rgba(255,255,255,.06)}
     *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{font-family:'Inter',-apple-system,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+    button:active,.btn:active{transform:scale(.97)}
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    }
     h1,h2,h3{font-family:'Space Grotesk','Hiragino Kaku Gothic ProN',sans-serif}
     .sp{display:none}@media(max-width:640px){.sp{display:inline}}
     [data-l]{display:none}[data-l].a{display:inline}
@@ -29,9 +37,9 @@
     .nb a{font-size:10px;color:var(--t2);text-decoration:none;letter-spacing:2px;transition:color .2s}
     .nb a:hover{color:var(--ac)}
     .ng{display:flex;gap:2px}
-    .ng a{padding:4px 8px;border-radius:3px;font-size:9px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s;cursor:pointer}
+    .ng a{padding:10px 12px;border-radius:6px;font-size:11px;font-weight:700;color:var(--t2);text-decoration:none;letter-spacing:2px;transition:all .2s;cursor:pointer;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}
     .ng a.a{color:var(--ac);background:var(--acg)}
-    @media(max-width:768px){nav{padding:16px 24px}}
+    @media(max-width:768px){nav{padding:14px 20px}}
 
     section{padding:clamp(60px,10vw,120px) 48px}
     @media(max-width:768px){section{padding:60px 24px}}
@@ -94,10 +102,11 @@
     .cta-sec p{font-size:14px;color:var(--t2);margin-bottom:28px;line-height:1.85}
 
     footer{background:#000;padding:40px 48px;text-align:center;border-top:1px solid var(--bd)}
-    footer .links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:18px}
-    footer .links a{font-size:11px;color:var(--t2);text-decoration:none;letter-spacing:1px}
+    @media(max-width:768px){footer{padding:32px 20px}}
+    footer .links{display:flex;justify-content:center;gap:8px 18px;flex-wrap:wrap;margin-bottom:18px}
+    footer .links a{font-size:13px;color:var(--t2);text-decoration:none;letter-spacing:.5px;padding:10px 8px;min-height:44px;display:inline-flex;align-items:center}
     footer .links a:hover{color:var(--ac)}
-    footer .copy{font-size:10px;color:var(--t3);letter-spacing:2px}
+    footer .copy{font-size:12px;color:var(--t2);letter-spacing:1px;line-height:1.7}
   </style>
 </head>
 <body>

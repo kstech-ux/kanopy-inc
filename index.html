@@ -18,7 +18,10 @@
     })(window, document, "clarity", "script", "w8acp9qnxk");
   </script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#050507">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>KANOPY Inc. — Makers of ROUNDIE</title>
   <meta name="description" content="KANOPY Inc. — Makers of ROUNDIE. ゴルフの体験と記憶を、かたちに残す。We shape what lasts.">
   <meta property="og:title" content="KANOPY Inc. — Makers of ROUNDIE">
@@ -31,14 +34,19 @@
   <style>
     :root{
       --bg:#050507;--bg2:#09090D;--card:#0E0E14;
-      --t1:#EDEDEF;--t2:#6E6E7E;--t3:#5A5A70;
+      --t1:#EDEDEF;--t2:#9095A0;--t3:#8B8BA0;
       --ac:#81C784;--acg:rgba(129,199,132,.1);
       --gold:#D4A857;
-      --bd:rgba(255,255,255,.05);
+      --bd:rgba(255,255,255,.06);
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.9;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--t1);line-height:1.7;font-size:16px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+    button:active,.btn:active{transform:scale(.97)}
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    }
     ::selection{background:var(--ac);color:var(--bg)}
     h1,h2,h3,.display{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif}
     .sp{display:none}
@@ -56,16 +64,20 @@
     .nk a{font-family:inherit;font-size:10px;font-weight:500;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:color .3s;margin-left:20px;text-transform:uppercase}
     .nk a:hover{color:var(--t1)}
     .ng{display:flex;gap:2px}
-    .ng a{padding:4px 8px;border-radius:3px;font-size:10px;font-weight:700;color:var(--t3);text-decoration:none;letter-spacing:2px;transition:all .2s;cursor:pointer}
+    .ng a{padding:10px 12px;border-radius:6px;font-size:11px;font-weight:700;color:var(--t2);text-decoration:none;letter-spacing:2px;transition:all .2s;cursor:pointer;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center}
     .ng a.a{color:var(--ac);background:var(--acg)}
 
-    .hamburger{display:none;position:fixed;top:18px;right:24px;z-index:200;background:transparent;border:none;cursor:pointer;width:36px;height:36px;flex-direction:column;justify-content:center;gap:5px}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--t1);transition:all .3s;margin:0 auto}
-    .mob-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(5,5,7,.98);backdrop-filter:blur(20px);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:32px}
-    .mob-overlay a{font-size:18px;font-weight:600;color:var(--t1);text-decoration:none;letter-spacing:3px}
+    .hamburger{display:none;position:fixed;top:14px;right:18px;z-index:200;background:transparent;border:none;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px;padding:0}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--t1);transition:all .3s;margin:0 auto;border-radius:1px}
+    .hamburger.o span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.o span:nth-child(2){opacity:0}
+    .hamburger.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mob-overlay{display:none;position:fixed;inset:0;background:rgba(5,5,7,.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);z-index:150;flex-direction:column;justify-content:center;align-items:center;gap:28px;padding:0 24px}
+    .mob-overlay a{font-size:20px;font-weight:600;color:var(--t1);text-decoration:none;letter-spacing:2px;padding:8px 16px;min-height:44px;display:inline-flex;align-items:center}
+    .mob-overlay a.cta{margin-top:12px;padding:16px 36px;background:var(--ac);color:var(--bg);border-radius:8px;font-weight:700;letter-spacing:1px;font-size:14px}
     @media(max-width:768px){
       .nk{display:none}.hamburger{display:flex}
-      nav{padding:16px 24px}
+      nav{padding:14px 20px}
       .mob-overlay.o{display:flex}
     }
 
@@ -83,7 +95,7 @@
     .btn-g:hover{border-color:var(--ac);color:var(--ac)}
 
     /* HERO */
-    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 48px;text-align:center;position:relative}
+    .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 48px;text-align:center;position:relative}
     .hero-glow{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--acg) 0%,transparent 70%);animation:breathe 16s ease-in-out infinite;pointer-events:none}
     @keyframes breathe{0%,100%{opacity:.4;transform:translate(-50%,-50%) scale(1)}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.15)}}
     .hero-c{position:relative;z-index:1;max-width:640px}
@@ -217,14 +229,14 @@
 
     /* COMPANY BAR */
     .co-bar{background:#000;padding:40px 48px;border-top:1px solid var(--bd)}
-    @media(max-width:768px){.co-bar{padding:32px 24px}}
-    .co-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;font-size:11px;color:var(--t3)}
-    @media(max-width:768px){.co-g{grid-template-columns:1fr;gap:20px;text-align:center}}
-    .co-g div h5{font-size:10px;color:var(--ac);font-weight:700;letter-spacing:2px;margin-bottom:10px}
+    @media(max-width:768px){.co-bar{padding:32px 20px}}
+    .co-g{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;font-size:13px;color:var(--t2)}
+    @media(max-width:768px){.co-g{grid-template-columns:1fr;gap:24px;text-align:center}}
+    .co-g div h5{font-size:11px;color:var(--ac);font-weight:700;letter-spacing:2px;margin-bottom:12px}
     .co-g div p{line-height:1.8}
-    .co-g div a{color:var(--t2);text-decoration:none;display:block;line-height:2;transition:color .2s}
+    .co-g div a{color:var(--t2);text-decoration:none;display:block;line-height:1.6;padding:8px 0;min-height:36px;transition:color .2s}
     .co-g div a:hover{color:var(--ac)}
-    .copyright{max-width:900px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--bd);text-align:center;font-size:10px;color:var(--t3);letter-spacing:2px}
+    .copyright{max-width:900px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--bd);text-align:center;font-size:12px;color:var(--t2);letter-spacing:1px;line-height:1.7}
 
     /* Sidebar dots */
     .sidebar{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;z-index:90}
@@ -255,7 +267,7 @@
   </div>
 </nav>
 
-<button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+<button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 
 <div class="mob-overlay" id="mobMenu">
   <a href="https://roundie.app/" target="_blank">ROUNDIE ↗</a>
@@ -619,8 +631,19 @@ function sl(lang, el){
 })();
 
 // Mobile menu
-function toggleMenu(){document.getElementById('mobMenu').classList.toggle('o')}
-function closeMenu(){document.getElementById('mobMenu').classList.remove('o')}
+function toggleMenu(){
+  var menu=document.getElementById('mobMenu'),btn=document.querySelector('.hamburger');
+  var open=menu.classList.toggle('o');
+  if(btn){btn.classList.toggle('o',open);btn.setAttribute('aria-expanded',open?'true':'false')}
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMenu(){
+  var menu=document.getElementById('mobMenu'),btn=document.querySelector('.hamburger');
+  menu.classList.remove('o');
+  if(btn){btn.classList.remove('o');btn.setAttribute('aria-expanded','false')}
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeMenu()});
 
 // Logo char animation
 (function(){
