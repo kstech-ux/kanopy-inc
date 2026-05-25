@@ -187,7 +187,8 @@ body > *{position:relative;z-index:2}
 }
 
 /* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;transition:background .4s,border-color .4s,transform .45s var(--ease-out)}
+nav{position:fixed;top:32px;left:0;right:0;z-index:100;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;transition:background .4s,border-color .4s,transform .45s var(--ease-out)}
+@media(max-width:520px){nav{top:28px}}
 nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--bd)}
 nav.hidden{transform:translateY(-110%)}
 @media(min-width:834px){nav{padding:24px 40px}}
@@ -311,6 +312,17 @@ body.menu-open{overflow:hidden}
 .lang-btn{appearance:none;border:1px solid var(--bd-strong);background:transparent;color:var(--text-2);padding:8px 16px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;border-radius:6px;cursor:pointer;min-height:44px;min-width:64px;transition:color .2s,border-color .2s,background .2s}
 .lang-btn:hover,.lang-btn:focus-visible{color:var(--text-1);border-color:var(--text-1)}
 .lang-btn[aria-pressed="true"]{color:var(--bg);background:var(--text-1);border-color:var(--text-1)}
+
+/* FE-443 F9: 画面最上部 言語切替バー (Apple/Google パターン、PC でも常時可視) */
+.top-lang-bar{position:fixed;top:0;left:0;right:0;z-index:201;display:flex;justify-content:flex-end;align-items:center;gap:6px;padding:6px 24px;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--bd);min-height:32px;font-size:11px;letter-spacing:.08em}
+.top-lang-link{appearance:none;border:0;background:transparent;color:var(--text-2);padding:6px 10px;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;cursor:pointer;transition:color .2s;min-height:32px}
+.top-lang-link:hover,.top-lang-link:focus-visible{color:var(--text-1)}
+.top-lang-link[aria-pressed="true"]{color:var(--green-hi);font-weight:800}
+.top-lang-sep{color:var(--text-3);font-size:10px;user-select:none}
+@media(max-width:520px){
+  .top-lang-bar{padding:4px 12px;font-size:10px}
+  .top-lang-link{padding:4px 6px;font-size:10px;min-height:28px}
+}
 
 /* FE-437: data-l hooks (hidden until language matches) — scoped to 3 lang codes
    to avoid conflict with existing data-l="P|B|Bo|E|D|T" on .bpg-cell (ROUNDIE preview grid). */
@@ -801,6 +813,15 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 </head>
 <body>
 
+<!-- FE-443 F9: nav 上独立バー (Apple/Google パターン) — PC でも常時可視 -->
+<div class="top-lang-bar" role="navigation" aria-label="Language">
+  <button type="button" class="top-lang-link" data-lang="ja" aria-pressed="true">日本語</button>
+  <span aria-hidden="true" class="top-lang-sep">·</span>
+  <button type="button" class="top-lang-link" data-lang="en" aria-pressed="false">English</button>
+  <span aria-hidden="true" class="top-lang-sep">·</span>
+  <button type="button" class="top-lang-link" data-lang="ko" aria-pressed="false">한국어</button>
+</div>
+
 <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
 <div class="cursor-spot" id="cursorSpot" aria-hidden="true"></div>
 
@@ -827,7 +848,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <a href="#mission" data-menu-link>Mission<span class="mm-jp"><span data-l="ja" class="a">ミッション</span><span data-l="en">Mission</span><span data-l="ko">미션</span></span></a>
   <a href="#business" data-menu-link>Business<span class="mm-jp"><span data-l="ja" class="a">2 つの事業</span><span data-l="en">Two businesses</span><span data-l="ko">2가지 사업</span></span></a>
   <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp"><span data-l="ja" class="a">ゴルフ SNS</span><span data-l="en">Golf social app</span><span data-l="ko">골프 SNS</span></span></a>
-  <a href="talent.html" data-menu-link>KANOPY Talent<span class="mm-jp"><span data-l="ja" class="a">人事採用支援</span><span data-l="en">Hiring support</span><span data-l="ko">인사 채용 지원</span></span></a>
+  <a href="/talent/" data-menu-link>KANOPY Talent<span class="mm-jp"><span data-l="ja" class="a">人事採用支援</span><span data-l="en">Hiring support</span><span data-l="ko">인사 채용 지원</span></span></a>
   <a href="#founder" data-menu-link>Founder<span class="mm-jp"><span data-l="ja" class="a">創業者</span><span data-l="en">Founder</span><span data-l="ko">창업자</span></span></a>
   <a href="#news" data-menu-link>News<span class="mm-jp"><span data-l="ja" class="a">お知らせ</span><span data-l="en">News</span><span data-l="ko">소식</span></span></a>
   <a href="#contact" class="mobile-menu-cta" data-menu-link><span data-l="ja" class="a">お問い合わせ →</span><span data-l="en">Contact us →</span><span data-l="ko">문의하기 →</span></a>
@@ -1119,7 +1140,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
             </div>
           </div>
 
-          <a href="talent.html" class="biz-link" data-ripple>
+          <a href="/talent/" class="biz-link" data-ripple>
             <span data-l="ja" class="a">Talent に相談する</span>
             <span data-l="en">Talk to Talent</span>
             <span data-l="ko">Talent 에 상담</span>
@@ -1358,7 +1379,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       <div class="footer-col">
         <h5>Services</h5>
         <a href="https://roundie.app" rel="noopener">ROUNDIE ↗</a>
-        <a href="talent.html">KANOPY Talent</a>
+        <a href="/talent/">KANOPY Talent</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1677,14 +1698,14 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     document.querySelectorAll('[data-l-block="ja"],[data-l-block="en"],[data-l-block="ko"]').forEach(el=>{
       el.classList.toggle('a', el.getAttribute('data-l-block') === lang);
     });
-    document.querySelectorAll('.lang-btn').forEach(btn=>{
+    document.querySelectorAll('.lang-btn, .top-lang-link').forEach(btn=>{
       btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
     });
     const og = document.querySelector('meta[property="og:locale"]');
     if (og) og.setAttribute('content', OG_LOCALE[lang]);
     try{ localStorage.setItem('kanopy_lang', lang); }catch(e){}
   }
-  document.querySelectorAll('.lang-btn').forEach(btn=>{
+  document.querySelectorAll('.lang-btn, .top-lang-link').forEach(btn=>{
     btn.addEventListener('click', ()=>setLang(btn.dataset.lang));
   });
   // Initial language detection (localStorage > navigator.language > ja)
