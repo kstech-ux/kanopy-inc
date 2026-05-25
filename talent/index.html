@@ -238,10 +238,10 @@ body.menu-open{overflow:hidden}
 @media(min-width:1024px){.h1-line{white-space:nowrap}}
 .hero-sub{font-size:clamp(15px,1.7vw,19px);color:var(--text-2);line-height:1.85;max-width:640px;margin-bottom:40px;font-weight:400}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .3s cubic-bezier(.25,.8,.25,1);min-height:50px;line-height:1;text-decoration:none;will-change:transform;position:relative;overflow:hidden}
-.btn-primary{background:var(--amber);color:#0A0A0A}
-.btn-primary:hover{background:#E0B060;color:#0A0A0A;box-shadow:0 12px 32px var(--amber-glow-strong)}
-.btn-ghost{background:transparent;color:var(--text-1);border:1px solid var(--bd-strong)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 32px;border:1px solid transparent;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .3s cubic-bezier(.25,.8,.25,1);min-height:50px;line-height:1;text-decoration:none;will-change:transform;position:relative;overflow:hidden;box-sizing:border-box}
+.btn-primary{background:var(--amber);color:#0A0A0A;border-color:var(--amber)}
+.btn-primary:hover{background:#E0B060;border-color:#E0B060;color:#0A0A0A;box-shadow:0 12px 32px var(--amber-glow-strong)}
+.btn-ghost{background:transparent;color:var(--text-1);border-color:var(--bd-strong)}
 .btn-ghost:hover{border-color:var(--text-1);background:rgba(255,255,255,.04)}
 .btn-arrow{font-weight:900;transition:transform .25s}
 .btn:hover .btn-arrow{transform:translateX(3px)}
@@ -507,8 +507,6 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 </style>
 </head>
 <body>
-
-<div class="opt-banner">KANOPY TALENT PROTOTYPE · <a href="index.html">← KANOPY HP</a></div>
 
 <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
 <div class="cursor-spot" id="cursorSpot" aria-hidden="true"></div>
