@@ -343,6 +343,7 @@ body.menu-open{overflow:hidden}
 .hero-sub{font-size:clamp(15px,1.7vw,20px);color:var(--text-2);line-height:1.85;max-width:600px;margin-bottom:48px;font-weight:400;opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease-out) .9s,transform .9s var(--ease-out) .9s}
 .hero-content.in-view .hero-sub{opacity:1;transform:translateY(0)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease-out) 1.05s,transform .9s var(--ease-out) 1.05s}
+.hero-cta .btn{min-width:220px}
 .hero-content.in-view .hero-cta{opacity:1;transform:translateY(0)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 32px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:all .3s cubic-bezier(.25,.8,.25,1);min-height:50px;line-height:1;text-decoration:none;will-change:transform;position:relative;overflow:hidden}
 .btn-primary{background:var(--text-1);color:var(--bg)}
@@ -804,6 +805,8 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   </button>
   <a href="#mission" data-menu-link>Mission<span class="mm-jp">ミッション</span></a>
   <a href="#business" data-menu-link>Business<span class="mm-jp">2 つの事業</span></a>
+  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp">ゴルフ SNS</span></a>
+  <a href="talent.html" data-menu-link>KANOPY Talent<span class="mm-jp">人事採用支援</span></a>
   <a href="#founder" data-menu-link>Founder<span class="mm-jp">創業者</span></a>
   <a href="#news" data-menu-link>News<span class="mm-jp">お知らせ</span></a>
   <a href="#contact" class="mobile-menu-cta" data-menu-link>お問い合わせ →</a>
@@ -854,7 +857,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="mission-head" data-reveal="up">
       <div class="section-eyebrow">Mission &amp; Vision</div>
-      <h2 class="section-title">KANOPY が<em>大切に</em>していること</h2>
+      <h2 class="section-title"><span class="nowrap">KANOPY が</span><span class="nowrap"><em>大切に</em>していること</span></h2>
       <p class="section-sub">短期的なトレンドや数字ではなく、<br>人生に残るかたちをつくるために。<br>KANOPY のすべての活動は、ひとつの想いから始まります。</p>
     </div>
 
@@ -920,8 +923,8 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 
           <div class="biz-stats">
             <div class="biz-stat">
-              <div class="biz-stat-num">2026</div>
-              <div class="biz-stat-label">iOS Launch</div>
+              <div class="biz-stat-num">TestFlight</div>
+              <div class="biz-stat-label">公開中 · 2026 ローンチ予定</div>
             </div>
             <div class="biz-stat">
               <div class="biz-stat-num">¥0</div>
@@ -1028,7 +1031,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <div class="founder-role">CEO / Founder</div>
         <h3 class="founder-name">柴 和成</h3>
         <div class="founder-name-en">Kazushige Shiba</div>
-        <p class="founder-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、製造業で<strong>営業を 7 年</strong>経験したのち、<strong>人事採用領域</strong>へ転身し <strong>6 年</strong>を積みました。<strong>2023 年に独立</strong>し、AI・SaaS スタートアップを中心に <strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</p>
+        <p class="founder-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</p>
         <p class="founder-bio"><strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「<strong>人生に残るかたちをつくる</strong>」</span> という同じ想いで運営しています。</p>
         <blockquote class="founder-quote">
           <span class="founder-quote-line">いいプロダクトと、いい人材。</span>
@@ -1063,8 +1066,8 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       </a>
       <a href="/notice/" class="news-item">
         <span class="news-date">2026.03.01</span>
-        <span class="news-cat">Talent</span>
-        <span class="news-title">KANOPY Talent、支援企業数 17 社を達成しました</span>
+        <span class="news-cat">Milestone</span>
+        <span class="news-title">Founder の独立以来、累計支援企業数 17 社を達成</span>
         <span class="news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
@@ -1139,7 +1142,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 KANOPY Inc.（株式会社 KANOPY）</div>
+      <div>© <span id="copyrightYear">2026</span> KANOPY Inc.（株式会社 KANOPY）</div>
       <div>TOKYO · JAPAN</div>
     </div>
   </div>
@@ -1433,6 +1436,14 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       target.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
     });
   });
+
+  // ===== Copyright year (F10) =====
+  const cy = document.getElementById('copyrightYear');
+  if (cy) {
+    const FOUNDED_YEAR = 2026;
+    const currentYear = new Date().getFullYear();
+    cy.textContent = currentYear > FOUNDED_YEAR ? `${FOUNDED_YEAR}-${currentYear}` : `${FOUNDED_YEAR}`;
+  }
 })();
 </script>
 </body>

@@ -339,7 +339,9 @@ body.menu-open{overflow:hidden}
 .case-result{font-family:'Arial Black',sans-serif;font-size:clamp(20px,2.5vw,28px);line-height:1.25;font-weight:900;letter-spacing:-.015em;color:var(--text-1);margin-bottom:12px}
 .case-result em{font-style:normal;color:var(--amber);font-variation-settings:'wght' 900}
 .case-desc{font-size:13.5px;color:var(--text-2);line-height:1.75}
-.case-metric{display:inline-flex;align-items:baseline;gap:6px;margin-top:14px;padding:6px 12px;background:rgba(212,160,80,.1);border:1px solid rgba(212,160,80,.3);border-radius:100px;font-size:11px;font-weight:700;color:var(--text-1);letter-spacing:.05em}
+.case-metric{display:flex;flex-direction:column;gap:4px;margin-top:14px;padding:10px 14px;background:rgba(212,160,80,.1);border:1px solid rgba(212,160,80,.3);border-radius:10px;font-size:12px;font-weight:700;color:var(--text-1);letter-spacing:.04em;align-self:flex-start}
+.case-metric-row{display:flex;align-items:baseline;gap:8px}
+.case-metric-label{color:var(--text-2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:10px;min-width:36px}
 .case-metric strong{color:var(--amber);font-weight:900}
 
 /* LOGO GRID (AI ツール + 採用プラットフォーム) */
@@ -496,9 +498,6 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 .footer-col a:hover{color:var(--text-1);padding-left:6px}
 .footer-bottom{padding-top:32px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;color:var(--text-3);letter-spacing:.15em;font-weight:600}
 
-.opt-banner{position:fixed;bottom:0;left:0;right:0;background:var(--text-1);color:#0A0A0A;text-align:center;padding:6px;font-size:11px;font-weight:800;letter-spacing:.15em;z-index:50;text-transform:uppercase}
-.opt-banner a{color:#0A0A0A;text-decoration:underline;margin-left:12px}
-
 @view-transition{navigation:auto}
 @keyframes vt-fade-in{from{opacity:0}}
 @keyframes vt-fade-out{to{opacity:0}}
@@ -507,8 +506,6 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 </style>
 </head>
 <body>
-
-<div class="opt-banner">KANOPY TALENT PROTOTYPE · <a href="index.html">← KANOPY HP</a></div>
 
 <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
 <div class="cursor-spot" id="cursorSpot" aria-hidden="true"></div>
@@ -536,8 +533,9 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <a href="#why" data-menu-link>Why<span class="mm-jp">選ばれる理由</span></a>
   <a href="#process" data-menu-link>Process<span class="mm-jp">採用フロー</span></a>
   <a href="#service" data-menu-link>Service<span class="mm-jp">対応領域</span></a>
+  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp">ゴルフ SNS</span></a>
   <a href="#founder" data-menu-link>Founder<span class="mm-jp">代表紹介</span></a>
-  <a href="index.html" data-menu-link>KANOPY<span class="mm-jp">会社全体へ</span></a>
+  <a href="index.html" data-menu-link>KANOPY HP<span class="mm-jp">会社全体へ</span></a>
   <a href="#contact" class="mobile-menu-cta" data-menu-link>無料相談 →</a>
 </div>
 
@@ -555,7 +553,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     </div>
     <div class="hero-vision">Hiring, strategy to execution.</div>
     <h1><span class="h1-line">採用は、戦略から、</span><br><span class="h1-line"><em>変わる。</em></span></h1>
-    <p class="hero-sub"><span class="nowrap">Personal AI 企業</span> の人事採用を主軸に、<span class="nowrap">AI・SaaS・プロダクト組織</span> の採用 <span class="nowrap">（Talent Acquisition / RPO）</span> と人事立ち上げをご支援しています。<br>営業 7 年・人事/採用 6 年の経験。<strong>2023 年に独立</strong>後、年間約 <strong>500 名</strong> と面談・面接、累計 <strong>17 社</strong> を支援。<span class="nowrap">人事採用コンサル</span> 時代まで遡ると <strong>累計 150 社以上</strong> のサポート実績があります。<br>上流の戦略設計から下流の実行運用まで、<strong>一気通貫</strong> で伴走します。</p>
+    <p class="hero-sub"><span class="nowrap">AI スタートアップ</span> の人事採用を主軸に、<span class="nowrap">AI・SaaS・プロダクト組織</span> の採用 <span class="nowrap">（Talent Acquisition / RPO）</span> と人事立ち上げをご支援しています。<br>営業 7 年・人事/採用 6 年の経験。<strong>2023 年に独立</strong>後、年間約 <strong>500 名</strong> と面談・面接、累計 <strong>17 社</strong> を支援。<span class="nowrap">人事採用コンサル</span> 時代まで遡ると <strong>累計 150 社以上</strong> のサポート実績があります。<br>上流の戦略設計から下流の実行運用まで、<strong>一気通貫</strong> で伴走します。</p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary magnetic" id="magneticCta">無料相談する<span class="btn-arrow" aria-hidden="true">→</span></a>
       <a href="#process" class="btn btn-ghost">採用フローを見る</a>
@@ -692,41 +690,59 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     </div>
 
     <div class="cases-grid">
-      <div class="case-card" data-reveal="up" data-delay="1">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">外資系大手広告 · 新卒採用</div>
         <h3 class="case-result">新卒母集団 <em>前年比 +150%</em><br>辞退率も低減</h3>
         <p class="case-desc">ターゲット大学・職種別のスカウト戦略と、ブランドメッセージを刷新。エントリー数と質、辞退率の改善まで一気通貫で実行。</p>
-        <div class="case-metric">母集団 <strong>+150%</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span>母集団 <strong>+150%</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>通年運用</strong></span>
+        </div>
       </div>
-      <div class="case-card" data-reveal="up" data-delay="2">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">ソーシャルベンチャー · 通年採用</div>
         <h3 class="case-result">年間 100 名目標を<br><em>採用率 100%</em> 達成</h3>
         <p class="case-desc">大規模な通年採用を、母集団形成から内定承諾までフルファネルで設計・運用。目標数を完全達成し、組織拡大を後押し。</p>
-        <div class="case-metric">年間 100 名 <strong>100% 達成</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span>採用率 <strong>100%</strong>（100/100 名）</span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>年間運用</strong></span>
+        </div>
       </div>
-      <div class="case-card" data-reveal="up" data-delay="3">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">SaaS × AI スタートアップ</div>
         <h3 class="case-result"><em>2 ヶ月</em> で、<br>エンジニア <em>6 名</em> 充足</h3>
         <p class="case-desc">急成長フェーズの組織拡大に対応。<strong>LLM / Backend / Full-stack</strong> 領域を LLM 活用のソーシングと複数プラットフォーム並行運用で短期決着。</p>
-        <div class="case-metric">2 ヶ月で <strong>6 名</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span>エンジニア <strong>6 名</strong> 充足</span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>2 ヶ月</strong></span>
+        </div>
       </div>
-      <div class="case-card" data-reveal="up" data-delay="4">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">AI スタートアップ · 0 → 1 立ち上げ</div>
         <h3 class="case-result">AI エンジニア採用を<br><em>ゼロから設計 ・ 運用</em></h3>
         <p class="case-desc">採用基盤がない段階から、要件定義・JD・スカウト・面接フローを丸ごと構築。運用までを一気通貫で行い、組織の最初の数名を確保。</p>
-        <div class="case-metric">0 → 1 <strong>一気通貫</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span><strong>採用基盤構築 + 初期メンバー確保</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>0 → 1 立上げ期</strong></span>
+        </div>
       </div>
-      <div class="case-card" data-reveal="up" data-delay="5">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">センサ × 生成 AI スタートアップ</div>
         <h3 class="case-result"><em>2 ヶ月</em> で、コンサル<br>セールスを <em>DR 採用</em> 完了</h3>
         <p class="case-desc">ダイレクトリクルーティングを<strong>導入 〜 運営 〜 承諾まで並走</strong>。希少なコンサル経験のセールス人材を 2 ヶ月で確保。</p>
-        <div class="case-metric">DR で <strong>2 ヶ月 1 名</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span>コンサルセールス <strong>1 名</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>2 ヶ月</strong></span>
+        </div>
       </div>
-      <div class="case-card" data-reveal="up" data-delay="6">
+      <div class="case-card" data-reveal="up">
         <div class="case-industry">製造メーカー · 新卒採用</div>
         <h3 class="case-result">内定承諾率 <em>90%</em><br>移行率をフォロー面談で担保</h3>
         <p class="case-desc">内定後のフォロー面談を体系化し、内定 → 内定承諾の移行率 90% を担保。承諾後の入社まで丁寧に伴走。</p>
-        <div class="case-metric">承諾率 <strong>90%</strong></div>
+        <div class="case-metric">
+          <span class="case-metric-row"><span class="case-metric-label">結果</span>承諾率 <strong>90%</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>内定後フォロー</strong></span>
+        </div>
       </div>
     </div>
   </div>
@@ -862,9 +878,9 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <span class="logo-mark"><span class="logo-wordmark" style="font-family:'Inter',sans-serif;font-size:18px;letter-spacing:.04em">BIZREACH</span></span>
         <span class="logo-name">ハイクラス · Visional</span>
       </div>
-      <div class="logo-card" style="--i:5;--brand-color:#9A9A8F">
-        <span class="logo-mark"><span class="logo-wordmark" style="letter-spacing:.4em;font-size:24px">···</span></span>
-        <span class="logo-name">ほか多数</span>
+      <div class="logo-card" style="--i:5;--brand-color:#FF4F4F">
+        <span class="logo-mark"><span class="logo-wordmark" style="font-family:'Inter',sans-serif;font-size:18px;letter-spacing:.04em">YOUTRUST</span></span>
+        <span class="logo-name">転職・副業 SNS</span>
       </div>
     </div>
   </div>
@@ -886,7 +902,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <div class="fs-meta-role">CEO / Founder</div>
         <h3 class="fs-meta-name">柴 和成</h3>
         <div class="fs-meta-name-en">Kazushige Shiba</div>
-        <p class="fs-meta-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>・<strong>人事採用コンサル 4 年</strong>を経て、ベンチャー企業の<strong>人事 / 採用</strong>へ転身し <strong>6 年</strong>を積みました。<strong>2023 年に独立</strong>し、AI・SaaS スタートアップを中心に <strong>累計 17 社</strong>を伴走。年間約 <strong>500 名</strong>の候補者と面談・面接しています。</p>
+        <p class="fs-meta-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</p>
         <p class="fs-meta-bio">人事採用コンサル時代まで遡ると、<strong>累計 150 社以上</strong>のサポート実績。<strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「人生に残るかたちをつくる」</span> という同じ想いで運営しています。</p>
         <a href="index.html#founder" class="fs-link">KANOPY 全体を見る <span aria-hidden="true">→</span></a>
       </div>
@@ -944,7 +960,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 KANOPY Inc.（株式会社 KANOPY）</div>
+      <div>© <span id="copyrightYear">2026</span> KANOPY Inc.（株式会社 KANOPY）</div>
       <div>TOKYO · JAPAN</div>
     </div>
   </div>
@@ -1152,6 +1168,14 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       target.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
     });
   });
+
+  // Copyright year (FE-436 F10)
+  const cy = document.getElementById('copyrightYear');
+  if (cy) {
+    const FOUNDED_YEAR = 2026;
+    const currentYear = new Date().getFullYear();
+    cy.textContent = currentYear > FOUNDED_YEAR ? `${FOUNDED_YEAR}-${currentYear}` : `${FOUNDED_YEAR}`;
+  }
 })();
 </script>
 </body>
