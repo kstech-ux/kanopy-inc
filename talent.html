@@ -9,6 +9,12 @@
 <meta name="description" content="KANOPY Talent は、AI・SaaS・スタートアップに特化した人事採用支援。営業 7 年・人事採用 6 年の現場経験と LLM 活用で、要件設計からオンボーディング・組織戦略まで一気通貫で伴走します。">
 <meta name="robots" content="index, follow">
 
+<!-- FE-437: hreflang for 3-language sites -->
+<link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/talent/?lang=ja">
+<link rel="alternate" hreflang="en" href="https://kanopy-inc.com/talent/?lang=en">
+<link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/talent/?lang=ko">
+<link rel="alternate" hreflang="x-default" href="https://kanopy-inc.com/talent/">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KANOPY Talent">
 <meta property="og:title" content="KANOPY Talent | 採用は、戦略から、変わる。">
@@ -16,6 +22,8 @@
 <meta property="og:url" content="https://kanopy-inc.com/talent/">
 <meta property="og:image" content="https://kanopy-inc.com/og-talent.png">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -210,6 +218,18 @@ nav.hidden{transform:translateY(-110%)}
 .mobile-menu a.mobile-menu-cta:hover,.mobile-menu a.mobile-menu-cta:focus-visible{color:#0A0A0A;background:#E0B060}
 .mobile-menu.open .mobile-menu-cta{transition-delay:.46s}
 body.menu-open{overflow:hidden}
+
+/* FE-437: Language switcher inside mobile menu */
+.lang-switcher{display:flex;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--bd);justify-content:center;flex-wrap:wrap}
+.lang-btn{appearance:none;border:1px solid var(--bd-strong);background:transparent;color:var(--text-2);padding:8px 16px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;border-radius:6px;cursor:pointer;min-height:44px;min-width:64px;transition:color .2s,border-color .2s,background .2s}
+.lang-btn:hover,.lang-btn:focus-visible{color:var(--text-1);border-color:var(--text-1)}
+.lang-btn[aria-pressed="true"]{color:#0A0A0A;background:var(--amber);border-color:var(--amber)}
+
+/* FE-437: data-l hooks */
+[data-l]{display:none}
+[data-l].a{display:inline}
+[data-l-block]{display:none}
+[data-l-block].a{display:block}
 
 /* HERO */
 .hero{padding:160px 24px 100px;min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden}
@@ -537,6 +557,12 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <a href="#founder" data-menu-link>Founder<span class="mm-jp">代表紹介</span></a>
   <a href="index.html" data-menu-link>KANOPY HP<span class="mm-jp">会社全体へ</span></a>
   <a href="#contact" class="mobile-menu-cta" data-menu-link>無料相談 →</a>
+  <!-- FE-437: Language switcher -->
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" data-lang="ja" aria-pressed="true">日本語</button>
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    <button type="button" class="lang-btn" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -552,11 +578,28 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       <span><span class="nowrap">KANOPY Talent</span> · 人事採用支援</span>
     </div>
     <div class="hero-vision">Hiring, strategy to execution.</div>
-    <h1><span class="h1-line">採用は、戦略から、</span><br><span class="h1-line"><em>変わる。</em></span></h1>
-    <p class="hero-sub"><span class="nowrap">AI スタートアップ</span> の人事採用を主軸に、<span class="nowrap">AI・SaaS・プロダクト組織</span> の採用 <span class="nowrap">（Talent Acquisition / RPO）</span> と人事立ち上げをご支援しています。<br>営業 7 年・人事/採用 6 年の経験。<strong>2023 年に独立</strong>後、年間約 <strong>500 名</strong> と面談・面接、累計 <strong>17 社</strong> を支援。<span class="nowrap">人事採用コンサル</span> 時代まで遡ると <strong>累計 150 社以上</strong> のサポート実績があります。<br>上流の戦略設計から下流の実行運用まで、<strong>一気通貫</strong> で伴走します。</p>
+    <h1>
+      <span data-l="ja" class="a"><span class="h1-line">採用は、戦略から、</span><br><span class="h1-line"><em>変わる。</em></span></span>
+      <span data-l="en"><span class="h1-line">Hiring starts</span><br><span class="h1-line">with <em>strategy.</em></span></span>
+      <span data-l="ko"><span class="h1-line">채용은 전략에서</span><br><span class="h1-line"><em>변화한다.</em></span></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-l="ja" class="a"><span class="nowrap">AI スタートアップ</span> の人事採用を主軸に、<span class="nowrap">AI・SaaS・プロダクト組織</span> の採用 <span class="nowrap">（Talent Acquisition / RPO）</span> と人事立ち上げをご支援しています。<br>営業 7 年・人事/採用 6 年の経験。<strong>2023 年に独立</strong>後、年間約 <strong>500 名</strong> と面談・面接、累計 <strong>17 社</strong> を支援。<span class="nowrap">人事採用コンサル</span> 時代まで遡ると <strong>累計 150 社以上</strong> のサポート実績があります。<br>上流の戦略設計から下流の実行運用まで、<strong>一気通貫</strong> で伴走します。</span>
+      <span data-l="en">Hiring support for <span class="nowrap">AI startups</span>, <span class="nowrap">AI · SaaS · product orgs</span>, and HR organization design (Talent Acquisition / RPO). 7 years in sales, 6 years in HR / talent. Independent since 2023, ~500 candidate interviews per year, 17 companies supported.</span>
+      <span data-l="ko">AI 스타트업의 인사 채용을 중심으로 AI · SaaS · 프로덕트 조직의 채용 (TA / RPO) 과 인사 셋업을 지원합니다. 영업 7년 · 인사 채용 6년 경력, 2023년 독립 이후 누계 17개 기업 지원.</span>
+    </p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary magnetic" id="magneticCta">無料相談する<span class="btn-arrow" aria-hidden="true">→</span></a>
-      <a href="#process" class="btn btn-ghost">採用フローを見る</a>
+      <a href="#contact" class="btn btn-primary magnetic" id="magneticCta">
+        <span data-l="ja" class="a">無料相談する</span>
+        <span data-l="en">Free consultation</span>
+        <span data-l="ko">무료 상담</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#process" class="btn btn-ghost">
+        <span data-l="ja" class="a">採用フローを見る</span>
+        <span data-l="en">View hiring process</span>
+        <span data-l="ko">채용 프로세스 보기</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1176,6 +1219,41 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     const currentYear = new Date().getFullYear();
     cy.textContent = currentYear > FOUNDED_YEAR ? `${FOUNDED_YEAR}-${currentYear}` : `${FOUNDED_YEAR}`;
   }
+
+  // FE-437: Language switcher (JA/EN/KO)
+  const OG_LOCALE = {ja:'ja_JP', en:'en_US', ko:'ko_KR'};
+  function setLang(lang){
+    if (!['ja','en','ko'].includes(lang)) lang = 'ja';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-l]').forEach(el=>{
+      el.classList.toggle('a', el.getAttribute('data-l') === lang);
+    });
+    document.querySelectorAll('[data-l-block]').forEach(el=>{
+      el.classList.toggle('a', el.getAttribute('data-l-block') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+    });
+    const og = document.querySelector('meta[property="og:locale"]');
+    if (og) og.setAttribute('content', OG_LOCALE[lang]);
+    try{ localStorage.setItem('kanopy_lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>setLang(btn.dataset.lang));
+  });
+  (function(){
+    let initial = 'ja';
+    try{
+      const saved = localStorage.getItem('kanopy_lang');
+      if (saved && ['ja','en','ko'].includes(saved)) initial = saved;
+      else {
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.startsWith('en')) initial = 'en';
+        else if (nav.startsWith('ko')) initial = 'ko';
+      }
+    }catch(e){}
+    setLang(initial);
+  })();
 })();
 </script>
 </body>

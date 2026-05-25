@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- FE-437: 3-language hreflang annotations per Google sitemap protocol -->
   <url>
     <loc>https://kanopy-inc.com/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanopy-inc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanopy-inc.com/ja/"/>
+  </url>
+  <url>
+    <loc>https://kanopy-inc.com/ja/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanopy-inc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/ko/"/>
+  </url>
+  <url>
+    <loc>https://kanopy-inc.com/en/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanopy-inc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/ko/"/>
+  </url>
+  <url>
+    <loc>https://kanopy-inc.com/ko/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanopy-inc.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/ko/"/>
   </url>
   <url>
     <loc>https://kanopy-inc.com/talent/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/talent/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanopy-inc.com/talent/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/talent/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanopy-inc.com/talent/"/>
   </url>
   <url>
     <loc>https://kanopy-inc.com/notice/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-25</lastmod>
   </url>
 </urlset>

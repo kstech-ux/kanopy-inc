@@ -9,6 +9,12 @@
 <meta name="description" content="KANOPY Inc.（株式会社 KANOPY）は、ゴルフ SNS「ROUNDIE」の開発と、AI・SaaS・スタートアップ向けの人事採用支援「KANOPY Talent」を展開するプロダクトカンパニーです。">
 <meta name="robots" content="index, follow">
 
+<!-- FE-437: hreflang for 3-language sites -->
+<link rel="alternate" hreflang="ja" href="https://kanopy-inc.com/ja/">
+<link rel="alternate" hreflang="en" href="https://kanopy-inc.com/en/">
+<link rel="alternate" hreflang="ko" href="https://kanopy-inc.com/ko/">
+<link rel="alternate" hreflang="x-default" href="https://kanopy-inc.com/ja/">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KANOPY Inc.">
@@ -17,6 +23,8 @@
 <meta property="og:url" content="https://kanopy-inc.com/">
 <meta property="og:image" content="https://kanopy-inc.com/og-image.png">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
@@ -297,6 +305,18 @@ nav.hidden{transform:translateY(-110%)}
 }
 .mobile-menu.open .mobile-menu-cta{transition-delay:.4s}
 body.menu-open{overflow:hidden}
+
+/* FE-437: Language switcher inside mobile menu */
+.lang-switcher{display:flex;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid var(--bd);justify-content:center;flex-wrap:wrap}
+.lang-btn{appearance:none;border:1px solid var(--bd-strong);background:transparent;color:var(--text-2);padding:8px 16px;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;border-radius:6px;cursor:pointer;min-height:44px;min-width:64px;transition:color .2s,border-color .2s,background .2s}
+.lang-btn:hover,.lang-btn:focus-visible{color:var(--text-1);border-color:var(--text-1)}
+.lang-btn[aria-pressed="true"]{color:var(--bg);background:var(--text-1);border-color:var(--text-1)}
+
+/* FE-437: data-l hooks (hidden until language matches) */
+[data-l]{display:none}
+[data-l].a{display:inline}
+[data-l-block]{display:none}
+[data-l-block].a{display:block}
 
 /* ===== HERO ===== */
 .hero{padding:180px 24px 120px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden}
@@ -810,6 +830,12 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <a href="#founder" data-menu-link>Founder<span class="mm-jp">創業者</span></a>
   <a href="#news" data-menu-link>News<span class="mm-jp">お知らせ</span></a>
   <a href="#contact" class="mobile-menu-cta" data-menu-link>お問い合わせ →</a>
+  <!-- FE-437: Language switcher -->
+  <div class="lang-switcher" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" data-lang="ja" aria-pressed="true">日本語</button>
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    <button type="button" class="lang-btn" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -825,11 +851,29 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
       <span><span class="nowrap">KANOPY Inc.</span> · 株式会社 KANOPY</span>
     </div>
     <div class="hero-vision" data-char-reveal>We shape what lasts</div>
-    <h1 data-h1-reveal><span class="h1-line">人生に残る、</span><br><span class="h1-line"><em>かたちをつくる</em></span></h1>
-    <p class="hero-sub">ゴルフ SNS <span class="nowrap">「ROUNDIE」</span> の開発と、<span class="nowrap">AI・SaaS・スタートアップ</span>向けの人事採用支援 <span class="nowrap">「KANOPY Talent」</span>。<br>2 つの事業を手がける、東京発のプロダクトカンパニーです。</p>
+    <h1 data-h1-reveal>
+      <span data-l="ja" class="a"><span class="h1-line">人生に残る、</span><br><span class="h1-line"><em>かたちをつくる</em></span></span>
+      <span data-l="en"><span class="h1-line">Shape what lasts,</span><br><span class="h1-line"><em>round by round</em></span></span>
+      <span data-l="ko"><span class="h1-line">인생에 남는,</span><br><span class="h1-line"><em>형태를 만들다</em></span></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-l="ja" class="a">ゴルフ SNS <span class="nowrap">「ROUNDIE」</span> の開発と、<span class="nowrap">AI・SaaS・スタートアップ</span>向けの人事採用支援 <span class="nowrap">「KANOPY Talent」</span>。<br>2 つの事業を手がける、東京発のプロダクトカンパニーです。</span>
+      <span data-l="en">Building the golf social app <span class="nowrap">"ROUNDIE"</span> and a hiring support service <span class="nowrap">"KANOPY Talent"</span> for AI / SaaS startups. A Tokyo-based product company with two businesses.</span>
+      <span data-l="ko">골프 SNS <span class="nowrap">"ROUNDIE"</span> 개발과 AI · SaaS · 스타트업 대상 인사 채용 지원 <span class="nowrap">"KANOPY Talent"</span>. 2가지 사업을 운영하는 도쿄 발 프로덕트 컴퍼니입니다.</span>
+    </p>
     <div class="hero-cta">
-      <a href="#business" class="btn btn-primary magnetic" id="magneticCta" data-ripple>2 つの事業を知る<span class="btn-arrow" aria-hidden="true">→</span></a>
-      <a href="#contact" class="btn btn-ghost" data-ripple>お問い合わせ<span class="btn-arrow" aria-hidden="true">→</span></a>
+      <a href="#business" class="btn btn-primary magnetic" id="magneticCta" data-ripple>
+        <span data-l="ja" class="a">2 つの事業を知る</span>
+        <span data-l="en">Explore our businesses</span>
+        <span data-l="ko">2가지 사업 보기</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="#contact" class="btn btn-ghost" data-ripple>
+        <span data-l="ja" class="a">お問い合わせ</span>
+        <span data-l="en">Contact us</span>
+        <span data-l="ko">문의하기</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
   <div class="hero-cue" aria-hidden="true">
@@ -1444,6 +1488,42 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     const currentYear = new Date().getFullYear();
     cy.textContent = currentYear > FOUNDED_YEAR ? `${FOUNDED_YEAR}-${currentYear}` : `${FOUNDED_YEAR}`;
   }
+
+  // ===== FE-437: Language switcher (JA/EN/KO) =====
+  const OG_LOCALE = {ja:'ja_JP', en:'en_US', ko:'ko_KR'};
+  function setLang(lang){
+    if (!['ja','en','ko'].includes(lang)) lang = 'ja';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-l]').forEach(el=>{
+      el.classList.toggle('a', el.getAttribute('data-l') === lang);
+    });
+    document.querySelectorAll('[data-l-block]').forEach(el=>{
+      el.classList.toggle('a', el.getAttribute('data-l-block') === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+    });
+    const og = document.querySelector('meta[property="og:locale"]');
+    if (og) og.setAttribute('content', OG_LOCALE[lang]);
+    try{ localStorage.setItem('kanopy_lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>setLang(btn.dataset.lang));
+  });
+  // Initial language detection (localStorage > navigator.language > ja)
+  (function(){
+    let initial = 'ja';
+    try{
+      const saved = localStorage.getItem('kanopy_lang');
+      if (saved && ['ja','en','ko'].includes(saved)) initial = saved;
+      else {
+        const nav = (navigator.language || '').toLowerCase();
+        if (nav.startsWith('en')) initial = 'en';
+        else if (nav.startsWith('ko')) initial = 'ko';
+      }
+    }catch(e){}
+    setLang(initial);
+  })();
 })();
 </script>
 </body>
