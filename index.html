@@ -312,11 +312,12 @@ body.menu-open{overflow:hidden}
 .lang-btn:hover,.lang-btn:focus-visible{color:var(--text-1);border-color:var(--text-1)}
 .lang-btn[aria-pressed="true"]{color:var(--bg);background:var(--text-1);border-color:var(--text-1)}
 
-/* FE-437: data-l hooks (hidden until language matches) */
-[data-l]{display:none}
-[data-l].a{display:inline}
-[data-l-block]{display:none}
-[data-l-block].a{display:block}
+/* FE-437: data-l hooks (hidden until language matches) — scoped to 3 lang codes
+   to avoid conflict with existing data-l="P|B|Bo|E|D|T" on .bpg-cell (ROUNDIE preview grid). */
+[data-l="ja"],[data-l="en"],[data-l="ko"]{display:none}
+[data-l="ja"].a,[data-l="en"].a,[data-l="ko"].a{display:inline}
+[data-l-block="ja"],[data-l-block="en"],[data-l-block="ko"]{display:none}
+[data-l-block="ja"].a,[data-l-block="en"].a,[data-l-block="ko"].a{display:block}
 
 /* ===== HERO ===== */
 .hero{padding:180px 24px 120px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden}
@@ -823,13 +824,13 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     <span class="mm-close-icon" aria-hidden="true"><span></span><span></span></span>
     <span class="mm-close-label">Close</span>
   </button>
-  <a href="#mission" data-menu-link>Mission<span class="mm-jp">ミッション</span></a>
-  <a href="#business" data-menu-link>Business<span class="mm-jp">2 つの事業</span></a>
-  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp">ゴルフ SNS</span></a>
-  <a href="talent.html" data-menu-link>KANOPY Talent<span class="mm-jp">人事採用支援</span></a>
-  <a href="#founder" data-menu-link>Founder<span class="mm-jp">創業者</span></a>
-  <a href="#news" data-menu-link>News<span class="mm-jp">お知らせ</span></a>
-  <a href="#contact" class="mobile-menu-cta" data-menu-link>お問い合わせ →</a>
+  <a href="#mission" data-menu-link>Mission<span class="mm-jp"><span data-l="ja" class="a">ミッション</span><span data-l="en">Mission</span><span data-l="ko">미션</span></span></a>
+  <a href="#business" data-menu-link>Business<span class="mm-jp"><span data-l="ja" class="a">2 つの事業</span><span data-l="en">Two businesses</span><span data-l="ko">2가지 사업</span></span></a>
+  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp"><span data-l="ja" class="a">ゴルフ SNS</span><span data-l="en">Golf social app</span><span data-l="ko">골프 SNS</span></span></a>
+  <a href="talent.html" data-menu-link>KANOPY Talent<span class="mm-jp"><span data-l="ja" class="a">人事採用支援</span><span data-l="en">Hiring support</span><span data-l="ko">인사 채용 지원</span></span></a>
+  <a href="#founder" data-menu-link>Founder<span class="mm-jp"><span data-l="ja" class="a">創業者</span><span data-l="en">Founder</span><span data-l="ko">창업자</span></span></a>
+  <a href="#news" data-menu-link>News<span class="mm-jp"><span data-l="ja" class="a">お知らせ</span><span data-l="en">News</span><span data-l="ko">소식</span></span></a>
+  <a href="#contact" class="mobile-menu-cta" data-menu-link><span data-l="ja" class="a">お問い合わせ →</span><span data-l="en">Contact us →</span><span data-l="ko">문의하기 →</span></a>
   <!-- FE-437: Language switcher -->
   <div class="lang-switcher" role="group" aria-label="Language">
     <button type="button" class="lang-btn" data-lang="ja" aria-pressed="true">日本語</button>
@@ -848,7 +849,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="hero-content" id="heroContent">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-      <span><span class="nowrap">KANOPY Inc.</span> · 株式会社 KANOPY</span>
+      <span><span class="nowrap">KANOPY Inc.</span> · <span data-l="ja" class="a">株式会社 KANOPY</span><span data-l="en">A Tokyo product company</span><span data-l="ko">주식회사 KANOPY</span></span>
     </div>
     <div class="hero-vision" data-char-reveal>We shape what lasts</div>
     <h1 data-h1-reveal>
@@ -901,14 +902,30 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="mission-head" data-reveal="up">
       <div class="section-eyebrow">Mission &amp; Vision</div>
-      <h2 class="section-title"><span class="nowrap">KANOPY が</span><span class="nowrap"><em>大切に</em>していること</span></h2>
-      <p class="section-sub">短期的なトレンドや数字ではなく、<br>人生に残るかたちをつくるために。<br>KANOPY のすべての活動は、ひとつの想いから始まります。</p>
+      <h2 class="section-title">
+        <span data-l="ja" class="a"><span class="nowrap">KANOPY が</span><span class="nowrap"><em>大切に</em>していること</span></span>
+        <span data-l="en">What <em>we believe</em> in</span>
+        <span data-l="ko">KANOPY 가 <em>소중히</em> 여기는 것</span>
+      </h2>
+      <p class="section-sub">
+        <span data-l="ja" class="a">短期的なトレンドや数字ではなく、<br>人生に残るかたちをつくるために。<br>KANOPY のすべての活動は、ひとつの想いから始まります。</span>
+        <span data-l="en">Not short-term trends or numbers, but lasting forms. Every KANOPY activity begins from one shared belief.</span>
+        <span data-l="ko">단기적인 트렌드나 숫자가 아니라, 인생에 남는 형태를 만들기 위해. KANOPY 의 모든 활동은 하나의 마음에서 시작됩니다.</span>
+      </p>
     </div>
 
     <div class="mission-statement" data-reveal="scale" data-delay="1">
       <div class="mission-vision-en">We <em>shape</em> what lasts.</div>
-      <div class="mission-jp">人生に残るかたちをつくる。</div>
-      <p class="mission-body">コースで過ごした一日、面接で語った言葉、仲間と交わした拍手 —— 私たちは、誰かの人生に残るものを、プロダクトと人材の両面からつくります。プロダクト開発と人事採用支援、2 つの事業は <span class="nowrap">「<strong>人生に残るかたちをつくる</strong>」</span> という同じ目的でつながっています。</p>
+      <div class="mission-jp">
+        <span data-l="ja" class="a">人生に残るかたちをつくる。</span>
+        <span data-l="en">Shape what lasts.</span>
+        <span data-l="ko">인생에 남는 형태를 만들다.</span>
+      </div>
+      <p class="mission-body">
+        <span data-l="ja" class="a">コースで過ごした一日、面接で語った言葉、仲間と交わした拍手 —— 私たちは、誰かの人生に残るものを、プロダクトと人材の両面からつくります。プロダクト開発と人事採用支援、2 つの事業は <span class="nowrap">「<strong>人生に残るかたちをつくる</strong>」</span> という同じ目的でつながっています。</span>
+        <span data-l="en">A day on the course, words spoken at an interview, applause shared with friends — we shape what lasts in someone's life, through both product and people. Our two businesses, product development and hiring support, are connected by one purpose: <span class="nowrap"><strong>to shape what lasts</strong></span>.</span>
+        <span data-l="ko">코스에서 보낸 하루, 면접에서 나눈 말, 동료와 주고받은 박수 — 우리는 누군가의 인생에 남는 것을 프로덕트와 인재의 양면에서 만듭니다. 프로덕트 개발과 인사 채용 지원, 2가지 사업은 <span class="nowrap"><strong>"인생에 남는 형태를 만들다"</strong></span> 라는 같은 목적으로 이어져 있습니다.</span>
+      </p>
     </div>
   </div>
 </section>
@@ -919,8 +936,16 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     <div class="container">
       <div class="mission-head" data-reveal="up">
         <div class="section-eyebrow">Business</div>
-        <h2 class="section-title"><span class="h1-line">ふたつの<em>事業</em>、</span><br><span class="h1-line">ひとつの想い</span></h2>
-        <p class="section-sub">プロダクトと人材、どちらも <span class="nowrap">「人生に残るかたちをつくる」</span> ための仕事です。</p>
+        <h2 class="section-title">
+          <span data-l="ja" class="a"><span class="h1-line">ふたつの<em>事業</em>、</span><br><span class="h1-line">ひとつの想い</span></span>
+          <span data-l="en"><span class="h1-line">Two <em>businesses</em>,</span><br><span class="h1-line">one purpose</span></span>
+          <span data-l="ko"><span class="h1-line">2가지 <em>사업</em>,</span><br><span class="h1-line">하나의 마음</span></span>
+        </h2>
+        <p class="section-sub">
+          <span data-l="ja" class="a">プロダクトと人材、どちらも <span class="nowrap">「人生に残るかたちをつくる」</span> ための仕事です。</span>
+          <span data-l="en">Product and people — both exist to <span class="nowrap">"shape what lasts"</span>.</span>
+          <span data-l="ko">프로덕트와 인재, 둘 다 <span class="nowrap">"인생에 남는 형태를 만드는"</span> 일입니다.</span>
+        </p>
       </div>
 
       <div class="business-grid">
@@ -928,8 +953,16 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <article class="biz-card biz-card-1" data-reveal="left">
           <span class="biz-tag biz-tag-1"><span class="biz-num">01</span>Product Development</span>
           <h3 class="biz-name">ROUNDIE</h3>
-          <p class="biz-tagline">ラウンドを、<span class="nowrap">語れる物語に。</span></p>
-          <p class="biz-desc">ゴルフは、スコアだけではない。<br>仲間との笑い声、コースの匂い、奇跡の 1 打。<br><span class="nowrap">ROUNDIE</span> は 18 ホールを <span class="nowrap">「世界に一つのカラーグリッド」</span> と <span class="nowrap">「ひとことの物語」</span> に変える、ゴルフ好きのための <span class="nowrap">SNS</span> です。</p>
+          <p class="biz-tagline">
+            <span data-l="ja" class="a">ラウンドを、<span class="nowrap">語れる物語に。</span></span>
+            <span data-l="en">A round becomes <span class="nowrap">a story worth telling.</span></span>
+            <span data-l="ko">라운드를, <span class="nowrap">이야기로.</span></span>
+          </p>
+          <p class="biz-desc">
+            <span data-l="ja" class="a">ゴルフは、スコアだけではない。<br>仲間との笑い声、コースの匂い、奇跡の 1 打。<br><span class="nowrap">ROUNDIE</span> は 18 ホールを <span class="nowrap">「世界に一つのカラーグリッド」</span> と <span class="nowrap">「ひとことの物語」</span> に変える、ゴルフ好きのための <span class="nowrap">SNS</span> です。</span>
+            <span data-l="en">Golf isn't just about the score. The laughter with friends, the scent of the course, that one miracle shot. <span class="nowrap">ROUNDIE</span> turns 18 holes into a <span class="nowrap">"one-of-a-kind color grid"</span> and a <span class="nowrap">"one-line story"</span> — a <span class="nowrap">social app</span> for golf lovers.</span>
+            <span data-l="ko">골프는 스코어만이 아닙니다. 동료와의 웃음, 코스의 향기, 기적의 1타. <span class="nowrap">ROUNDIE</span> 는 18홀을 <span class="nowrap">"세상에 단 하나뿐인 컬러 그리드"</span> 와 <span class="nowrap">"한 줄의 이야기"</span> 로 바꾸는, 골프 애호가를 위한 <span class="nowrap">SNS</span> 입니다.</span>
+          </p>
 
           <div class="biz-preview-grid" aria-label="ROUNDIE のラウンドカード例（OUT 9 ホール × IN 9 ホール、各セルに hole 番号・スコア数字・スコアラベル）" role="img">
             <div class="bpg-row">
@@ -959,68 +992,138 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
           </div>
 
           <div class="biz-features">
-            <div class="biz-feature"><span class="biz-feature-text">18 ホールが、<strong>18 マスのカラーグリッド</strong>に。同じ絵は二度と生まれない</span></div>
-            <div class="biz-feature"><span class="biz-feature-text"><strong>Nice Shot / Nice Fight / Best Buddy</strong> の Kudos で、仲間に拍手を送れる</span></div>
-            <div class="biz-feature"><span class="biz-feature-text">新ペリア方式に対応した<strong>コンペが 3 タップ</strong>で開催可能。結果発表演出まで自動化</span></div>
-            <div class="biz-feature"><span class="biz-feature-text"><strong>PLAY × VIBE × STYLE</strong> の 3 つの軸で、スコアだけでなく <span class="nowrap">「らしさ」</span> まで可視化</span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a">18 ホールが、<strong>18 マスのカラーグリッド</strong>に。同じ絵は二度と生まれない</span>
+              <span data-l="en">18 holes become an <strong>18-cell color grid</strong>. No two rounds look alike.</span>
+              <span data-l="ko">18홀이 <strong>18칸의 컬러 그리드</strong>로. 같은 그림은 두 번 다시 나오지 않습니다</span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a"><strong>Nice Shot / Nice Fight / Best Buddy</strong> の Kudos で、仲間に拍手を送れる</span>
+              <span data-l="en">Send applause to friends via <strong>Nice Shot / Nice Fight / Best Buddy</strong> Kudos</span>
+              <span data-l="ko"><strong>Nice Shot / Nice Fight / Best Buddy</strong> Kudos 로 동료에게 박수를 보낼 수 있습니다</span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a">新ペリア方式に対応した<strong>コンペが 3 タップ</strong>で開催可能。結果発表演出まで自動化</span>
+              <span data-l="en"><strong>Host a competition in 3 taps</strong> with new-peoria handicap. Results announcement is fully automated.</span>
+              <span data-l="ko"><strong>3탭으로 컴페</strong> 개최 가능. 신페리아 방식 대응, 결과 발표 연출까지 자동화</span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a"><strong>PLAY × VIBE × STYLE</strong> の 3 つの軸で、スコアだけでなく <span class="nowrap">「らしさ」</span> まで可視化</span>
+              <span data-l="en">Three axes — <strong>PLAY × VIBE × STYLE</strong> — visualize not just your score but your <span class="nowrap">unique style</span></span>
+              <span data-l="ko"><strong>PLAY × VIBE × STYLE</strong> 의 3가지 축으로, 스코어뿐 아니라 <span class="nowrap">"개성"</span> 까지 시각화</span>
+            </span></div>
           </div>
 
           <div class="biz-stats">
             <div class="biz-stat">
               <div class="biz-stat-num">TestFlight</div>
-              <div class="biz-stat-label">公開中 · 2026 ローンチ予定</div>
+              <div class="biz-stat-label">
+                <span data-l="ja" class="a">公開中 · 2026 ローンチ予定</span>
+                <span data-l="en">Live now · launching 2026</span>
+                <span data-l="ko">공개 중 · 2026 런칭 예정</span>
+              </div>
             </div>
             <div class="biz-stat">
               <div class="biz-stat-num">¥0</div>
-              <div class="biz-stat-label">コア機能・永続無料</div>
+              <div class="biz-stat-label">
+                <span data-l="ja" class="a">コア機能・永続無料</span>
+                <span data-l="en">Core features · free forever</span>
+                <span data-l="ko">코어 기능 · 영구 무료</span>
+              </div>
             </div>
           </div>
 
           <a href="https://roundie.app" class="biz-link" target="_blank" rel="noopener" data-ripple>
-            ROUNDIE を見る <span aria-hidden="true">↗</span>
+            <span data-l="ja" class="a">ROUNDIE を見る</span>
+            <span data-l="en">View ROUNDIE</span>
+            <span data-l="ko">ROUNDIE 보기</span>
+            <span aria-hidden="true">↗</span>
           </a>
         </article>
 
         <article class="biz-card biz-card-2" data-reveal="right">
           <span class="biz-tag biz-tag-2"><span class="biz-num">02</span>Talent Services</span>
           <h3 class="biz-name">KANOPY Talent</h3>
-          <p class="biz-tagline">採用は、<span class="nowrap">戦略から、変わる。</span></p>
-          <p class="biz-desc">AI 時代の組織づくりに、<span class="nowrap">しっくり来る採用パートナー</span> がいない。<br><span class="nowrap">KANOPY Talent</span> は、<span class="nowrap">AI・SaaS・スタートアップ</span> に特化した人事採用支援です。<br>営業 7 年・人事採用 6 年の現場経験と <span class="nowrap">LLM</span> 活用で、<span class="nowrap">「最初の 1 人」</span> から <span class="nowrap">「強い組織」</span> まで <strong>一気通貫</strong> で伴走します。</p>
+          <p class="biz-tagline">
+            <span data-l="ja" class="a">採用は、<span class="nowrap">戦略から、変わる。</span></span>
+            <span data-l="en">Hiring starts <span class="nowrap">with strategy.</span></span>
+            <span data-l="ko">채용은 <span class="nowrap">전략에서 변화한다.</span></span>
+          </p>
+          <p class="biz-desc">
+            <span data-l="ja" class="a">AI 時代の組織づくりに、<span class="nowrap">しっくり来る採用パートナー</span> がいない。<br><span class="nowrap">KANOPY Talent</span> は、<span class="nowrap">AI・SaaS・スタートアップ</span> に特化した人事採用支援です。<br>営業 7 年・人事採用 6 年の現場経験と <span class="nowrap">LLM</span> 活用で、<span class="nowrap">「最初の 1 人」</span> から <span class="nowrap">「強い組織」</span> まで <strong>一気通貫</strong> で伴走します。</span>
+            <span data-l="en">In the AI era, there's no <span class="nowrap">hiring partner that truly fits</span>. <span class="nowrap">KANOPY Talent</span> specializes in hiring support for <span class="nowrap">AI · SaaS · startups</span>. Combining 7 years of sales, 6 years in HR / talent, and <span class="nowrap">LLM</span> tooling, we accompany you from <span class="nowrap">"your first hire"</span> to <span class="nowrap">"a strong team"</span> — <strong>end-to-end</strong>.</span>
+            <span data-l="ko">AI 시대의 조직 구축에 <span class="nowrap">잘 맞는 채용 파트너</span> 가 없습니다. <span class="nowrap">KANOPY Talent</span> 는 <span class="nowrap">AI · SaaS · 스타트업</span> 에 특화한 인사 채용 지원. 영업 7년 · 인사 채용 6년의 현장 경험과 <span class="nowrap">LLM</span> 활용으로 <span class="nowrap">"첫 번째 1명"</span> 부터 <span class="nowrap">"강한 조직"</span> 까지 <strong>일관되게</strong> 동반합니다.</span>
+          </p>
 
           <div class="biz-flow" aria-label="KANOPY Talent の人事採用フロー（一気通貫 6 ステップ）">
-            <span style="--i:0">要件設計</span>
+            <span style="--i:0"><span data-l="ja" class="a">要件設計</span><span data-l="en">Define needs</span><span data-l="ko">요건 설계</span></span>
             <span class="biz-flow-arrow" aria-hidden="true">→</span>
-            <span style="--i:1">母集団形成</span>
+            <span style="--i:1"><span data-l="ja" class="a">母集団形成</span><span data-l="en">Build pipeline</span><span data-l="ko">모집단 형성</span></span>
             <span class="biz-flow-arrow" aria-hidden="true">→</span>
-            <span style="--i:2">選考運用</span>
+            <span style="--i:2"><span data-l="ja" class="a">選考運用</span><span data-l="en">Run process</span><span data-l="ko">선발 운영</span></span>
             <span class="biz-flow-arrow" aria-hidden="true">→</span>
-            <span style="--i:3">入社支援</span>
+            <span style="--i:3"><span data-l="ja" class="a">入社支援</span><span data-l="en">Offer & join</span><span data-l="ko">입사 지원</span></span>
             <span class="biz-flow-arrow" aria-hidden="true">→</span>
-            <span style="--i:4">オンボーディング</span>
+            <span style="--i:4"><span data-l="ja" class="a">オンボーディング</span><span data-l="en">Onboard</span><span data-l="ko">온보딩</span></span>
             <span class="biz-flow-arrow" aria-hidden="true">→</span>
-            <span style="--i:5">組織戦略</span>
+            <span style="--i:5"><span data-l="ja" class="a">組織戦略</span><span data-l="en">Org strategy</span><span data-l="ko">조직 전략</span></span>
           </div>
 
           <div class="biz-features">
-            <div class="biz-feature"><span class="biz-feature-text">最先端領域（<strong>AI Engineer / LLM / MLOps</strong>）の採用要件を、現場目線で<strong>言語化</strong></span></div>
-            <div class="biz-feature"><span class="biz-feature-text"><strong>0 → 1 フェーズ</strong>で、JD・KPI・面接フローを一緒に設計</span></div>
-            <div class="biz-feature"><span class="biz-feature-text"><strong>LLM × ソーシング</strong>で、候補者発掘と一次選考を自動化</span></div>
-            <div class="biz-feature"><span class="biz-feature-text">累計 17 社の支援で培った<strong>カルチャーフィット観点</strong>で、長く活躍する人を厳選</span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a">最先端領域（<strong>AI Engineer / LLM / MLOps</strong>）の採用要件を、現場目線で<strong>言語化</strong></span>
+              <span data-l="en">Frontier hiring needs (<strong>AI Engineer / LLM / MLOps</strong>) <strong>articulated</strong> from a hands-on view</span>
+              <span data-l="ko">최첨단 영역 (<strong>AI Engineer / LLM / MLOps</strong>) 의 채용 요건을 현장 시점으로 <strong>언어화</strong></span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a"><strong>0 → 1 フェーズ</strong>で、JD・KPI・面接フローを一緒に設計</span>
+              <span data-l="en">In the <strong>0 → 1 phase</strong>, we co-design JDs, KPIs, and interview flows</span>
+              <span data-l="ko"><strong>0 → 1 단계</strong> 에서 JD · KPI · 면접 플로우를 함께 설계</span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a"><strong>LLM × ソーシング</strong>で、候補者発掘と一次選考を自動化</span>
+              <span data-l="en">Automate sourcing & first-round screening via <strong>LLM × sourcing</strong></span>
+              <span data-l="ko"><strong>LLM × 소싱</strong> 으로 후보 발굴과 1차 선발을 자동화</span>
+            </span></div>
+            <div class="biz-feature"><span class="biz-feature-text">
+              <span data-l="ja" class="a">累計 17 社の支援で培った<strong>カルチャーフィット観点</strong>で、長く活躍する人を厳選</span>
+              <span data-l="en">17-company experience gives us a <strong>culture-fit lens</strong> to pick people who'll thrive long-term</span>
+              <span data-l="ko">누계 17개 기업 지원 경험에서 길러진 <strong>컬처핏 관점</strong> 으로, 오래 활약할 인재를 엄선</span>
+            </span></div>
           </div>
 
           <div class="biz-stats">
             <div class="biz-stat">
-              <div class="biz-stat-num"><span class="count" data-target="17">0</span><span class="biz-stat-num-unit">社</span></div>
-              <div class="biz-stat-label">支援企業</div>
+              <div class="biz-stat-num"><span class="count" data-target="17">0</span><span class="biz-stat-num-unit">
+                <span data-l="ja" class="a">社</span>
+                <span data-l="en"> co.</span>
+                <span data-l="ko">개사</span>
+              </span></div>
+              <div class="biz-stat-label">
+                <span data-l="ja" class="a">支援企業</span>
+                <span data-l="en">Client companies</span>
+                <span data-l="ko">지원 기업</span>
+              </div>
             </div>
             <div class="biz-stat">
-              <div class="biz-stat-num"><span class="count" data-target="500">0</span><span class="biz-stat-num-unit">名</span></div>
-              <div class="biz-stat-label">年間面談</div>
+              <div class="biz-stat-num"><span class="count" data-target="500">0</span><span class="biz-stat-num-unit">
+                <span data-l="ja" class="a">名</span>
+                <span data-l="en"> ppl</span>
+                <span data-l="ko">명</span>
+              </span></div>
+              <div class="biz-stat-label">
+                <span data-l="ja" class="a">年間面談</span>
+                <span data-l="en">Yearly interviews</span>
+                <span data-l="ko">연간 면담</span>
+              </div>
             </div>
           </div>
 
           <a href="talent.html" class="biz-link" data-ripple>
-            Talent に相談する <span aria-hidden="true">→</span>
+            <span data-l="ja" class="a">Talent に相談する</span>
+            <span data-l="en">Talk to Talent</span>
+            <span data-l="ko">Talent 에 상담</span>
+            <span aria-hidden="true">→</span>
           </a>
         </article>
 
@@ -1034,25 +1137,29 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="mission-head" data-reveal="up">
       <div class="section-eyebrow">Numbers</div>
-      <h2 class="section-title"><span class="h1-line"><em>KANOPY</em> を、</span><br><span class="h1-line">数字で見る</span></h2>
+      <h2 class="section-title">
+        <span data-l="ja" class="a"><span class="h1-line"><em>KANOPY</em> を、</span><br><span class="h1-line">数字で見る</span></span>
+        <span data-l="en"><span class="h1-line"><em>KANOPY</em></span><br><span class="h1-line">by the numbers</span></span>
+        <span data-l="ko"><span class="h1-line"><em>KANOPY</em> 를,</span><br><span class="h1-line">숫자로 보기</span></span>
+      </h2>
     </div>
 
     <div class="numbers-grid">
       <div class="num-card" data-reveal="up" data-delay="1">
         <div class="num-value"><span class="count" data-target="2026" data-morph>0</span></div>
-        <div class="num-label">Founded<br>設立年</div>
+        <div class="num-label">Founded<br><span data-l="ja" class="a">設立年</span><span data-l="en">Founded year</span><span data-l="ko">설립 연도</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="2">
         <div class="num-value"><span class="count" data-target="2" data-morph>0</span></div>
-        <div class="num-label">Business Lines<br>事業数</div>
+        <div class="num-label">Business Lines<br><span data-l="ja" class="a">事業数</span><span data-l="en">Business lines</span><span data-l="ko">사업 수</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="3">
-        <div class="num-value"><span class="count" data-target="17" data-morph>0</span><span class="num-value-unit">社</span></div>
-        <div class="num-label">Talent Clients<br>支援企業数</div>
+        <div class="num-value"><span class="count" data-target="17" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">社</span><span data-l="en"> co.</span><span data-l="ko">개사</span></span></div>
+        <div class="num-label">Talent Clients<br><span data-l="ja" class="a">支援企業数</span><span data-l="en">Client companies</span><span data-l="ko">지원 기업 수</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="4">
-        <div class="num-value"><span class="count" data-target="500" data-morph>0</span><span class="num-value-unit">名</span></div>
-        <div class="num-label">Annual Interviews<br>年間面談数</div>
+        <div class="num-value"><span class="count" data-target="500" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">名</span><span data-l="en"> ppl</span><span data-l="ko">명</span></span></div>
+        <div class="num-label">Annual Interviews<br><span data-l="ja" class="a">年間面談数</span><span data-l="en">Yearly interviews</span><span data-l="ko">연간 면담 수</span></div>
       </div>
     </div>
   </div>
@@ -1063,7 +1170,11 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="mission-head" data-reveal="up">
       <div class="section-eyebrow">Founder</div>
-      <h2 class="section-title">創業者の<em>原点</em></h2>
+      <h2 class="section-title">
+        <span data-l="ja" class="a">創業者の<em>原点</em></span>
+        <span data-l="en">Founder's <em>origin</em></span>
+        <span data-l="ko">창업자의 <em>원점</em></span>
+      </h2>
     </div>
 
     <div class="founder-grid">
@@ -1075,12 +1186,32 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <div class="founder-role">CEO / Founder</div>
         <h3 class="founder-name">柴 和成</h3>
         <div class="founder-name-en">Kazushige Shiba</div>
-        <p class="founder-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</p>
-        <p class="founder-bio"><strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「<strong>人生に残るかたちをつくる</strong>」</span> という同じ想いで運営しています。</p>
+        <p class="founder-bio">
+          <span data-l="ja" class="a">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</span>
+          <span data-l="en">Studied <strong>business administration and entrepreneurship</strong> in university. After 3 years in <strong>manufacturing sales</strong>, spent <strong>4 years in HR / talent consulting</strong> supporting hiring across industries, then 6 years in <strong>venture-company HR / talent</strong>. Went <strong>independent in 2023</strong>, accompanying hiring for <strong>17 AI · SaaS startups</strong> with ~<strong>500</strong> candidate interviews per year.</span>
+          <span data-l="ko">대학에서 <strong>경영학 · 창업론</strong> 을 배움. 졸업 후 <strong>제조사 영업 3년</strong> 을 거쳐 <strong>인사 채용 컨설팅 4년</strong> 으로 다양한 업종의 채용 지원에 종사. 이후 <strong>벤처기업의 인사 / 채용</strong> 6년을 쌓고 <strong>2023년 독립</strong>. AI · SaaS 스타트업을 중심으로 <strong>누계 17개사</strong> 의 채용을 동반, 연간 약 <strong>500명</strong> 의 후보자와 면담.</span>
+        </p>
+        <p class="founder-bio">
+          <span data-l="ja" class="a"><strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「<strong>人生に残るかたちをつくる</strong>」</span> という同じ想いで運営しています。</span>
+          <span data-l="en"><strong>Founded KANOPY Inc. in April 2026</strong>. Running two businesses — product development and hiring support — driven by one shared purpose: <span class="nowrap"><strong>to shape what lasts</strong></span>.</span>
+          <span data-l="ko"><strong>2026년 4월, 주식회사 KANOPY 설립</strong>. 프로덕트 개발과 인사 채용 지원, 2가지 사업을 <span class="nowrap"><strong>"인생에 남는 형태를 만들다"</strong></span> 라는 같은 마음으로 운영하고 있습니다.</span>
+        </p>
         <blockquote class="founder-quote">
-          <span class="founder-quote-line">いいプロダクトと、いい人材。</span>
-          <span class="founder-quote-line">どちらも、誰かの人生に残ります。</span>
-          <span class="founder-quote-line">その <span class="nowrap">「残るかたち」</span> をつくることが、KANOPY の仕事です。</span>
+          <span class="founder-quote-line">
+            <span data-l="ja" class="a">いいプロダクトと、いい人材。</span>
+            <span data-l="en">Great products, great people.</span>
+            <span data-l="ko">좋은 프로덕트와 좋은 인재.</span>
+          </span>
+          <span class="founder-quote-line">
+            <span data-l="ja" class="a">どちらも、誰かの人生に残ります。</span>
+            <span data-l="en">Both stay with someone for life.</span>
+            <span data-l="ko">둘 다, 누군가의 인생에 남습니다.</span>
+          </span>
+          <span class="founder-quote-line">
+            <span data-l="ja" class="a">その <span class="nowrap">「残るかたち」</span> をつくることが、KANOPY の仕事です。</span>
+            <span data-l="en">Shaping <span class="nowrap">"what lasts"</span> is what KANOPY does.</span>
+            <span data-l="ko">그 <span class="nowrap">"남는 형태"</span> 를 만드는 것이 KANOPY 의 일입니다.</span>
+          </span>
         </blockquote>
       </div>
     </div>
@@ -1092,31 +1223,52 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="mission-head" data-reveal="up">
       <div class="section-eyebrow">News</div>
-      <h2 class="section-title">最新の<em>お知らせ</em></h2>
+      <h2 class="section-title">
+        <span data-l="ja" class="a">最新の<em>お知らせ</em></span>
+        <span data-l="en">Latest <em>news</em></span>
+        <span data-l="ko">최신 <em>소식</em></span>
+      </h2>
     </div>
 
     <div class="news-list" data-reveal="up">
       <a href="/notice/" class="news-item">
         <span class="news-date">2026.05.20</span>
         <span class="news-cat">Product</span>
-        <span class="news-title">ROUNDIE iOS 版、<span class="nowrap">TestFlight</span> で先行公開を開始しました</span>
+        <span class="news-title">
+          <span data-l="ja" class="a">ROUNDIE iOS 版、<span class="nowrap">TestFlight</span> で先行公開を開始しました</span>
+          <span data-l="en">ROUNDIE iOS — early access via <span class="nowrap">TestFlight</span> is live</span>
+          <span data-l="ko">ROUNDIE iOS 버전, <span class="nowrap">TestFlight</span> 에서 선행 공개를 시작했습니다</span>
+        </span>
         <span class="news-arrow" aria-hidden="true">→</span>
       </a>
       <a href="/notice/" class="news-item">
         <span class="news-date">2026.04.14</span>
         <span class="news-cat">Company</span>
-        <span class="news-title">株式会社 KANOPY を設立しました</span>
+        <span class="news-title">
+          <span data-l="ja" class="a">株式会社 KANOPY を設立しました</span>
+          <span data-l="en">KANOPY Inc. has been founded</span>
+          <span data-l="ko">주식회사 KANOPY 를 설립했습니다</span>
+        </span>
         <span class="news-arrow" aria-hidden="true">→</span>
       </a>
       <a href="/notice/" class="news-item">
         <span class="news-date">2026.03.01</span>
         <span class="news-cat">Milestone</span>
-        <span class="news-title">Founder の独立以来、累計支援企業数 17 社を達成</span>
+        <span class="news-title">
+          <span data-l="ja" class="a">Founder の独立以来、累計支援企業数 17 社を達成</span>
+          <span data-l="en">Reached 17 client companies since the founder went independent</span>
+          <span data-l="ko">Founder 의 독립 이후, 누계 지원 기업 17개사 달성</span>
+        </span>
         <span class="news-arrow" aria-hidden="true">→</span>
       </a>
     </div>
 
-    <a href="/notice/" class="news-cta">お知らせ一覧 <span aria-hidden="true">→</span></a>
+    <a href="/notice/" class="news-cta">
+      <span data-l="ja" class="a">お知らせ一覧</span>
+      <span data-l="en">View all news</span>
+      <span data-l="ko">소식 일람</span>
+      <span aria-hidden="true">→</span>
+    </a>
   </div>
 </section>
 
@@ -1124,27 +1276,47 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 <section class="contact" id="contact">
   <div class="container" data-reveal="up">
     <div class="section-eyebrow">Contact</div>
-    <h2><em>お問い合わせ</em></h2>
-    <p>ご用件に応じて、下記のアドレスにご連絡ください。<br>通常 2 営業日以内にご返信いたします。</p>
+    <h2>
+      <span data-l="ja" class="a"><em>お問い合わせ</em></span>
+      <span data-l="en"><em>Contact</em></span>
+      <span data-l="ko"><em>문의하기</em></span>
+    </h2>
+    <p>
+      <span data-l="ja" class="a">ご用件に応じて、下記のアドレスにご連絡ください。<br>通常 2 営業日以内にご返信いたします。</span>
+      <span data-l="en">Choose the address that matches your inquiry. We typically reply within 2 business days.</span>
+      <span data-l="ko">용건에 따라 아래 주소로 연락 주십시오. 통상 2영업일 이내에 답변드립니다.</span>
+    </p>
 
     <div class="contact-mails">
       <a href="mailto:roundie@kanopy-inc.com" class="contact-mail">
         <div class="contact-mail-left">
-          <span class="contact-mail-label">ROUNDIE に関するお問い合わせ</span>
+          <span class="contact-mail-label">
+            <span data-l="ja" class="a">ROUNDIE に関するお問い合わせ</span>
+            <span data-l="en">ROUNDIE inquiries</span>
+            <span data-l="ko">ROUNDIE 관련 문의</span>
+          </span>
           <span class="contact-mail-addr">roundie@kanopy-inc.com</span>
         </div>
         <span class="contact-mail-arrow" aria-hidden="true">→</span>
       </a>
       <a href="mailto:recruit@kanopy-inc.com" class="contact-mail">
         <div class="contact-mail-left">
-          <span class="contact-mail-label">人事採用支援に関するご相談</span>
+          <span class="contact-mail-label">
+            <span data-l="ja" class="a">人事採用支援に関するご相談</span>
+            <span data-l="en">Hiring support inquiries</span>
+            <span data-l="ko">인사 채용 지원 상담</span>
+          </span>
           <span class="contact-mail-addr">recruit@kanopy-inc.com</span>
         </div>
         <span class="contact-mail-arrow" aria-hidden="true">→</span>
       </a>
       <a href="mailto:notify@kanopy-inc.com" class="contact-mail">
         <div class="contact-mail-left">
-          <span class="contact-mail-label">メディア取材・その他</span>
+          <span class="contact-mail-label">
+            <span data-l="ja" class="a">メディア取材・その他</span>
+            <span data-l="en">Press and other</span>
+            <span data-l="ko">언론 취재 · 기타</span>
+          </span>
           <span class="contact-mail-addr">notify@kanopy-inc.com</span>
         </div>
         <span class="contact-mail-arrow" aria-hidden="true">→</span>
@@ -1166,7 +1338,11 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
           <span class="wm">KANOPY</span>
         </div>
         <p class="footer-vision">We shape what lasts.</p>
-        <p>人生に残るかたちをつくる、<br>東京発のプロダクトカンパニー。</p>
+        <p>
+          <span data-l="ja" class="a">人生に残るかたちをつくる、<br>東京発のプロダクトカンパニー。</span>
+          <span data-l="en">A Tokyo product company<br>shaping what lasts.</span>
+          <span data-l="ko">인생에 남는 형태를 만드는,<br>도쿄 발 프로덕트 컴퍼니.</span>
+        </p>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
@@ -1494,10 +1670,11 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   function setLang(lang){
     if (!['ja','en','ko'].includes(lang)) lang = 'ja';
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-l]').forEach(el=>{
+    // Scope to 3 lang codes to avoid collision with bpg-cell data-l="P|B|Bo|E|D|T"
+    document.querySelectorAll('[data-l="ja"],[data-l="en"],[data-l="ko"]').forEach(el=>{
       el.classList.toggle('a', el.getAttribute('data-l') === lang);
     });
-    document.querySelectorAll('[data-l-block]').forEach(el=>{
+    document.querySelectorAll('[data-l-block="ja"],[data-l-block="en"],[data-l-block="ko"]').forEach(el=>{
       el.classList.toggle('a', el.getAttribute('data-l-block') === lang);
     });
     document.querySelectorAll('.lang-btn').forEach(btn=>{

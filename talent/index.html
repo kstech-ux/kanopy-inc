@@ -225,11 +225,11 @@ body.menu-open{overflow:hidden}
 .lang-btn:hover,.lang-btn:focus-visible{color:var(--text-1);border-color:var(--text-1)}
 .lang-btn[aria-pressed="true"]{color:#0A0A0A;background:var(--amber);border-color:var(--amber)}
 
-/* FE-437: data-l hooks */
-[data-l]{display:none}
-[data-l].a{display:inline}
-[data-l-block]{display:none}
-[data-l-block].a{display:block}
+/* FE-437: data-l hooks — scoped to 3 lang codes to avoid attr collision */
+[data-l="ja"],[data-l="en"],[data-l="ko"]{display:none}
+[data-l="ja"].a,[data-l="en"].a,[data-l="ko"].a{display:inline}
+[data-l-block="ja"],[data-l-block="en"],[data-l-block="ko"]{display:none}
+[data-l-block="ja"].a,[data-l-block="en"].a,[data-l-block="ko"].a{display:block}
 
 /* HERO */
 .hero{padding:160px 24px 100px;min-height:88vh;display:flex;align-items:center;position:relative;overflow:hidden}
@@ -550,13 +550,13 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     <span class="mm-close-icon" aria-hidden="true"><span></span><span></span></span>
     <span class="mm-close-label">Close</span>
   </button>
-  <a href="#why" data-menu-link>Why<span class="mm-jp">選ばれる理由</span></a>
-  <a href="#process" data-menu-link>Process<span class="mm-jp">採用フロー</span></a>
-  <a href="#service" data-menu-link>Service<span class="mm-jp">対応領域</span></a>
-  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp">ゴルフ SNS</span></a>
-  <a href="#founder" data-menu-link>Founder<span class="mm-jp">代表紹介</span></a>
-  <a href="index.html" data-menu-link>KANOPY HP<span class="mm-jp">会社全体へ</span></a>
-  <a href="#contact" class="mobile-menu-cta" data-menu-link>無料相談 →</a>
+  <a href="#why" data-menu-link>Why<span class="mm-jp"><span data-l="ja" class="a">選ばれる理由</span><span data-l="en">Why us</span><span data-l="ko">선택받는 이유</span></span></a>
+  <a href="#process" data-menu-link>Process<span class="mm-jp"><span data-l="ja" class="a">採用フロー</span><span data-l="en">Hiring process</span><span data-l="ko">채용 프로세스</span></span></a>
+  <a href="#service" data-menu-link>Service<span class="mm-jp"><span data-l="ja" class="a">対応領域</span><span data-l="en">What we cover</span><span data-l="ko">대응 영역</span></span></a>
+  <a href="https://roundie.app/" data-menu-link>ROUNDIE<span class="mm-jp"><span data-l="ja" class="a">ゴルフ SNS</span><span data-l="en">Golf social app</span><span data-l="ko">골프 SNS</span></span></a>
+  <a href="#founder" data-menu-link>Founder<span class="mm-jp"><span data-l="ja" class="a">代表紹介</span><span data-l="en">Founder</span><span data-l="ko">대표 소개</span></span></a>
+  <a href="index.html" data-menu-link>KANOPY HP<span class="mm-jp"><span data-l="ja" class="a">会社全体へ</span><span data-l="en">Company site</span><span data-l="ko">회사 전체</span></span></a>
+  <a href="#contact" class="mobile-menu-cta" data-menu-link><span data-l="ja" class="a">無料相談 →</span><span data-l="en">Free consultation →</span><span data-l="ko">무료 상담 →</span></a>
   <!-- FE-437: Language switcher -->
   <div class="lang-switcher" role="group" aria-label="Language">
     <button type="button" class="lang-btn" data-lang="ja" aria-pressed="true">日本語</button>
@@ -575,7 +575,7 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="hero-content" id="heroContent">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-      <span><span class="nowrap">KANOPY Talent</span> · 人事採用支援</span>
+      <span><span class="nowrap">KANOPY Talent</span> · <span data-l="ja" class="a">人事採用支援</span><span data-l="en">Hiring support</span><span data-l="ko">인사 채용 지원</span></span>
     </div>
     <div class="hero-vision">Hiring, strategy to execution.</div>
     <h1>
@@ -609,30 +609,70 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">Why KANOPY Talent</div>
-      <h2 class="section-title"><em>選ばれる</em> 4 つの理由</h2>
-      <p class="section-sub"><span class="nowrap">「採用に詳しい」</span> だけではない。<br><span class="nowrap">「事業を理解する」</span> 採用支援を、現場目線で。</p>
+      <h2 class="section-title">
+        <span data-l="ja" class="a"><em>選ばれる</em> 4 つの理由</span>
+        <span data-l="en">4 reasons clients <em>choose us</em></span>
+        <span data-l="ko"><em>선택받는</em> 4가지 이유</span>
+      </h2>
+      <p class="section-sub">
+        <span data-l="ja" class="a"><span class="nowrap">「採用に詳しい」</span> だけではない。<br><span class="nowrap">「事業を理解する」</span> 採用支援を、現場目線で。</span>
+        <span data-l="en">Not just <span class="nowrap">"hiring expertise"</span> — <span class="nowrap">hiring support that understands your business</span>, from a hands-on view.</span>
+        <span data-l="ko"><span class="nowrap">"채용에 정통한 것"</span> 만이 아닙니다. <span class="nowrap">"사업을 이해하는"</span> 채용 지원을, 현장 시점으로.</span>
+      </p>
     </div>
 
     <div class="why-grid why-grid-4">
       <div class="why-card" data-reveal="up" data-delay="1">
         <span class="why-num">01</span>
-        <h3 class="why-card-title">全職種の<br>採用アウトソーシング</h3>
-        <p class="why-card-desc"><strong>エンジニア / セールス / PM / デザイン / コーポレート / マーケ / 専門職 〜 マネジメント / CxO</strong> まで、職種・レイヤーを問わず対応。特に <strong>エンジニア採用</strong>（AI Engineer / FDE / Backend / Full-stack / Data / ML / LLM）が強みです。</p>
+        <h3 class="why-card-title">
+          <span data-l="ja" class="a">全職種の<br>採用アウトソーシング</span>
+          <span data-l="en">All-role<br>hiring outsourcing</span>
+          <span data-l="ko">전 직종<br>채용 아웃소싱</span>
+        </h3>
+        <p class="why-card-desc">
+          <span data-l="ja" class="a"><strong>エンジニア / セールス / PM / デザイン / コーポレート / マーケ / 専門職 〜 マネジメント / CxO</strong> まで、職種・レイヤーを問わず対応。特に <strong>エンジニア採用</strong>（AI Engineer / FDE / Backend / Full-stack / Data / ML / LLM）が強みです。</span>
+          <span data-l="en">Covers all roles and levels — <strong>Engineering / Sales / PM / Design / Corporate / Marketing / Specialists → Management / CxO</strong>. Particular strength in <strong>engineering hiring</strong> (AI Engineer / FDE / Backend / Full-stack / Data / ML / LLM).</span>
+          <span data-l="ko"><strong>엔지니어 / 세일즈 / PM / 디자인 / 코퍼레이트 / 마케팅 / 전문직 ~ 매니지먼트 / CxO</strong> 까지 직종 · 레이어 무관하게 대응. 특히 <strong>엔지니어 채용</strong> (AI Engineer / FDE / Backend / Full-stack / Data / ML / LLM) 이 강점입니다.</span>
+        </p>
       </div>
       <div class="why-card" data-reveal="up" data-delay="2">
         <span class="why-num">02</span>
-        <h3 class="why-card-title">0 → 1 の<br>採用立ち上げ</h3>
-        <p class="why-card-desc">創業期スタートアップに特化し、<strong>要件定義 〜 KPI 設計</strong> までを一緒に構築。<span class="nowrap">「最初の 1 人」</span> の意思決定から伴走できる数少ないパートナーです。</p>
+        <h3 class="why-card-title">
+          <span data-l="ja" class="a">0 → 1 の<br>採用立ち上げ</span>
+          <span data-l="en">0 → 1<br>hiring buildout</span>
+          <span data-l="ko">0 → 1<br>채용 셋업</span>
+        </h3>
+        <p class="why-card-desc">
+          <span data-l="ja" class="a">創業期スタートアップに特化し、<strong>要件定義 〜 KPI 設計</strong> までを一緒に構築。<span class="nowrap">「最初の 1 人」</span> の意思決定から伴走できる数少ないパートナーです。</span>
+          <span data-l="en">Specialized in early-stage startups, co-building everything from <strong>requirements definition to KPI design</strong>. One of few partners who can accompany you from <span class="nowrap">"your first hire"</span> decision onward.</span>
+          <span data-l="ko">창업기 스타트업에 특화하여 <strong>요건 정의 ~ KPI 설계</strong> 까지 함께 구축. <span class="nowrap">"첫 1명"</span> 의 의사결정부터 동반할 수 있는 드문 파트너입니다.</span>
+        </p>
       </div>
       <div class="why-card" data-reveal="up" data-delay="3">
         <span class="why-num">03</span>
-        <h3 class="why-card-title">人事戦略 〜<br>組織戦略まで</h3>
-        <p class="why-card-desc">採用だけでなく、ベンチャーでの<strong>人事経験</strong>を活かした<strong>人事制度・組織戦略</strong>の設計まで対応可能。採用を組織づくり全体の中で位置づけます。</p>
+        <h3 class="why-card-title">
+          <span data-l="ja" class="a">人事戦略 〜<br>組織戦略まで</span>
+          <span data-l="en">HR strategy<br>through org design</span>
+          <span data-l="ko">인사 전략 ~<br>조직 전략까지</span>
+        </h3>
+        <p class="why-card-desc">
+          <span data-l="ja" class="a">採用だけでなく、ベンチャーでの<strong>人事経験</strong>を活かした<strong>人事制度・組織戦略</strong>の設計まで対応可能。採用を組織づくり全体の中で位置づけます。</span>
+          <span data-l="en">Beyond hiring, our <strong>venture HR experience</strong> enables design of <strong>HR systems and org strategy</strong>. We position hiring within the bigger picture of organization-building.</span>
+          <span data-l="ko">채용뿐 아니라 벤처 <strong>인사 경험</strong> 을 살린 <strong>인사 제도 · 조직 전략</strong> 설계까지 대응 가능. 채용을 조직 구축 전체 안에서 자리매김합니다.</span>
+        </p>
       </div>
       <div class="why-card" data-reveal="up" data-delay="4">
         <span class="why-num">04</span>
-        <h3 class="why-card-title">中途・新卒・CxO の<br>全方位経験</h3>
-        <p class="why-card-desc"><strong>中途採用・新卒採用・CxO 採用</strong>のすべてに実績あり。フェーズ・職種・採用タイプを横断した知見で、最適な打ち手をご提案します。</p>
+        <h3 class="why-card-title">
+          <span data-l="ja" class="a">中途・新卒・CxO の<br>全方位経験</span>
+          <span data-l="en">Mid-career, new-grad,<br>CxO — all covered</span>
+          <span data-l="ko">경력 · 신졸 · CxO<br>전방위 경험</span>
+        </h3>
+        <p class="why-card-desc">
+          <span data-l="ja" class="a"><strong>中途採用・新卒採用・CxO 採用</strong>のすべてに実績あり。フェーズ・職種・採用タイプを横断した知見で、最適な打ち手をご提案します。</span>
+          <span data-l="en">Track record across <strong>mid-career, new-graduate, and CxO hiring</strong>. Cross-functional insights — by phase, role, and hiring type — to recommend the best move.</span>
+          <span data-l="ko"><strong>경력 · 신졸 · CxO 채용</strong> 전반에 실적. 단계 · 직종 · 채용 타입을 횡단한 지견으로 최적의 한 수를 제안합니다.</span>
+        </p>
       </div>
     </div>
   </div>
@@ -643,51 +683,83 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">End-to-End Process</div>
-      <h2 class="section-title">採用フロー、<br class="sp-only">6 ステップで<em>一気通貫</em></h2>
-      <p class="section-sub">求人公開の前から、入社後の組織戦略まで。<br>一つの伴走でつながっています。</p>
+      <h2 class="section-title">
+        <span data-l="ja" class="a">採用フロー、<br class="sp-only">6 ステップで<em>一気通貫</em></span>
+        <span data-l="en">Hiring process —<br class="sp-only">6 steps, <em>end-to-end</em></span>
+        <span data-l="ko">채용 프로세스,<br class="sp-only">6단계 <em>일관 운영</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-l="ja" class="a">求人公開の前から、入社後の組織戦略まで。<br>一つの伴走でつながっています。</span>
+        <span data-l="en">From before the job opens to post-hire org strategy — all connected through one continuous partnership.</span>
+        <span data-l="ko">구인 공개 전부터 입사 후 조직 전략까지. 하나의 동반으로 이어집니다.</span>
+      </p>
     </div>
 
     <div class="process-list">
       <div class="process-step">
         <div class="process-num">01</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">要件設計</h3>
-          <p class="process-step-desc">事業フェーズと組織課題から、本当に必要な <strong>1 人目の要件</strong>を一緒に定義。曖昧な <span class="nowrap">「いい人がほしい」</span> を、採用可能な JD に翻訳します。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">要件設計</span><span data-l="en">Define needs</span><span data-l="ko">요건 설계</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a">事業フェーズと組織課題から、本当に必要な <strong>1 人目の要件</strong>を一緒に定義。曖昧な <span class="nowrap">「いい人がほしい」</span> を、採用可能な JD に翻訳します。</span>
+            <span data-l="en">From your business phase and org challenges, we co-define the <strong>real first-hire needs</strong>. A vague <span class="nowrap">"we want someone good"</span> becomes a hireable JD.</span>
+            <span data-l="ko">사업 단계와 조직 과제로부터 정말 필요한 <strong>첫 1명의 요건</strong> 을 함께 정의. 모호한 <span class="nowrap">"좋은 사람이 필요해"</span> 를 채용 가능한 JD 로 번역합니다.</span>
+          </p>
         </div>
       </div>
       <div class="process-step">
         <div class="process-num">02</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">母集団形成</h3>
-          <p class="process-step-desc"><strong>LLM × ダイレクトリクルーティング</strong>で、ターゲットに最適な母集団を構築。エージェントに丸投げしない、再現性のあるソーシング設計を提供します。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">母集団形成</span><span data-l="en">Build pipeline</span><span data-l="ko">모집단 형성</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a"><strong>LLM × ダイレクトリクルーティング</strong>で、ターゲットに最適な母集団を構築。エージェントに丸投げしない、再現性のあるソーシング設計を提供します。</span>
+            <span data-l="en"><strong>LLM × direct recruiting</strong> builds the right candidate pool. Reproducible sourcing — never just handed off to agencies.</span>
+            <span data-l="ko"><strong>LLM × 다이렉트 리크루팅</strong> 으로 타겟에 최적인 모집단을 구축. 에이전트에게 통째로 맡기지 않는, 재현 가능한 소싱 설계.</span>
+          </p>
         </div>
       </div>
       <div class="process-step">
         <div class="process-num">03</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">選考運用</h3>
-          <p class="process-step-desc"><strong>面接設計・スカウト文面・候補者対応</strong>まで、選考全体のオペレーションを整備。歩留まりを KPI で見ながら、週次でチューニングを続けます。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">選考運用</span><span data-l="en">Run selection</span><span data-l="ko">선발 운영</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a"><strong>面接設計・スカウト文面・候補者対応</strong>まで、選考全体のオペレーションを整備。歩留まりを KPI で見ながら、週次でチューニングを続けます。</span>
+            <span data-l="en">Full selection ops — <strong>interview design, scout messaging, candidate care</strong>. Funnel KPIs tracked weekly with continuous tuning.</span>
+            <span data-l="ko"><strong>면접 설계 · 스카우트 문안 · 후보자 대응</strong> 까지 선발 전체 운영을 정비. 통과율을 KPI 로 보며 주간 튜닝을 계속합니다.</span>
+          </p>
         </div>
       </div>
       <div class="process-step">
         <div class="process-num">04</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">入社支援</h3>
-          <p class="process-step-desc"><strong>条件提示・クロージング・退職交渉支援</strong>まで、内定承諾までの最終フェーズを伴走。<span class="nowrap">「ほぼ決まり」</span> から本当の入社までを確実に運びます。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">入社支援</span><span data-l="en">Offer & join</span><span data-l="ko">입사 지원</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a"><strong>条件提示・クロージング・退職交渉支援</strong>まで、内定承諾までの最終フェーズを伴走。<span class="nowrap">「ほぼ決まり」</span> から本当の入社までを確実に運びます。</span>
+            <span data-l="en"><strong>Offer terms, closing, resignation negotiation support</strong> — the final mile from <span class="nowrap">"nearly there"</span> to actual start date.</span>
+            <span data-l="ko"><strong>조건 제시 · 클로징 · 퇴직 협상 지원</strong> 까지 합격 수락까지의 마지막 단계를 동반. <span class="nowrap">"거의 결정"</span> 에서 진짜 입사까지 확실히 운반합니다.</span>
+          </p>
         </div>
       </div>
       <div class="process-step">
         <div class="process-num">05</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">オンボーディング</h3>
-          <p class="process-step-desc">入社後の <strong>30 / 60 / 90 日プラン</strong>を一緒に設計。初期定着率を上げ、早期の戦力化と長期活躍の両立を支援します。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">オンボーディング</span><span data-l="en">Onboarding</span><span data-l="ko">온보딩</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a">入社後の <strong>30 / 60 / 90 日プラン</strong>を一緒に設計。初期定着率を上げ、早期の戦力化と長期活躍の両立を支援します。</span>
+            <span data-l="en">Co-design the <strong>30 / 60 / 90-day plan</strong>. Lift early retention, accelerate ramp-up, and set up long-term performance.</span>
+            <span data-l="ko">입사 후의 <strong>30 / 60 / 90일 플랜</strong> 을 함께 설계. 초기 정착률을 높이고 조기 전력화와 장기 활약을 양립.</span>
+          </p>
         </div>
       </div>
       <div class="process-step">
         <div class="process-num">06</div>
         <div class="process-step-body">
-          <h3 class="process-step-title">組織戦略</h3>
-          <p class="process-step-desc">採用を <strong>組織づくり全体の戦略</strong> として捉え直し、次の <span class="nowrap">1 年・3 年</span> を一緒に設計。単発の採用支援を超え、<span class="nowrap">組織の継続的なパートナー</span> へ。</p>
+          <h3 class="process-step-title"><span data-l="ja" class="a">組織戦略</span><span data-l="en">Org strategy</span><span data-l="ko">조직 전략</span></h3>
+          <p class="process-step-desc">
+            <span data-l="ja" class="a">採用を <strong>組織づくり全体の戦略</strong> として捉え直し、次の <span class="nowrap">1 年・3 年</span> を一緒に設計。単発の採用支援を超え、<span class="nowrap">組織の継続的なパートナー</span> へ。</span>
+            <span data-l="en">Hiring as <strong>part of overall org strategy</strong> — we design the next <span class="nowrap">1 and 3 years</span> together. Beyond one-off hiring support, into a <span class="nowrap">long-term org partnership</span>.</span>
+            <span data-l="ko">채용을 <strong>조직 만들기 전체 전략</strong> 으로 다시 파악, 다음 <span class="nowrap">1년 · 3년</span> 을 함께 설계. 단발성 채용 지원을 넘어 <span class="nowrap">조직의 지속적 파트너</span> 로.</span>
+          </p>
         </div>
       </div>
     </div>
@@ -699,25 +771,29 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">Numbers</div>
-      <h2 class="section-title"><span class="h1-line">実績で見る、</span><br><span class="h1-line"><em>KANOPY Talent</em></span></h2>
+      <h2 class="section-title">
+        <span data-l="ja" class="a"><span class="h1-line">実績で見る、</span><br><span class="h1-line"><em>KANOPY Talent</em></span></span>
+        <span data-l="en"><span class="h1-line"><em>KANOPY Talent</em></span><br><span class="h1-line">by the numbers</span></span>
+        <span data-l="ko"><span class="h1-line">실적으로 보는,</span><br><span class="h1-line"><em>KANOPY Talent</em></span></span>
+      </h2>
     </div>
 
     <div class="numbers-grid">
       <div class="num-card" data-reveal="up" data-delay="1">
-        <div class="num-value"><span class="count" data-target="150" data-morph>0</span><span class="num-value-unit">社+</span></div>
-        <div class="num-label">Career Total<br>累計支援企業</div>
+        <div class="num-value"><span class="count" data-target="150" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">社+</span><span data-l="en"> co+</span><span data-l="ko">개사+</span></span></div>
+        <div class="num-label">Career Total<br><span data-l="ja" class="a">累計支援企業</span><span data-l="en">Career-total clients</span><span data-l="ko">누계 지원 기업</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="2">
-        <div class="num-value"><span class="count" data-target="17" data-morph>0</span><span class="num-value-unit">社</span></div>
-        <div class="num-label">Since Independent<br>独立後 支援企業</div>
+        <div class="num-value"><span class="count" data-target="17" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">社</span><span data-l="en"> co.</span><span data-l="ko">개사</span></span></div>
+        <div class="num-label">Since Independent<br><span data-l="ja" class="a">独立後 支援企業</span><span data-l="en">Clients since 2023</span><span data-l="ko">독립 후 지원 기업</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="3">
-        <div class="num-value"><span class="count" data-target="500" data-morph>0</span><span class="num-value-unit">名</span></div>
-        <div class="num-label">Annual Interviews<br>年間面談・面接数</div>
+        <div class="num-value"><span class="count" data-target="500" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">名</span><span data-l="en"> ppl</span><span data-l="ko">명</span></span></div>
+        <div class="num-label">Annual Interviews<br><span data-l="ja" class="a">年間面談・面接数</span><span data-l="en">Interviews per year</span><span data-l="ko">연간 면담 · 면접 수</span></div>
       </div>
       <div class="num-card" data-reveal="up" data-delay="4">
-        <div class="num-value"><span class="count" data-target="13" data-morph>0</span><span class="num-value-unit">年</span></div>
-        <div class="num-label">Total Experience<br>営業 7 年 + 人事採用 6 年</div>
+        <div class="num-value"><span class="count" data-target="13" data-morph>0</span><span class="num-value-unit"><span data-l="ja" class="a">年</span><span data-l="en"> yrs</span><span data-l="ko">년</span></span></div>
+        <div class="num-label">Total Experience<br><span data-l="ja" class="a">営業 7 年 + 人事採用 6 年</span><span data-l="en">7 yrs sales + 6 yrs HR</span><span data-l="ko">영업 7년 + 인사 채용 6년</span></div>
       </div>
     </div>
   </div>
@@ -728,63 +804,119 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">Case Studies</div>
-      <h2 class="section-title">具体的な<em>支援実績</em></h2>
-      <p class="section-sub">業界・フェーズ・職種を問わず、課題に応じた採用施策を設計・実行してきました。<br>守秘契約により企業名は伏せていますが、共通するのは <span class="nowrap">「数字で見える成果」</span> です。</p>
+      <h2 class="section-title">
+        <span data-l="ja" class="a">具体的な<em>支援実績</em></span>
+        <span data-l="en"><em>Selected</em> case studies</span>
+        <span data-l="ko">구체적인 <em>지원 실적</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-l="ja" class="a">業界・フェーズ・職種を問わず、課題に応じた採用施策を設計・実行してきました。<br>守秘契約により企業名は伏せていますが、共通するのは <span class="nowrap">「数字で見える成果」</span> です。</span>
+        <span data-l="en">Across industries, phases, and roles, we've designed and run hiring tailored to the challenge. Company names are withheld under NDA, but what they share is <span class="nowrap">"results visible in numbers"</span>.</span>
+        <span data-l="ko">업계 · 단계 · 직종을 막론하고 과제에 맞춘 채용 시책을 설계 · 실행해 왔습니다. 비밀 유지 계약으로 기업명은 비공개이지만, 공통점은 <span class="nowrap">"숫자로 보이는 성과"</span> 입니다.</span>
+      </p>
     </div>
 
     <div class="cases-grid">
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">外資系大手広告 · 新卒採用</div>
-        <h3 class="case-result">新卒母集団 <em>前年比 +150%</em><br>辞退率も低減</h3>
-        <p class="case-desc">ターゲット大学・職種別のスカウト戦略と、ブランドメッセージを刷新。エントリー数と質、辞退率の改善まで一気通貫で実行。</p>
+        <div class="case-industry"><span data-l="ja" class="a">外資系大手広告 · 新卒採用</span><span data-l="en">Global advertising · new-grad</span><span data-l="ko">외자계 대형 광고 · 신졸 채용</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a">新卒母集団 <em>前年比 +150%</em><br>辞退率も低減</span>
+          <span data-l="en">New-grad pipeline <em>+150% YoY</em><br>decline rate also down</span>
+          <span data-l="ko">신졸 모집단 <em>전년 대비 +150%</em><br>사퇴율도 감소</span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">ターゲット大学・職種別のスカウト戦略と、ブランドメッセージを刷新。エントリー数と質、辞退率の改善まで一気通貫で実行。</span>
+          <span data-l="en">Refreshed scout strategy by target university and role, and the brand message. Entries, quality, and decline-rate improvement — all done end-to-end.</span>
+          <span data-l="ko">타겟 대학 · 직종별 스카우트 전략과 브랜드 메시지를 쇄신. 엔트리 수와 질, 사퇴율 개선까지 일관 운영.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span>母集団 <strong>+150%</strong></span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>通年運用</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a">母集団 <strong>+150%</strong></span><span data-l="en">Pipeline <strong>+150%</strong></span><span data-l="ko">모집단 <strong>+150%</strong></span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>通年運用</strong></span><span data-l="en"><strong>Year-round</strong></span><span data-l="ko"><strong>연간 운영</strong></span></span>
         </div>
       </div>
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">ソーシャルベンチャー · 通年採用</div>
-        <h3 class="case-result">年間 100 名目標を<br><em>採用率 100%</em> 達成</h3>
-        <p class="case-desc">大規模な通年採用を、母集団形成から内定承諾までフルファネルで設計・運用。目標数を完全達成し、組織拡大を後押し。</p>
+        <div class="case-industry"><span data-l="ja" class="a">ソーシャルベンチャー · 通年採用</span><span data-l="en">Social venture · year-round</span><span data-l="ko">소셜 벤처 · 연간 채용</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a">年間 100 名目標を<br><em>採用率 100%</em> 達成</span>
+          <span data-l="en">100-hire annual target<br><em>100% achieved</em></span>
+          <span data-l="ko">연간 100명 목표<br><em>채용률 100%</em> 달성</span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">大規模な通年採用を、母集団形成から内定承諾までフルファネルで設計・運用。目標数を完全達成し、組織拡大を後押し。</span>
+          <span data-l="en">Designed and ran a large-scale year-round hiring funnel — from pipeline to offer acceptance. Hit the full target, accelerating org growth.</span>
+          <span data-l="ko">대규모 연간 채용을 모집단 형성부터 입사 수락까지 풀 퍼널로 설계 · 운영. 목표를 완전 달성하여 조직 확대를 추진.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span>採用率 <strong>100%</strong>（100/100 名）</span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>年間運用</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a">採用率 <strong>100%</strong>（100/100 名）</span><span data-l="en">Hire rate <strong>100%</strong> (100/100)</span><span data-l="ko">채용률 <strong>100%</strong> (100/100명)</span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>年間運用</strong></span><span data-l="en"><strong>Annual</strong></span><span data-l="ko"><strong>연간 운영</strong></span></span>
         </div>
       </div>
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">SaaS × AI スタートアップ</div>
-        <h3 class="case-result"><em>2 ヶ月</em> で、<br>エンジニア <em>6 名</em> 充足</h3>
-        <p class="case-desc">急成長フェーズの組織拡大に対応。<strong>LLM / Backend / Full-stack</strong> 領域を LLM 活用のソーシングと複数プラットフォーム並行運用で短期決着。</p>
+        <div class="case-industry"><span data-l="ja" class="a">SaaS × AI スタートアップ</span><span data-l="en">SaaS × AI startup</span><span data-l="ko">SaaS × AI 스타트업</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a"><em>2 ヶ月</em> で、<br>エンジニア <em>6 名</em> 充足</span>
+          <span data-l="en"><em>6 engineers</em> hired<br>in <em>2 months</em></span>
+          <span data-l="ko"><em>2개월</em> 만에<br>엔지니어 <em>6명</em> 충족</span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">急成長フェーズの組織拡大に対応。<strong>LLM / Backend / Full-stack</strong> 領域を LLM 活用のソーシングと複数プラットフォーム並行運用で短期決着。</span>
+          <span data-l="en">Supported rapid-growth org expansion. <strong>LLM / Backend / Full-stack</strong> roles closed in record time via LLM-assisted sourcing and parallel-platform ops.</span>
+          <span data-l="ko">급성장 단계의 조직 확대 대응. <strong>LLM / Backend / Full-stack</strong> 영역을 LLM 활용 소싱과 복수 플랫폼 병행 운영으로 단기 결착.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span>エンジニア <strong>6 名</strong> 充足</span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>2 ヶ月</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a">エンジニア <strong>6 名</strong> 充足</span><span data-l="en">Engineers <strong>6 filled</strong></span><span data-l="ko">엔지니어 <strong>6명</strong> 충족</span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>2 ヶ月</strong></span><span data-l="en"><strong>2 months</strong></span><span data-l="ko"><strong>2개월</strong></span></span>
         </div>
       </div>
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">AI スタートアップ · 0 → 1 立ち上げ</div>
-        <h3 class="case-result">AI エンジニア採用を<br><em>ゼロから設計 ・ 運用</em></h3>
-        <p class="case-desc">採用基盤がない段階から、要件定義・JD・スカウト・面接フローを丸ごと構築。運用までを一気通貫で行い、組織の最初の数名を確保。</p>
+        <div class="case-industry"><span data-l="ja" class="a">AI スタートアップ · 0 → 1 立ち上げ</span><span data-l="en">AI startup · 0 → 1 buildout</span><span data-l="ko">AI 스타트업 · 0 → 1 셋업</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a">AI エンジニア採用を<br><em>ゼロから設計 ・ 運用</em></span>
+          <span data-l="en">AI engineer hiring,<br><em>built from zero</em></span>
+          <span data-l="ko">AI 엔지니어 채용을<br><em>제로부터 설계 · 운영</em></span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">採用基盤がない段階から、要件定義・JD・スカウト・面接フローを丸ごと構築。運用までを一気通貫で行い、組織の最初の数名を確保。</span>
+          <span data-l="en">Built the entire hiring foundation from scratch — requirements, JD, scout flow, interview process — and ran it end-to-end. Secured the org's first few hires.</span>
+          <span data-l="ko">채용 기반이 없는 단계에서 요건 정의 · JD · 스카우트 · 면접 플로우를 통째로 구축. 운영까지 일관 진행하여 조직의 첫 멤버 확보.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span><strong>採用基盤構築 + 初期メンバー確保</strong></span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>0 → 1 立上げ期</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a"><strong>採用基盤構築 + 初期メンバー確保</strong></span><span data-l="en"><strong>Hiring foundation + first members</strong></span><span data-l="ko"><strong>채용 기반 구축 + 초기 멤버 확보</strong></span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>0 → 1 立上げ期</strong></span><span data-l="en"><strong>0 → 1 phase</strong></span><span data-l="ko"><strong>0 → 1 셋업기</strong></span></span>
         </div>
       </div>
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">センサ × 生成 AI スタートアップ</div>
-        <h3 class="case-result"><em>2 ヶ月</em> で、コンサル<br>セールスを <em>DR 採用</em> 完了</h3>
-        <p class="case-desc">ダイレクトリクルーティングを<strong>導入 〜 運営 〜 承諾まで並走</strong>。希少なコンサル経験のセールス人材を 2 ヶ月で確保。</p>
+        <div class="case-industry"><span data-l="ja" class="a">センサ × 生成 AI スタートアップ</span><span data-l="en">Sensors × generative AI startup</span><span data-l="ko">센서 × 생성 AI 스타트업</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a"><em>2 ヶ月</em> で、コンサル<br>セールスを <em>DR 採用</em> 完了</span>
+          <span data-l="en">Consulting sales hire<br><em>done in 2 months</em> via DR</span>
+          <span data-l="ko"><em>2개월</em> 만에 컨설팅<br>세일즈를 <em>DR 채용</em> 완료</span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">ダイレクトリクルーティングを<strong>導入 〜 運営 〜 承諾まで並走</strong>。希少なコンサル経験のセールス人材を 2 ヶ月で確保。</span>
+          <span data-l="en">Direct recruiting <strong>from setup, through operation, to acceptance</strong>. Secured rare consulting-experienced sales talent in 2 months.</span>
+          <span data-l="ko">다이렉트 리크루팅을 <strong>도입 ~ 운영 ~ 수락까지 동반</strong>. 희소한 컨설팅 경험의 세일즈 인재를 2개월 만에 확보.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span>コンサルセールス <strong>1 名</strong></span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>2 ヶ月</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a">コンサルセールス <strong>1 名</strong></span><span data-l="en">Consulting sales <strong>1 hire</strong></span><span data-l="ko">컨설팅 세일즈 <strong>1명</strong></span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>2 ヶ月</strong></span><span data-l="en"><strong>2 months</strong></span><span data-l="ko"><strong>2개월</strong></span></span>
         </div>
       </div>
       <div class="case-card" data-reveal="up">
-        <div class="case-industry">製造メーカー · 新卒採用</div>
-        <h3 class="case-result">内定承諾率 <em>90%</em><br>移行率をフォロー面談で担保</h3>
-        <p class="case-desc">内定後のフォロー面談を体系化し、内定 → 内定承諾の移行率 90% を担保。承諾後の入社まで丁寧に伴走。</p>
+        <div class="case-industry"><span data-l="ja" class="a">製造メーカー · 新卒採用</span><span data-l="en">Manufacturer · new-grad</span><span data-l="ko">제조사 · 신졸 채용</span></div>
+        <h3 class="case-result">
+          <span data-l="ja" class="a">内定承諾率 <em>90%</em><br>移行率をフォロー面談で担保</span>
+          <span data-l="en">Offer-acceptance rate <em>90%</em><br>secured via follow-up meetings</span>
+          <span data-l="ko">합격 수락률 <em>90%</em><br>이행률을 팔로업 면담으로 담보</span>
+        </h3>
+        <p class="case-desc">
+          <span data-l="ja" class="a">内定後のフォロー面談を体系化し、内定 → 内定承諾の移行率 90% を担保。承諾後の入社まで丁寧に伴走。</span>
+          <span data-l="en">Systematized post-offer follow-up meetings, securing a 90% offer-to-acceptance conversion. Accompanied each candidate to actual start.</span>
+          <span data-l="ko">합격 후 팔로업 면담을 체계화하여 합격 → 수락 이행률 90% 담보. 수락 후 입사까지 정성껏 동반.</span>
+        </p>
         <div class="case-metric">
-          <span class="case-metric-row"><span class="case-metric-label">結果</span>承諾率 <strong>90%</strong></span>
-          <span class="case-metric-row"><span class="case-metric-label">期間</span><strong>内定後フォロー</strong></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">結果</span><span data-l="en">RESULT</span><span data-l="ko">결과</span></span><span data-l="ja" class="a">承諾率 <strong>90%</strong></span><span data-l="en">Acceptance <strong>90%</strong></span><span data-l="ko">수락률 <strong>90%</strong></span></span>
+          <span class="case-metric-row"><span class="case-metric-label"><span data-l="ja" class="a">期間</span><span data-l="en">PERIOD</span><span data-l="ko">기간</span></span><span data-l="ja" class="a"><strong>内定後フォロー</strong></span><span data-l="en"><strong>Post-offer follow-up</strong></span><span data-l="ko"><strong>합격 후 팔로업</strong></span></span>
         </div>
       </div>
     </div>
@@ -796,26 +928,50 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">Service Coverage</div>
-      <h2 class="section-title"><em>対応領域</em></h2>
-      <p class="section-sub"><span class="nowrap">AI・SaaS・スタートアップ</span> 領域に特化し、技術職から事業職まで幅広く支援しています。</p>
+      <h2 class="section-title">
+        <span data-l="ja" class="a"><em>対応領域</em></span>
+        <span data-l="en">What <em>we cover</em></span>
+        <span data-l="ko"><em>대응 영역</em></span>
+      </h2>
+      <p class="section-sub">
+        <span data-l="ja" class="a"><span class="nowrap">AI・SaaS・スタートアップ</span> 領域に特化し、技術職から事業職まで幅広く支援しています。</span>
+        <span data-l="en">Specialized in <span class="nowrap">AI · SaaS · startups</span>, supporting roles from technical to business across the board.</span>
+        <span data-l="ko"><span class="nowrap">AI · SaaS · 스타트업</span> 영역에 특화하여 기술직부터 비즈니스 직군까지 폭넓게 지원합니다.</span>
+      </p>
     </div>
 
     <div class="service-grid">
       <div class="service-card" data-reveal="up" data-delay="1">
-        <h3 class="service-card-title">全職種の <span class="nowrap">採用アウトソーシング</span></h3>
-        <p class="service-card-desc">職種・レイヤーを問わず対応。<strong>専門職からマネジメント・CxO まで</strong>、フェーズに応じた採用施策を設計・実行します。</p>
+        <h3 class="service-card-title">
+          <span data-l="ja" class="a">全職種の <span class="nowrap">採用アウトソーシング</span></span>
+          <span data-l="en">All-role <span class="nowrap">hiring outsourcing</span></span>
+          <span data-l="ko">전 직종 <span class="nowrap">채용 아웃소싱</span></span>
+        </h3>
+        <p class="service-card-desc">
+          <span data-l="ja" class="a">職種・レイヤーを問わず対応。<strong>専門職からマネジメント・CxO まで</strong>、フェーズに応じた採用施策を設計・実行します。</span>
+          <span data-l="en">All roles and levels covered — from <strong>specialists to management and CxO</strong>. Hiring designed and run for your phase.</span>
+          <span data-l="ko">직종 · 레이어 무관하게 대응. <strong>전문직부터 매니지먼트 · CxO 까지</strong>, 단계에 맞춘 채용 시책을 설계 · 실행.</span>
+        </p>
         <div class="service-card-tags">
-          <span class="service-card-tag">セールス</span>
+          <span class="service-card-tag"><span data-l="ja" class="a">セールス</span><span data-l="en">Sales</span><span data-l="ko">세일즈</span></span>
           <span class="service-card-tag">PM</span>
-          <span class="service-card-tag">デザイン</span>
-          <span class="service-card-tag">コーポレート</span>
-          <span class="service-card-tag">マーケ</span>
+          <span class="service-card-tag"><span data-l="ja" class="a">デザイン</span><span data-l="en">Design</span><span data-l="ko">디자인</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">コーポレート</span><span data-l="en">Corporate</span><span data-l="ko">코퍼레이트</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">マーケ</span><span data-l="en">Marketing</span><span data-l="ko">마케팅</span></span>
           <span class="service-card-tag">CxO</span>
         </div>
       </div>
       <div class="service-card" data-reveal="up" data-delay="2">
-        <h3 class="service-card-title">エンジニア採用 <span class="nowrap">（特に強み）</span></h3>
-        <p class="service-card-desc">技術スタックと事業フェーズを理解した上で、適切な人材像を定義。<strong>AI Engineer / FDE</strong> など最先端領域に強みがあります。</p>
+        <h3 class="service-card-title">
+          <span data-l="ja" class="a">エンジニア採用 <span class="nowrap">（特に強み）</span></span>
+          <span data-l="en">Engineering hires <span class="nowrap">(core strength)</span></span>
+          <span data-l="ko">엔지니어 채용 <span class="nowrap">(특히 강점)</span></span>
+        </h3>
+        <p class="service-card-desc">
+          <span data-l="ja" class="a">技術スタックと事業フェーズを理解した上で、適切な人材像を定義。<strong>AI Engineer / FDE</strong> など最先端領域に強みがあります。</span>
+          <span data-l="en">Tech-stack and business-phase aware — we define the right profile. Strong in frontier areas like <strong>AI Engineer / FDE</strong>.</span>
+          <span data-l="ko">기술 스택과 사업 단계를 이해한 위에 적절한 인재상을 정의. <strong>AI Engineer / FDE</strong> 등 최첨단 영역에 강점.</span>
+        </p>
         <div class="service-card-tags">
           <span class="service-card-tag">AI Engineer</span>
           <span class="service-card-tag">FDE</span>
@@ -826,24 +982,40 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         </div>
       </div>
       <div class="service-card" data-reveal="up" data-delay="3">
-        <h3 class="service-card-title"><span class="nowrap">0 → 1 採用立ち上げ</span></h3>
-        <p class="service-card-desc">創業期スタートアップの最初の数名から、組織としての採用基盤構築まで。<strong>要件定義 〜 KPI 設計</strong>を一緒に組み立てます。</p>
+        <h3 class="service-card-title">
+          <span data-l="ja" class="a"><span class="nowrap">0 → 1 採用立ち上げ</span></span>
+          <span data-l="en"><span class="nowrap">0 → 1 hiring buildout</span></span>
+          <span data-l="ko"><span class="nowrap">0 → 1 채용 셋업</span></span>
+        </h3>
+        <p class="service-card-desc">
+          <span data-l="ja" class="a">創業期スタートアップの最初の数名から、組織としての採用基盤構築まで。<strong>要件定義 〜 KPI 設計</strong>を一緒に組み立てます。</span>
+          <span data-l="en">From the very first hires to building hiring as an org capability. Co-build <strong>requirements through KPI design</strong>.</span>
+          <span data-l="ko">창업기 스타트업의 첫 멤버부터 조직으로서의 채용 기반 구축까지. <strong>요건 정의 ~ KPI 설계</strong> 를 함께 조립.</span>
+        </p>
         <div class="service-card-tags">
-          <span class="service-card-tag">要件定義</span>
-          <span class="service-card-tag">KPI 設計</span>
-          <span class="service-card-tag">JD 設計</span>
-          <span class="service-card-tag">面接フロー</span>
-          <span class="service-card-tag">採用広報</span>
+          <span class="service-card-tag"><span data-l="ja" class="a">要件定義</span><span data-l="en">Requirements</span><span data-l="ko">요건 정의</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">KPI 設計</span><span data-l="en">KPI design</span><span data-l="ko">KPI 설계</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">JD 設計</span><span data-l="en">JD design</span><span data-l="ko">JD 설계</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">面接フロー</span><span data-l="en">Interview flow</span><span data-l="ko">면접 플로우</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">採用広報</span><span data-l="en">Hiring PR</span><span data-l="ko">채용 홍보</span></span>
         </div>
       </div>
       <div class="service-card" data-reveal="up" data-delay="4">
-        <h3 class="service-card-title">人事戦略 〜 <span class="nowrap">組織戦略</span></h3>
-        <p class="service-card-desc">採用以外も、ベンチャーでの<strong>人事経験</strong>を活かして人事制度・組織戦略の設計まで対応。<strong>中途・新卒・CxO</strong> の全方位経験あり。</p>
+        <h3 class="service-card-title">
+          <span data-l="ja" class="a">人事戦略 〜 <span class="nowrap">組織戦略</span></span>
+          <span data-l="en">HR strategy to <span class="nowrap">org strategy</span></span>
+          <span data-l="ko">인사 전략 ~ <span class="nowrap">조직 전략</span></span>
+        </h3>
+        <p class="service-card-desc">
+          <span data-l="ja" class="a">採用以外も、ベンチャーでの<strong>人事経験</strong>を活かして人事制度・組織戦略の設計まで対応。<strong>中途・新卒・CxO</strong> の全方位経験あり。</span>
+          <span data-l="en">Beyond hiring — <strong>venture HR experience</strong> covers HR-system and org-strategy design. Track record across <strong>mid-career, new-grad, and CxO</strong>.</span>
+          <span data-l="ko">채용 외에도 벤처 <strong>인사 경험</strong> 을 살려 인사 제도 · 조직 전략 설계까지 대응. <strong>경력 · 신졸 · CxO</strong> 전방위 경험.</span>
+        </p>
         <div class="service-card-tags">
-          <span class="service-card-tag">人事制度設計</span>
-          <span class="service-card-tag">リファラル施策</span>
-          <span class="service-card-tag">組織戦略</span>
-          <span class="service-card-tag">中途 / 新卒 / CxO</span>
+          <span class="service-card-tag"><span data-l="ja" class="a">人事制度設計</span><span data-l="en">HR system design</span><span data-l="ko">인사 제도 설계</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">リファラル施策</span><span data-l="en">Referral programs</span><span data-l="ko">레퍼럴 시책</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">組織戦略</span><span data-l="en">Org strategy</span><span data-l="ko">조직 전략</span></span>
+          <span class="service-card-tag"><span data-l="ja" class="a">中途 / 新卒 / CxO</span><span data-l="en">Mid / new-grad / CxO</span><span data-l="ko">경력 / 신졸 / CxO</span></span>
         </div>
       </div>
     </div>
@@ -851,8 +1023,16 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
     <!-- Stack / Platform -->
     <div class="logo-section-head" data-reveal="up">
       <div class="section-eyebrow">AI × 採用効率化</div>
-      <h3><em>AI ツール</em> と <em>採用プラットフォーム</em></h3>
-      <p>最新の <span class="nowrap">AI ツール</span> を日常運用に統合し、主要採用プラットフォームに横断的に対応します。<br>媒体運用・スカウト・エージェントリレーション・AI 自動化まで。</p>
+      <h3>
+        <span data-l="ja" class="a"><em>AI ツール</em> と <em>採用プラットフォーム</em></span>
+        <span data-l="en"><em>AI tools</em> and <em>hiring platforms</em></span>
+        <span data-l="ko"><em>AI 도구</em> 와 <em>채용 플랫폼</em></span>
+      </h3>
+      <p>
+        <span data-l="ja" class="a">最新の <span class="nowrap">AI ツール</span> を日常運用に統合し、主要採用プラットフォームに横断的に対応します。<br>媒体運用・スカウト・エージェントリレーション・AI 自動化まで。</span>
+        <span data-l="en">Latest <span class="nowrap">AI tools</span> integrated into daily ops; major hiring platforms supported across the board — media ops, scouting, agency relations, AI automation.</span>
+        <span data-l="ko">최신 <span class="nowrap">AI 도구</span> 를 일상 운영에 통합하고, 주요 채용 플랫폼에 횡단적으로 대응합니다. 매체 운영 · 스카우트 · 에이전트 관계 · AI 자동화까지.</span>
+      </p>
     </div>
 
     <!-- AI ツール -->
@@ -934,7 +1114,11 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   <div class="container">
     <div class="section-head" data-reveal="up">
       <div class="section-eyebrow">Founder</div>
-      <h2 class="section-title">代表紹介</h2>
+      <h2 class="section-title">
+        <span data-l="ja" class="a">代表紹介</span>
+        <span data-l="en">Meet the founder</span>
+        <span data-l="ko">대표 소개</span>
+      </h2>
     </div>
 
     <div class="founder-strip-grid" data-reveal="up">
@@ -945,9 +1129,22 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
         <div class="fs-meta-role">CEO / Founder</div>
         <h3 class="fs-meta-name">柴 和成</h3>
         <div class="fs-meta-name-en">Kazushige Shiba</div>
-        <p class="fs-meta-bio">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</p>
-        <p class="fs-meta-bio">人事採用コンサル時代まで遡ると、<strong>累計 150 社以上</strong>のサポート実績。<strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「人生に残るかたちをつくる」</span> という同じ想いで運営しています。</p>
-        <a href="index.html#founder" class="fs-link">KANOPY 全体を見る <span aria-hidden="true">→</span></a>
+        <p class="fs-meta-bio">
+          <span data-l="ja" class="a">大学で<strong>経営学・起業論</strong>を学ぶ。卒業後、<strong>メーカー営業 3 年</strong>を経て、<strong>人事採用コンサル 4 年</strong>で多業種の採用支援に従事。その後<strong>ベンチャー企業の人事 / 採用</strong> 6 年を積み、<strong>2023 年に独立</strong>しました。AI・SaaS スタートアップを中心に<strong>累計 17 社</strong>の採用を伴走。年間約 <strong>500 名</strong>の候補者と面談しています。</span>
+          <span data-l="en">Studied <strong>business administration and entrepreneurship</strong> in university. After 3 years in <strong>manufacturing sales</strong>, spent <strong>4 years in HR / talent consulting</strong> supporting hiring across industries, then 6 years in <strong>venture-company HR / talent</strong>. Went <strong>independent in 2023</strong>, accompanying hiring for <strong>17 AI · SaaS startups</strong> with ~<strong>500</strong> candidate interviews per year.</span>
+          <span data-l="ko">대학에서 <strong>경영학 · 창업론</strong> 을 배움. 졸업 후 <strong>제조사 영업 3년</strong> 을 거쳐 <strong>인사 채용 컨설팅 4년</strong> 으로 다양한 업종의 채용 지원에 종사. 이후 <strong>벤처기업의 인사 / 채용</strong> 6년을 쌓고 <strong>2023년 독립</strong>. AI · SaaS 스타트업을 중심으로 <strong>누계 17개사</strong> 의 채용을 동반, 연간 약 <strong>500명</strong> 의 후보자와 면담.</span>
+        </p>
+        <p class="fs-meta-bio">
+          <span data-l="ja" class="a">人事採用コンサル時代まで遡ると、<strong>累計 150 社以上</strong>のサポート実績。<strong>2026 年 4 月、株式会社 KANOPY を設立</strong>。プロダクト開発と人事採用支援、2 つの事業を <span class="nowrap">「人生に残るかたちをつくる」</span> という同じ想いで運営しています。</span>
+          <span data-l="en">Including the HR / talent consulting years, the track record reaches <strong>150+ companies supported</strong>. <strong>Founded KANOPY Inc. in April 2026</strong>. Running two businesses — product development and hiring support — with one shared purpose: <span class="nowrap">"to shape what lasts"</span>.</span>
+          <span data-l="ko">인사 채용 컨설팅 시대까지 거슬러 올라가면 <strong>누계 150개사 이상</strong> 의 지원 실적. <strong>2026년 4월, 주식회사 KANOPY 설립</strong>. 프로덕트 개발과 인사 채용 지원, 2가지 사업을 <span class="nowrap">"인생에 남는 형태를 만들다"</span> 라는 같은 마음으로 운영.</span>
+        </p>
+        <a href="index.html#founder" class="fs-link">
+          <span data-l="ja" class="a">KANOPY 全体を見る</span>
+          <span data-l="en">View KANOPY overview</span>
+          <span data-l="ko">KANOPY 전체 보기</span>
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>
@@ -957,14 +1154,26 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
 <section class="contact" id="contact">
   <div class="container" data-reveal="up">
     <div class="section-eyebrow">Contact</div>
-    <h2>採用のご相談、<br class="sp-only"><em>お待ちしています</em></h2>
-    <p class="contact-lead"><strong>採用を始める方も、見直したい方も、情報交換だけでも歓迎です。</strong><br>採用要件が固まっていない段階からのご相談も OK。30 分のオンラインミーティングから、現状の整理をご一緒します。</p>
+    <h2>
+      <span data-l="ja" class="a">採用のご相談、<br class="sp-only"><em>お待ちしています</em></span>
+      <span data-l="en">Let's talk <em>hiring</em></span>
+      <span data-l="ko">채용 상담,<br class="sp-only"><em>기다리고 있습니다</em></span>
+    </h2>
+    <p class="contact-lead">
+      <span data-l="ja" class="a"><strong>採用を始める方も、見直したい方も、情報交換だけでも歓迎です。</strong><br>採用要件が固まっていない段階からのご相談も OK。30 分のオンラインミーティングから、現状の整理をご一緒します。</span>
+      <span data-l="en"><strong>Starting hiring, rethinking it, or just exchanging notes — all welcome.</strong> Even if your requirements aren't set, a 30-minute online meeting helps us organize where you are.</span>
+      <span data-l="ko"><strong>채용을 시작하시는 분도, 재검토하실 분도, 정보 교환만이라도 환영입니다.</strong> 채용 요건이 정해지지 않은 단계의 상담도 OK. 30분 온라인 미팅에서 현황 정리를 함께 합니다.</span>
+    </p>
 
     <a href="mailto:recruit@kanopy-inc.com?subject=KANOPY%20Talent%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="contact-mail">
       <span class="contact-mail-text">recruit@kanopy-inc.com</span>
       <span class="contact-mail-arrow" aria-hidden="true">→</span>
     </a>
-    <p class="contact-note">通常 2 営業日以内にご返信いたします。<br>初回相談は無料・秘密保持契約も対応可。</p>
+    <p class="contact-note">
+      <span data-l="ja" class="a">通常 2 営業日以内にご返信いたします。<br>初回相談は無料・秘密保持契約も対応可。</span>
+      <span data-l="en">We typically reply within 2 business days. First meeting is free, and NDAs are welcome.</span>
+      <span data-l="ko">통상 2영업일 이내에 답변드립니다. 초회 상담은 무료, 비밀 유지 계약도 대응 가능합니다.</span>
+    </p>
   </div>
 </section>
 
@@ -981,25 +1190,29 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
           <span class="wm">KANOPY <span style="font-size:11px;letter-spacing:.3em;color:var(--amber)">TALENT</span></span>
         </div>
         <p class="footer-vision">Recruiting, redesigned.</p>
-        <p><span class="nowrap">AI・SaaS・スタートアップ</span> に特化した人事採用支援。<br>営業 7 年・人事採用 6 年の現場経験と LLM 活用で、一気通貫で伴走します。</p>
+        <p>
+          <span data-l="ja" class="a"><span class="nowrap">AI・SaaS・スタートアップ</span> に特化した人事採用支援。<br>営業 7 年・人事採用 6 年の現場経験と LLM 活用で、一気通貫で伴走します。</span>
+          <span data-l="en">Hiring support for <span class="nowrap">AI · SaaS · startups</span>. 7 years in sales + 6 years in HR / talent, with LLM tooling — end-to-end partnership.</span>
+          <span data-l="ko"><span class="nowrap">AI · SaaS · 스타트업</span> 에 특화한 인사 채용 지원. 영업 7년 · 인사 채용 6년의 현장 경험과 LLM 활용으로 일관 동반합니다.</span>
+        </p>
       </div>
       <div class="footer-col">
         <h5>Service</h5>
         <a href="#why">Why KANOPY Talent</a>
-        <a href="#process">採用フロー</a>
-        <a href="#service">対応領域</a>
-        <a href="#numbers">実績</a>
+        <a href="#process"><span data-l="ja" class="a">採用フロー</span><span data-l="en">Hiring process</span><span data-l="ko">채용 프로세스</span></a>
+        <a href="#service"><span data-l="ja" class="a">対応領域</span><span data-l="en">Coverage</span><span data-l="ko">대응 영역</span></a>
+        <a href="#numbers"><span data-l="ja" class="a">実績</span><span data-l="en">Numbers</span><span data-l="ko">실적</span></a>
       </div>
       <div class="footer-col">
         <h5>Company</h5>
         <a href="index.html">KANOPY HP</a>
-        <a href="index.html#founder">創業者</a>
-        <a href="index.html#news">お知らせ</a>
+        <a href="index.html#founder"><span data-l="ja" class="a">創業者</span><span data-l="en">Founder</span><span data-l="ko">창업자</span></a>
+        <a href="index.html#news"><span data-l="ja" class="a">お知らせ</span><span data-l="en">News</span><span data-l="ko">소식</span></a>
       </div>
       <div class="footer-col">
         <h5>Contact</h5>
-        <a href="mailto:recruit@kanopy-inc.com">採用のご相談</a>
-        <a href="mailto:notify@kanopy-inc.com">メディア取材</a>
+        <a href="mailto:recruit@kanopy-inc.com"><span data-l="ja" class="a">採用のご相談</span><span data-l="en">Hiring inquiries</span><span data-l="ko">채용 상담</span></a>
+        <a href="mailto:notify@kanopy-inc.com"><span data-l="ja" class="a">メディア取材</span><span data-l="en">Press</span><span data-l="ko">언론 취재</span></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1225,10 +1438,10 @@ footer{padding:80px 0 48px;border-top:1px solid var(--bd);background:#000}
   function setLang(lang){
     if (!['ja','en','ko'].includes(lang)) lang = 'ja';
     document.documentElement.lang = lang;
-    document.querySelectorAll('[data-l]').forEach(el=>{
+    document.querySelectorAll('[data-l="ja"],[data-l="en"],[data-l="ko"]').forEach(el=>{
       el.classList.toggle('a', el.getAttribute('data-l') === lang);
     });
-    document.querySelectorAll('[data-l-block]').forEach(el=>{
+    document.querySelectorAll('[data-l-block="ja"],[data-l-block="en"],[data-l-block="ko"]').forEach(el=>{
       el.classList.toggle('a', el.getAttribute('data-l-block') === lang);
     });
     document.querySelectorAll('.lang-btn').forEach(btn=>{
