@@ -150,7 +150,8 @@ nav{position:fixed;top:32px;left:0;right:0;z-index:100;padding:18px 24px;display
   .top-lang-link{padding:4px 6px;font-size:10px;min-height:28px}
 }
 nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--bd)}
-nav.hidden{transform:translateY(-110%)}
+/* FE-484 INS-025 (Phase 1 F3): PC sticky 統一、scroll-down hide 撤廃 */
+/* nav.hidden{transform:translateY(-110%)} */
 @media(min-width:834px){nav{padding:24px 40px}}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:opacity .2s}
 .nav-brand:hover{opacity:.8}
