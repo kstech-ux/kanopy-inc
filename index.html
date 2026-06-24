@@ -116,7 +116,7 @@ nav .menu a[aria-current]::after{content:"";position:absolute;left:0;right:0;bot
   nav.open .navtog span:nth-child(2){opacity:0;transform:translateX(6px)}
   nav.open .navtog span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
   nav .menu{position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:flex-start;gap:6px;
-    padding:0 var(--mx);background:rgba(11,13,12,.97);backdrop-filter:blur(18px);
+    padding:0 var(--mx);background:var(--bg);backdrop-filter:blur(18px);
     transform:translateX(8%);opacity:0;visibility:hidden;transition:transform .42s var(--ease-reveal),opacity .42s var(--ease-reveal),visibility .42s;z-index:55}
   nav.open .menu{transform:none;opacity:1;visibility:visible}
   nav .menu a{font-family:var(--font-ja);font-size:var(--t5);font-weight:700;color:var(--ink);letter-spacing:.02em;min-height:60px}
