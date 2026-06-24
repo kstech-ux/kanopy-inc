@@ -267,6 +267,11 @@ html:not([lang="ja"]):not([lang="ko"]) .head h2{font-family:var(--font-en);font-
 .canopy{position:relative;width:min(1560px,118%);height:min(72vh,720px);margin:0 auto;z-index:1;
   transform:translateY(var(--cu,0px)) scale(var(--cs,1));transform-origin:50% 6%;
   transition:transform .14s linear}
+/* 大画面対応: 上限(720px/1560px)で樹冠の成長が止まり、ワイド画面で中央に小さく見えてしまう。
+   SVGは preserveAspectRatio=meet で高さ制約により幅が決まるため、高さ上限を主に引き上げ、
+   viewport に応じてスケールを継続させる(revealの--cu/--csは相対transformなので振付は不変)。 */
+@media(min-width:1500px){.canopy{width:min(2040px,92vw);height:min(78vh,940px)}}
+@media(min-width:2000px){.canopy{width:min(2400px,90vw);height:min(80vh,1120px)}}
 /* 修正1: SVG(枝/node 描画)は装飾なので pointer-events:none。これを auto のままにすると z-3 の SVG が
    z-auto のラベル(.lab)を覆いクリックを奪う。クリックは node-hit(z-6)とラベル(z-4)が受ける。 */
 .canopy svg{position:relative;z-index:3;width:100%;height:100%;display:block;overflow:visible;pointer-events:none}
