@@ -110,10 +110,11 @@ nav .menu a[aria-current]::after{content:"";position:absolute;left:0;right:0;bot
 .lang button[aria-pressed="true"]::after{content:"";display:block;height:1px;background:var(--ink-mid);margin-top:3px}
 .navtog{display:none}
 @media(max-width:760px){
-  .navtog{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:60;padding:11px}
-  .navtog span{display:block;height:1.5px;width:22px;background:var(--ink);transition:transform .32s var(--ease-hover),opacity .25s}
+  .navtog{display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;z-index:60;padding:11px}
+  .navtog span{display:block;height:1.5px;width:22px;background:var(--ink);border-radius:1px;transition:transform .32s var(--ease-hover),opacity .25s}
   nav.open .navtog span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-  nav.open .navtog span:nth-child(2){transform:translateY(-6.5px) rotate(-45deg)}
+  nav.open .navtog span:nth-child(2){opacity:0;transform:translateX(6px)}
+  nav.open .navtog span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
   nav .menu{position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:flex-start;gap:6px;
     padding:0 var(--mx);background:rgba(11,13,12,.97);backdrop-filter:blur(18px);
     transform:translateX(8%);opacity:0;visibility:hidden;transition:transform .42s var(--ease-reveal),opacity .42s var(--ease-reveal),visibility .42s;z-index:55}
@@ -507,6 +508,10 @@ main:focus{outline:none}
 @media(max-height:760px){.canopy{height:min(54vh,460px)}.hero-main{bottom:22px}.hero .tiles{display:none}}
 @media(max-height:600px){.canopy{height:min(46vh,340px)}}
 </style>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main" data-k="skip">本文へスキップ</a>
@@ -523,7 +528,7 @@ main:focus{outline:none}
     <span class="mote m1"></span><span class="mote m2"></span><span class="mote m3"></span>
     KANOPY
   </a>
-  <button class="navtog" aria-expanded="false" aria-controls="navmenu" aria-label="メニュー"><span></span><span></span></button>
+  <button class="navtog" aria-expanded="false" aria-controls="navmenu" aria-label="メニュー"><span></span><span></span><span></span></button>
   <div class="menu" id="navmenu">
     <a class="nl" href="#business" data-k="nav_biz">事業</a>
     <a class="nl" href="#company" data-k="nav_co">会社</a>
@@ -657,6 +662,7 @@ main:focus{outline:none}
 <section class="s bd" id="news">
   <div class="head"><div class="eyebrow"><span class="tx" data-k="lab_news"></span></div><h2 class="sm rl"><span data-k="h2_news"></span></h2></div>
   <ul class="news-list" data-stagger>
+    <li class="news-item rise"><time datetime="2026-06-24">2026.06.24</time><span class="ncat">Company</span><span class="ntitle" data-k="nt_renew"></span></li>
     <li class="news-item rise"><time datetime="2026-05-20">2026.05.20</time><span class="ncat">Product</span><span class="ntitle" data-k="ntitle1"></span></li>
     <li class="news-item rise"><time datetime="2026-04-14">2026.04.14</time><span class="ncat">Company</span><span class="ntitle" data-k="ntitle2"></span></li>
     <li class="news-item rise"><time datetime="2026-03-01">2026.03.01</time><span class="ncat">Milestone</span><span class="ntitle" data-k="ntitle3"></span></li>
@@ -744,6 +750,7 @@ const I18N={
   ci_biz_l:"事業内容", ci_biz:"ゴルフSNS「ROUNDIE」の企画・開発・運営／AI・SaaS・スタートアップ向け人事採用支援「KANOPY Talent」",
   ci_contact_l:"連絡先", ci_contact:'ROUNDIE: <a href="mailto:roundie@kanopy-inc.com">roundie@kanopy-inc.com</a> ／ 採用支援: <a href="mailto:recruit@kanopy-inc.com">recruit@kanopy-inc.com</a> ／ その他: <a href="mailto:notify@kanopy-inc.com">notify@kanopy-inc.com</a>',
   lab_news:"お知らせ", h2_news:"最新のニュース。",
+  nt_renew:"コーポレートサイトをリニューアルしました",
   ntitle1:"ROUNDIE iOS版、TestFlightで先行公開を開始しました",
   ntitle2:"株式会社KANOPYを設立しました",
   ntitle3:"代表の独立以来、累計支援企業数17社を達成",
@@ -803,6 +810,7 @@ const I18N={
   ci_biz_l:"Business", ci_biz:"Planning, development and operation of the golf SNS “ROUNDIE” / Talent support for AI · SaaS · startups, “KANOPY Talent”",
   ci_contact_l:"Contact", ci_contact:'ROUNDIE: <a href="mailto:roundie@kanopy-inc.com">roundie@kanopy-inc.com</a> · Talent: <a href="mailto:recruit@kanopy-inc.com">recruit@kanopy-inc.com</a> · Other: <a href="mailto:notify@kanopy-inc.com">notify@kanopy-inc.com</a>',
   lab_news:"News", h2_news:"Latest news.",
+  nt_renew:"Our corporate website has been redesigned",
   ntitle1:"ROUNDIE iOS — early access via TestFlight is live",
   ntitle2:"KANOPY Inc. has been founded",
   ntitle3:"Reached 17 client companies since the founder went independent",
@@ -862,6 +870,7 @@ const I18N={
   ci_biz_l:"사업 내용", ci_biz:"골프 SNS ‘ROUNDIE’ 기획·개발·운영 / AI · SaaS · 스타트업 인사 채용 지원 ‘KANOPY Talent’",
   ci_contact_l:"연락처", ci_contact:'ROUNDIE: <a href="mailto:roundie@kanopy-inc.com">roundie@kanopy-inc.com</a> / 채용: <a href="mailto:recruit@kanopy-inc.com">recruit@kanopy-inc.com</a> / 기타: <a href="mailto:notify@kanopy-inc.com">notify@kanopy-inc.com</a>',
   lab_news:"소식", h2_news:"최신 뉴스.",
+  nt_renew:"코퍼레이트 사이트를 리뉴얼했습니다",
   ntitle1:"ROUNDIE iOS 버전, TestFlight에서 선행 공개를 시작했습니다",
   ntitle2:"주식회사 KANOPY를 설립했습니다",
   ntitle3:"대표의 독립 이후, 누계 지원 기업 17개사 달성",
