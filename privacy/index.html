@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>プライバシーポリシー — KANOPY Inc.</title>
+<meta name="description" content="株式会社 KANOPY のプライバシーポリシー。採用候補者データの取扱い、業務委託、安全管理措置、本人の権利について定めています。">
+<meta name="theme-color" content="#0B0D0C">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kanopy-inc.com/privacy">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KANOPY Inc.">
+<meta property="og:title" content="プライバシーポリシー — KANOPY Inc.">
+<meta property="og:description" content="株式会社 KANOPY のプライバシーポリシー。採用候補者データの取扱い、業務委託、安全管理措置、本人の権利について定めています。">
+<meta property="og:url" content="https://kanopy-inc.com/privacy">
+<meta property="og:locale" content="ja_JP">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0D0C; --panel:#161A14; --hover:#1E241A; --elevated:#262D20;
+  --ink:#EDEAE0; --ink-mid:#A8A89E; --ink-dim:#8C8C7E;
+  --line:rgba(237,234,224,.12); --line-2:rgba(237,234,224,.07); --line-strong:rgba(237,234,224,.28);
+  --accent:#9ED4A6; --accent-line:#8FC79B; --accent-soft:rgba(158,212,166,.16);
+  --font-ja:'Zen Kaku Gothic New',sans-serif;
+  --mx:clamp(24px,6.5vw,120px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font-family:var(--font-ja);line-height:1.85;letter-spacing:.04em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  font-feature-settings:"palt" 0;font-variant-numeric:tabular-nums}
+::selection{background:var(--accent-soft)}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--panel);color:var(--ink);
+  padding:10px 16px;border:1px solid var(--line);border-radius:3px;font-size:13px}
+.skip:focus{left:var(--mx)}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:14px;
+  padding:18px var(--mx);background:rgba(11,13,12,.82);backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--line-2)}
+nav.top .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  font-weight:900;letter-spacing:.14em;font-size:15px}
+nav.top .brand svg{width:20px;height:24px;color:var(--ink)}
+nav.top .spacer{flex:1}
+nav.top .back{font-size:12.5px;color:var(--ink-mid);text-decoration:none;letter-spacing:.08em;
+  border:1px solid var(--line);border-radius:999px;padding:7px 16px;transition:.2s}
+nav.top .back:hover{color:var(--ink);border-color:var(--line-strong);background:var(--hover)}
+
+/* legal document */
+main{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,96px) var(--mx) clamp(64px,10vw,120px)}
+.legal-doc__header{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:8px}
+.legal-doc__eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-line);margin-bottom:18px;font-weight:500}
+.legal-doc h1{font-size:clamp(28px,1.4rem + 2.4vw,40px);font-weight:900;letter-spacing:.02em;line-height:1.35;margin-bottom:20px}
+.legal-doc__lead{font-size:15.5px;color:var(--ink-mid);line-height:1.95}
+.legal-doc__meta{font-size:12.5px;color:var(--ink-dim);margin-top:18px;letter-spacing:.06em}
+.legal-doc section{padding:34px 0;border-bottom:1px solid var(--line-2)}
+.legal-doc h2{display:flex;align-items:baseline;gap:14px;font-size:18px;font-weight:700;letter-spacing:.03em;
+  margin-bottom:16px;line-height:1.5}
+.legal-doc h2 .num{font-size:12px;color:var(--accent-line);letter-spacing:.1em;font-weight:700;
+  flex:0 0 auto;min-width:24px}
+.legal-doc p{font-size:14.5px;color:var(--ink-mid);line-height:1.95;margin:0 0 12px}
+.legal-doc p:last-child{margin-bottom:0}
+.legal-doc strong{color:var(--ink);font-weight:700}
+.legal-list{list-style:none;margin:14px 0 0;padding:0}
+.legal-list li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink-mid);line-height:1.9;margin-bottom:10px}
+.legal-list li::before{content:"";position:absolute;left:4px;top:13px;width:6px;height:6px;border-radius:50%;
+  background:var(--accent);opacity:.7}
+.legal-list li:last-child{margin-bottom:0}
+.legal-doc a{color:var(--accent-line);text-decoration:none;border-bottom:1px solid rgba(143,199,155,.4);
+  transition:.2s}
+.legal-doc a:hover{border-bottom-color:var(--accent-line)}
+.legal-doc__footer{margin-top:8px;padding-top:34px}
+.legal-doc__nav{display:flex;flex-wrap:wrap;gap:14px 28px}
+.legal-doc__nav a{font-size:13px;color:var(--ink-mid);text-decoration:none;letter-spacing:.06em;border:0;transition:.2s}
+.legal-doc__nav a:hover{color:var(--accent-line)}
+
+footer.site{border-top:1px solid var(--line-2);padding:40px var(--mx);display:flex;flex-wrap:wrap;gap:14px 28px;
+  align-items:center;font-size:12.5px;color:var(--ink-dim);letter-spacing:.06em}
+footer.site a{color:var(--ink-mid);text-decoration:none;transition:.2s}
+footer.site a:hover{color:var(--ink)}
+footer.site .spacer{flex:1}
+</style>
+</head>
+<body>
+<a class="skip" href="#doc">本文へスキップ</a>
+<nav class="top">
+  <a class="brand" href="/" aria-label="KANOPY home">
+    <svg viewBox="0 0 24 28" aria-hidden="true">
+        <path d="M12 27 C11 22 13.4 18 11.8 13.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M12 16 C12 12 4.5 13 3 8" stroke="currentColor" stroke-width=".95" fill="none" stroke-linecap="round"/>
+        <path d="M12 14 C12 9 20 10 22 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+        <circle cx="12" cy="14" r="3.4" fill="rgba(158,212,166,.18)"/><circle cx="12" cy="14" r="1.9" fill="var(--accent)"/>
+      </svg>
+    KANOPY
+  </a>
+  <span class="spacer"></span>
+  <a class="back" href="/">← トップへ戻る</a>
+</nav>
+<main id="doc">
+<article class="legal-doc">
+  <header class="legal-doc__header">
+    <p class="legal-doc__eyebrow">Legal · KANOPY Inc.</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="legal-doc__lead">株式会社 KANOPY（以下「当社」）は、本ホームページおよび「KANOPY Talent」をはじめとする当社サービスにおける個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
+    <p class="legal-doc__meta">最終更新: 2026 年 5 月 25 日</p>
+  </header>
+
+  <section>
+    <h2><span class="num">01</span>取得する個人情報</h2>
+    <p>当社は、業務遂行上必要な範囲で以下の個人情報を取得することがあります。</p>
+    <ul class="legal-list">
+      <li><strong>採用支援サービス利用時</strong>: 取引先企業の担当者情報、候補者情報（氏名、連絡先、職務経歴、面談時の発言内容、応募意思の有無等）</li>
+      <li><strong>お問い合わせ時</strong>: 氏名、所属、メールアドレス、お問い合わせ内容</li>
+      <li><strong>本ホームページ閲覧時</strong>: アクセスログ（IP アドレス、ブラウザ情報、参照元、滞在時間等の統計情報）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>利用目的</h2>
+    <p>取得した個人情報は、以下の目的のためにのみ利用します。</p>
+    <ul class="legal-list">
+      <li>採用支援サービスの提供（候補者紹介、選考プロセスの設計・運用、面接対応、内定支援、入社支援、オンボーディング設計等）</li>
+      <li>取引先・候補者・関係者とのコミュニケーション（連絡、調整、報告）</li>
+      <li>サービス品質改善のための統計的分析</li>
+      <li>法令に基づく対応</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>採用候補者データの取扱い</h2>
+    <p>KANOPY Talent では採用支援の性質上、候補者の個人情報（氏名、職務経歴、現職、希望条件等）を取得します。これらの情報は以下の原則で取扱います。</p>
+    <ul class="legal-list">
+      <li>候補者本人の<strong>明示的な同意</strong>を取得したうえで取扱います</li>
+      <li>取得した候補者情報は、本人が応募意思を示した特定の取引先企業の選考プロセスに限定して提供します</li>
+      <li>選考が終了した（不合格 or 辞退 or 内定後 6 か月経過）候補者情報は、本人の希望に応じて速やかに削除または匿名化します</li>
+      <li>候補者本人からの開示・訂正・削除請求には、合理的な期間内に対応します</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>第三者提供</h2>
+    <p>当社は、以下の場合を除き、個人情報を第三者に提供しません。</p>
+    <ul class="legal-list">
+      <li>本人の同意がある場合（採用候補者紹介における取引先企業への情報提供等）</li>
+      <li>法令に基づく場合</li>
+      <li>人の生命・身体・財産の保護のために必要な場合</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>業務委託</h2>
+    <p>当社は、業務の一部を信頼できる第三者（業務委託先）に委託することがあります。委託先には、個人情報を適切に取り扱うよう契約により義務づけ、当社が監督します。</p>
+    <p>主な業務委託先・利用サービス:</p>
+    <ul class="legal-list">
+      <li><strong>Google Workspace</strong>（メール・ドキュメント管理）</li>
+      <li><strong>Cloudflare</strong>（本ホームページ配信・セキュリティ）</li>
+      <li><strong>Google Analytics 4</strong>（本ホームページのアクセス解析・統計）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>安全管理措置</h2>
+    <p>当社は、個人情報の漏えい、滅失または毀損を防止するため、以下のような安全管理措置を講じます。</p>
+    <ul class="legal-list">
+      <li>アクセス権限の限定（業務上必要な担当者のみアクセス可）</li>
+      <li>暗号化通信（HTTPS / TLS）の徹底</li>
+      <li>パスワード管理・二段階認証の採用</li>
+      <li>業務委託先との契約に基づく監督</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>本人の権利</h2>
+    <p>ご本人は、当社が保有する個人情報について、開示・訂正・追加・削除・利用停止を請求することができます。請求は以下の窓口までご連絡ください。</p>
+    <p>合理的な範囲で速やかに対応いたします。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>本ポリシーの変更</h2>
+    <p>本ポリシーの内容は、法令の変更や当社業務の変更に応じて、必要な範囲で改定することがあります。改定後の内容は本ページに掲示した時点から効力を生じます。</p>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>お問い合わせ窓口</h2>
+    <p>本プライバシーポリシーに関するお問い合わせ・個人情報の開示等請求:</p>
+    <p>
+      株式会社 KANOPY 個人情報担当窓口<br>
+      Email: <a href="mailto:notify@kanopy-inc.com">notify@kanopy-inc.com</a>
+    </p>
+  </section>
+
+  <footer class="legal-doc__footer">
+    <nav class="legal-doc__nav">
+      <a href="/">トップへ戻る</a>
+      <a href="/talent/">KANOPY Talent</a>
+      <a href="/terms">業務委託契約概要</a>
+    </nav>
+  </footer>
+</article>
+</main>
+<footer class="site">
+  <span>株式会社KANOPY · Tokyo · Since 2026</span>
+  <span class="spacer"></span>
+  <a href="/">ホーム</a>
+  <a href="/privacy">プライバシーポリシー</a>
+  <a href="/terms">業務委託契約概要</a>
+</footer>
+</body>
+</html>
