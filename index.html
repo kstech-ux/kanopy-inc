@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" class="no-js">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -97,8 +97,8 @@ nav.top{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-cont
   padding:14px var(--mx);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
 nav.top::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(11,13,12,.6),transparent)}
 nav.top.scrolled{background:rgba(11,13,12,.74);backdrop-filter:blur(14px);border-bottom-color:var(--line-2)}
-nav .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-en);font-weight:600;font-size:16px;letter-spacing:.04em;color:var(--ink);text-decoration:none;min-height:44px}
-nav .brand svg{width:19px;height:22px;overflow:visible}
+nav .brand{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-en);font-weight:600;font-size:15.5px;letter-spacing:.12em;color:var(--ink);text-decoration:none;min-height:44px}
+nav .brand svg{width:18px;height:21px;overflow:visible;flex:none;transform:translateY(.5px)}
 nav .menu{display:flex;gap:20px;align-items:center}
 nav .menu a{font-family:var(--font-en);font-size:12px;letter-spacing:.04em;color:var(--ink-dim);text-decoration:none;position:relative;transition:color .25s;min-height:44px;display:inline-flex;align-items:center}
 nav .menu a:hover,nav .menu a[aria-current]{color:var(--ink)}
@@ -194,7 +194,7 @@ html:not([lang="ja"]):not([lang="ko"]) .head h2{font-family:var(--font-en);font-
 .card .cname{font-family:var(--font-en);font-weight:600;font-size:var(--t5);letter-spacing:-.01em;margin-top:16px;color:var(--ink-mid);transition:color var(--d-base) var(--ease-hover)}
 .card:hover .cname{color:var(--ink)}
 .card .cline{margin-top:14px;font-size:var(--t3);color:var(--ink-mid);max-width:40ch}
-.shot{margin-top:24px;border-radius:8px;overflow:hidden;max-width:380px;line-height:0;
+.shot{margin-top:24px;border-radius:8px;overflow:hidden;max-width:310px;line-height:0;
   padding:10px;background:linear-gradient(180deg,#1A1F18,#141811);
   box-shadow:0 0 0 1px rgba(var(--accent-line-rgb),.22),0 26px 64px -30px rgba(0,0,0,.85);
   transition:transform var(--d-base) var(--ease-hover)}
@@ -511,7 +511,7 @@ main:focus{outline:none}
 <body>
 <a class="skip" href="#main" data-k="skip">本文へスキップ</a>
 <nav class="top" id="nav">
-  <a class="brand" href="#top" aria-label="KANOPY home">
+  <a class="brand" href="/" aria-label="KANOPY home">
     <svg viewBox="0 0 24 28" aria-hidden="true">
       <path d="M12 27 C11 22 13.4 18 11.8 13.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
       <path d="M12 16 C12 12 4.5 13 3 8" stroke="currentColor" stroke-width=".95" fill="none" stroke-linecap="round"/>
@@ -603,7 +603,7 @@ main:focus{outline:none}
       <span class="role" data-k="b1role"></span><span class="ctag" data-k="b1tag"></span>
       <span class="cname">ROUNDIE</span>
       <span class="cline" data-k="b1line"></span>
-      <span class="shot"><span class="frame"><img src="images/roundie-colorgrid.png" alt="ROUNDIEのラウンドカード — 18ホールのスコアが色のグリッドになり、合計78(+6)"></span><span class="cap" data-k="shot_cap"></span></span>
+      <span class="shot"><span class="frame"><img src="images/roundie-feed.png" alt="ROUNDIE のフィード — 仲間のラウンドがコース名とスコアの色グリッドカードで流れ、リアクションやコメントがつく"></span><span class="cap" data-k="shot_cap"></span></span>
       <span class="cgo" data-k="b1cta"></span>
     </a>
     <div class="div"></div>
@@ -698,7 +698,6 @@ main:focus{outline:none}
     <a href="https://roundie.app" target="_blank" rel="noopener">ROUNDIE <span class="ar" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12 L12 4 M6 4 H12 V10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     <a href="#company" data-k="foot_co"></a>
     <a href="/privacy" data-k="foot_pp"></a>
-    <a href="/terms" data-k="foot_tm"></a>
   </span>
   <span>株式会社KANOPY · Tokyo · Since 2026</span>
 </footer>
@@ -723,7 +722,7 @@ const I18N={
   lab_biz:"運営している事業", h2_biz:"つくりあげたサービスと、培ってきた経験。",
   b1role:"Proof — 自分たちで、つくった。", b1tag:"ゴルフSNS · プロダクト",
   b1line:"18ホールが、一行の物語になる。",
-  shot_cap:"ROUNDIE — ラウンドカード", b1cta:"ROUNDIEを見る",
+  shot_cap:"ROUNDIE — ゴルフのフィード", b1cta:"ROUNDIEを見る",
   b2role:"Offer — つくる側の目で、組織をつくる。", b2tag:"採用支援 · 組織",
   b2svc:"組織開発 / 採用要件定義 / 人事戦略 / 面接見極め・面談アトラクト / 定着",
   b2line:"一人目の採用から、組織の設計まで。良いチームのつくりかたを、共に。", b2cta:"採用のご相談へ",
@@ -781,7 +780,7 @@ const I18N={
   lab_biz:"What we run", h2_biz:"The services we’ve built, the experience we’ve earned.",
   b1role:"Proof — we built it ourselves.", b1tag:"Golf SNS · Product",
   b1line:"Eighteen holes become a single line of story.",
-  shot_cap:"ROUNDIE — round card", b1cta:"Visit ROUNDIE",
+  shot_cap:"ROUNDIE — the golf feed", b1cta:"Visit ROUNDIE",
   b2role:"Offer — we build your team, from the inside.", b2tag:"Talent · Organization",
   b2svc:"Org development / Hiring criteria / HR strategy / Interview & attraction / Retention",
   b2line:"From your first hire to designing the org. Building good teams, together.", b2cta:"Talent inquiry",
@@ -839,7 +838,7 @@ const I18N={
   lab_biz:"운영하는 사업", h2_biz:"만들어 온 서비스와, 쌓아 온 경험.",
   b1role:"Proof — 우리가 직접 만들었다.", b1tag:"골프 SNS · 프로덕트",
   b1line:"18홀이, 한 줄의 이야기가 된다.",
-  shot_cap:"ROUNDIE — 라운드 카드", b1cta:"ROUNDIE 보기",
+  shot_cap:"ROUNDIE — 골프 피드", b1cta:"ROUNDIE 보기",
   b2role:"Offer — 만드는 쪽의 눈으로, 조직을 만든다.", b2tag:"채용 지원 · 조직",
   b2svc:"조직 개발 / 채용 요건 정의 / 인사 전략 / 면접 선별·면담 어트랙트 / 정착",
   b2line:"첫 채용부터 조직 설계까지. 좋은 팀을 만드는 법을, 함께.", b2cta:"채용 문의",
@@ -915,7 +914,7 @@ function setLang(l){
   try{localStorage.setItem("kanopy_lang",l);}catch(e){}
 }
 (function(){ let l=null; try{l=localStorage.getItem("kanopy_lang");}catch(e){}
-  if(!l){const n=(navigator.language||"ja").slice(0,2); l=["en","ko"].includes(n)?n:"ja";} setLang(l); })();
+  if(!l){ l="en"; } setLang(l); })();
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
 document.querySelectorAll('a[target="_blank"]').forEach(a=>{ if(!a.querySelector('[data-k="ext_tab"]')){
